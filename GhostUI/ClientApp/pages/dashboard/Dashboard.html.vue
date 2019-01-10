@@ -13,7 +13,7 @@
                 <div class="card-content">
                     <div class="column">
                         <div class="bd-notification is-flex is-horizontal-center">
-                            <img src="../../assets/image/react-redux-aspcore-logo.png" alt="" />
+                            <img src="../../assets/image/vue-type-script.png" alt="" />
                         </div>
                         <div class="columns is-multiline is-mobile">
                             <div class="column dashboard-info is-half">
