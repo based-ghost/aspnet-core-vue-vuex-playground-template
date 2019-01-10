@@ -34,7 +34,8 @@ module.exports = (env) => {
                     loader: 'awesome-typescript-loader?silent=true',
                     options: {
                         appendTsSuffixTo: [/\.vue$/],
-                        appendTsxSuffixTo: [/\.vue$/], useBabel: true
+                        appendTsxSuffixTo: [/\.vue$/],
+                        useBabel: true
                     }
                 },
                 {
@@ -42,7 +43,13 @@ module.exports = (env) => {
                     use: [
                         isDevBuild ? 'vue-style-loader' : MiniCssExtractPlugin.loader,
                         'css-loader',
-                        { loader: 'sass-loader', options: { data: '@import "variables.scss";', includePaths: [path.resolve(__dirname, "./ClientApp/assets/style/scss")] } }
+                        {
+                            loader: 'sass-loader',
+                            options: {
+                                data: '@import "variables.scss";',
+                                includePaths: [path.resolve(__dirname, "./ClientApp/assets/style/scss")]
+                            }
+                        }
                     ]
                 },
                 {
