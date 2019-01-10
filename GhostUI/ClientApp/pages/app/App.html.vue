@@ -34,7 +34,6 @@
         -webkit-animation-duration: .35s;
         animation-duration: .35s;
     }
-
     .pageSlideRight-leave-active,
     .pageSlideLeft-leave-active {
         -webkit-animation: page-leave-fadeOut ease;
@@ -80,19 +79,16 @@
             -webkit-transform: translate3d(-150px, 0, 0);
             transform: translate3d(-150px, 0, 0);
         }
-
         to {
             opacity: 1;
         }
     }
-
     @keyframes page-enter-slideLeft {
         from {
             opacity: 0;
             -webkit-transform: translate3d(-150px, 0, 0);
             transform: translate3d(-150px, 0, 0);
         }
-
         to {
             opacity: 1;
         }

@@ -41,6 +41,7 @@ export default class FetchData extends Vue {
             // failed
         })
         .then(() => {
+            // setTimeout added since the request completes so quickly - gives a change to show loading animation spinner for demonstration purposes
             setTimeout(() => {
                 this.loading = false;
             }, 50);

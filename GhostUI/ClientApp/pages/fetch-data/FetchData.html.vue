@@ -2,7 +2,7 @@
     <section class="section">
         <div class="container is-centered box">
             <h3 class="title is-3">Weather forecast</h3>
-            <h5 class="subtitle is-5">This component demonstrates fetching data from the server. Start Date Index: {{currentStartDateIndex.toString()}}</h5>
+            <h5 class="subtitle is-5">This component demonstrates fetching data from the server - Start Date Index: <strong>{{currentStartDateIndex.toString()}}</strong></h5>
             <spinner :show="loading" />
             <table class="table is-fullwidth">
                 <thead>
