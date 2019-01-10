@@ -1,0 +1,197 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
+    <TypeScriptToolsVersion>Latest</TypeScriptToolsVersion>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <LangVersion>default</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="ClientApp\components\loaders\delete\**" />
+    <Compile Remove="ClientApp\components\controls\date-picker\**" />
+    <Compile Remove="ClientApp\components\controls\input-dropdown\**" />
+    <Compile Remove="ClientApp\components\controls\table\**" />
+    <Compile Remove="ClientApp\components\mixins\**" />
+    <Compile Remove="ClientApp\components\modals\**" />
+    <Compile Remove="ClientApp\pages\agency\**" />
+    <Compile Remove="ClientApp\pages\role\**" />
+    <Compile Remove="ClientApp\pages\user\**" />
+    <Content Remove="ClientApp\components\loaders\delete\**" />
+    <Content Remove="ClientApp\components\controls\date-picker\**" />
+    <Content Remove="ClientApp\components\controls\input-dropdown\**" />
+    <Content Remove="ClientApp\components\controls\table\**" />
+    <Content Remove="ClientApp\components\mixins\**" />
+    <Content Remove="ClientApp\components\modals\**" />
+    <Content Remove="ClientApp\pages\agency\**" />
+    <Content Remove="ClientApp\pages\role\**" />
+    <Content Remove="ClientApp\pages\user\**" />
+    <EmbeddedResource Remove="ClientApp\components\loaders\delete\**" />
+    <EmbeddedResource Remove="ClientApp\components\controls\date-picker\**" />
+    <EmbeddedResource Remove="ClientApp\components\controls\input-dropdown\**" />
+    <EmbeddedResource Remove="ClientApp\components\controls\table\**" />
+    <EmbeddedResource Remove="ClientApp\components\mixins\**" />
+    <EmbeddedResource Remove="ClientApp\components\modals\**" />
+    <EmbeddedResource Remove="ClientApp\pages\agency\**" />
+    <EmbeddedResource Remove="ClientApp\pages\role\**" />
+    <EmbeddedResource Remove="ClientApp\pages\user\**" />
+    <None Remove="ClientApp\components\loaders\delete\**" />
+    <None Remove="ClientApp\components\controls\date-picker\**" />
+    <None Remove="ClientApp\components\controls\input-dropdown\**" />
+    <None Remove="ClientApp\components\controls\table\**" />
+    <None Remove="ClientApp\components\mixins\**" />
+    <None Remove="ClientApp\components\modals\**" />
+    <None Remove="ClientApp\pages\agency\**" />
+    <None Remove="ClientApp\pages\role\**" />
+    <None Remove="ClientApp\pages\user\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="babel.config.ts" />
+    <None Remove="ClientApp\api\index.ts" />
+    <None Remove="ClientApp\api\services\sample.service.ts" />
+    <None Remove="ClientApp\api\signalR.service.ts" />
+    <None Remove="ClientApp\components\footer\Footer.ts" />
+    <None Remove="ClientApp\components\controls\checkbox\VCheckbox.render.tsx" />
+    <None Remove="ClientApp\components\controls\checkbox\VCheckbox.ts" />
+    <None Remove="ClientApp\components\controls\dropdown\VDropdown.render.tsx" />
+    <None Remove="ClientApp\components\controls\VDropdown.ts" />
+    <None Remove="ClientApp\components\controls\VSearchDropdown.ts" />
+    <None Remove="ClientApp\components\loaders\index.ts" />
+    <None Remove="ClientApp\components\nav\index.ts" />
+    <None Remove="ClientApp\components\nav\NavBarTop.ts" />
+    <None Remove="ClientApp\components\nav\settings\Settings.ts" />
+    <None Remove="ClientApp\pages\fetch-data\FetchData.ts" />
+    <None Remove="ClientApp\pages\form\Form.ts" />
+    <None Remove="ClientApp\pages\index.ts" />
+    <None Remove="ClientApp\pages\login\Login.ts" />
+    <None Remove="ClientApp\plugins\vue-click-outside.ts" />
+    <None Remove="ClientApp\store\modules\auth\types.d.ts" />
+    <None Remove="ClientApp\store\modules\form\form.store.ts" />
+    <None Remove="ClientApp\store\modules\form\types.d.ts" />
+    <None Remove="ClientApp\store\modules\weather-forecasts\types.d.ts" />
+    <None Remove="ClientApp\store\modules\weather-forecasts\weather-forecasts.store.ts" />
+    <None Remove="ClientApp\tests\controls.test.ts" />
+    <None Remove="ClientApp\store\modules\agency.store.ts" />
+    <None Remove="ClientApp\store\modules\auth.store.ts" />
+    <None Remove="ClientApp\store\modules\role.store.ts" />
+    <None Remove="ClientApp\store\modules\user.store.ts" />
+    <None Remove="ClientApp\config\vee-validate.config.ts" />
+    <None Remove="ClientApp\config\vue-snotify.config.ts" />
+    <None Remove="ClientApp\prototype\date.extensions.ts" />
+    <None Remove="ClientApp\prototype\index.ts" />
+    <None Remove="ClientApp\store\modules\signalR.store.ts" />
+    <None Remove="ClientApp\store\store.ts" />
+    <None Remove="ClientApp\types\tsx-shims.d.ts" />
+    <None Remove="ClientApp\types\vue-snotify-shims.d.ts" />
+    <None Remove="ClientApp\utils\debouncer.ts" />
+    <None Remove="ClientApp\utils\error-handler.ts" />
+    <None Remove="ClientApp\utils\number.extensions.ts" />
+    <None Remove="ClientApp\utils\string.extensions.ts" />
+    <None Remove="ClientApp\components\loaders\Authenticator.ts" />
+    <None Remove="ClientApp\components\loaders\Deletion.ts" />
+    <None Remove="ClientApp\components\loaders\Spinner.ts" />
+    <None Remove="ClientApp\utils\Constants.ts" />
+    <None Remove="ClientApp\api\agency.service.ts" />
+    <None Remove="ClientApp\api\auth.service.ts" />
+    <None Remove="ClientApp\api\base.service.ts" />
+    <None Remove="ClientApp\api\role.service.ts" />
+    <None Remove="ClientApp\api\user.service.ts" />
+    <None Remove="ClientApp\types\vue-shims.d.ts" />
+    <None Remove="ClientApp\pages\app\App.ts" />
+    <None Remove="ClientApp\pages\router.ts" />
+    <None Remove="EventBus.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AspNetCore.HealthChecks.UI" Version="2.2.10" />
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\api\index.ts" />
+    <TypeScriptCompile Include="ClientApp\api\services\sample.service.ts" />
+    <TypeScriptCompile Include="ClientApp\api\services\signalR.service.ts" />
+    <TypeScriptCompile Include="ClientApp\components\footer\Footer.ts" />
+    <TypeScriptCompile Include="ClientApp\components\controls\checkbox\VCheckbox.render.tsx" />
+    <TypeScriptCompile Include="ClientApp\components\controls\checkbox\VCheckbox.ts" />
+    <TypeScriptCompile Include="ClientApp\components\controls\dropdown\VDropdown.render.tsx" />
+    <TypeScriptCompile Include="ClientApp\components\loaders\index.ts" />
+    <TypeScriptCompile Include="ClientApp\components\nav\index.ts" />
+    <TypeScriptCompile Include="ClientApp\components\nav\settings\Settings.ts" />
+    <TypeScriptCompile Include="ClientApp\config\constants.ts" />
+    <TypeScriptCompile Include="ClientApp\config\vue-snotify.config.ts" />
+    <TypeScriptCompile Include="ClientApp\pages\fetch-data\FetchData.ts" />
+    <TypeScriptCompile Include="ClientApp\pages\form\Form.ts" />
+    <TypeScriptCompile Include="ClientApp\pages\index.ts" />
+    <TypeScriptCompile Include="ClientApp\prototype\index.ts" />
+    <TypeScriptCompile Include="ClientApp\store\modules\auth\types.d.ts" />
+    <TypeScriptCompile Include="ClientApp\store\modules\form\form.store.ts" />
+    <TypeScriptCompile Include="ClientApp\store\modules\form\types.d.ts" />
+    <TypeScriptCompile Include="ClientApp\store\modules\weather-forecasts\types.d.ts" />
+    <TypeScriptCompile Include="ClientApp\store\modules\weather-forecasts\weather-forecasts.store.ts" />
+    <TypeScriptCompile Include="ClientApp\tests\controls.test.ts" />
+    <TypeScriptCompile Include="ClientApp\types\tsx-shims.d.ts" />
+    <TypeScriptCompile Include="ClientApp\utils\error-handler.ts" />
+    <TypeScriptCompile Include="ClientApp\prototype\extensions\string.extensions.ts" />
+    <TypeScriptCompile Include="ClientApp\components\controls\dropdown\VDropdown.ts" />
+    <TypeScriptCompile Include="ClientApp\components\loaders\authenticator\Authenticator.ts" />
+    <TypeScriptCompile Include="ClientApp\components\loaders\spinner\Spinner.ts" />
+    <TypeScriptCompile Include="ClientApp\components\nav\navbar\NavBar.ts" />
+    <TypeScriptCompile Include="ClientApp\plugins\vue-click-outside.ts" />
+    <TypeScriptCompile Include="ClientApp\api\services\auth.service.ts" />
+    <TypeScriptCompile Include="ClientApp\api\services\base.service.ts" />
+    <TypeScriptCompile Include="ClientApp\store\store.ts" />
+    <TypeScriptCompile Include="ClientApp\store\modules\auth\auth.store.ts" />
+    <TypeScriptCompile Include="ClientApp\types\vue-snotify-shims.d.ts" />
+    <TypeScriptCompile Include="ClientApp\types\vue-shims.d.ts" />
+    <TypeScriptCompile Include="ClientApp\pages\login\Login.ts" />
+    <TypeScriptCompile Include="ClientApp\pages\app\App.ts" />
+    <TypeScriptCompile Include="ClientApp\pages\dashboard\Dashboard.ts" />
+    <TypeScriptCompile Include="ClientApp\event-bus.ts" />
+    <TypeScriptCompile Include="ClientApp\router.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\dist\" />
+  </ItemGroup>
+
+  <Target Name="DebugRunWebpack" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('wwwroot\dist') ">
+    <!-- Ensure Node.js is installed -->
+    <Exec Command="node --version" ContinueOnError="true">
+      <Output TaskParameter="ExitCode" PropertyName="ErrorCode" />
+    </Exec>
+    <Error Condition="'$(ErrorCode)' != '0'" Text="Node.js is required to build and run this project. To continue, please install Node.js from https://nodejs.org/, and then restart your command prompt or IDE." />
+
+    <!-- In development, the dist files won't exist on the first run or when cloning to
+         a different machine, so rebuild them if not already present. -->
+    <Message Importance="high" Text="Performing first-run Webpack build..." />
+    <Exec Command="node node_modules/webpack/bin/webpack.js --config webpack.config.vendor.js" />
+    <Exec Command="node node_modules/webpack/bin/webpack.js" />
+  </Target>
+
+  <Target Name="PublishRunWebpack" AfterTargets="ComputeFilesToPublish">
+    <!-- As part of publishing, ensure the JS resources are freshly built in production mode -->
+    <Exec Command="npm install" />
+    <Exec Command="node node_modules/webpack/bin/webpack.js --config webpack.config.vendor.js --env.prod" />
+    <Exec Command="node node_modules/webpack/bin/webpack.js --env.prod" />
+
+    <!-- Include the newly-built files in the publish output -->
+    <ItemGroup>
+      <DistFiles Include="wwwroot\dist\**" />
+      <ResolvedFileToPublish Include="@(DistFiles->'%(FullPath)')" Exclude="@(ResolvedFileToPublish)">
+        <RelativePath>%(DistFiles.Identity)</RelativePath>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      </ResolvedFileToPublish>
+    </ItemGroup>
+  </Target>
+
+</Project>

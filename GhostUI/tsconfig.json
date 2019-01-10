@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "module": "es2015",
+    "target": "es5",
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "skipLibCheck": true,
+    "noImplicitAny": false,
+    "noImplicitThis": true,
+    "lib": [ "es6", "dom" ],
+    "types": [ "webpack-env" ],
+    "jsx": "preserve"
+  },
+  "exclude": [
+    "bin",
+    "node_modules"
+  ]
+}
