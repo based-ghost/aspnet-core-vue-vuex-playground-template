@@ -2,7 +2,7 @@
 This template is a SPA application built using ASP.NET Core 2.2 as the REST API server and Vue/Vuex/TypeScript as the web client (Bulma + SASS used for UI styling). You can find a similar version using React + Redux (and associated libraries) here: https://github.com/based-ghost/aspnet-core-react-redux-playground-template
 
 # General Overview
-This template is vaguely based on the original Vue + TypeScript .NET Core SPA template that was offered in the past with earlier versions of the framework (Vue has been removed as an option from their starter templates for some reason). Using that as a base, this template greatly extends the functionality provided and also uses the latest versions of all dependent libraries. Keep in mind that I use this project (or others like it) as a testing ground for varying libraries/packages and it is not meant to act as a stand-alone final solution - it is more of POC. For example, the login & logout processes are stubbed to simulate the actual process (no real authentication is happening, however, it is something I plan to add to this project in the near future). I plan on keeping this up to date, and technologies used may fluctuate.
+This template is vaguely based on the original Vue + TypeScript .NET Core SPA template that was offered in the past with earlier versions of the framework (Vue has been removed as an option from their starter templates for some reason). Using that as a base, this template greatly extends the functionality provided and also uses the latest versions of all dependent libraries. Keep in mind that I use this project (or others like it) as a testing ground for varying libraries/packages and it is not meant to act as a stand-alone final solution - it is more of POC. For example, the login & logout processes are stubbed to simulate the actual process (no real authentication is happening, however, it is something I plan to add to this project in the near future). I plan on keeping this up to date, and the listed technology stack may be subject to change.
 
 # Technology Stack Overview
 * Server
@@ -16,13 +16,12 @@ This template is vaguely based on the original Vue + TypeScript .NET Core SPA te
   * Vue-router
   * TypeScript
   * Webpack for bundling of application assets and HMR (Hot Module Replacement)
-  * Bulma CSS framework
-  * SASS
-  * Axios for REST endpoint requests/communication
-  * vuex-type-helper - package that provides type support for vuex store modules - https://github.com/ktsn/vuex-type-helper
+  * Bulma CSS framework + SASS
+  * Axios for REST endpoint requests
+  * vuex-type-helper - package that provides type/linter/IntelliSense support for vuex store modules - https://github.com/ktsn/vuex-type-helper
   * vue-snotify (highly configurable toast notification library - comes hooked up to display login error & SignalR hub push notifications examples) - https://github.com/artemsky/vue-snotify
-  * Babel integration to handle transformation of React-like JSX/TSX render function syntax - configured in package.json, but can be moved to a babelrc file. Two custom control components act as examples of how to use this pattern in vue applications - (VCheckbox.render.tsx & VDropdown.render.tsx). It is a nice option to have for components that have very little HTML or for those that come from a React background and are comfortable with JSX syntax. Here is what the VCheckbox.render.tsx component looks like:
-  
+  * Two different loader components (spinner & authentication animation w/ callback for success/fail)
+  * Babel integration to handle transformation of React-like JSX/TSX render function syntax - configured in package.json, but can be moved to a babelrc file. The app's VCheckbox.render.tsx & VDropdown.render.tsx components are live examples. This is a nice option to have for components that have very little HTML or for those that come from a React background and are comfortable with JSX syntax. Here is what the VCheckbox.render.tsx component looks like:
   
   ```JSX
       public render(h: CreateElement): VNode {
