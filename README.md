@@ -14,12 +14,12 @@ This template is vaguely based on the original Vue + TypeScript .NET Core SPA te
   * Vue
   * Vuex
   * Vue-router
-  * vuex-type-helper - package that provides type support for vuex store modules - https://github.com/ktsn/vuex-type-helper
   * TypeScript
   * Webpack for bundling of application assets and HMR (Hot Module Replacement)
   * Bulma CSS framework
   * SASS
   * Axios for REST endpoint requests/communication
+  * vuex-type-helper - package that provides type support for vuex store modules - https://github.com/ktsn/vuex-type-helper
   * vue-snotify (highly configurable toast notification library - comes hooked up to display login error & SignalR hub push notifications examples) - https://github.com/artemsky/vue-snotify
   * Babel integration to handle transformation of React-like JSX/TSX render function syntax - configured in package.json, but can be moved to a babelrc file. Two custom control components act as examples of how to use this pattern in vue applications - (VCheckbox.render.tsx & VDropdown.render.tsx). It is a nice option to have for components that have very little HTML or for those that come from a React background and are comfortable with JSX syntax. Here is what the VCheckbox.render.tsx component looks like:
   
@@ -52,5 +52,3 @@ This template is vaguely based on the original Vue + TypeScript .NET Core SPA te
   * Clone the repository and running ```npm install``` should properly restore all packages and dependencies - if the vendor.js & vendor-manifest.json did not get installed, run ```npm run webpack``` to execute the script added to accomplish this task.
   * A solution.sln file is added to act as an entry point to open the application in Visual Studio. Visual Studio 2017 and up and the [Vue.js Pack 2017](https://marketplace.visualstudio.com/items?itemName=MadsKristensen.VuejsPack-18329) extension may need to be installed as well.
   * GhostUI/GhostUI.csproj acts as the entry point to open the application in Visual Studio Code.
-
-    
