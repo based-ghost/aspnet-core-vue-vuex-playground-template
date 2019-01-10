@@ -23,6 +23,7 @@ This template is vaguely based on the original Vue + TypeScript .NET Core SPA te
   * vue-snotify (highly configurable toast notification library - comes hooked up to display login error & SignalR hub push notifications examples) - https://github.com/artemsky/vue-snotify
   * Babel integration to handle transformation of React-like JSX/TSX render function syntax - configured in package.json, but can be moved to a babelrc file. Two custom control components act as examples of how to use this pattern in vue applications - (VCheckbox.render.tsx & VDropdown.render.tsx). It is a nice option to have for components that have very little HTML or for those that come from a React background and are comfortable with JSX syntax. Here is what the VCheckbox.render.tsx component looks like:
   
+  
   ```JSX
       public render(h: CreateElement): VNode {
         return (
