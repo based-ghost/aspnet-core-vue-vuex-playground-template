@@ -21,12 +21,12 @@
                                     <div class="content dashboard-content">
                                         <ul>
                                             <li>
-                                                <a class="dashboard-link react" target="_blank" rel="noopener" href="https://reactjs.org/">React</a>
-                                                is an open-source JavaScript library that makes no assumptions about the rest of your technology stack. It allows you to build encapsulated components that mange their own state using JavaScript, instead of templates.
+                                                <a class="dashboard-link vue" target="_blank" rel="noopener" href="https://vuejs.org/">Vue</a>
+                                                is designed from the ground up to be incrementally adoptable. The core library is focused on the view layer only, and is easy to pick up and integrate with other libraries or existing projects. Vue is also perfectly capable of powering sophisticated Single-Page Applications when combined with other libraries.
                                             </li>
                                             <li>
-                                                <a class="dashboard-link redux" target="_blank" rel="noopener" href="https://redux.js.org/">Redux</a>
-                                                centralizes your application"s state and logic and helps you write applications that behave consistently and are easy to test.
+                                                <a class="dashboard-link vuex" target="_blank" rel="noopener" href="https://vuex.vuejs.org/">Vuex</a>
+                                                serves as a centralized store for all the components in an application, with rules ensuring that the state can only be mutated in a predictable fashion.
                                             </li>
                                             <li>
                                                 <a class="dashboard-link bulma" target="_blank" rel="noopener" href="https://bulma.io/">Bulma</a>

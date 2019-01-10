@@ -62,23 +62,23 @@ html, body {
     padding: 0.25em 0.5em 0.25em;
     margin-right: .25em;
 
-    &.react {
-        background-color: rgba(32,156,238,0.2);
-        border-bottom: 1px solid rgba(32,156,238,0.75);
+    &.vue {
+        background-color: rgba(66,185,131,0.2);
+        border-bottom: 1px solid rgba(66,185,131,0.75);
 
         &:hover {
-            background-color: rgba(32,156,238,0.35);
-            border-bottom: 1px solid rgba(32,156,238,1);
+            background-color: rgba(66,185,131,0.35);
+            border-bottom: 1px solid rgba(66,185,131,1);
         }
     }
 
-    &.redux {
-        background-color: rgba(118,74,188,0.2);
-        border-bottom: 1px solid rgba(118,74,188,0.75);
+    &.vuex {
+        background-color: rgba(62,83,104,0.2);
+        border-bottom: 1px solid rgba(62,83,104,0.75);
 
         &:hover {
-            background-color: rgba(118,74,188,0.35);
-            border-bottom: 1px solid rgba(118,74,188,1);
+            background-color: rgba(62,83,104,0.35);
+            border-bottom: 1px solid rgba(62,83,104,1);
         }
     }
 
