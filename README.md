@@ -8,13 +8,13 @@ This template is vaguely based on the original Vue + TypeScript .NET Core SPA te
 * Server
   * ASP.NET Core 2.2
   * SignalR
-  * HealthChecks + the AspNetCore.HealthChecks.UI package (https://github.com/xabaril/AspNetCore.Diagnostics.HealthChecks) - this provides  a nicely formatted UI for viewing the results of the HealthCheck modules in use and is accessed on ```/health-ui``` (also, provide an option for viewing the raw JSON data that the UI package prettifies for you at ```/healthchecks-json``` - configured in appsettings.json and can be accessed in the application via the floating settings cog on right screen by clicking the "Health Checks" link).
+  * HealthChecks + the AspNetCore.HealthChecks.UI package - https://github.com/xabaril/AspNetCore.Diagnostics.HealthChecks - this provides  a nicely formatted UI for viewing the results of the HealthCheck modules in use and is accessed on ```/health-ui``` (also, provide an option for viewing the raw JSON data that the UI package prettifies for you at ```/healthchecks-json``` - configured in appsettings.json and can be accessed in the application via the floating settings cog on right screen by clicking the "Health Checks" link).
   * Gzip response compression (production build)
 * Client
   * Vue
   * Vuex
   * Vue-router
-  * vuex-type-helper - package that provides type support for vuex store modules (https://github.com/ktsn/vuex-type-helper)
+  * vuex-type-helper - package that provides type support for vuex store modules - https://github.com/ktsn/vuex-type-helper
   * TypeScript
   * Webpack for bundling of application assets and HMR (Hot Module Replacement)
   * Bulma CSS framework
