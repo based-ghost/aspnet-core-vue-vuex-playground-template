@@ -1,13 +1,13 @@
 ﻿import { Component, Vue } from 'vue-property-decorator';
 import { NavBar, Settings } from '../../components/nav';
-import Footer from '../../components/footer/Footer.html.vue';
+import FooterStatic from '../../components/footer/Footer.html.vue';
 import { mapGetters } from 'vuex';
 
 @Component({
     components: {
         NavBar,
         Settings,
-        Footer
+        FooterStatic
     },
     computed: mapGetters({
         isAuthenticated: 'isAuthenticated'

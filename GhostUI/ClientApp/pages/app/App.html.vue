@@ -6,7 +6,7 @@
         <transition :name="$route.meta.transitionName" mode="out-in">
             <router-view></router-view>
         </transition>
-        <footer />
+        <footer-static />
     </div>
 </template>
 
