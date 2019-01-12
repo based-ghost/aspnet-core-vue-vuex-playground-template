@@ -15,7 +15,6 @@ export default class Authenticator extends Vue {
     onStatusChange(newStatus: string): void {
         if (newStatus.isIn(AuthStatusEnum.Success, AuthStatusEnum.Fail)) {
             setTimeout(() => {
-                this.show = false;
                 this.$emit(newStatus);
             }, this.emitTimeout);
         } else {
