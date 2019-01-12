@@ -10223,9 +10223,9 @@
       }
     },
     "vue": {
-      "version": "2.5.21",
-      "resolved": "https://registry.npmjs.org/vue/-/vue-2.5.21.tgz",
-      "integrity": "sha512-Aejvyyfhn0zjVeLvXd70h4hrE4zZDx1wfZqia6ekkobLmUZ+vNFQer53B4fu0EjWBSiqApxPejzkO1Znt3joxQ=="
+      "version": "2.5.22",
+      "resolved": "https://registry.npmjs.org/vue/-/vue-2.5.22.tgz",
+      "integrity": "sha512-pxY3ZHlXNJMFQbkjEgGVMaMMkSV1ONpz+4qB55kZuJzyJOhn6MSy/YZdzhdnumegNzVTL/Dn3Pp4UrVBYt1j/g=="
     },
     "vue-class-component": {
       "version": "6.3.2",
@@ -10301,9 +10301,9 @@
       }
     },
     "vue-property-decorator": {
-      "version": "7.2.0",
-      "resolved": "https://registry.npmjs.org/vue-property-decorator/-/vue-property-decorator-7.2.0.tgz",
-      "integrity": "sha512-sCI6NVM3tEDg+mpZrQlgkddtxd9LbFWetue8D+nqO3agfSLz0KoC/UIi2P1l5E0TDhcUeIXS9rasuP2HWg+L4w==",
+      "version": "7.3.0",
+      "resolved": "https://registry.npmjs.org/vue-property-decorator/-/vue-property-decorator-7.3.0.tgz",
+      "integrity": "sha512-HarXfTQ/Nxm4s/APpAaGIGHq5ZzslApImQy8ZrtkfGamw8rUFAVgMS5C50/AQ80+wfw3Wpnf4bNzbmj75m/k2Q==",
       "requires": {
         "vue-class-component": "6.3.2"
       }
@@ -10329,9 +10329,9 @@
       }
     },
     "vue-template-compiler": {
-      "version": "2.5.21",
-      "resolved": "https://registry.npmjs.org/vue-template-compiler/-/vue-template-compiler-2.5.21.tgz",
-      "integrity": "sha512-Vmk5Cv7UcmI99B9nXJEkaK262IQNnHp5rJYo+EwYpe2epTAXqcVyExhV6pk8jTkxQK2vRc8v8KmZBAwdmUZvvw==",
+      "version": "2.5.22",
+      "resolved": "https://registry.npmjs.org/vue-template-compiler/-/vue-template-compiler-2.5.22.tgz",
+      "integrity": "sha512-1VTw/NPTUeHNiwhkq6NkFzO7gYLjFCueBN0FX8NEiQIemd5EUMQ5hxrF7O0zCPo5tae+U9S/scETPea+hIz8Eg==",
       "dev": true,
       "requires": {
         "de-indent": "1.0.2",
