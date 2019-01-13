@@ -22,9 +22,9 @@ This template is vaguely based on the original Vue + TypeScript .NET Core SPA te
   * TypeScript
   * Webpack for bundling of application assets and HMR (Hot Module Replacement)
   * Bulma CSS framework + SASS
-  * Axios for REST endpoint requests
-  * vuex-type-helper - package that provides type/linter/IntelliSense support for vuex store modules - https://github.com/ktsn/vuex-type-helper
-  * vue-snotify (highly configurable toast notification library - comes hooked up to display login error & SignalR hub push notifications examples) - https://github.com/artemsky/vue-snotify
+  * [Axios](https://github.com/axios/axios) for REST endpoint requests
+  * [vuex-type-helper](https://github.com/ktsn/vuex-type-helper) - a helpful little package that provides type/linter/IntelliSense support for vuex store modules
+  * [vue-snotify](https://github.com/artemsky/vue-snotify) - a highly configurable toast notification library - comes hooked up to display login error & SignalR hub push notifications examples.
   * Two different loader components (spinner & authentication animation w/ callback for success/fail)
   * Babel integration to handle transformation of React-like JSX/TSX render function syntax - configured in package.json, but can be moved to a babelrc file. The app's VCheckbox.render.tsx & VDropdown.render.tsx components are live examples. This is a nice option to have for components that have very little HTML or for those that come from a React background and are comfortable with JSX syntax. Here is what the VCheckbox.render.tsx component looks like:
   
