@@ -2,19 +2,20 @@
 This template is a SPA application built using ASP.NET Core 2.2 as the REST API server and Vue/Vuex/TypeScript as the web client (Bulma + SASS used for UI styling). You can find a similar version using React + Redux (and associated libraries) here: https://github.com/based-ghost/aspnet-core-react-redux-playground-template
 
 
-![](https://j.gifs.com/rRy7g4.gif)
+![](https://j.gifs.com/l5j045.gif)
 
 
 # General Overview
 This template is vaguely based on the original Vue + TypeScript .NET Core SPA template that was offered in the past with earlier versions of the framework (Vue has been removed as an option from their starter templates for some reason). Using that as a base, this template greatly extends the functionality provided and also uses the latest versions of all dependent libraries. Keep in mind that I use this project (or others like it) as a testing ground for varying libraries/packages and it is not meant to act as a stand-alone final solution - it is more of POC. For example, the login & logout processes are stubbed to simulate the actual process (no real authentication is happening, however, it is something I plan to add to this project in the near future). I plan on keeping this up to date, and the listed technology stack may be subject to change.
 
 # Technology Stack Overview
-* Server
+* __Server__
   * ASP.NET Core 2.2
   * SignalR
-  * HealthChecks + the AspNetCore.HealthChecks.UI package - https://github.com/xabaril/AspNetCore.Diagnostics.HealthChecks - this provides  a nicely formatted UI for viewing the results of the HealthCheck modules in use and is accessed on ```/health-ui``` (also, provide an option for viewing the raw JSON data that the UI package prettifies for you at ```/healthchecks-json``` - configured in appsettings.json and can be accessed in the application via the floating settings cog on right screen by clicking the "Health Checks" link).
+  * HealthChecks + [AspNetCore.HealthChecks.UI package](https://github.com/xabaril/AspNetCore.Diagnostics.HealthChecks) - this provides  a nicely formatted UI for viewing the results of the HealthCheck modules in use and is accessed on ```/health-ui``` (also, provide an option for viewing the raw JSON data that the UI package prettifies for you at ```/healthchecks-json```). Access this view in the application via the floating settings cog on right screen by clicking the "Health Checks" link.
+  * API Documentation using Swagger UI - using package [NSwag.AspNetCore](http://NSwag.org) to prettify the specification output and display at ```/docs``` & [NSwag.MSBuild](http://NSwag.org) to handle automatic updates - so that when the project builds, the NSwag CLI will run and generate an updated API specification. Access this view in the application via the floating settings cog on right screen by clicking the "Swagger API" link.
   * Gzip response compression (production build)
-* Client
+* __Client__
   * Vue
   * Vuex
   * Vue-router
@@ -47,7 +48,7 @@ This template is vaguely based on the original Vue + TypeScript .NET Core SPA te
     }
     ```
     
-* Unit Testing
+* __Unit Testing__
   * Jest - configured in package.json and pointed to run all tests in any files under /ClientApp/tests. Run ```npm run test:unit``` to execute.
   
 # Setup
