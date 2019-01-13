@@ -45,7 +45,7 @@ export default class Login extends Vue {
                 }).catch(() => {
                     this.authStatus = AuthStatusEnum.Fail;
                 })
-            }, 4000);
+            }, 2500);
         }
     }
 

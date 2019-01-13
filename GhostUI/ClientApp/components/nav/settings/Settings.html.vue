@@ -21,11 +21,15 @@
                     </a>
                 </li>
                 <li>
-                    <a class="dropdown-item">
+                    <a class="dropdown-item"
+                       target="_blank"
+                       rel="noopener"
+                       :href="swaggerURL"
+                       role="button">
                         <span class="icon">
-                            <i class="fa fa-envelope"></i>
+                            <i class="fa fa-file"></i>
                         </span>
-                        <span>Messages</span>
+                        <span>Swagger API</span>
                     </a>
                 </li>
                 <li>

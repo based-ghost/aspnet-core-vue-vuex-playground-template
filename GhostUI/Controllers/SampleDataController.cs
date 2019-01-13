@@ -15,7 +15,7 @@ namespace GhostUI.Controllers
         };
 
         [HttpGet("[action]")]
-        public IEnumerable<IWeatherForecast> GetWeatherForecasts(int startDateIndex)
+        public IEnumerable<WeatherForecast> GetWeatherForecasts(int startDateIndex)
         {
             var rng = new Random();
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast

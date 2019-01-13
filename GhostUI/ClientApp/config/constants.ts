@@ -17,11 +17,12 @@ export const DROPDOWN_TEST_DATA: DropdownOption[] = [
 ];
 
 /**
- * HealthChecks response path config
+ * HealthChecks/Swagger response path config
  */
-export const healthChecksConfig = {
-    UI_URL: 'http://localhost:52530/healthchecks-ui',
-    JSON_URL: 'http://localhost:52530/healthchecks-json'
+export const spaNugetUrls = {
+    health_ui: 'http://localhost:52530/healthchecks-ui',
+    health_json: 'http://localhost:52530/healthchecks-json',
+    swagger_docs: 'http://localhost:52530/docs'
 };
 
 /**
@@ -30,7 +31,7 @@ export const healthChecksConfig = {
 export const signalrService = {
     BASE_URL: '/hubs/users',
     CONNECTION_DELAY: 0,
-    HUB_MESSAGE_DELAY: 3500,
+    HUB_MESSAGE_DELAY: 3000,
     HUB_MESSAGE_TITLE: 'SignalR',
     LOGIN_USER_EVENT: 'UserLogin',
     LOGOUT_USER_EVENT: 'UserLogout',

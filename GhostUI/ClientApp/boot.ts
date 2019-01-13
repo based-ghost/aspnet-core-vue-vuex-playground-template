@@ -14,7 +14,6 @@ Vue.use(Snotify, snotifyOptions);
 
 // Vue debug options (Vue.config.devtools also needs setting in './store/store' - to pick up vuex stores)
 Vue.config.devtools = false;
-Vue.config.performance = false;
 Vue.config.productionTip = false;
 
 // Mount app to Vue instance

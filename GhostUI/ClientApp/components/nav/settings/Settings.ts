@@ -1,11 +1,12 @@
 ﻿import { Component, Vue, Prop } from 'vue-property-decorator';
-import { healthChecksConfig } from '../../../config/constants';
 import { AuthActions } from '../../../store/modules/auth/types';
+import { spaNugetUrls } from '../../../config/constants';
 import { Dispatcher } from 'vuex-type-helper';
 
 @Component
 export default class Settings extends Vue {
-    readonly healthCheckURL: string = healthChecksConfig.UI_URL;
+    readonly swaggerURL: string = spaNugetUrls.swagger_docs;
+    readonly healthCheckURL: string = spaNugetUrls.health_ui;
 
     @Prop({ default: false })
     showSettings: boolean;
