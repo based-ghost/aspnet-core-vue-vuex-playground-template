@@ -9907,9 +9907,9 @@
       "dev": true
     },
     "typescript": {
-      "version": "3.2.2",
-      "resolved": "https://registry.npmjs.org/typescript/-/typescript-3.2.2.tgz",
-      "integrity": "sha512-VCj5UiSyHBjwfYacmDuc/NOk4QQixbE+Wn7MFJuS0nRuPQbof132Pw4u53dm264O8LPc2MVsc7RJNml5szurkg==",
+      "version": "3.2.4",
+      "resolved": "https://registry.npmjs.org/typescript/-/typescript-3.2.4.tgz",
+      "integrity": "sha512-0RNDbSdEokBeEAkgNbxJ+BLwSManFy9TeXz8uW+48j/xhEXv1ePME60olyzw2XzUqUBNAYFeJadIqAgNqIACwg==",
       "dev": true
     },
     "uglify-js": {
@@ -10345,9 +10345,9 @@
       "dev": true
     },
     "vuex": {
-      "version": "3.0.1",
-      "resolved": "https://registry.npmjs.org/vuex/-/vuex-3.0.1.tgz",
-      "integrity": "sha512-wLoqz0B7DSZtgbWL1ShIBBCjv22GV5U+vcBFox658g6V0s4wZV9P4YjCNyoHSyIBpj1f29JBoNQIqD82cR4O3w=="
+      "version": "3.1.0",
+      "resolved": "https://registry.npmjs.org/vuex/-/vuex-3.1.0.tgz",
+      "integrity": "sha512-mdHeHT/7u4BncpUZMlxNaIdcN/HIt1GsGG5LKByArvYG/v6DvHcOxvDCts+7SRdCoIRGllK8IMZvQtQXLppDYg=="
     },
     "vuex-type-helper": {
       "version": "1.2.0",
@@ -10731,9 +10731,9 @@
       }
     },
     "webpack-dev-middleware": {
-      "version": "3.5.0",
-      "resolved": "https://registry.npmjs.org/webpack-dev-middleware/-/webpack-dev-middleware-3.5.0.tgz",
-      "integrity": "sha512-1Zie7+dMr4Vv3nGyhr8mxGQkzTQK1PTS8K3yJ4yB1mfRGwO1DzQibgmNfUqbEfQY6eEtEEUzC+o7vhpm/Sfn5w==",
+      "version": "3.5.1",
+      "resolved": "https://registry.npmjs.org/webpack-dev-middleware/-/webpack-dev-middleware-3.5.1.tgz",
+      "integrity": "sha512-4dwCh/AyMOYAybggUr8fiCkRnjVDp+Cqlr9c+aaNB3GJYgRGYQWJ1YX/WAKUNA9dPNHZ6QSN2lYDKqjKSI8Vqw==",
       "dev": true,
       "requires": {
         "memory-fs": "0.4.1",
