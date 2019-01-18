@@ -72,7 +72,7 @@
     <None Remove="ClientApp\pages\login\Login.ts" />
     <None Remove="ClientApp\plugins\vue-click-outside.ts" />
     <None Remove="ClientApp\router\index.ts" />
-    <None Remove="ClientApp\router\routes.ts" />
+    <None Remove="ClientApp\router\routes-config.ts" />
     <None Remove="ClientApp\store\modules\auth\types.d.ts" />
     <None Remove="ClientApp\store\modules\form\form.store.ts" />
     <None Remove="ClientApp\store\modules\form\types.d.ts" />
@@ -143,7 +143,7 @@
     <TypeScriptCompile Include="ClientApp\pages\index.ts" />
     <TypeScriptCompile Include="ClientApp\prototype\index.ts" />
     <TypeScriptCompile Include="ClientApp\router\index.ts" />
-    <TypeScriptCompile Include="ClientApp\router\routes.ts" />
+    <TypeScriptCompile Include="ClientApp\router\routes-config.ts" />
     <TypeScriptCompile Include="ClientApp\store\modules\auth\types.d.ts" />
     <TypeScriptCompile Include="ClientApp\store\modules\form\form.store.ts" />
     <TypeScriptCompile Include="ClientApp\store\modules\form\types.d.ts" />

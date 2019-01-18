@@ -1,10 +1,12 @@
 ﻿import { Component, Vue, Prop } from 'vue-property-decorator';
 import { AuthActions } from '../../../store/modules/auth/types';
+import { RoutesConfig } from '../../../router/routes-config';
 import { spaNugetUrls } from '../../../config/constants';
 import { Dispatcher } from 'vuex-type-helper';
 
 @Component
 export default class Settings extends Vue {
+    readonly routesConfig = RoutesConfig;
     readonly swaggerURL: string = spaNugetUrls.swagger_docs;
     readonly healthCheckURL: string = spaNugetUrls.health_ui;
 
@@ -24,7 +26,7 @@ export default class Settings extends Vue {
     public logout(): void {
         this.$store.dispatch<Dispatcher<AuthActions>>({ type: 'authLogout' }).then(() => {
             this.$snotify.clear();
-            this.$router.push('/');
+            this.$router.push(this.routesConfig.Login.path);
             this.$store.dispatch('clearAllStores');
         });
     }

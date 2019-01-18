@@ -37,9 +37,9 @@
                        role="button" 
                        @click="logout">
                         <span class="icon">
-                            <font-awesome-icon icon="sign-out-alt" />
+                            <font-awesome-icon :icon="routesConfig.Login.meta.icon" />
                         </span>
-                        <span>Logout</span>
+                        <span>{{routesConfig.Login.displayName}}</span>
                     </a>
                 </li>
             </ul>

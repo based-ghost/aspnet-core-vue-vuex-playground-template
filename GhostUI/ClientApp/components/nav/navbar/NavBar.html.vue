@@ -5,25 +5,25 @@
         </div>
         <div class="navbar-centered">
             <div v-if="showNavigation" class="navbar-start">
-                <router-link to="/form" class="navbar-item">
+                <router-link :to="routesConfig.Form.path" class="navbar-item">
                     <span class="icon">
-                        <font-awesome-icon icon="pencil-alt" />
+                        <font-awesome-icon :icon="routesConfig.Form.meta.icon" />
                     </span>
-                    <span>Form</span>
+                    <span>{{routesConfig.Form.displayName}}</span>
                 </router-link>
                 <div class="nav-divider"></div>
-                <router-link to="/dashboard" class="navbar-item">
+                <router-link :to="routesConfig.Dashboard.path" class="navbar-item">
                     <span class="icon">
-                        <font-awesome-icon icon="home" />
+                        <font-awesome-icon :icon="routesConfig.Dashboard.meta.icon" />
                     </span>
-                    <span>Dashboard</span>
+                    <span>{{routesConfig.Dashboard.displayName}}</span>
                 </router-link>
                 <div class="nav-divider"></div>
-                <router-link to="/fetchdata" class="navbar-item">
+                <router-link :to="routesConfig.FetchData.path" class="navbar-item">
                     <span class="icon">
-                        <font-awesome-icon icon="cloud" />
+                        <font-awesome-icon :icon="routesConfig.FetchData.meta.icon" />
                     </span>
-                    <span>Fetch Data</span>
+                    <span>{{routesConfig.FetchData.displayName}}</span>
                 </router-link>
             </div>
         </div>     
