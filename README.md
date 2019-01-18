@@ -21,7 +21,7 @@ This template is vaguely based on the original Vue + TypeScript .NET Core SPA te
   * Vue-router
   * TypeScript
   * Webpack for bundling of application assets and HMR (Hot Module Replacement)
-  * Bulma CSS framework + SASS
+  * Bulma CSS framework + SASS + Font Awesome 5 (using fontawesome-svg-core)
   * [Axios](https://github.com/axios/axios) for REST endpoint requests
   * [vuex-type-helper](https://github.com/ktsn/vuex-type-helper) - a helpful little package that provides type/linter/IntelliSense support for vuex store modules
   * [vue-snotify](https://github.com/artemsky/vue-snotify) - a highly configurable toast notification library - comes hooked up to display login error & SignalR hub push notifications examples.
