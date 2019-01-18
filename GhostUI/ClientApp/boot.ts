@@ -5,13 +5,11 @@ import Vue from 'vue';
 import { App } from './pages';
 import router from './router';
 import store from './store/store';
-import Snotify from 'vue-snotify';
+import './config/vue-snotify.config';
 import vClickOutside from './plugins/vue-click-outside';
-import { snotifyOptions } from './config/vue-snotify.config';
 
-// Install NPM modules/Plugins
+// Install custom plugins
 Vue.use(vClickOutside);
-Vue.use(Snotify, snotifyOptions);
 
 // Vue debug options (Vue.config.devtools also needs setting in './store/store' - to pick up vuex stores)
 Vue.config.devtools = false;

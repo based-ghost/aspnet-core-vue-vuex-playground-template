@@ -4,7 +4,8 @@
             bind: function (el, binding, vNode) {
                 if (typeof binding.value !== 'function') {
                     const compName = vNode.context.name;
-                    let warn = compName
+
+                    const warn = compName
                         ? `[Vue-click-outside:] provided expression '${binding.expression}' is not a function, but has to be - Found in component '${compName}'`
                         : `[Vue-click-outside:] provided expression '${binding.expression}' is not a function, but has to be`;
 

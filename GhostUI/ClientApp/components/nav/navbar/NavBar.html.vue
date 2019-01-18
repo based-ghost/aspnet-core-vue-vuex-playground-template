@@ -1,7 +1,7 @@
 <template>
     <nav class="navbar" role="navigation" aria-label="main navigation">
         <div class="brand-wrapper">
-            <img src="../../../assets/image/bulma-type-white-40.png" alt="">
+            <img src="../../../assets/image/bulma.io-logo.png" alt="">
         </div>
         <div class="navbar-centered">
             <div v-if="showNavigation" class="navbar-start">

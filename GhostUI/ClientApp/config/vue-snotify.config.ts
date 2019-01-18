@@ -1,9 +1,7 @@
-﻿import { SnotifyPosition, SnotifyDefaults, SnotifyStyle } from 'vue-snotify';
+﻿import Vue from 'vue';
+import Snotify, { SnotifyPosition, SnotifyDefaults, SnotifyStyle } from 'vue-snotify';
 
-/**
- * vue-snotify package (snackbar notification) settings
- */
-export const snotifyOptions: SnotifyDefaults = {
+const snotifyOptions: SnotifyDefaults = {
     global: {
         newOnTop: true,
         maxAtPosition: 4,
@@ -26,3 +24,5 @@ export const snotifyOptions: SnotifyDefaults = {
         }
     }
 };
+
+Vue.use(Snotify, snotifyOptions);

@@ -13,7 +13,7 @@
                                        type="text"
                                        v-model="credentials.userName"
                                        autofocus=""                                      
-                                       placeholder="User Name"
+                                       placeholder="Username"
                                        name="LoginUser">
                                 <span class="icon is-left">
                                     <font-awesome-icon icon="user" />
