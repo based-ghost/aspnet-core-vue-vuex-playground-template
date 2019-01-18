@@ -11,7 +11,7 @@
                             <button class="button is-danger"
                                     @click="count = count - 1">
                                 <span class="icon">
-                                    <i class="fa fa-minus"></i>
+                                    <font-awesome-icon icon="minus" />
                                 </span>
                                 <span>Decrement</span>
                             </button>
@@ -20,7 +20,7 @@
                             <button class="button is-success"
                                     @click="count = count + 1">
                                 <span class="icon">
-                                    <i class="fa fa-plus"></i>
+                                    <font-awesome-icon icon="plus" />
                                 </span>
                                 <span>Increment</span>
                             </button>

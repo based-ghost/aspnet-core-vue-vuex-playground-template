@@ -1,4 +1,5 @@
 import './assets/style/scss/main.scss';
+import './config/fa.config';
 import './prototype';
 import Vue from 'vue';
 import { App } from './pages';

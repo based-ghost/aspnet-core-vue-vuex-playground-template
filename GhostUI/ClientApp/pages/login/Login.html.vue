@@ -16,7 +16,7 @@
                                        placeholder="User Name"
                                        name="LoginUser">
                                 <span class="icon is-left">
-                                    <i class="fa fa-user"></i>
+                                    <font-awesome-icon icon="user" />
                                 </span>
                             </div>
                         </div>
@@ -28,12 +28,12 @@
                                        placeholder="Password"
                                        name="LoginPassword">
                                 <span class="icon is-left">
-                                    <i class="fa fa-lock"></i>
+                                    <font-awesome-icon icon="lock" />
                                 </span>
-                                <span class="icon is-right icon-clickable" 
+                                <span class="icon is-right icon-clickable"
                                       :data-tooltip="!showPassword ? 'Show password' : 'Hide password'"
                                       @click="showPassword = !showPassword">
-                                    <i :class="[!showPassword ? 'fa fa-eye' : 'fa fa-eye-slash']"></i>
+                                    <font-awesome-icon :icon="!showPassword ? 'eye' : 'eye-slash'" />
                                 </span>
                             </div>
                         </div>
@@ -41,10 +41,10 @@
                                     parentClass="remember-me-control" 
                                     :checked="credentials.rememberMe"
                                     @checked="isCheckedState => credentials.rememberMe = isCheckedState" />
-                        <button class="button is-block is-info is-large is-fullwidth" type="submit">
+                        <button class="button is-info is-large is-fullwidth" type="submit">
                             <span>Login</span>
                             <span class="icon">
-                                <i class="fa fa-sign-in"></i>
+                                <font-awesome-icon icon="sign-in-alt" />
                             </span>
                         </button>
                         <authenticator :authStatus="authStatus"                                    

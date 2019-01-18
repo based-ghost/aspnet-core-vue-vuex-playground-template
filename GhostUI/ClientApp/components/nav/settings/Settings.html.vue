@@ -4,7 +4,7 @@
             <a role="button"
                @click="toggleSettingsMenu"
                v-click-outside="closeSettingsMenu">
-                <i class="fa fa-cog fa-2x"></i>
+                <font-awesome-icon icon="cog" size="3x" />
             </a>
             <ul v-if="open" class="dropdown-menu">
                 <li class="header-title">Settings</li>
@@ -15,7 +15,7 @@
                        :href="healthCheckURL" 
                        role="button">
                         <span class="icon">
-                            <i class="fa fa-heart"></i>
+                            <font-awesome-icon icon="heart" />
                         </span>
                         <span>Health Checks</span>
                     </a>
@@ -27,7 +27,7 @@
                        :href="swaggerURL"
                        role="button">
                         <span class="icon">
-                            <i class="fa fa-file"></i>
+                            <font-awesome-icon icon="file" />
                         </span>
                         <span>Swagger API</span>
                     </a>
@@ -37,7 +37,7 @@
                        role="button" 
                        @click="logout">
                         <span class="icon">
-                            <i class="fa fa-sign-out"></i>
+                            <font-awesome-icon icon="sign-out-alt" />
                         </span>
                         <span>Logout</span>
                     </a>

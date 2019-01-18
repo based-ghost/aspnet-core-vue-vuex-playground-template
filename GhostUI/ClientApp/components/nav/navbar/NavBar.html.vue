@@ -7,21 +7,21 @@
             <div v-if="showNavigation" class="navbar-start">
                 <router-link to="/form" class="navbar-item">
                     <span class="icon">
-                        <i class="fa fa-pencil-square-o"></i>
+                        <font-awesome-icon icon="pencil-alt" />
                     </span>
                     <span>Form</span>
                 </router-link>
                 <div class="nav-divider"></div>
                 <router-link to="/dashboard" class="navbar-item">
                     <span class="icon">
-                        <i class="fa fa-home"></i>
+                        <font-awesome-icon icon="home" />
                     </span>
                     <span>Dashboard</span>
                 </router-link>
                 <div class="nav-divider"></div>
                 <router-link to="/fetchdata" class="navbar-item">
                     <span class="icon">
-                        <i class="fa fa-cloud"></i>
+                        <font-awesome-icon icon="cloud" />
                     </span>
                     <span>Fetch Data</span>
                 </router-link>

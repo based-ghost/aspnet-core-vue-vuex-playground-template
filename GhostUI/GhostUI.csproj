@@ -65,6 +65,7 @@
     <None Remove="ClientApp\components\nav\index.ts" />
     <None Remove="ClientApp\components\nav\NavBarTop.ts" />
     <None Remove="ClientApp\components\nav\settings\Settings.ts" />
+    <None Remove="ClientApp\config\fa.config.ts" />
     <None Remove="ClientApp\pages\fetch-data\FetchData.ts" />
     <None Remove="ClientApp\pages\form\Form.ts" />
     <None Remove="ClientApp\pages\index.ts" />
@@ -135,6 +136,7 @@
     <TypeScriptCompile Include="ClientApp\components\nav\index.ts" />
     <TypeScriptCompile Include="ClientApp\components\nav\settings\Settings.ts" />
     <TypeScriptCompile Include="ClientApp\config\constants.ts" />
+    <TypeScriptCompile Include="ClientApp\config\fa.config.ts" />
     <TypeScriptCompile Include="ClientApp\config\vue-snotify.config.ts" />
     <TypeScriptCompile Include="ClientApp\pages\fetch-data\FetchData.ts" />
     <TypeScriptCompile Include="ClientApp\pages\form\Form.ts" />

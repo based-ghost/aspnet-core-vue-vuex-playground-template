@@ -26,7 +26,7 @@
                 <p class="control">
                     <a class="button is-info" @click="paginateForecastData('prev')">
                         <span class="icon">
-                            <i class="fa fa-chevron-left"></i>
+                            <font-awesome-icon icon="chevron-left" />
                         </span>
                         <span>Previous</span>
                     </a>
@@ -35,7 +35,7 @@
                     <a class="button is-info" @click="paginateForecastData('next')">
                         <span>Next</span>
                         <span class="icon">
-                            <i class="fa fa-chevron-right"></i>
+                            <font-awesome-icon icon="chevron-right" />
                         </span>
                     </a>
                 </p>
