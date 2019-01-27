@@ -24,7 +24,7 @@ export default class VDropdown extends Vue {
     placeholder: string;
 
     @Prop({ default: '' })
-    parentClass: string;
+    wrapperClass: string;
 
     @Prop({ default: '' })
     buttonClass: string;
@@ -40,7 +40,7 @@ export default class VDropdown extends Vue {
       
     public render(h: CreateElement): VNode {
         return (
-            <div class={['dropdown', this.parentClass, { 'is-active': this.open }]}>
+            <div class={['dropdown', this.wrapperClass, { 'is-active': this.open }]}>
                 <button class={['button', this.buttonClass]}
                         type="button"
                         ref="dropdownButton"

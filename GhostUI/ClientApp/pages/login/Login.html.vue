@@ -38,7 +38,7 @@
                             </div>
                         </div>
                         <v-checkbox trailingLabel="Remember me" 
-                                    parentClass="remember-me-control" 
+                                    wrapperClass="remember-me-control" 
                                     :checked="credentials.rememberMe"
                                     @checked="isCheckedState => credentials.rememberMe = isCheckedState" />
                         <button class="button is-info is-large is-fullwidth" type="submit">

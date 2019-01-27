@@ -1,5 +1,5 @@
 ﻿<template>
-    <div :class="['dropdown', parentClass, { 'is-active': open }]">
+    <div :class="['dropdown', wrapperClass, { 'is-active': open }]">
             <button :class="['button', buttonClass]"
                     type="button"
                     disabled="disabled"

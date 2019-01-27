@@ -1,5 +1,5 @@
 ﻿<template>
-    <div :class="['control', parentClass]">
+    <div :class="['control', wrapperClass]">
         <p :class="['checkbox-control', controlClass, { 'disabled': disabled }]">
             <label>
                 <input type="checkbox"

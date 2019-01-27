@@ -16,11 +16,11 @@ localVue.use(vClickOutside);
  * VCheckbox.render.tsx unit tests
  */
 describe('VCheckbox.render.tsx', () => {
-    it('reflects visual changes to component via updates to reactive properties (parentClass, controlClass)', () => {
+    it('reflects visual changes to component via updates to reactive properties (wrapperClass, controlClass)', () => {
         const className = 'is-medium';
         const wrapper = mount(VCheckbox, {
             propsData: {
-                parentClass: className,
+                wrapperClass: className,
                 controlClass: className
             }
         });
@@ -69,7 +69,7 @@ describe('VDropdown.render.tsx', () => {
     });
 
 
-    it('reflects visual changes to component via updates to reactive properties (parentClass, buttonClass)', () => {
+    it('reflects visual changes to component via updates to reactive properties (wrapperClass, buttonClass)', () => {
         const className = 'is-medium';
         const objectArray_OptionsList = DROPDOWN_TEST_DATA;
 
@@ -77,7 +77,7 @@ describe('VDropdown.render.tsx', () => {
             localVue,
             propsData: {
                 options: objectArray_OptionsList,
-                parentClass: className,
+                wrapperClass: className,
                 buttonClass: className
             }
         });

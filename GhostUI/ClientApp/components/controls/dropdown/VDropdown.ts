@@ -20,7 +20,7 @@ export default class VDropdown extends Vue {
     placeholder: string;
 
     @Prop({ default: '' })
-    parentClass: string;
+    wrapperClass: string;
 
     @Prop({ default: '' })
     buttonClass: string;

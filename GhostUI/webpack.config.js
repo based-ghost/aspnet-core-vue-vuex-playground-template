@@ -3,6 +3,7 @@ const webpack = require('webpack');
 const { VueLoaderPlugin } = require('vue-loader');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CheckerPlugin = require('awesome-typescript-loader').CheckerPlugin;
+
 const bundleOutputDir = './wwwroot/dist';
 
 module.exports = (env) => {
@@ -82,15 +83,21 @@ module.exports = (env) => {
                 /\.js$/,
                 /\.d\.ts$/
             ])
-        ].concat(isDevBuild ? [ // Plugins that apply in development builds only            
+        ].concat(isDevBuild ? [
+            // Plugins that apply in development builds only
             new webpack.SourceMapDevToolPlugin({
                 filename: '[file].map', // Remove this line if you prefer inline source maps
                 moduleFilenameTemplate: path.relative(bundleOutputDir, '[resourcePath]') // Point sourcemap entries to the original file locations on disk
             })
-        ] : [ // Plugins that apply in production builds only
-                new webpack.optimize.ModuleConcatenationPlugin(),
-                new webpack.optimize.AggressiveMergingPlugin(),
-                new webpack.optimize.OccurrenceOrderPlugin()
+        ] : [
+            // Plugins that apply in production builds only
+            new webpack.optimize.UglifyJsPlugin({
+                cache: true,
+                parallel: true
+            }),
+            new webpack.optimize.OccurrenceOrderPlugin(),
+            new webpack.optimize.AggressiveMergingPlugin(),
+            new webpack.optimize.ModuleConcatenationPlugin()
         ])
     }];
 };

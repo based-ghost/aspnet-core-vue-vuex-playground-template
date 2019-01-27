@@ -12,7 +12,7 @@ export default class VCheckbox extends Vue {
     trailingLabel: string;
 
     @Prop({ default: '' })
-    parentClass: string;
+    wrapperClass: string;
 
     @Prop({ default: '' })
     controlClass: string;

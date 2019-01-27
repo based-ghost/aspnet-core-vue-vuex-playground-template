@@ -7,7 +7,7 @@ import { Component, Prop } from 'vue-property-decorator';
 @Component
 export default class VCheckBox extends Vue {
     @Prop({ default: '' })
-    parentClass: string;
+    wrapperClass: string;
 
     @Prop({ default: '' })
     controlClass: string;
@@ -23,7 +23,7 @@ export default class VCheckBox extends Vue {
 
     public render(h: CreateElement): VNode {
         return (
-            <div class={['control', this.parentClass]}>
+            <div class={['control', this.wrapperClass]}>
                 <p class={['checkbox-control', this.controlClass, { 'disabled': this.disabled }]}>
                     <label>
                         <input type="checkbox"

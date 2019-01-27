@@ -36,7 +36,7 @@
                             <v-dropdown :options="dropdownOptionsList"
                                         labelKey="label"
                                         :selectedOptionLabel="selectedDropdownOption.label"
-                                        parentClass="normal-width"
+                                        wrapperClass="normal-width"
                                         @select="newSelectedOption => selectedDropdownOption = newSelectedOption" />
                         </div>
                     </div>
