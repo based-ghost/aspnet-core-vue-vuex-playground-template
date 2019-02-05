@@ -48,7 +48,7 @@ module.exports = (env) => {
                             loader: 'sass-loader',
                             options: {
                                 data: '@import "variables.scss";',
-                                includePaths: [path.resolve(__dirname, "./ClientApp/assets/style/scss")]
+                                includePaths: [path.resolve(__dirname, "./ClientApp/assets/style/scss/base")]
                             }
                         }
                     ]
