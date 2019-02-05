@@ -7,8 +7,8 @@ import { Dispatcher } from 'vuex-type-helper';
 @Component
 export default class Settings extends Vue {
     readonly routesConfig = RoutesConfig;
-    readonly swaggerURL: string = spaNugetUrls.swagger_docs;
-    readonly healthCheckURL: string = spaNugetUrls.health_ui;
+    readonly swaggerURL: string = spaNugetUrls.SWAGGER_DOCS;
+    readonly healthCheckURL: string = spaNugetUrls.HEALTH_UI;
 
     @Prop({ default: false })
     showSettings: boolean;
