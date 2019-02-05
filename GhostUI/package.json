@@ -1,7 +1,9 @@
 {
-  "name": "GhostUI",
-  "private": true,
-  "version": "0.0.0",
+  "name": "aspnet-core-vue-vuex-playground-template",
+  "version": "1.0.0",
+  "description": "",
+  "author": "",
+  "license": "MIT",
   "scripts": {
     "test:unit": "jest",
     "webpack": "webpack --config webpack.config.vendor.js"
