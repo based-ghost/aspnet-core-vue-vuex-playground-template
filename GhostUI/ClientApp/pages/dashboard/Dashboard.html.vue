@@ -1,4 +1,4 @@
-﻿<template>
+﻿<template functional>
     <div class="dashboard-wrapper">
         <section class="hero is-dark">
             <div class="hero-body">
@@ -13,7 +13,7 @@
                 <div class="card-content">
                     <div class="column">
                         <div class="bd-notification is-flex is-horizontal-center">
-                            <img src="../../assets/image/vue-type-script.png" alt="" />
+                            <img :src="parent.sfcData.VUE_TS_IMAGE" alt="" />
                         </div>
                         <div class="columns is-multiline is-mobile">
                             <div class="column dashboard-info is-half">
@@ -63,5 +63,3 @@
         </section>
     </div>
 </template>
-
-<script lang="ts" src="./Dashboard.ts"></script>

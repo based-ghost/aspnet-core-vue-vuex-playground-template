@@ -55,7 +55,6 @@
     <None Remove="ClientApp\api\index.ts" />
     <None Remove="ClientApp\api\services\sample.service.ts" />
     <None Remove="ClientApp\api\signalR.service.ts" />
-    <None Remove="ClientApp\components\footer\Footer.ts" />
     <None Remove="ClientApp\components\controls\checkbox\VCheckbox.render.tsx" />
     <None Remove="ClientApp\components\controls\checkbox\VCheckbox.ts" />
     <None Remove="ClientApp\components\controls\dropdown\VDropdown.render.tsx" />
@@ -128,7 +127,6 @@
     <TypeScriptCompile Include="ClientApp\api\index.ts" />
     <TypeScriptCompile Include="ClientApp\api\services\sample.service.ts" />
     <TypeScriptCompile Include="ClientApp\api\services\signalR.service.ts" />
-    <TypeScriptCompile Include="ClientApp\components\footer\Footer.ts" />
     <TypeScriptCompile Include="ClientApp\components\controls\checkbox\VCheckbox.render.tsx" />
     <TypeScriptCompile Include="ClientApp\components\controls\checkbox\VCheckbox.ts" />
     <TypeScriptCompile Include="ClientApp\components\controls\dropdown\VDropdown.render.tsx" />
@@ -166,7 +164,6 @@
     <TypeScriptCompile Include="ClientApp\types\vue-shims.d.ts" />
     <TypeScriptCompile Include="ClientApp\pages\login\Login.ts" />
     <TypeScriptCompile Include="ClientApp\pages\app\App.ts" />
-    <TypeScriptCompile Include="ClientApp\pages\dashboard\Dashboard.ts" />
     <TypeScriptCompile Include="ClientApp\event-bus.ts" />
   </ItemGroup>
 

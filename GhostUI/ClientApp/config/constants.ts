@@ -1,9 +1,12 @@
 ﻿import { DropdownOption } from '../store/modules/form/types';
 
 /**
- * Text that appears at bottom of all views/pages (footer)
+ * Global data consumed by App component - used by functional components via exposed parent prop
  */
-export const FOOTER_TEXT = '\u00A9 2019 based-ghost LLC';
+export const sfcGlobalData = {
+    FOOTER_TEXT: '\u00A9 2019 based-ghost LLC',
+    VUE_TS_IMAGE: require('../assets/image/vue-type-script.png')
+};
 
 /**
  * Dropdown test data
