@@ -1,7 +1,6 @@
 ﻿import 'jest';
 import '../prototype';
 import { mount, createLocalVue } from '@vue/test-utils';
-import { DROPDOWN_TEST_DATA } from '../config/constants';
 import vClickOutside from '../plugins/vue-click-outside';
 import VCheckbox from '../components/controls/checkbox/VCheckbox.render';
 import VDropdown from '../components/controls/dropdown/VDropdown.render';
@@ -11,6 +10,17 @@ import VDropdown from '../components/controls/dropdown/VDropdown.render';
  */
 const localVue = createLocalVue();
 localVue.use(vClickOutside);
+
+/**
+ * Dropdown test data
+ */
+export const dropdownTestData = [
+    { value: 1, label: 'Option 1' },
+    { value: 2, label: 'Option 2' },
+    { value: 3, label: 'Option 3' },
+    { value: 4, label: 'Option 4' },
+    { value: 5, label: 'Option 5' }
+];
 
 /**
  * VCheckbox.render.tsx unit tests
@@ -53,7 +63,7 @@ describe('VCheckbox.render.tsx', () => {
  */
 describe('VDropdown.render.tsx', () => {
     it('allows DOM manipulation via the custom ref attributes (dropdownButton, dropdownMenu)', () => {
-        const objectArray_OptionsList = DROPDOWN_TEST_DATA;
+        const objectArray_OptionsList = dropdownTestData;
         const wrapper = mount(VDropdown, {
             localVue,
             propsData: {
@@ -71,7 +81,7 @@ describe('VDropdown.render.tsx', () => {
 
     it('reflects visual changes to component via updates to reactive properties (wrapperClass, buttonClass)', () => {
         const className = 'is-medium';
-        const objectArray_OptionsList = DROPDOWN_TEST_DATA;
+        const objectArray_OptionsList = dropdownTestData;
 
         const wrapper = mount(VDropdown, {
             localVue,
@@ -87,7 +97,7 @@ describe('VDropdown.render.tsx', () => {
     });
 
     it('detects if individual options are singleton or object, and detects changes to the options property', () => {
-        const objectArray_OptionsList = DROPDOWN_TEST_DATA;
+        const objectArray_OptionsList = dropdownTestData;
         const strArray_OptionsList = ['string', 'array'];
 
         const wrapper = mount(VDropdown, {
