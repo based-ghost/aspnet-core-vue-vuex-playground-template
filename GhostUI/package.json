@@ -69,8 +69,8 @@
   },
   "dependencies": {
     "@aspnet/signalr": "^1.1.0",
-    "@fortawesome/fontawesome-svg-core": "^1.2.14",
-    "@fortawesome/free-solid-svg-icons": "^5.7.1",
+    "@fortawesome/fontawesome-svg-core": "^1.2.15",
+    "@fortawesome/free-solid-svg-icons": "^5.7.2",
     "@fortawesome/vue-fontawesome": "^0.1.5",
     "axios": "^0.18.0",
     "bulma": "^0.7.4",
