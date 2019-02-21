@@ -1,7 +1,7 @@
 ﻿import Vue from 'vue';
 import VueRouter from 'vue-router';
-import { RoutesConfig } from './routes-config';
-import { Dashboard, FetchData, Form, Login } from '../pages';
+import { RoutesConfig } from './config/routes.config';
+import { Dashboard, FetchData, Form, Login } from './views';
 
 Vue.use(VueRouter);
 

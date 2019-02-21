@@ -8,3 +8,7 @@
 </template>
 
 <script lang="ts" src="./Spinner.ts"></script>
+
+<style lang="scss" scoped>
+    @import '../../../assets/style/scss/components/spinner.scss';
+</style>

@@ -1,5 +1,5 @@
 ﻿import { Component, Prop, Vue } from 'vue-property-decorator';
-import { RoutesConfig } from '../../../router/routes-config';
+import { RoutesConfig } from '../../../config/routes.config';
 
 @Component
 export default class NavBar extends Vue {

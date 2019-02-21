@@ -75,7 +75,7 @@
     "axios": "^0.18.0",
     "bulma": "^0.7.4",
     "vue": "^2.6.6",
-    "vue-class-component": "^6.3.2",
+    "vue-class-component": "^7.0.1",
     "vue-property-decorator": "^7.3.0",
     "vue-router": "^3.0.2",
     "vue-snotify": "^3.2.1",

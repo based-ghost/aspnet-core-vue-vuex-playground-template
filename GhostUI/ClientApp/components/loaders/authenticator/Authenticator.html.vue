@@ -6,3 +6,7 @@
 </template>
 
 <script lang="ts" src="./Authenticator.ts"></script>
+
+<style lang="scss" scoped>
+    @import '../../../assets/style/scss/components/authenticator.scss';
+</style>

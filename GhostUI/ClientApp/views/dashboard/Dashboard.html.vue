@@ -8,7 +8,7 @@
                 </div>
             </div>
         </section>
-        <section class="container is-fluid">
+        <section class="container">
             <div class="card">
                 <div class="card-content">
                     <div class="column">

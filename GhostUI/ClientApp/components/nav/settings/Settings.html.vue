@@ -48,3 +48,7 @@
 </template>
 
 <script lang="ts" src="./Settings.ts"></script>
+
+<style lang="scss" scoped>
+    @import '../../../assets/style/scss/components/settings.scss';
+</style>

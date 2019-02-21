@@ -31,3 +31,7 @@
 </template>
 
 <script lang="ts" src="./NavBar.ts"></script>
+
+<style lang="scss" scoped>
+    @import '../../../assets/style/scss/components/navbar.scss';
+</style>

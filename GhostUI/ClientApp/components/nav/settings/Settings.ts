@@ -1,6 +1,6 @@
 ﻿import { Component, Vue, Prop } from 'vue-property-decorator';
 import { AuthActions } from '../../../store/modules/auth/types';
-import { RoutesConfig } from '../../../router/routes-config';
+import { RoutesConfig } from '../../../config/routes.config';
 import { spaNugetUrls } from '../../../config/constants';
 import { Dispatcher } from 'vuex-type-helper';
 
