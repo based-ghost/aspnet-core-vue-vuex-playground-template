@@ -5,7 +5,7 @@
  */
 export const sfcGlobalData = {
     FOOTER_TEXT: '\u00A9 2019 based-ghost LLC',
-    VUE_TS_IMAGE: require('../assets/image/vue-type-script.png')
+    VUE_ASPCORE_IMAGE: require('../assets/image/aspcore-vue.png')
 };
 
 /**

@@ -58,13 +58,13 @@
     "typescript": "^3.3.3",
     "url-loader": "^1.1.2",
     "vue-jest": "^3.0.2",
-    "vue-loader": "^15.6.3",
+    "vue-loader": "^15.6.4",
     "vue-style-loader": "^4.1.2",
     "vue-template-compiler": "^2.6.6",
     "vuex-type-helper": "^1.2.1",
     "webpack": "^4.29.5",
     "webpack-cli": "^3.2.3",
-    "webpack-dev-middleware": "^3.5.2",
+    "webpack-dev-middleware": "^3.6.0",
     "webpack-hot-middleware": "^2.24.3"
   },
   "dependencies": {

@@ -2,9 +2,8 @@
     <div class="dashboard-wrapper">
         <section class="hero is-dark">
             <div class="hero-body">
-                <div class="container has-text-centered">
-                    <h1 class="title">Welcome, User</h1>
-                    <h2 class="subtitle">Check out some highlights from the technology stack below.</h2>
+                <div class="is-flex is-horizontal-center">
+                    <img :src="parent.sfcData.VUE_ASPCORE_IMAGE" alt="" width="300" />
                 </div>
             </div>
         </section>
@@ -12,9 +11,8 @@
             <div class="card">
                 <div class="card-content">
                     <div class="column">
-                        <div class="is-flex is-horizontal-center">
-                            <img :src="parent.sfcData.VUE_TS_IMAGE" alt="" />
-                        </div>
+                        <p class="title has-text-centered">Technology Stack</p>
+                        <hr>
                         <div class="columns is-multiline">
                             <div class="column dashboard-info is-half">
                                 <div class="content dashboard-content">
