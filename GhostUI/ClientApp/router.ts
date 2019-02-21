@@ -7,6 +7,7 @@ Vue.use(VueRouter);
 
 export default new VueRouter({
     mode: 'history',
+    linkExactActiveClass: 'is-active',
     routes: [
         {
             path: RoutesConfig.Login.path,
