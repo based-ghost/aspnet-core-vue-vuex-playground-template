@@ -53,6 +53,7 @@
   <ItemGroup>
     <None Remove="babel.config.ts" />
     <None Remove="ClientApp\api\index.ts" />
+    <None Remove="ClientApp\api\services\base.config.ts" />
     <None Remove="ClientApp\api\services\sample.service.ts" />
     <None Remove="ClientApp\api\signalR.service.ts" />
     <None Remove="ClientApp\components\controls\checkbox\VCheckbox.render.tsx" />
@@ -88,14 +89,9 @@
     <None Remove="ClientApp\store\store.ts" />
     <None Remove="ClientApp\types\tsx-shims.d.ts" />
     <None Remove="ClientApp\types\vue-snotify-shims.d.ts" />
-    <None Remove="ClientApp\utils\debouncer.ts" />
-    <None Remove="ClientApp\utils\error-handler.ts" />
-    <None Remove="ClientApp\utils\number.extensions.ts" />
-    <None Remove="ClientApp\utils\string.extensions.ts" />
     <None Remove="ClientApp\components\loaders\Authenticator.ts" />
     <None Remove="ClientApp\components\loaders\Deletion.ts" />
     <None Remove="ClientApp\components\loaders\Spinner.ts" />
-    <None Remove="ClientApp\utils\Constants.ts" />
     <None Remove="ClientApp\api\agency.service.ts" />
     <None Remove="ClientApp\api\auth.service.ts" />
     <None Remove="ClientApp\api\base.service.ts" />
@@ -108,7 +104,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="AspNetCore.HealthChecks.UI" Version="2.2.16" />
+    <PackageReference Include="AspNetCore.HealthChecks.UI" Version="2.2.17" />
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.2.0" />
     <PackageReference Include="NSwag.AspNetCore" Version="12.0.14" />
     <PackageReference Include="NSwag.MSBuild" Version="12.0.14">
@@ -123,6 +119,7 @@
 
   <ItemGroup>
     <TypeScriptCompile Include="ClientApp\api\index.ts" />
+    <TypeScriptCompile Include="ClientApp\api\services\base.config.ts" />
     <TypeScriptCompile Include="ClientApp\api\services\sample.service.ts" />
     <TypeScriptCompile Include="ClientApp\api\services\signalR.service.ts" />
     <TypeScriptCompile Include="ClientApp\components\controls\checkbox\VCheckbox.render.tsx" />
@@ -147,7 +144,6 @@
     <TypeScriptCompile Include="ClientApp\store\modules\weather-forecasts\weather-forecasts.store.ts" />
     <TypeScriptCompile Include="ClientApp\tests\controls.test.ts" />
     <TypeScriptCompile Include="ClientApp\types\tsx-shims.d.ts" />
-    <TypeScriptCompile Include="ClientApp\utils\error-handler.ts" />
     <TypeScriptCompile Include="ClientApp\prototype\extensions\string.extensions.ts" />
     <TypeScriptCompile Include="ClientApp\components\controls\dropdown\VDropdown.ts" />
     <TypeScriptCompile Include="ClientApp\components\loaders\authenticator\Authenticator.ts" />

@@ -1,4 +1,4 @@
-﻿import Vue, { VNode, CreateElement } from 'vue';
+﻿import Vue, { VNode } from 'vue';
 import { Component, Prop } from 'vue-property-decorator';
 
 /**
@@ -21,7 +21,7 @@ export default class VCheckBox extends Vue {
     @Prop({ default: false })
     disabled: boolean;  
 
-    public render(h: CreateElement): VNode {
+    public render(): VNode {
         return (
             <div class={['control', this.wrapperClass]}>
                 <p class={['checkbox-control', this.controlClass, { 'disabled': this.disabled }]}>
@@ -32,14 +32,14 @@ export default class VCheckBox extends Vue {
                                disabled={this.disabled}
                                onChange={this.handleOnChange} />
                         <i class="helper"></i>
-                        { this.trailingLabel ? <span>{this.trailingLabel}</span> : null }
+                        { this.trailingLabel && <span>{this.trailingLabel}</span> }
                     </label>
                 </p>
             </div>
         );      
     }
 
-    private handleOnChange(event: Event): void {
-        this.$emit('checked', !!(event.target as HTMLInputElement).checked);
+    private handleOnChange(e: Event): void {
+        this.$emit('checked', !!(e.target as HTMLInputElement).checked);
     }
 }

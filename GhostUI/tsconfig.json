@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
-    "module": "es2015",
-    "target": "es5",
+    "module": "esnext",
+    "target": "esnext",
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
@@ -10,7 +10,6 @@
     "skipLibCheck": true,
     "noImplicitAny": false,
     "noImplicitThis": true,
-    "lib": [ "es6", "dom" ],
     "types": [ "webpack-env" ],
     "jsx": "preserve"
   },

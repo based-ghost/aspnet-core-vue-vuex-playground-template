@@ -1,4 +1,4 @@
-﻿import Vue, { VNode, CreateElement } from 'vue';
+﻿import Vue, { VNode } from 'vue';
 import { Component, Prop } from 'vue-property-decorator';
 
 /**
@@ -38,7 +38,7 @@ export default class VDropdown extends Vue {
         return this.options && (this.options[0] === Object(this.options[0]));
     }
       
-    public render(h: CreateElement): VNode {
+    public render(): VNode {
         return (
             <div class={['dropdown', this.wrapperClass, { 'is-active': this.open }]}>
                 <button class={['button', this.buttonClass]}
@@ -57,14 +57,14 @@ export default class VDropdown extends Vue {
                      ref="dropdownMenu"
                      role="menu">
                     <ul class="dropdown-content">
-                        { this.options.map((option: any, index: number) => this.renderListOption(h, option, index)) }
+                        { this.options.map((option: any, index: number) => this.renderListOption(option, index)) }
                     </ul>
                 </div>
             </div>
         );
     }
 
-    private renderListOption(h: CreateElement, option: any, index: number): VNode {
+    private renderListOption(option: any, index: number): VNode {
         const optionLabel = this.getOptionLabelName(option);
         return (           
             <li key={index}>
@@ -93,14 +93,14 @@ export default class VDropdown extends Vue {
         return this.isArrayOfObjects ? (option[this.labelKey] || option[0]) : option;
     }
 
-    private keyDownHandler(event: KeyboardEvent): void {
-        if (event.keyCode === 38 || event.keyCode === 40) { // up and down keys
+    private keyDownHandler(e: KeyboardEvent): void {
+        if (e.keyCode === 38 || e.keyCode === 40) { // up and down keys
             this.toggleDropdownMenu();
-            event.preventDefault();
-        } else if (event.keyCode === 27) { // Esc key
+            e.preventDefault();
+        } else if (e.keyCode === 27) { // Esc key
             this.$refs.dropdownButton.focus();
             this.hideDropdownMenu();
-        } else if (event.keyCode === 9 && this.open) { // Tab key
+        } else if (e.keyCode === 9) { // Tab key
             this.hideDropdownMenu();
         }
     }

@@ -1,6 +1,18 @@
 ﻿import { EventBus } from '../../event-bus';
-import { signalrService } from '../../config/constants';
 import { HubConnection, HubConnectionBuilder, HubConnectionState } from '@aspnet/signalr';
+
+/**
+ * SIGNALR HUB defaults
+ */
+const signalrService = {
+    BASE_URL: '/hubs/users',
+    CONNECTION_DELAY: 0,
+    HUB_MESSAGE_DELAY: 3000,
+    HUB_MESSAGE_TITLE: 'SignalR',
+    LOGIN_USER_EVENT: 'UserLogin',
+    LOGOUT_USER_EVENT: 'UserLogout',
+    CLOSE_EVENT: 'CloseAllConnections'
+};
 
 /**
  * SignalR API abstraction layer communication - configures/manages hub connections

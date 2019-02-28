@@ -46,8 +46,7 @@
                     <h5 class="subtitle is-5">Toggle the checkbox</h5>
                     <p class="subtitle is-5">Checked: <strong>{{checkboxValue.toString()}}</strong></p>
                     <div class="field is-grouped">
-                        <v-checkbox :checked="checkboxValue"
-                                    @checked="isCheckedState => checkboxValue = isCheckedState" />
+                        <v-checkbox :checked="checkboxValue" @checked="isCheckedState => checkboxValue = isCheckedState" />
                     </div>
                 </div>
             </div>

@@ -6,10 +6,14 @@ import router from './router';
 import { App } from './views';
 import store from './store/store';
 import './config/vue-snotify.config';
+import { configureAxiosInterceptors } from './api';
 import vClickOutside from './plugins/vue-click-outside';
 
 // Install custom plugins
 Vue.use(vClickOutside);
+
+// Execute any base Axios configurations (e.g. request interceptors)
+configureAxiosInterceptors();
 
 // Vue debug options (Vue.config.devtools also needs setting in './store/store' - to pick up vuex stores)
 Vue.config.devtools = false;

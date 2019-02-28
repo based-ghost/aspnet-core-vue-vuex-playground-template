@@ -1,6 +1,13 @@
 ﻿import { BaseService } from './base.service';
-import { sampleService } from '../../config/constants';
 import { WeatherForecast } from '../../store/modules/weather-forecasts/types';
+
+/**
+ * SampleDataController endpoints
+ */
+const sampleService = {
+    CONTROLLER_ID: 'SampleData',
+    GET_FORECASTS_RQ: 'GetWeatherForecasts'
+};
 
 /**
  * SampleData API abstraction layer communication via Axios (typescript singleton pattern)

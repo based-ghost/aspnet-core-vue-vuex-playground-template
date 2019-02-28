@@ -9,7 +9,6 @@ import { WeatherForecastsMutations } from './modules/weather-forecasts/types';
 import { Committer } from 'vuex-type-helper';
 
 Vue.use(Vuex);
-Vue.config.devtools = false;
 
 export default new Vuex.Store({
     modules: {

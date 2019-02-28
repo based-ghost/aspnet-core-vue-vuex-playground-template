@@ -1,5 +1,5 @@
 ﻿<template>
-    <div v-if="showSettings" :class="['fixed-plugin', { 'fixed-plugin-active': open }]">
+    <div :class="['fixed-plugin', { 'fixed-plugin-active': open }]">
         <div class="dropdown">
             <a role="button"
                @click="toggleSettingsMenu"
@@ -12,7 +12,7 @@
                     <a class="dropdown-item" 
                        target="_blank" 
                        rel="noopener" 
-                       :href="healthCheckURL" 
+                       :href="nugetURLs.HEALTH_UI" 
                        role="button">
                         <span class="icon">
                             <font-awesome-icon icon="heart" />
@@ -24,7 +24,7 @@
                     <a class="dropdown-item"
                        target="_blank"
                        rel="noopener"
-                       :href="swaggerURL"
+                       :href="nugetURLs.SWAGGER_DOCS"
                        role="button">
                         <span class="icon">
                             <font-awesome-icon icon="file" />

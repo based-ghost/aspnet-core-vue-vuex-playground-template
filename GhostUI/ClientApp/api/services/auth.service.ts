@@ -1,6 +1,14 @@
 ﻿import { BaseService } from './base.service';
-import { authService } from '../../config/constants';
 import { Credentials, AuthUser } from '../../store/modules/auth/types';
+
+/**
+ * AuthController endpoints
+ */
+const authService = {
+    CONTROLLER_ID: 'Auth',
+    LOGIN_RQ: 'Login',
+    LOGOUT_RQ: 'Logout'
+};
 
 /**
  * Auth API abstraction layer communication via Axios (typescript singleton pattern)

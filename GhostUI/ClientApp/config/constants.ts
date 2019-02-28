@@ -27,33 +27,3 @@ export const spaNugetUrls = {
     HEALTH_JSON: 'http://localhost:52530/healthchecks-json',
     SWAGGER_DOCS: 'http://localhost:52530/docs'
 };
-
-/**
- * SIGNALR HUB defaults
- */
-export const signalrService = {
-    BASE_URL: '/hubs/users',
-    CONNECTION_DELAY: 0,
-    HUB_MESSAGE_DELAY: 3000,
-    HUB_MESSAGE_TITLE: 'SignalR',
-    LOGIN_USER_EVENT: 'UserLogin',
-    LOGOUT_USER_EVENT: 'UserLogout',
-    CLOSE_EVENT: 'CloseAllConnections'
-};
-
-/**
- * AuthController endpoints
- */
-export const authService = {
-    CONTROLLER_ID: 'Auth',
-    LOGIN_RQ: 'Login',
-    LOGOUT_RQ: 'Logout'
-};
-
-/**
- * SampleDataController endpoints
- */
-export const sampleService = {
-    CONTROLLER_ID: 'SampleData',
-    GET_FORECASTS_RQ: 'GetWeatherForecasts'
-};

@@ -4,7 +4,7 @@
             <div class="brand-wrapper">
                 <img src="../../../assets/image/bulma.io-logo.png" alt="" width="165">
             </div>
-            <div v-if="showNavigation" class="navbar-routes">
+            <div v-if="isAuthenticated" class="navbar-routes">
                 <router-link :to="routesConfig.Form.path" class="navbar-item">
                     <span class="icon">
                         <font-awesome-icon :icon="routesConfig.Form.meta.icon" />

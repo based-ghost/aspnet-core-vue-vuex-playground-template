@@ -1,15 +1,21 @@
-﻿import { AxiosError } from 'axios';
-import { EventBus } from '../event-bus';
+﻿import axios, { AxiosError } from 'axios';
+import { EventBus } from '../../event-bus';
 
-interface ErrorMessage {
-    body: string;
-    request: string;
-    status: number;
+export const configureAxiosInterceptors = (): void =>  {
+    axios.interceptors.response.use(
+        (response) => {
+            return response;
+        },
+        (error) => {
+            handleAxiosError(error);
+            return Promise.reject(error);
+        }
+    );
 }
 
-export const handleError = (error: AxiosError): void => {
+export const handleAxiosError = (error: AxiosError): void => {
     // Error Message Object
-    let message = <ErrorMessage>{
+    let message = {
         body: 'Internal Server Error',
         request: '',
         status: 500
