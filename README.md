@@ -23,15 +23,15 @@ This template is vaguely based on the original Vue + TypeScript .NET Core SPA te
   - Webpack for bundling of application assets and HMR (Hot Module Replacement)
   - Bulma CSS framework + SASS + Font Awesome 5 (using fontawesome-svg-core)
   - Axios for REST endpoint requests
-  - [vuex-type-helper](https://github.com/ktsn/vuex-type-helper) - a helpful little package that provides type/linter/IntelliSense support for vuex store modules
+  - [vuex-module-decorators](https://github.com/championswimmer/vuex-module-decorators) - a helpful package of decorators which allows you to write your vuex store modules in class-based syntax (inspired by vue-class-component). Also allows for easier namespacing and registration of modules into store at runtime after store is constructed - dynamic modules (I have all the modules configured this way in my project).
   - [vue-snotify](https://github.com/artemsky/vue-snotify) - a highly configurable toast notification library - comes hooked up to display login error & SignalR hub push notifications examples.
   - Two different loader components (spinner & authentication animation w/ callback for success/fail)
   - Babel integration to handle transformation of React-like JSX/TSX render function syntax - configured in package.json, but can be moved to a babelrc file. The app's VCheckbox.render.tsx & VDropdown.render.tsx components are live examples. This is a nice option to have for components that have very little HTML or for those that come from a React background and are comfortable with JSX syntax. Here is what the VCheckbox.render.tsx component looks like:
   
   ```JSX
-      public render(h: CreateElement): VNode {
+    public render(): VNode {
         return (
-            <div class={['control', this.parentClass]}>
+            <div class={['control', this.wrapperClass]}>
                 <p class={['checkbox-control', this.controlClass, { 'disabled': this.disabled }]}>
                     <label>
                         <input type="checkbox"
@@ -40,11 +40,15 @@ This template is vaguely based on the original Vue + TypeScript .NET Core SPA te
                                disabled={this.disabled}
                                onChange={this.handleOnChange} />
                         <i class="helper"></i>
-                        { this.trailingLabel ? <span>{this.trailingLabel}</span> : null }
+                        { this.trailingLabel && <span>{this.trailingLabel}</span> }
                     </label>
                 </p>
             </div>
         );      
+    }
+
+    private handleOnChange(e: Event): void {
+        this.$emit('checked', !!(e.target as HTMLInputElement).checked);
     }
     ```
     
