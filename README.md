@@ -16,13 +16,13 @@ This template is vaguely based on the original Vue + TypeScript .NET Core SPA te
   - API Documentation using Swagger UI - using package [NSwag.AspNetCore](http://NSwag.org) to prettify the specification output and display at ```/docs``` & [NSwag.MSBuild](http://NSwag.org) to handle automatic updates - so that when the project builds, the NSwag CLI will run and generate an updated API specification. Access this view in the application via the floating settings cog on right screen by clicking the "Swagger API" link.
   - Brotli/Gzip response compression (production build)
 - **Client**
-  - Vue
-  - Vuex
-  - Vue-router
-  - TypeScript
-  - Webpack for bundling of application assets and HMR (Hot Module Replacement)
-  - Bulma CSS framework + SASS + Font Awesome 5 (using fontawesome-svg-core)
-  - Axios for REST endpoint requests
+  - [Vue](https://vuejs.org/)
+  - [Vuex](https://vuex.vuejs.org/)
+  - [Vue-router](https://router.vuejs.org/)
+  - [TypeScript](https://www.typescriptlang.org/)
+  - [Webpack](https://github.com/webpack/webpack) for bundling of application assets and HMR (Hot Module Replacement)
+  - [Bulma CSS Framework](https://bulma.io/) + [SASS](https://github.com/sass/sass) + Font Awesome 5 (using fontawesome-svg-core)
+  - [Axios](https://github.com/axios/axios) for REST endpoint requests
   - [vuex-module-decorators](https://github.com/championswimmer/vuex-module-decorators) - a helpful package of decorators which allows you to write your vuex store modules in class-based syntax (inspired by vue-class-component). Also allows for easier namespacing and registration of modules into store at runtime after store is constructed - dynamic modules (I have all the modules configured this way in my project).
   - [vue-snotify](https://github.com/artemsky/vue-snotify) - a highly configurable toast notification library - comes hooked up to display login error & SignalR hub push notifications examples.
   - Two different loader components (spinner & authentication animation w/ callback for success/fail)
