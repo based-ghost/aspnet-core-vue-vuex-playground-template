@@ -19,14 +19,6 @@ class WeatherForecast extends VuexModule implements IWeatherForecastsState {
     public startDateIndex: number = 0;
     public forecasts: IWeatherForecast[] = [];
 
-    public get currentStartDateIndex(): number {
-        return this.startDateIndex || 0;
-    }
-
-    public get allForecastData(): IWeatherForecast[] {
-        return this.forecasts || [];
-    }
-
     @MutationAction({ mutate: ['forecasts', 'startDateIndex'] })
     public async GetWeatherForecasts(index: number | null) {
         const normalizedStartDateIndex = index || 0;

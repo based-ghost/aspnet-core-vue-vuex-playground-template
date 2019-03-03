@@ -58,11 +58,11 @@
         private loading: boolean = false;
 
         get currentStartDateIndex(): number {
-            return WeatherForecastModule.currentStartDateIndex;
+            return WeatherForecastModule.startDateIndex;
         }
 
         get allForecastData(): IWeatherForecast[] {
-            return WeatherForecastModule.allForecastData;
+            return WeatherForecastModule.forecasts;
         }
 
         private mounted(): void {
