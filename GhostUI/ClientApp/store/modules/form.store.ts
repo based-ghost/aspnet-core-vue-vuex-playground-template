@@ -24,10 +24,6 @@ class Form extends VuexModule implements IFormState {
         label: 'Option 1'
     };
 
-    public get activeDropdownOption(): IDropdownOption {
-        return this.selectedDropdownOption;
-    }
-
     @Mutation
     public UPDATE_COUNT(value: number) {
         this.count = value;
