@@ -47,8 +47,34 @@
     </div>
 </template>
 
-<script lang="ts" src="./Settings.ts"></script>
+<script lang="ts">
+    import { Component, Vue } from 'vue-property-decorator';
+    import { AuthActions } from '../../store/modules/auth/types';
+    import { RoutesConfig } from '../../config/routes.config';
+    import { spaNugetUrls } from '../../config/constants';
+    import { Dispatcher } from 'vuex-type-helper';
 
-<style lang="scss" scoped>
-    @import '../../../assets/style/scss/components/settings.scss';
-</style>
+    @Component
+    export default class Settings extends Vue {
+        public readonly nugetURLs = spaNugetUrls;
+        public readonly routesConfig = RoutesConfig;
+
+        public open: boolean = false;
+
+        public closeSettingsMenu(): void {
+            this.open = false;
+        }
+
+        public toggleSettingsMenu(): void {
+            this.open = !this.open;
+        }
+
+        public logout(): void {
+            this.$store.dispatch<Dispatcher<AuthActions>>({ type: 'authLogout' }).then(() => {
+                this.$snotify.clear();
+                this.$router.push(this.routesConfig.Login.path);
+                this.$store.dispatch('clearAllStores');
+            });
+        }
+    }
+</script>

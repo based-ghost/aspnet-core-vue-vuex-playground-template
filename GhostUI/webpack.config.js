@@ -24,17 +24,19 @@ module.exports = (env) => {
             rules: [
                 {
                     test: /\.vue$/,
-                    loader: 'vue-loader',
+                    loader: 'vue-loader'
+                },
+                {
+                    test: /\.ts$/,
+                    loader: 'ts-loader',
                     options: {
-                        loaders: { ts: 'awesome-typescript-loader?silent=true' },
-                        esModule: true
+                        appendTsSuffixTo: [/\.vue$/]
                     }
                 },
                 {
-                    test: /\.tsx?$/,
+                    test: /\.tsx$/,
                     loader: 'awesome-typescript-loader?silent=true',
                     options: {
-                        appendTsSuffixTo: [/\.vue$/],
                         appendTsxSuffixTo: [/\.vue$/],
                         useBabel: true
                     }

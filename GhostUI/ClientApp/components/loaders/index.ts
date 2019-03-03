@@ -1,4 +1,4 @@
-﻿import _Spinner from './spinner/Spinner.html.vue';
+﻿import _Spinner from './Spinner.vue';
 export { _Spinner as Spinner };
-import _Authenticator from './authenticator/Authenticator.html.vue';
+import _Authenticator from './Authenticator.vue';
 export { _Authenticator as Authenticator };

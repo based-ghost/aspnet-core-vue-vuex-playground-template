@@ -1,10 +1,8 @@
-﻿import _App from './app/App.html.vue';
-export { _App as App };
-import _Form from './form/Form.html.vue';
+﻿import _Form from './Form.vue';
 export { _Form as Form };
-import _Login from './login/Login.html.vue';
+import _Login from './Login.vue';
 export { _Login as Login };
-import _FetchData from './fetch-data/FetchData.html.vue';
+import _FetchData from './FetchData.vue';
 export { _FetchData as FetchData };
-import _Dashboard from './dashboard/Dashboard.html.vue';
+import _Dashboard from './Dashboard.vue';
 export { _Dashboard as Dashboard };

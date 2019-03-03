@@ -57,19 +57,14 @@
     <None Remove="ClientApp\api\services\sample.service.ts" />
     <None Remove="ClientApp\api\signalR.service.ts" />
     <None Remove="ClientApp\components\controls\checkbox\VCheckbox.render.tsx" />
-    <None Remove="ClientApp\components\controls\checkbox\VCheckbox.ts" />
     <None Remove="ClientApp\components\controls\dropdown\VDropdown.render.tsx" />
     <None Remove="ClientApp\components\controls\VDropdown.ts" />
     <None Remove="ClientApp\components\controls\VSearchDropdown.ts" />
     <None Remove="ClientApp\components\loaders\index.ts" />
     <None Remove="ClientApp\components\nav\index.ts" />
     <None Remove="ClientApp\components\nav\NavBarTop.ts" />
-    <None Remove="ClientApp\components\nav\settings\Settings.ts" />
     <None Remove="ClientApp\config\fa.config.ts" />
-    <None Remove="ClientApp\views\fetch-data\FetchData.ts" />
-    <None Remove="ClientApp\views\form\Form.ts" />
     <None Remove="ClientApp\views\index.ts" />
-    <None Remove="ClientApp\views\login\Login.ts" />
     <None Remove="ClientApp\plugins\vue-click-outside.ts" />
     <None Remove="ClientApp\store\modules\auth\types.d.ts" />
     <None Remove="ClientApp\store\modules\form\form.store.ts" />
@@ -98,7 +93,6 @@
     <None Remove="ClientApp\api\role.service.ts" />
     <None Remove="ClientApp\api\user.service.ts" />
     <None Remove="ClientApp\types\vue-shims.d.ts" />
-    <None Remove="ClientApp\views\app\App.ts" />
     <None Remove="ClientApp\views\router.ts" />
     <None Remove="EventBus.ts" />
   </ItemGroup>
@@ -123,16 +117,12 @@
     <TypeScriptCompile Include="ClientApp\api\services\sample.service.ts" />
     <TypeScriptCompile Include="ClientApp\api\services\signalR.service.ts" />
     <TypeScriptCompile Include="ClientApp\components\controls\checkbox\VCheckbox.render.tsx" />
-    <TypeScriptCompile Include="ClientApp\components\controls\checkbox\VCheckbox.ts" />
     <TypeScriptCompile Include="ClientApp\components\controls\dropdown\VDropdown.render.tsx" />
     <TypeScriptCompile Include="ClientApp\components\loaders\index.ts" />
     <TypeScriptCompile Include="ClientApp\components\nav\index.ts" />
-    <TypeScriptCompile Include="ClientApp\components\nav\settings\Settings.ts" />
     <TypeScriptCompile Include="ClientApp\config\constants.ts" />
     <TypeScriptCompile Include="ClientApp\config\fa.config.ts" />
     <TypeScriptCompile Include="ClientApp\config\vue-snotify.config.ts" />
-    <TypeScriptCompile Include="ClientApp\views\fetch-data\FetchData.ts" />
-    <TypeScriptCompile Include="ClientApp\views\form\Form.ts" />
     <TypeScriptCompile Include="ClientApp\views\index.ts" />
     <TypeScriptCompile Include="ClientApp\prototype\index.ts" />
     <TypeScriptCompile Include="ClientApp\router.ts" />
@@ -145,10 +135,6 @@
     <TypeScriptCompile Include="ClientApp\tests\controls.test.ts" />
     <TypeScriptCompile Include="ClientApp\types\tsx-shims.d.ts" />
     <TypeScriptCompile Include="ClientApp\prototype\extensions\string.extensions.ts" />
-    <TypeScriptCompile Include="ClientApp\components\controls\dropdown\VDropdown.ts" />
-    <TypeScriptCompile Include="ClientApp\components\loaders\authenticator\Authenticator.ts" />
-    <TypeScriptCompile Include="ClientApp\components\loaders\spinner\Spinner.ts" />
-    <TypeScriptCompile Include="ClientApp\components\nav\navbar\NavBar.ts" />
     <TypeScriptCompile Include="ClientApp\plugins\vue-click-outside.ts" />
     <TypeScriptCompile Include="ClientApp\api\services\auth.service.ts" />
     <TypeScriptCompile Include="ClientApp\api\services\base.service.ts" />
@@ -156,8 +142,6 @@
     <TypeScriptCompile Include="ClientApp\store\modules\auth\auth.store.ts" />
     <TypeScriptCompile Include="ClientApp\types\vue-snotify-shims.d.ts" />
     <TypeScriptCompile Include="ClientApp\types\vue-shims.d.ts" />
-    <TypeScriptCompile Include="ClientApp\views\login\Login.ts" />
-    <TypeScriptCompile Include="ClientApp\views\app\App.ts" />
     <TypeScriptCompile Include="ClientApp\event-bus.ts" />
   </ItemGroup>
 

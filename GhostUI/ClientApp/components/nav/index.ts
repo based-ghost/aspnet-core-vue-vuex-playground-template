@@ -1,4 +1,4 @@
-﻿import _NavBar from './navbar/NavBar.html.vue';
+﻿import _NavBar from './NavBar.vue';
 export { _NavBar as NavBar };
-import _Settings from './settings/Settings.html.vue';
+import _Settings from './Settings.vue';
 export { _Settings as Settings };

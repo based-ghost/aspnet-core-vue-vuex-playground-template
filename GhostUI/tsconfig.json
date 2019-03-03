@@ -2,10 +2,12 @@
   "compilerOptions": {
     "module": "esnext",
     "target": "esnext",
+    "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "importHelpers": true,
     "sourceMap": true,
     "skipLibCheck": true,
     "noImplicitAny": false,
@@ -13,6 +15,12 @@
     "types": [ "webpack-env" ],
     "jsx": "preserve"
   },
+  "lib": [
+    "esnext",
+    "dom",
+    "dom.iterable",
+    "scripthost"
+  ],
   "exclude": [
     "bin",
     "node_modules"

@@ -1,7 +1,7 @@
 ﻿import axios, { AxiosError } from 'axios';
 import { EventBus } from '../../event-bus';
 
-export const configureAxiosInterceptors = (): void =>  {
+export const configureAxiosInterceptors = (): void => {
     axios.interceptors.response.use(
         (response) => {
             return response;
@@ -11,11 +11,11 @@ export const configureAxiosInterceptors = (): void =>  {
             return Promise.reject(error);
         }
     );
-}
+};
 
 export const handleAxiosError = (error: AxiosError): void => {
     // Error Message Object
-    let message = {
+    const message = {
         body: 'Internal Server Error',
         request: '',
         status: 500
@@ -57,4 +57,4 @@ export const handleAxiosError = (error: AxiosError): void => {
 
     // Log in console or use Snotify notification (via Global EventBus)
     EventBus.$snotify.error(`${message.status} (${message.body})`, 'XHR Error');
-}
+};

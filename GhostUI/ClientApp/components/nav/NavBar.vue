@@ -2,7 +2,7 @@
     <nav class="navbar" role="navigation" aria-label="main navigation">
         <div class="navbar-wrapper">
             <div class="brand-wrapper">
-                <img src="../../../assets/image/bulma.io-logo.png" alt="" width="165">
+                <img src="../../assets/image/bulma.io-logo.png" alt="" width="165">
             </div>
             <div v-if="isAuthenticated" class="navbar-routes">
                 <router-link :to="routesConfig.Form.path" class="navbar-item">
@@ -29,8 +29,17 @@
     </nav>
 </template>
 
-<script lang="ts" src="./NavBar.ts"></script>
+<script lang="ts">
+    import { Component, Vue } from 'vue-property-decorator';
+    import { RoutesConfig } from '../../config/routes.config';
+    import { mapGetters } from 'vuex';
 
-<style lang="scss" scoped>
-    @import '../../../assets/style/scss/components/navbar.scss';
-</style>
+    @Component({
+        computed: mapGetters({
+            isAuthenticated: 'isAuthenticated'
+        })
+    })
+    export default class NavBar extends Vue {
+        public readonly routesConfig = RoutesConfig;
+    }
+</script>
