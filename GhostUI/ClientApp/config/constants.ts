@@ -1,4 +1,4 @@
-﻿import { DropdownOption } from '../store/modules/form/types';
+﻿import { IDropdownOption } from '../store/modules/form.store';
 
 /**
  * Global data consumed by App component - used by functional components via exposed parent prop
@@ -11,7 +11,7 @@ export const sfcGlobalData = {
 /**
  * Dropdown test data
  */
-export const DROPDOWN_TEST_DATA: DropdownOption[] = [
+export const DROPDOWN_TEST_DATA: IDropdownOption[] = [
     { value: 1, label: 'Option 1' },
     { value: 2, label: 'Option 2' },
     { value: 3, label: 'Option 3' },

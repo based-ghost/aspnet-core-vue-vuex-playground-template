@@ -61,8 +61,7 @@
     import { Component, Vue } from 'vue-property-decorator';
     import { Authenticator } from '../components/loaders';
     import VCheckbox from '../components/controls/checkbox/VCheckbox.render';
-    import { AuthStatusEnum, Credentials, AuthActions } from '../store/modules/auth/types';
-    import { Dispatcher } from 'vuex-type-helper';
+    import { AuthModule, AuthStatusEnum, ICredentials } from '../store/modules/auth.store';
     import { SignalRApi } from '../api';
 
     @Component({
@@ -72,17 +71,17 @@
         }
     })
     export default class Login extends Vue {
-        showPassword: boolean = false;
-        invalidInputs: boolean = false;
-        authStatus: string = AuthStatusEnum.None;
-        credentials: Credentials = { userName: '', password: '', rememberMe: false };
+        private showPassword:  boolean = false;
+        private invalidInputs: boolean = false;
+        private authStatus:    string = AuthStatusEnum.None;
+        private credentials:   ICredentials = { userName: '', password: '', rememberMe: false };
 
         // Configure and connect SignalR directly before this component is mounted to DOM
-        beforeMount(): void {
+        private beforeMount(): void {
             SignalRApi.startConnection();
         }
 
-        handleLogin(): void {
+        private handleLogin(): void {
             // Prevent multiple login requests onClick
             if (this.authStatus === AuthStatusEnum.Process) {
                 return;
@@ -100,7 +99,7 @@
 
                 // Perform stub login, setting delay to show animation/processing
                 setTimeout(() => {
-                    this.$store.dispatch<Dispatcher<AuthActions>>({ type: 'authRequest', credentials: this.credentials }).then(() => {
+                    AuthModule.DoLogin(this.credentials).then(() => {
                         this.authStatus = AuthStatusEnum.Success;
                     }).catch(() => {
                         this.authStatus = AuthStatusEnum.Fail;
@@ -109,11 +108,11 @@
             }
         }
 
-        onAuthSuccess(): void {
+        private onAuthSuccess(): void {
             this.$router.push('/dashboard');
         }
 
-        onAuthFailure(): void {
+        private onAuthFailure(): void {
             this.authStatus = AuthStatusEnum.None;
             this.$snotify.error(`Could not authenticate: ${this.credentials.userName}`, 'Login Error');
         }

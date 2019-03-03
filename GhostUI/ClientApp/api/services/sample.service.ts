@@ -1,5 +1,5 @@
 ﻿import { BaseService } from './base.service';
-import { WeatherForecast } from '../../store/modules/weather-forecasts/types';
+import { IWeatherForecast } from '../../store/modules/weather-forecasts.store';
 
 /**
  * SampleDataController endpoints
@@ -23,9 +23,9 @@ class SampleService extends BaseService {
         super(controllerName);
     }
 
-    public async getWeatherForecastsAsync(startDateIndex: number): Promise<WeatherForecast[]> {
+    public async getWeatherForecastsAsync(startDateIndex: number): Promise<IWeatherForecast[]> {
         const { data } = await this.$http.get(sampleService.GET_FORECASTS_RQ, { params: { startDateIndex: startDateIndex } });
-        return <WeatherForecast[]> data;
+        return <IWeatherForecast[]> data;
     }
 }
 

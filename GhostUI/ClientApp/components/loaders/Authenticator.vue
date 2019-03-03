@@ -7,20 +7,17 @@
 
 <script lang="ts">
     import { Component, Prop, Watch, Vue } from 'vue-property-decorator';
-    import { AuthStatusEnum } from '../../store/modules/auth/types';
+    import { AuthStatusEnum } from '../../store/modules/auth.store';
 
     @Component
     export default class Authenticator extends Vue {
-        @Prop({ default: 1500 })
-        emitTimeout: number;
+        @Prop({ default: 1500 })                private emitTimeout: number;
+        @Prop({ default: AuthStatusEnum.None }) private authStatus:  string;
 
-        @Prop({ default: AuthStatusEnum.None })
-        authStatus: string;
-
-        show: boolean = false;
+        private show: boolean = false;
 
         @Watch('authStatus')
-        onStatusChange(newStatus: string): void {
+        private onStatusChange(newStatus: string): void {
             if (newStatus.isIn(AuthStatusEnum.Success, AuthStatusEnum.Fail)) {
                 setTimeout(() => {
                     this.$emit(newStatus);

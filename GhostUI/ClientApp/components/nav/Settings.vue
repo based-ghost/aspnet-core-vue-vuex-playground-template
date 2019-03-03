@@ -35,7 +35,7 @@
                 <li>
                     <a class="dropdown-item" 
                        role="button" 
-                       @click="logout">
+                       @click="handleLogout">
                         <span class="icon">
                             <font-awesome-icon :icon="routesConfig.Login.meta.icon" />
                         </span>
@@ -49,31 +49,29 @@
 
 <script lang="ts">
     import { Component, Vue } from 'vue-property-decorator';
-    import { AuthActions } from '../../store/modules/auth/types';
     import { RoutesConfig } from '../../config/routes.config';
     import { spaNugetUrls } from '../../config/constants';
-    import { Dispatcher } from 'vuex-type-helper';
+    import { AuthModule } from '../../store/modules/auth.store'; 
 
     @Component
     export default class Settings extends Vue {
-        public readonly nugetURLs = spaNugetUrls;
-        public readonly routesConfig = RoutesConfig;
+        private readonly nugetURLs = spaNugetUrls;
+        private readonly routesConfig = RoutesConfig;
 
-        public open: boolean = false;
+        private open: boolean = false;
 
-        public closeSettingsMenu(): void {
+        private closeSettingsMenu(): void {
             this.open = false;
         }
 
-        public toggleSettingsMenu(): void {
+        private toggleSettingsMenu(): void {
             this.open = !this.open;
         }
 
-        public logout(): void {
-            this.$store.dispatch<Dispatcher<AuthActions>>({ type: 'authLogout' }).then(() => {
+        private handleLogout(): void {
+            AuthModule.DoLogout().then(() => {
                 this.$snotify.clear();
                 this.$router.push(this.routesConfig.Login.path);
-                this.$store.dispatch('clearAllStores');
             });
         }
     }

@@ -1,5 +1,5 @@
 ﻿import { BaseService } from './base.service';
-import { Credentials, AuthUser } from '../../store/modules/auth/types';
+import { ICredentials, IAuthUser } from '../../store/modules/auth.store';
 
 /**
  * AuthController endpoints
@@ -24,9 +24,9 @@ class AuthService extends BaseService {
         super(controllerName);
     }
 
-    public async login(credentials: Credentials): Promise<AuthUser> {
+    public async login(credentials: ICredentials): Promise<IAuthUser> {
         const { data } = await this.$http.post(authService.LOGIN_RQ, credentials);
-        return <AuthUser> data;
+        return <IAuthUser> data;
     }
 
     public async logout(): Promise<any> {

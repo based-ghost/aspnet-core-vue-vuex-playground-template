@@ -11,28 +11,15 @@ export default class VDropdown extends Vue {
         dropdownButton: HTMLElement
     }
 
-    @Prop({ default: () => ([]) })
-    options: any[];
+    @Prop({ default: () => ([]) }) private options:             any[];
+    @Prop({ default: false })      private disabled:            boolean;    
+    @Prop({ default: 'label' })    private labelKey:            string;    
+    @Prop({ default: '' })         private placeholder:         string;
+    @Prop({ default: '' })         private wrapperClass:        string;
+    @Prop({ default: '' })         private buttonClass:         string;
+    @Prop({ default: '' })         private selectedOptionLabel: string;
 
-    @Prop({ default: false })
-    disabled: boolean;    
-
-    @Prop({ default: 'label' })
-    labelKey: string;    
-
-    @Prop({ default: '' })
-    placeholder: string;
-
-    @Prop({ default: '' })
-    wrapperClass: string;
-
-    @Prop({ default: '' })
-    buttonClass: string;
-
-    @Prop({ default: '' })
-    selectedOptionLabel: string;
-
-    open: boolean = false;
+    private open: boolean = false;
 
     get isArrayOfObjects(): boolean {
         return this.options && (this.options[0] === Object(this.options[0]));

@@ -11024,10 +11024,10 @@
       "resolved": "https://registry.npmjs.org/vuex/-/vuex-3.1.0.tgz",
       "integrity": "sha512-mdHeHT/7u4BncpUZMlxNaIdcN/HIt1GsGG5LKByArvYG/v6DvHcOxvDCts+7SRdCoIRGllK8IMZvQtQXLppDYg=="
     },
-    "vuex-type-helper": {
-      "version": "1.2.1",
-      "resolved": "https://registry.npmjs.org/vuex-type-helper/-/vuex-type-helper-1.2.1.tgz",
-      "integrity": "sha512-IirYN4/ZQqe08XaXIydkH7XkPsdP9ZLE9lvJR+vT1bSOH04bSteZ4FPwAPvfTXmsvzqRF0iOmP8AbeNVKkYA8g==",
+    "vuex-module-decorators": {
+      "version": "0.9.8",
+      "resolved": "https://registry.npmjs.org/vuex-module-decorators/-/vuex-module-decorators-0.9.8.tgz",
+      "integrity": "sha512-yyh9+0mO7NYZxw5BlXWNA/lHioVOUL0muDpJPL9ssAvje2PHQfFSOCSridK4vA3HasjyaGRtTPJKH7+7UCcpwg==",
       "dev": true
     },
     "w3c-hr-time": {

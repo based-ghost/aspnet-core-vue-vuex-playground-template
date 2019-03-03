@@ -32,14 +32,14 @@
 <script lang="ts">
     import { Component, Vue } from 'vue-property-decorator';
     import { RoutesConfig } from '../../config/routes.config';
-    import { mapGetters } from 'vuex';
+    import { AuthModule } from '../../store/modules/auth.store'; 
 
-    @Component({
-        computed: mapGetters({
-            isAuthenticated: 'isAuthenticated'
-        })
-    })
+    @Component
     export default class NavBar extends Vue {
-        public readonly routesConfig = RoutesConfig;
+        private readonly routesConfig = RoutesConfig;
+
+        get isAuthenticated(): boolean {
+            return AuthModule.isAuthenticated;
+        }
     }
 </script>

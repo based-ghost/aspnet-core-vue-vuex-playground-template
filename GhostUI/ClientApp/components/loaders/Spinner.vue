@@ -12,8 +12,7 @@
 
     @Component
     export default class Spinner extends Vue {
-        @Prop({ default: false })
-        show: boolean;
+        @Prop({ default: false }) private show: boolean;
     }
 </script>
 

@@ -15,19 +15,20 @@
     import AppFooter from './components/footer/Footer.vue';
     import { NavBar, Settings } from './components/nav';
     import { sfcGlobalData } from './config/constants';
-    import { mapGetters } from 'vuex';
+    import { AuthModule } from './store/modules/auth.store'; 
 
     @Component({
         components: {
             NavBar,
             Settings,
             AppFooter
-        },
-        computed: mapGetters({
-            isAuthenticated: 'isAuthenticated'
-        })
+        }
     })
     export default class App extends Vue {
-        public readonly sfcData = sfcGlobalData;
+        private readonly sfcData = sfcGlobalData;
+
+        get isAuthenticated(): boolean {
+            return AuthModule.isAuthenticated;
+        }
     }
 </script>

@@ -46,32 +46,32 @@
 
 <script lang="ts">
     import { Component, Vue } from 'vue-property-decorator';
-    import { WeatherForecast, WeatherForecastsActions } from '../store/modules/weather-forecasts/types';
+    import { WeatherForecastModule, IWeatherForecast } from '../store/modules/weather-forecasts.store';
     import { Spinner } from '../components/loaders';
-    import { Dispatcher } from 'vuex-type-helper';
-    import { mapGetters } from 'vuex';
 
     @Component({
         components: {
             Spinner
-        },
-        computed: mapGetters({
-            allForecastData: 'allForecastData',
-            currentStartDateIndex: 'currentStartDateIndex'
-        })
+        }
     })
     export default class FetchData extends Vue {
-        loading: boolean = false;
-        currentStartDateIndex: number;
-        allForecastData: WeatherForecast[];
+        private loading: boolean = false;
 
-        mounted(): void {
+        get currentStartDateIndex(): number {
+            return WeatherForecastModule.currentStartDateIndex;
+        }
+
+        get allForecastData(): IWeatherForecast[] {
+            return WeatherForecastModule.allForecastData;
+        }
+
+        private mounted(): void {
             if (!this.allForecastData || this.allForecastData.length === 0) {
                 this.handleGetWeatherForecasts();
             }
         }
 
-        paginateForecastData(pageDirection: string): void {
+        private paginateForecastData(pageDirection: string): void {
             const newStartDateIndex = (!pageDirection || pageDirection === 'prev')
                 ? (this.currentStartDateIndex - 5)
                 : (this.currentStartDateIndex + 5);
@@ -79,20 +79,19 @@
             this.handleGetWeatherForecasts(newStartDateIndex);
         }
 
-        handleGetWeatherForecasts(startDateIndex: number = 0): void {
+        private handleGetWeatherForecasts(startDateIndex: number = 0): void {
             this.loading = true;
-
-            this.$store.dispatch<Dispatcher<WeatherForecastsActions>>({ type: 'getWeatherForecasts', startDateIndex: startDateIndex }).then(() => {
+            WeatherForecastModule.GetWeatherForecasts(startDateIndex).then(() => {
                 // success
             }).catch(() => {
                 // failed
             })
-                .then(() => {
-                    // setTimeout added since the request completes so quickly - gives a change to show loading animation spinner for demonstration purposes
-                    setTimeout(() => {
-                        this.loading = false;
-                    }, 50);
-                });
+            .then(() => {
+                // setTimeout added since the request completes so quickly - gives a change to show loading animation spinner for demonstration purposes
+                setTimeout(() => {
+                    this.loading = false;
+                }, 50);
+            });
         }
     }
 </script>
