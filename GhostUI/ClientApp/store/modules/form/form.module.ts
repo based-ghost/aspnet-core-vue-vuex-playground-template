@@ -1,19 +1,6 @@
-﻿import store from '../../store';
+﻿import store from '../../../store';
+import { IDropdownOption, IFormState } from './types';
 import { Module, VuexModule, Mutation, getModule } from 'vuex-module-decorators'
-
-export interface IDropdownOption {
-    value: number;
-    label: string;
-}
-
-export interface IFormState {
-    count: number;
-    checkboxValue: boolean;
-    selectedDropdownOption: {
-        value: number;
-        label: string;
-    };
-}
 
 @Module({ dynamic: true, store, name: 'form' })
 class Form extends VuexModule implements IFormState {

@@ -1,31 +1,7 @@
-﻿import store from '../../store';
-import { AuthApi } from '../../api';
+﻿import store from '../../../store';
+import { AuthApi } from '../../../api';
+import { IAuthState, ICredentials } from './types';
 import { Module, VuexModule, Mutation, MutationAction, Action, getModule } from 'vuex-module-decorators'
-
-export const enum AuthStatusEnum {
-    None = 'none',
-    Process = 'process',
-    Success = 'success',
-    Fail = 'fail'
-}
-
-export interface ICredentials {
-    userName?: string,
-    password?: string,
-    rememberMe?: boolean
-}
-
-export interface IAuthUser {
-    token?: string,
-    status?: string,
-    userName?: string
-}
-
-export interface IAuthState {
-    token: string,
-    status: string,
-    userName: string
-}
 
 @Module({ dynamic: true, store, name: 'auth' })
 class Auth extends VuexModule implements IAuthState {

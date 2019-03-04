@@ -17,13 +17,13 @@
         private show: boolean = false;
 
         @Watch('authStatus')
-        private onStatusChange(newStatus: string): void {
-            if (newStatus.isIn(AuthStatusEnum.Success, AuthStatusEnum.Fail)) {
+        private onStatusChange(newValue: string): void {
+            if (newValue.isIn(AuthStatusEnum.Success, AuthStatusEnum.Fail)) {
                 setTimeout(() => {
-                    this.$emit(newStatus);
+                    this.$emit(newValue);
                 }, this.emitTimeout);
             } else {
-                this.show = (newStatus === AuthStatusEnum.Process);
+                this.show = (newValue === AuthStatusEnum.Process);
             }
         }
     }

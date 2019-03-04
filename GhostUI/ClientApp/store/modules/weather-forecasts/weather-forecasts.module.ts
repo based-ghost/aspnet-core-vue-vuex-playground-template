@@ -1,18 +1,7 @@
-﻿import store from '../../store';
-import { SampleApi } from '../../api';
+﻿import store from '../../../store';
+import { SampleApi } from '../../../api';
+import { IWeatherForecast, IWeatherForecastsState } from './types';
 import { Module, VuexModule, MutationAction, getModule } from 'vuex-module-decorators'
-
-export interface IWeatherForecast {
-    DateFormatted: string;
-    TemperatureC: number;
-    TemperatureF: number;
-    Summary: string;
-}
-
-export interface IWeatherForecastsState {
-    startDateIndex?: number;
-    forecasts?: IWeatherForecast[];
-}
 
 @Module({ dynamic: true, store, name: 'forecasts' })
 class WeatherForecast extends VuexModule implements IWeatherForecastsState {
