@@ -1,9 +1,9 @@
-﻿<template functional>
+﻿<template>
     <div class="dashboard-wrapper">
         <section class="hero is-dark">
             <div class="hero-body">
                 <div class="is-flex is-horizontal-center">
-                    <img :src="parent.sfcData.VUE_ASPCORE_IMAGE" alt="" width="300" />
+                    <img src="../assets/image/aspcore-vue.png" alt="" width="300" />
                 </div>
             </div>
         </section>
@@ -57,3 +57,10 @@
         </section>
     </div>
 </template>
+
+<script lang="ts">
+    import { Component, Vue } from 'vue-property-decorator';
+
+    @Component
+    export default class Dashboard extends Vue { }
+</script>

@@ -1,5 +1,5 @@
 ﻿import axios, { AxiosError } from 'axios';
-import { EventBus } from '../../event-bus';
+import { EventBus } from '../event-bus';
 
 export const configureAxiosInterceptors = (): void => {
     axios.interceptors.response.use(

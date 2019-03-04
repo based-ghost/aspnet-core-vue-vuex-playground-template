@@ -7,7 +7,7 @@
 
 <script lang="ts">
     import { Component, Prop, Watch, Vue } from 'vue-property-decorator';
-    import { AuthStatusEnum } from '../../store/modules/auth.store';
+    import { AuthStatusEnum } from '../../store/modules/auth';
 
     @Component
     export default class Authenticator extends Vue {

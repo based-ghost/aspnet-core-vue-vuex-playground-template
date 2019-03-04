@@ -1,5 +1,5 @@
 ﻿import { BaseService } from './base.service';
-import { IWeatherForecast } from '../../store/modules/weather-forecasts.store';
+import { IWeatherForecast } from '../../store/modules/weather-forecasts';
 
 /**
  * SampleDataController endpoints

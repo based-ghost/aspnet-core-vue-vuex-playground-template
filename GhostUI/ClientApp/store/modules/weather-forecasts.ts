@@ -1,6 +1,6 @@
 ﻿import store from '../../store';
 import { SampleApi } from '../../api';
-import { Module, VuexModule, Mutation, MutationAction, getModule } from 'vuex-module-decorators'
+import { Module, VuexModule, MutationAction, getModule } from 'vuex-module-decorators'
 
 export interface IWeatherForecast {
     DateFormatted: string;
@@ -20,18 +20,12 @@ class WeatherForecast extends VuexModule implements IWeatherForecastsState {
     public forecasts: IWeatherForecast[] = [];
 
     @MutationAction({ mutate: ['forecasts', 'startDateIndex'] })
-    public async GetWeatherForecasts(index: number | null) {
-        const normalizedStartDateIndex = index || 0;
-        const forecasts = await SampleApi.getWeatherForecastsAsync(normalizedStartDateIndex);
+    public async GetWeatherForecasts(index: number | null): Promise<any> {
+        const forecasts = await SampleApi.getWeatherForecastsAsync(index || 0);
         return {
             forecasts: forecasts,
-            startDateIndex: normalizedStartDateIndex,
+            startDateIndex: index || 0,
         };
-    }
-
-    @Mutation
-    private SET_START_DATE_INDEX(index: number) {
-        this.startDateIndex = index;
     }
 }
 

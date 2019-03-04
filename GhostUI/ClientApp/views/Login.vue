@@ -61,7 +61,7 @@
     import { Component, Vue } from 'vue-property-decorator';
     import { Authenticator } from '../components/loaders';
     import VCheckbox from '../components/controls/checkbox/VCheckbox.render';
-    import { AuthModule, AuthStatusEnum, ICredentials } from '../store/modules/auth.store';
+    import { AuthModule, AuthStatusEnum, ICredentials } from '../store/modules/auth';
     import { SignalRApi } from '../api';
 
     @Component({
@@ -76,30 +76,26 @@
         private authStatus:    string = AuthStatusEnum.None;
         private credentials:   ICredentials = { userName: '', password: '', rememberMe: false };
 
-        // Configure and connect SignalR directly before this component is mounted to DOM
-        private beforeMount(): void {
+        // Configure and connect SignalR directly before this component is created
+        private created(): void {
             SignalRApi.startConnection();
         }
 
-        private handleLogin(): void {
-            // Prevent multiple login requests onClick
-            if (this.authStatus === AuthStatusEnum.Process) {
+        private handleLogin(): void {         
+            if (this.authStatus === AuthStatusEnum.Process) { // Prevent multiple login requests onClick
                 return;
             }
 
-            if (this.credentials.userName.isEmptyOrWhiteSpace() || this.credentials.password.isEmptyOrWhiteSpace()) {
-                // UserName and/or Password is blank
+            if (this.credentials.userName.isEmptyOrWhiteSpace() || this.credentials.password.isEmptyOrWhiteSpace()) {  // UserName and/or Password is blank              
                 this.invalidInputs = true;
                 this.$snotify.error('Enter user name/password', 'Login Error');
-            } else {
-                // Login stub code
+            } else {  // Perform stub login, setting delay to show animation/processing
                 this.$snotify.clear();
                 this.invalidInputs = false;
                 this.authStatus = AuthStatusEnum.Process;
 
-                // Perform stub login, setting delay to show animation/processing
                 setTimeout(() => {
-                    AuthModule.DoLogin(this.credentials).then(() => {
+                    AuthModule.LoginUser(this.credentials).then(() => {
                         this.authStatus = AuthStatusEnum.Success;
                     }).catch(() => {
                         this.authStatus = AuthStatusEnum.Fail;

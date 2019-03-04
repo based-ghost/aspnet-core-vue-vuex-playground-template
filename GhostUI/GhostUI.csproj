@@ -107,7 +107,7 @@
 
   <ItemGroup>
     <TypeScriptCompile Include="ClientApp\api\index.ts" />
-    <TypeScriptCompile Include="ClientApp\api\services\base.config.ts" />
+    <TypeScriptCompile Include="ClientApp\config\axios.config.ts" />
     <TypeScriptCompile Include="ClientApp\api\services\sample.service.ts" />
     <TypeScriptCompile Include="ClientApp\api\services\signalR.service.ts" />
     <TypeScriptCompile Include="ClientApp\components\controls\checkbox\VCheckbox.render.tsx" />
@@ -121,8 +121,8 @@
     <TypeScriptCompile Include="ClientApp\prototype\index.ts" />
     <TypeScriptCompile Include="ClientApp\router.ts" />
     <TypeScriptCompile Include="ClientApp\config\routes.config.ts" />
-    <TypeScriptCompile Include="ClientApp\store\modules\form.store.ts" />
-    <TypeScriptCompile Include="ClientApp\store\modules\weather-forecasts.store.ts" />
+    <TypeScriptCompile Include="ClientApp\store\modules\form.ts" />
+    <TypeScriptCompile Include="ClientApp\store\modules\weather-forecasts.ts" />
     <TypeScriptCompile Include="ClientApp\tests\controls.test.ts" />
     <TypeScriptCompile Include="ClientApp\types\tsx-shims.d.ts" />
     <TypeScriptCompile Include="ClientApp\prototype\extensions\string.extensions.ts" />
@@ -130,7 +130,7 @@
     <TypeScriptCompile Include="ClientApp\api\services\auth.service.ts" />
     <TypeScriptCompile Include="ClientApp\api\services\base.service.ts" />
     <TypeScriptCompile Include="ClientApp\store\index.ts" />
-    <TypeScriptCompile Include="ClientApp\store\modules\auth.store.ts" />
+    <TypeScriptCompile Include="ClientApp\store\modules\auth.ts" />
     <TypeScriptCompile Include="ClientApp\types\vue-snotify-shims.d.ts" />
     <TypeScriptCompile Include="ClientApp\types\vue-shims.d.ts" />
     <TypeScriptCompile Include="ClientApp\event-bus.ts" />

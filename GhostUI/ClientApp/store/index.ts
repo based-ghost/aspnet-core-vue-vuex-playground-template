@@ -1,8 +1,8 @@
 ﻿import Vue from 'vue';
 import Vuex from 'vuex';
-import { IAuthState } from './modules/auth.store';
-import { IFormState } from './modules/form.store';
-import { IWeatherForecastsState } from './modules/weather-forecasts.store';
+import { IAuthState } from './modules/auth';
+import { IFormState } from './modules/form';
+import { IWeatherForecastsState } from './modules/weather-forecasts';
 
 Vue.use(Vuex);
 

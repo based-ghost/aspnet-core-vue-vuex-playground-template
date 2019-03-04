@@ -1,5 +1,5 @@
 ﻿import { BaseService } from './base.service';
-import { ICredentials, IAuthUser } from '../../store/modules/auth.store';
+import { ICredentials, IAuthUser } from '../../store/modules/auth';
 
 /**
  * AuthController endpoints

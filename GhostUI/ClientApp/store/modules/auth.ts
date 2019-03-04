@@ -38,7 +38,7 @@ class Auth extends VuexModule implements IAuthState {
     }
 
     @MutationAction({ mutate: ['token', 'status', 'userName'] })
-    public async DoLogin(credentials: ICredentials) {
+    public async LoginUser(credentials: ICredentials): Promise<any> {
         const authUser = await AuthApi.login(credentials);
         return {
             token: authUser.token,
@@ -47,13 +47,13 @@ class Auth extends VuexModule implements IAuthState {
         };
     }
 
-    @Action({ commit: 'RESET_STATE' })
-    public async DoLogout() {
+    @Action({ commit: 'CLEAR_AUTH_STATE' })
+    public async LogoutUser(): Promise<any> {
         await AuthApi.logout();
     }
 
     @Mutation
-    private RESET_STATE() {
+    private CLEAR_AUTH_STATE(): void {
         this.status = '';
         this.token = '';
         this.userName = '';

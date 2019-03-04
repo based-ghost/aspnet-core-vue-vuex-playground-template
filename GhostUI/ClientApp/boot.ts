@@ -6,8 +6,8 @@ import App from './App.vue';
 import store from './store';
 import router from './router';
 import './config/vue-snotify.config';
-import { configureAxiosInterceptors } from './api';
 import vClickOutside from './plugins/vue-click-outside';
+import { configureAxiosInterceptors } from './config/axios.config';
 
 // Install custom plugins
 Vue.use(vClickOutside);

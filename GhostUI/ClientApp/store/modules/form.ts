@@ -19,23 +19,24 @@ export interface IFormState {
 class Form extends VuexModule implements IFormState {
     public count: number = 0;
     public checkboxValue: boolean = false;
+
     public selectedDropdownOption: IDropdownOption = {
         value: 1,
         label: 'Option 1'
     };
 
     @Mutation
-    public UPDATE_COUNT(value: number) {
+    public UPDATE_COUNT(value: number): void {
         this.count = value;
     }
 
     @Mutation
-    public UPDATE_CHECKBOX_VALUE(value: boolean) {
+    public UPDATE_CHECKBOX_VALUE(value: boolean): void {
         this.checkboxValue = value;
     }
 
     @Mutation
-    public UPDATE_SELECTED_OPTION(option: IDropdownOption) {
+    public UPDATE_SELECTED_OPTION(option: IDropdownOption): void {
         this.selectedDropdownOption = option;
     }
 }

@@ -1,9 +1,7 @@
 ﻿<template>
-    <div :class="['fixed-plugin', { 'fixed-plugin-active': open }]">
+    <div v-if="isAuthenticated" :class="['fixed-plugin', { 'fixed-plugin-active': open }]">
         <div class="dropdown">
-            <a role="button"
-               @click="toggleSettingsMenu"
-               v-click-outside="closeSettingsMenu">
+            <a role="button" @click="open = !open" v-click-outside="closeSettingsMenu">
                 <font-awesome-icon icon="cog" size="3x" />
             </a>
             <ul v-if="open" class="dropdown-menu">
@@ -51,7 +49,7 @@
     import { Component, Vue } from 'vue-property-decorator';
     import { RoutesConfig } from '../../config/routes.config';
     import { spaNugetUrls } from '../../config/constants';
-    import { AuthModule } from '../../store/modules/auth.store'; 
+    import { AuthModule } from '../../store/modules/auth'; 
 
     @Component
     export default class Settings extends Vue {
@@ -60,16 +58,16 @@
 
         private open: boolean = false;
 
+        get isAuthenticated(): boolean {
+            return AuthModule.isAuthenticated;
+        }
+
         private closeSettingsMenu(): void {
             this.open = false;
         }
 
-        private toggleSettingsMenu(): void {
-            this.open = !this.open;
-        }
-
         private handleLogout(): void {
-            AuthModule.DoLogout().then(() => {
+            AuthModule.LogoutUser().then(() => {
                 this.$snotify.clear();
                 this.$router.push(this.routesConfig.Login.path);
             });

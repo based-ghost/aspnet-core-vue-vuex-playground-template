@@ -2,7 +2,7 @@
     <section class="section">
         <div class="container is-centered box">
             <h3 class="title is-3">Weather forecast</h3>
-            <h5 class="subtitle is-5">This component demonstrates fetching data from the server - Start Date Index: <strong>{{currentStartDateIndex.toString()}}</strong></h5>
+            <h5 class="subtitle is-5">This component demonstrates fetching data from the server - Start Date Index: <strong>{{currentStartDateIndex}}</strong></h5>
             <spinner :show="loading" />
             <table class="table is-fullwidth">
                 <thead>
@@ -22,31 +22,27 @@
                     </tr>
                 </tbody>
             </table>
-            <div class="field is-grouped is-pagination-group">
-                <p class="control">
-                    <a class="button is-info" @click="paginateForecastData('prev')">
-                        <span class="icon">
-                            <font-awesome-icon icon="chevron-left" />
-                        </span>
-                        <span>Previous</span>
-                    </a>
-                </p>
-                <p class="control">
-                    <a class="button is-info" @click="paginateForecastData('next')">
-                        <span>Next</span>
-                        <span class="icon">
-                            <font-awesome-icon icon="chevron-right" />
-                        </span>
-                    </a>
-                </p>
-            </div>
+            <p class="buttons is-pagination-group">
+                <a class="button is-info" @click="paginateForecastData('prev')">
+                    <span class="icon">
+                        <font-awesome-icon icon="chevron-left" />
+                    </span>
+                    <span>Previous</span>
+                </a>
+                <a class="button is-info" @click="paginateForecastData('next')">
+                    <span>Next</span>
+                    <span class="icon">
+                        <font-awesome-icon icon="chevron-right" />
+                    </span>
+                </a>
+            </p>
         </div>
     </section>
 </template>
 
 <script lang="ts">
     import { Component, Vue } from 'vue-property-decorator';
-    import { WeatherForecastModule, IWeatherForecast } from '../store/modules/weather-forecasts.store';
+    import { WeatherForecastModule, IWeatherForecast } from '../store/modules/weather-forecasts';
     import { Spinner } from '../components/loaders';
 
     @Component({
@@ -65,7 +61,7 @@
             return WeatherForecastModule.forecasts;
         }
 
-        private mounted(): void {
+        private created(): void {
             if (!this.allForecastData || this.allForecastData.length === 0) {
                 this.handleGetWeatherForecasts();
             }

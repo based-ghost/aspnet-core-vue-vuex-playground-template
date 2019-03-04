@@ -61,7 +61,7 @@ html, body {
 }
 
 .dashboard-link {
-    color: $color-black;
+    color: #363636;
     font-weight: 700;
     padding: 0.25em 0.5em 0.25em;
     margin-right: .25em;
@@ -135,17 +135,17 @@ html, body {
     padding: 1.5em !important;
 }
 
-.is-pagination-group p {
+.is-pagination-group {
     > a {
         width: 8em;
-    }
 
-    &:nth-child(1) {
-        margin-left: auto;
-    }
+        &:nth-child(1) {
+            margin-left: auto;
+        }
 
-    &:nth-child(2) {
-        margin-right: auto;
+        &:nth-child(2) {
+            margin-right: auto;
+        }
     }
 }
 
@@ -154,7 +154,7 @@ html, body {
     cursor: pointer;
 
     &:hover {
-        color: $color-black !important;
+        color: #363636 !important;
         opacity: .7;
     }
 }
