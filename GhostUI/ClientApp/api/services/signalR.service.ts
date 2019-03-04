@@ -21,13 +21,13 @@ class SignalRService {
     private _hubConnection: HubConnection;
     private static _signalRService: SignalRService;
 
-    public static get Instance(): SignalRService {
-        return this._signalRService || (this._signalRService = new this());
-    }
-
     private constructor() {
         this.createConnection();
         this.registerOnServerEvents();
+    }
+
+    public static get Instance(): SignalRService {
+        return this._signalRService || (this._signalRService = new this());
     }
 
     public startConnection(): void {
