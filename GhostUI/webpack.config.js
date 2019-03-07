@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const { VueLoaderPlugin } = require('vue-loader');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin');
 const CheckerPlugin = require('awesome-typescript-loader').CheckerPlugin;
 
 const bundleOutputDir = './wwwroot/dist';
@@ -16,7 +17,7 @@ module.exports = (env) => {
         resolve: {
             extensions: ['.ts', '.tsx', '.js', '.vue', '.json'],
             alias: {
-                vue: 'vue/dist/vue.runtime.min.js'
+                vue: 'vue/dist/vue.runtime.js'
             }
         },
         entry: { 'main': './ClientApp/boot.ts' },
@@ -24,10 +25,12 @@ module.exports = (env) => {
             rules: [
                 {
                     test: /\.vue$/,
+                    include: /ClientApp/,
                     loader: 'vue-loader'
                 },
                 {
                     test: /\.ts$/,
+                    include: /ClientApp/,
                     loader: 'ts-loader',
                     options: {
                         appendTsSuffixTo: [/\.vue$/]
@@ -35,6 +38,7 @@ module.exports = (env) => {
                 },
                 {
                     test: /\.tsx$/,
+                    include: /ClientApp/,
                     loader: 'awesome-typescript-loader?silent=true',
                     options: {
                         appendTsxSuffixTo: [/\.vue$/],
@@ -91,13 +95,14 @@ module.exports = (env) => {
             })
         ] : [
             // Plugins that apply in production builds only
-            new webpack.optimize.UglifyJsPlugin({
-                cache: true,
-                parallel: true
-            }),
             new webpack.optimize.OccurrenceOrderPlugin(),
             new webpack.optimize.AggressiveMergingPlugin(),
-            new webpack.optimize.ModuleConcatenationPlugin()
+            new webpack.optimize.ModuleConcatenationPlugin(),
+            new OptimizeCSSPlugin({
+                cssProcessorOptions: {
+                    safe: true
+                }
+            })
         ])
     }];
 };

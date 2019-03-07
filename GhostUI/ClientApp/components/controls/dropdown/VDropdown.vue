@@ -38,54 +38,41 @@
             dropdownButton: HTMLElement
         }
 
-        @Prop({ default: () => ([]) })
-        options: any[];
+        @Prop({ default: () => ([]) }) private options:             any[];
+        @Prop({ default: false })      private disabled:            boolean;
+        @Prop({ default: 'label' })    private labelKey:            string;
+        @Prop({ default: '' })         private placeholder:         string;
+        @Prop({ default: '' })         private wrapperClass:        string;
+        @Prop({ default: '' })         private buttonClass:         string;
+        @Prop({ default: '' })         private selectedOptionLabel: string;
 
-        @Prop({ default: false })
-        disabled: boolean;
-
-        @Prop({ default: 'label' })
-        labelKey: string;
-
-        @Prop({ default: '' })
-        placeholder: string;
-
-        @Prop({ default: '' })
-        wrapperClass: string;
-
-        @Prop({ default: '' })
-        buttonClass: string;
-
-        @Prop({ default: '' })
-        selectedOptionLabel: string;
-
-        open: boolean = false;
+        private open: boolean = false;
 
         get isArrayOfObjects(): boolean {
             return this.options && (this.options[0] === Object(this.options[0]));
         }
 
-        toggleDropdownMenu(): void {
+        private toggleDropdownMenu(): void {
             this.open = !this.open;
         }
 
-        hideDropdownMenu(): void {
+        private hideDropdownMenu(): void {
             this.open = false;
         }
 
-        showDropdownMenu(): void {
+        private showDropdownMenu(): void {
             this.open = true;
         }
 
-        getOptionLabelName(option: any): string {
+        private getOptionLabelName(option: any): string {
             return this.isArrayOfObjects ? (option[this.labelKey] || option[0]) : option;
         }
 
-        updateSelectedOption(option: any): void {
+        private updateSelectedOption(option: any): void {
             this.$emit('select', option);
         }
 
-        keyDownHandler(event: KeyboardEvent): void {
+        private keyDownHandler(event: KeyboardEvent): void {
             if (event.keyCode == 38 || event.keyCode == 40) { // up and down keys
                 this.toggleDropdownMenu();
                 event.preventDefault();

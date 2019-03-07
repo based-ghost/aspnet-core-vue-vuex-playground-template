@@ -19,19 +19,10 @@
 
     @Component
     export default class VCheckbox extends Vue {
-        @Prop({ default: false })
-        disabled: boolean;
-
-        @Prop({ default: false })
-        checked: boolean;
-
-        @Prop({ default: '' })
-        trailingLabel: string;
-
-        @Prop({ default: '' })
-        wrapperClass: string;
-
-        @Prop({ default: '' })
-        controlClass: string;
+        @Prop({ default: '' })    private wrapperClass:  string;
+        @Prop({ default: '' })    private controlClass:  string;
+        @Prop({ default: '' })    private trailingLabel: string;
+        @Prop({ default: false }) private checked:       boolean;
+        @Prop({ default: false }) private disabled:      boolean;  
     }
 </script>
