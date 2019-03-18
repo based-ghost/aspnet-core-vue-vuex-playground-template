@@ -63,8 +63,6 @@
     export default class Form extends Vue {
         private readonly dropdownOptionsList: IDropdownOption[] = DROPDOWN_TEST_DATA;
 
-        // Vue can directly mutate vuex state stores, unlike react/redux pattern. 
-        // Set them up as getter / setters and map in HTML templates
         get count(): number {
             return FormModule.count;
         }

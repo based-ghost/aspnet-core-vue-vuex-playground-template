@@ -9,15 +9,15 @@ import './config/vue-snotify.config';
 import vClickOutside from './plugins/vue-click-outside';
 import { configureAxiosInterceptors } from './config/axios.config';
 
+// Vue debug options (Vue.config.devtools also needs setting in './store/store' - to pick up vuex stores)
+Vue.config.devtools = false;
+Vue.config.productionTip = (process.env.NODE_ENV === 'production');
+
 // Install custom plugins
 Vue.use(vClickOutside);
 
 // Execute any base Axios configurations (e.g. request interceptors)
 configureAxiosInterceptors();
-
-// Vue debug options (Vue.config.devtools also needs setting in './store/store' - to pick up vuex stores)
-Vue.config.devtools = false;
-Vue.config.productionTip = (process.env.NODE_ENV === 'production');
 
 new Vue({
   router,

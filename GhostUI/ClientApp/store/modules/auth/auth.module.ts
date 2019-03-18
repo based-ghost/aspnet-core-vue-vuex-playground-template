@@ -15,17 +15,26 @@ class Auth extends VuexModule implements IAuthState {
 
     @MutationAction({ mutate: ['token', 'status', 'userName'] })
     public async LoginUser(credentials: ICredentials): Promise<any> {
-        const authUser = await AuthApi.login(credentials);
-        return {
-            token: authUser.token,
-            status: authUser.status,
-            userName: authUser.userName,
-        };
+        try {
+            const authUser = await AuthApi.login(credentials);
+            return {
+                token: authUser.token,
+                status: authUser.status,
+                userName: authUser.userName,
+            };
+        }
+        catch (e) {
+            return {
+                token: '',
+                status: '',
+                userName: '',
+            };
+        }
     }
 
     @Action({ commit: 'CLEAR_AUTH_STATE' })
     public async LogoutUser(): Promise<any> {
-        await AuthApi.logout();
+        return await AuthApi.logout();
     }
 
     @Mutation

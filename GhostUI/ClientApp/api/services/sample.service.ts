@@ -2,14 +2,6 @@
 import { IWeatherForecast } from '../../store/modules/weather-forecasts';
 
 /**
- * SampleDataController endpoints
- */
-const sampleService = {
-    CONTROLLER_ID: 'SampleData',
-    GET_FORECASTS_RQ: 'GetWeatherForecasts'
-};
-
-/**
  * SampleData API abstraction layer communication via Axios (typescript singleton pattern)
  */
 class SampleService extends BaseService {
@@ -20,12 +12,12 @@ class SampleService extends BaseService {
     }
 
     public static get Instance(): SampleService {
-        return this._sampleService || (this._sampleService = new this(sampleService.CONTROLLER_ID));
+        return this._sampleService || (this._sampleService = new this('SampleData'));
     }
 
     public async getWeatherForecastsAsync(startDateIndex: number): Promise<IWeatherForecast[]> {
-        const { data } = await this.$http.get(sampleService.GET_FORECASTS_RQ, { params: { startDateIndex: startDateIndex } });
-        return <IWeatherForecast[]> data;
+        const { data } = await this.$http.get('GetWeatherForecasts', { params: { startDateIndex: startDateIndex } });
+        return data as IWeatherForecast[];
     }
 }
 

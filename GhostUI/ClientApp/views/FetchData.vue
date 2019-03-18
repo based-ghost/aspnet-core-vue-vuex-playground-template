@@ -77,14 +77,9 @@
 
         private handleGetWeatherForecasts(startDateIndex: number = 0): void {
             this.loading = true;
-            WeatherForecastModule.GetWeatherForecasts(startDateIndex).then(() => {
-                // success
-            }).catch(() => {
-                // failed
-            })
-            .then(() => {
-                // setTimeout added since the request completes so quickly - gives a change to show loading animation spinner for demonstration purposes
+            WeatherForecastModule.GetWeatherForecasts(startDateIndex).finally(() => {
                 setTimeout(() => {
+                    // setTimeout to show loading animation
                     this.loading = false;
                 }, 50);
             });
