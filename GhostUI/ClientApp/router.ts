@@ -11,28 +11,20 @@ export default new VueRouter({
     linkExactActiveClass: 'is-active',
     routes: [
         {
-            path: RoutesConfig.Login.path,
-            name: RoutesConfig.Login.displayName,
             component: Login,
-            meta: RoutesConfig.Login.meta
+            ...RoutesConfig.Login
         },
         {
-            path: RoutesConfig.Form.path,
-            name: RoutesConfig.Form.displayName,
             component: Form,
-            meta: RoutesConfig.Form.meta
+            ...RoutesConfig.Form
         },
         {
-            path: RoutesConfig.Dashboard.path,
-            name: RoutesConfig.Dashboard.displayName,
             component: Dashboard,
-            meta: RoutesConfig.Dashboard.meta
+            ...RoutesConfig.Dashboard
         },
         {
-            path: RoutesConfig.FetchData.path,
-            name: RoutesConfig.FetchData.displayName,
             component: FetchData,
-            meta: RoutesConfig.FetchData.meta
+            ...RoutesConfig.FetchData
         },
     ]
 });
