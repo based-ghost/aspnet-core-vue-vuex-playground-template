@@ -34,7 +34,7 @@ class Auth extends VuexModule implements IAuthState {
 
     @Action({ commit: 'CLEAR_AUTH_STATE' })
     public async LogoutUser(): Promise<any> {
-        return await AuthApi.logout();
+        await AuthApi.logout();
     }
 
     @Mutation

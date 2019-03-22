@@ -9,9 +9,9 @@
                     <form @submit.prevent="handleLogin">
                         <div class="field">
                             <div class="control has-icons-left">
-                                <input :class="['input is-large', { 'is-danger' : invalidInputs }]"
+                                <input :class="['input is-large', { 'is-danger' : invalidInputs && !credentials.userName }]"
                                        type="text"
-                                       v-model="credentials.userName"
+                                       v-model.trim="credentials.userName"
                                        autofocus=""                                      
                                        placeholder="Username"
                                        name="LoginUser">
@@ -22,9 +22,9 @@
                         </div>
                         <div class="field">
                             <div class="control has-icons-left has-icons-right">
-                                <input :class="['input is-large', { 'is-danger' : invalidInputs }]"
+                                <input :class="['input is-large', { 'is-danger' : invalidInputs && !credentials.password }]"
                                        :type="!showPassword ? 'password' : 'text'"                                                                                                                   
-                                       v-model="credentials.password"
+                                       v-model.trim="credentials.password"
                                        placeholder="Password"
                                        name="LoginPassword">
                                 <span class="icon is-left">
@@ -86,7 +86,7 @@
                 return;
             }
 
-            if (this.credentials.userName.isEmptyOrWhiteSpace() || this.credentials.password.isEmptyOrWhiteSpace()) {  // UserName and/or Password is blank              
+            if (!this.credentials.userName || !this.credentials.password) {  // UserName and/or Password is blank              
                 this.invalidInputs = true;
                 this.$snotify.error('Enter user name/password', 'Login Error');
             } else {  // Perform stub login, setting delay to show animation/processing

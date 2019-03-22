@@ -82,30 +82,30 @@
       }
     },
     "@fortawesome/fontawesome-common-types": {
-      "version": "0.2.15",
-      "resolved": "https://registry.npmjs.org/@fortawesome/fontawesome-common-types/-/fontawesome-common-types-0.2.15.tgz",
-      "integrity": "sha512-ATBRyKJw1d2ko+0DWN9+BXau0EK3I/Q6pPzPv3LhJD7r052YFAkAdfb1Bd7ZqhBsJrdse/S7jKxWUOZ61qBD4g=="
+      "version": "0.2.17",
+      "resolved": "https://registry.npmjs.org/@fortawesome/fontawesome-common-types/-/fontawesome-common-types-0.2.17.tgz",
+      "integrity": "sha512-DEYsEb/iiGVoMPQGjhG2uOylLVuMzTxOxysClkabZ5n80Q3oFDWGnshCLKvOvKoeClsgmKhWVrnnqvsMI1cAbw=="
     },
     "@fortawesome/fontawesome-svg-core": {
-      "version": "1.2.15",
-      "resolved": "https://registry.npmjs.org/@fortawesome/fontawesome-svg-core/-/fontawesome-svg-core-1.2.15.tgz",
-      "integrity": "sha512-M/sHyl4g2VBtKYkay1Z+XImMyTVcaBPmehYtPw4HKD9zg2E7eovB7Yx98aUfZjPbroGqa+IL4/+KhWBMOGlHIQ==",
+      "version": "1.2.17",
+      "resolved": "https://registry.npmjs.org/@fortawesome/fontawesome-svg-core/-/fontawesome-svg-core-1.2.17.tgz",
+      "integrity": "sha512-TORMW/wIX2QyyGBd4XwHGPir4/0U18Wxf+iDBAUW3EIJ0/VC/ZMpJOiyiCe1f8g9h0PPzA7sqVtl8JtTUtm4uA==",
       "requires": {
-        "@fortawesome/fontawesome-common-types": "^0.2.15"
+        "@fortawesome/fontawesome-common-types": "^0.2.17"
       }
     },
     "@fortawesome/free-solid-svg-icons": {
-      "version": "5.7.2",
-      "resolved": "https://registry.npmjs.org/@fortawesome/free-solid-svg-icons/-/free-solid-svg-icons-5.7.2.tgz",
-      "integrity": "sha512-iujcXMyAvIbWM8W3jkOLpvJbR+rPpdN1QyqhZeJaLRdHPH4JmuovIAYP4vx5Sa1csZVXfRD1eDWqVZ/jGM620A==",
+      "version": "5.8.1",
+      "resolved": "https://registry.npmjs.org/@fortawesome/free-solid-svg-icons/-/free-solid-svg-icons-5.8.1.tgz",
+      "integrity": "sha512-FUcxR75PtMOo3ihRHJOZz64IsWIVdWgB2vCMLJjquTv487wVVCMH5H5gWa72et2oI9lKKD2jvjQ+y+7mxhscVQ==",
       "requires": {
-        "@fortawesome/fontawesome-common-types": "^0.2.15"
+        "@fortawesome/fontawesome-common-types": "^0.2.17"
       }
     },
     "@fortawesome/vue-fontawesome": {
-      "version": "0.1.5",
-      "resolved": "https://registry.npmjs.org/@fortawesome/vue-fontawesome/-/vue-fontawesome-0.1.5.tgz",
-      "integrity": "sha512-tiNZCgh+ZkUsyFfm2MQMMdHKRrKj82M7g0XFPSNNY+s5nRB82soy0US+xj0jGRy433b0c4WpylCOhgle3294Uw=="
+      "version": "0.1.6",
+      "resolved": "https://registry.npmjs.org/@fortawesome/vue-fontawesome/-/vue-fontawesome-0.1.6.tgz",
+      "integrity": "sha512-HAGRbrOuGDwwUmCYdpzR0hhNQ3EE30dOS4JiJKcoZ+S4M210CxyU0OXCgzIg3HzK/23rlpHbV8zi9PDDZDnuIw=="
     },
     "@types/jest": {
       "version": "23.3.13",
@@ -11272,9 +11272,9 @@
       "dev": true
     },
     "typescript": {
-      "version": "3.3.3333",
-      "resolved": "https://registry.npmjs.org/typescript/-/typescript-3.3.3333.tgz",
-      "integrity": "sha512-JjSKsAfuHBE/fB2oZ8NxtRTk5iGcg6hkYXMnZ3Wc+b2RSqejEqTaem11mHASMnFilHrax3sLK0GDzcJrekZYLw==",
+      "version": "3.3.4000",
+      "resolved": "https://registry.npmjs.org/typescript/-/typescript-3.3.4000.tgz",
+      "integrity": "sha512-jjOcCZvpkl2+z7JFn0yBOoLQyLoIkNZAs/fYJkUG6VKy6zLPHJGfQJYFHzibB6GJaF/8QrcECtlQ5cpvRHSMEA==",
       "dev": true
     },
     "uglify-js": {
@@ -11606,9 +11606,9 @@
       }
     },
     "vue": {
-      "version": "2.6.9",
-      "resolved": "https://registry.npmjs.org/vue/-/vue-2.6.9.tgz",
-      "integrity": "sha512-t1+tvH8hybPM86oNne3ZozCD02zj/VoZIiojOBPJLjwBn7hxYU5e1gBObFpq8ts1NEn1VhPf/hVXBDAJ3X5ljg=="
+      "version": "2.6.10",
+      "resolved": "https://registry.npmjs.org/vue/-/vue-2.6.10.tgz",
+      "integrity": "sha512-ImThpeNU9HbdZL3utgMCq0oiMzAkt1mcgy3/E6zWC/G6AaQoeuFdsl9nDhTDU3X1R6FK7nsIUuRACVcjI+A2GQ=="
     },
     "vue-class-component": {
       "version": "7.0.1",
@@ -11684,9 +11684,9 @@
       }
     },
     "vue-property-decorator": {
-      "version": "8.0.0",
-      "resolved": "https://registry.npmjs.org/vue-property-decorator/-/vue-property-decorator-8.0.0.tgz",
-      "integrity": "sha512-aaAO/Wbh+n3sPMOoQ+Rwi9va6vFqZPX13dA8vMycGuS/DOIYC77KxX0gMAPEzzkT4Umya0uSlTvBV5jQvSTyBQ==",
+      "version": "8.1.0",
+      "resolved": "https://registry.npmjs.org/vue-property-decorator/-/vue-property-decorator-8.1.0.tgz",
+      "integrity": "sha512-TUWpbadApSW/sx9hlbrUq092ULm4E3RkL5X4fFhkiJ88/Y99lVubjh3bd3VbFQ8JRlKaTeqMOKaFHQRzWBCFPg==",
       "requires": {
         "vue-class-component": "^7.0.1"
       }
@@ -11712,9 +11712,9 @@
       }
     },
     "vue-template-compiler": {
-      "version": "2.6.9",
-      "resolved": "https://registry.npmjs.org/vue-template-compiler/-/vue-template-compiler-2.6.9.tgz",
-      "integrity": "sha512-QgO0LSCdeH6zUMSgtqel+yDWsZWQPXiWBdFg9qzOhWfQL8vZ+ywinAzE04rm1XrWc+3SU0YAdWISlEgs/i8WWA==",
+      "version": "2.6.10",
+      "resolved": "https://registry.npmjs.org/vue-template-compiler/-/vue-template-compiler-2.6.10.tgz",
+      "integrity": "sha512-jVZkw4/I/HT5ZMvRnhv78okGusqe0+qH2A0Em0Cp8aq78+NK9TII263CDVz2QXZsIT+yyV/gZc/j/vlwa+Epyg==",
       "dev": true,
       "requires": {
         "de-indent": "^1.0.2",
