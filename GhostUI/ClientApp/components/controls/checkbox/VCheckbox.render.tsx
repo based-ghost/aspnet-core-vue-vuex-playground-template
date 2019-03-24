@@ -6,11 +6,11 @@ import { Component, Prop } from 'vue-property-decorator';
  */
 @Component
 export default class VCheckBox extends Vue {
-    @Prop({ default: '' })    private wrapperClass:  string;
-    @Prop({ default: '' })    private controlClass:  string;
-    @Prop({ default: '' })    private trailingLabel: string;
-    @Prop({ default: false }) private checked:       boolean;
-    @Prop({ default: false }) private disabled:      boolean;  
+    @Prop({ default: '' }) private wrapperClass: string;
+    @Prop({ default: '' }) private controlClass: string;
+    @Prop({ default: '' }) private trailingLabel: string;
+    @Prop({ default: false }) private checked: boolean;
+    @Prop({ default: false }) private disabled: boolean;
 
     public render(): VNode {
         return (
@@ -23,11 +23,11 @@ export default class VCheckBox extends Vue {
                                disabled={this.disabled}
                                onChange={this.handleOnChange} />
                         <i class="helper"></i>
-                        { this.trailingLabel && <span>{this.trailingLabel}</span> }
+                        {this.trailingLabel && <span>{this.trailingLabel}</span>}
                     </label>
                 </p>
             </div>
-        );      
+        );
     }
 
     private handleOnChange(e: Event): void {

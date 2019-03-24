@@ -1,34 +1,34 @@
 ﻿<template>
-    <div v-if="show" :class="['atom-loader', authStatus]">
-        <div></div>
-        <div></div>
-    </div>
+  <div v-if="show" :class="['atom-loader', authStatus]">
+    <div></div>
+    <div></div>
+  </div>
 </template>
 
 <script lang="ts">
-    import { Component, Prop, Watch, Vue } from 'vue-property-decorator';
-    import { AuthStatusEnum } from '../../store/modules/auth';
+import { Component, Prop, Watch, Vue } from "vue-property-decorator";
+import { AuthStatusEnum } from "../../store/modules/auth";
 
-    @Component
-    export default class Authenticator extends Vue {
-        @Prop({ default: 1500 })                private emitTimeout: number;
-        @Prop({ default: AuthStatusEnum.None }) private authStatus:  string;
+@Component
+export default class Authenticator extends Vue {
+  @Prop({ default: 1500 }) private emitTimeout: number;
+  @Prop({ default: AuthStatusEnum.None }) private authStatus: string;
 
-        private show: boolean = false;
+  private show: boolean = false;
 
-        @Watch('authStatus')
-        private onStatusChange(newValue: string): void {
-            if (newValue.isIn(AuthStatusEnum.Success, AuthStatusEnum.Fail)) {
-                setTimeout(() => {
-                    this.$emit(newValue);
-                }, this.emitTimeout);
-            } else {
-                this.show = (newValue === AuthStatusEnum.Process);
-            }
-        }
+  @Watch("authStatus")
+  private onStatusChange(newValue: string): void {
+    if (newValue.isIn(AuthStatusEnum.Success, AuthStatusEnum.Fail)) {
+      setTimeout(() => {
+        this.$emit(newValue);
+      }, this.emitTimeout);
+    } else {
+      this.show = newValue === AuthStatusEnum.Process;
     }
+  }
+}
 </script>
 
 <style lang="scss" scoped>
-    @import '../../assets/style/scss/components/authenticator.scss';
+@import "../../assets/style/scss/components/authenticator.scss";
 </style>

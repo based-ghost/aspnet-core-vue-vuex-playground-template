@@ -11,20 +11,20 @@ export default class VDropdown extends Vue {
         dropdownButton: HTMLElement
     }
 
-    @Prop({ default: () => ([]) }) private options:             any[];
-    @Prop({ default: false })      private disabled:            boolean;    
-    @Prop({ default: 'label' })    private labelKey:            string;    
-    @Prop({ default: '' })         private placeholder:         string;
-    @Prop({ default: '' })         private wrapperClass:        string;
-    @Prop({ default: '' })         private buttonClass:         string;
-    @Prop({ default: '' })         private selectedOptionLabel: string;
+    @Prop({ default: () => ([]) }) private options: any[];
+    @Prop({ default: false }) private disabled: boolean;
+    @Prop({ default: 'label' }) private labelKey: string;
+    @Prop({ default: '' }) private placeholder: string;
+    @Prop({ default: '' }) private wrapperClass: string;
+    @Prop({ default: '' }) private buttonClass: string;
+    @Prop({ default: '' }) private selectedOptionLabel: string;
 
     private open: boolean = false;
 
     get isArrayOfObjects(): boolean {
         return this.options && (this.options[0] === Object(this.options[0]));
     }
-      
+
     public render(): VNode {
         return (
             <div class={['dropdown', this.wrapperClass, { 'is-active': this.open }]}>
@@ -35,16 +35,16 @@ export default class VDropdown extends Vue {
                         aria-controls="dropdown-menu"
                         disabled={this.disabled}
                         onKeydown={this.keyDownHandler}
-                        onClick={this.toggleDropdownMenu}                   
+                        onClick={this.toggleDropdownMenu}
                         v-click-outside={this.hideDropdownMenu}>
                     <span>{this.selectedOptionLabel || this.placeholder}</span>
                     <span class="caret-select"></span>
                 </button>
                 <div class="dropdown-menu"
-                     ref="dropdownMenu"
-                     role="menu">
+                    ref="dropdownMenu"
+                    role="menu">
                     <ul class="dropdown-content">
-                        { this.options.map((option: any, index: number) => this.renderListOption(option, index)) }
+                        {this.options.map((option: any, index: number) => this.renderListOption(option, index))}
                     </ul>
                 </div>
             </div>
@@ -53,12 +53,12 @@ export default class VDropdown extends Vue {
 
     private renderListOption(option: any, index: number): VNode {
         const optionLabel = this.getOptionLabelName(option);
-        return (           
+        return (
             <li key={index}>
                 <a role="button"
-                   class={['dropdown-item', { 'selected-option': optionLabel === this.selectedOptionLabel }]}
-                   onClick={() => this.updateSelectedOption(option)}>
-                       { optionLabel }
+                    class={['dropdown-item', { 'selected-option': optionLabel === this.selectedOptionLabel }]}
+                    onClick={() => this.updateSelectedOption(option)}>
+                    {optionLabel}
                 </a>
             </li>
         );
