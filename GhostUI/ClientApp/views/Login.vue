@@ -5,7 +5,7 @@
         <h3 class="title">Login</h3>
         <p class="subtitle">Please login to proceed</p>
         <div class="box">
-          <img id="login-img" src="../assets/image/based-ghost-crop.png" alt width="190">
+          <img id="login-img" src="../assets/image/based-ghost-crop.png" alt="based-ghost Logo" width="190">
           <form @submit.prevent="handleLogin">
             <div class="field">
               <div class="control has-icons-left">
