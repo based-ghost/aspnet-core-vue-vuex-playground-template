@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Linq;
-using GhostUI.Models.Response;
+using GhostUI.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Collections.Immutable;
