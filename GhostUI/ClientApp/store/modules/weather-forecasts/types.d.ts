@@ -1,4 +1,5 @@
 ﻿export interface IWeatherForecast {
+    ID: number;
     DateFormatted: string;
     TemperatureC: number;
     TemperatureF: number;

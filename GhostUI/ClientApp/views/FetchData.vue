@@ -17,7 +17,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="(forecast, index) in allForecastData" :key="index">
+          <tr v-for="forecast in allForecastData" :key="forecast.ID">
             <td>{{forecast.DateFormatted}}</td>
             <td>{{forecast.TemperatureC}}</td>
             <td>{{forecast.TemperatureF}}</td>
