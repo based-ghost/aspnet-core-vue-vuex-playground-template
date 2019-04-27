@@ -7,39 +7,18 @@
       <ul v-if="open" class="dropdown-menu">
         <li class="header-title">Settings</li>
         <li>
-          <a
-            class="dropdown-item"
-            target="_blank"
-            rel="noopener"
-            :href="nugetURLs.HEALTH_UI"
-            role="button"
-          >
-            <span class="icon">
-              <font-awesome-icon icon="heart"/>
-            </span>
-            <span>Health Checks</span>
+          <a class="dropdown-item" target="_blank" rel="noopener" :href="nugetURLs.HEALTH_UI" role="button">
+            <font-awesome-icon icon="heart" /> Health Checks
           </a>
         </li>
         <li>
-          <a
-            class="dropdown-item"
-            target="_blank"
-            rel="noopener"
-            :href="nugetURLs.SWAGGER_DOCS"
-            role="button"
-          >
-            <span class="icon">
-              <font-awesome-icon icon="file"/>
-            </span>
-            <span>Swagger API</span>
+          <a class="dropdown-item" target="_blank" rel="noopener" :href="nugetURLs.SWAGGER_DOCS" role="button">
+            <font-awesome-icon icon="file" /> Swagger API
           </a>
         </li>
         <li>
           <a class="dropdown-item" role="button" @click="handleLogout">
-            <span class="icon">
-              <font-awesome-icon :icon="routesConfig.Login.meta.icon"/>
-            </span>
-            <span>{{routesConfig.Login.displayName}}</span>
+            <font-awesome-icon :icon="routesConfig.Login.meta.icon" /> {{routesConfig.Login.displayName}}
           </a>
         </li>
       </ul>

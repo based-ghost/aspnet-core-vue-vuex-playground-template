@@ -107,14 +107,11 @@
                 }
             }
 
-            > span:last-child {
-                margin-left: .5rem;
-                margin-right: auto;
+            > svg {
+                margin-right: .5rem;
 
                 @include renderMobileNavView {
-                    margin-left: 0;
-                    padding-left: .25rem;
-                    padding-right: .25rem;
+                    display: none;
                 }
             }
         }

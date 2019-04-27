@@ -17,7 +17,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="forecast in allForecastData" :key="forecast.ID">
+          <tr v-for="forecast in forecasts" :key="forecast.ID">
             <td>{{forecast.DateFormatted}}</td>
             <td>{{forecast.TemperatureC}}</td>
             <td>{{forecast.TemperatureF}}</td>
@@ -27,16 +27,10 @@
       </table>
       <p class="buttons is-pagination-group">
         <a class="button is-info" @click="paginateForecastData('prev')">
-          <span class="icon">
-            <font-awesome-icon icon="chevron-left"/>
-          </span>
-          <span>Previous</span>
+            <font-awesome-icon icon="chevron-left" />Previous
         </a>
         <a class="button is-info" @click="paginateForecastData('next')">
-          <span>Next</span>
-          <span class="icon">
-            <font-awesome-icon icon="chevron-right"/>
-          </span>
+            Next<font-awesome-icon icon="chevron-right" />
         </a>
       </p>
     </div>
@@ -63,12 +57,12 @@ export default class FetchData extends Vue {
     return WeatherForecastModule.startDateIndex;
   }
 
-  get allForecastData(): IWeatherForecast[] {
+  get forecasts(): IWeatherForecast[] {
     return WeatherForecastModule.forecasts;
   }
 
   private created(): void {
-    if (!this.allForecastData || this.allForecastData.length === 0) {
+    if (!this.forecasts || this.forecasts.length === 0) {
       this.handleGetWeatherForecasts();
     }
   }

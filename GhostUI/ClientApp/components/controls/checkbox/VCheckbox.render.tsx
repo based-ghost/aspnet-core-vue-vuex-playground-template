@@ -17,11 +17,13 @@ export default class VCheckBox extends Vue {
             <div class={['control', this.wrapperClass]}>
                 <p class={['checkbox-control', this.controlClass, { 'disabled': this.disabled }]}>
                     <label>
-                        <input type="checkbox"
-                               value={this.checked}
-                               checked={this.checked}
-                               disabled={this.disabled}
-                               onChange={this.handleOnChange} />
+                        <input
+                          type="checkbox"
+                          value={this.checked}
+                          checked={this.checked}
+                          disabled={this.disabled}
+                          onChange={this.handleOnChange}
+                        />
                         <i class="helper"></i>
                         {this.trailingLabel && <span>{this.trailingLabel}</span>}
                     </label>

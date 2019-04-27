@@ -99,12 +99,9 @@
         z-index: initial;
         pointer-events: visible;
 
-        span {
-            float: left;
-        }
-
-        > span:last-child {
+        > svg {
             margin-left: .3rem;
+            margin-right: .3rem;
         }
     }
 }
