@@ -27,10 +27,11 @@
       </table>
       <p class="buttons is-pagination-group">
         <a class="button is-info" @click="paginateForecastData('prev')">
-            <font-awesome-icon icon="chevron-left" />Previous
+          <font-awesome-icon icon="chevron-left"/>Previous
         </a>
         <a class="button is-info" @click="paginateForecastData('next')">
-            Next<font-awesome-icon icon="chevron-right" />
+          Next
+          <font-awesome-icon icon="chevron-right"/>
         </a>
       </p>
     </div>
@@ -79,8 +80,7 @@ export default class FetchData extends Vue {
   private handleGetWeatherForecasts(startDateIndex: number = 0): void {
     this.loading = true;
     WeatherForecastModule.GetWeatherForecasts(startDateIndex).finally(() => {
-      setTimeout(() => {
-        // setTimeout to show loading animation
+      setTimeout(() => { // setTimeout to show loading animation
         this.loading = false;
       }, 50);
     });

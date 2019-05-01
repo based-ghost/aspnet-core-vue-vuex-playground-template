@@ -6,14 +6,15 @@
           <h3 class="title is-4">Counter</h3>
           <h5 class="subtitle is-5">Click buttons to change count value</h5>
           <p class="subtitle is-5">
-            Current count: <strong>{{count}}</strong>
+            Current count:
+            <strong>{{count}}</strong>
           </p>
           <p class="buttons incrementer-buttons">
             <button class="button is-danger" @click="count = count - 1">
-              <font-awesome-icon icon="minus" />Decrement
+              <font-awesome-icon icon="minus"/>Decrement
             </button>
             <button class="button is-success" @click="count = count + 1">
-              <font-awesome-icon icon="plus" />Increment
+              <font-awesome-icon icon="plus"/>Increment
             </button>
           </p>
         </div>
@@ -21,7 +22,8 @@
           <h3 class="title is-4">Dropdown</h3>
           <h5 class="subtitle is-5">Select an option from the dropdown</h5>
           <p class="subtitle is-5">
-            Option: <strong>{{JSON.stringify(selectedDropdownOption)}}</strong>
+            Option:
+            <strong>{{JSON.stringify(selectedDropdownOption)}}</strong>
           </p>
           <div class="field">
             <v-dropdown
@@ -37,7 +39,8 @@
           <h3 class="title is-4">Checkbox</h3>
           <h5 class="subtitle is-5">Toggle the checkbox</h5>
           <p class="subtitle is-5">
-            Checked: <strong>{{checkboxValue}}</strong>
+            Checked:
+            <strong>{{checkboxValue}}</strong>
           </p>
           <div class="field">
             <v-checkbox

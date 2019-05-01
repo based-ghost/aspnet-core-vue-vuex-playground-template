@@ -7,13 +7,16 @@
       <div class="navbar-routes">
         <div v-if="isAuthenticated" class="routes-wrapper">
           <router-link :to="routesConfig.Form.path" class="navbar-item">
-            <font-awesome-icon :icon="routesConfig.Form.meta.icon" />{{routesConfig.Form.displayName}}          
+            <font-awesome-icon :icon="routesConfig.Form.meta.icon"/>
+            {{routesConfig.Form.displayName}}
           </router-link>
           <router-link :to="routesConfig.Dashboard.path" class="navbar-item">
-            <font-awesome-icon :icon="routesConfig.Dashboard.meta.icon" />{{routesConfig.Dashboard.displayName}}
+            <font-awesome-icon :icon="routesConfig.Dashboard.meta.icon"/>
+            {{routesConfig.Dashboard.displayName}}
           </router-link>
           <router-link :to="routesConfig.FetchData.path" class="navbar-item">
-            <font-awesome-icon :icon="routesConfig.FetchData.meta.icon" />{{routesConfig.FetchData.displayName}}
+            <font-awesome-icon :icon="routesConfig.FetchData.meta.icon"/>
+            {{routesConfig.FetchData.displayName}}
           </router-link>
         </div>
       </div>

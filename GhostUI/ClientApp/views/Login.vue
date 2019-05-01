@@ -98,7 +98,6 @@ export default class Login extends Vue {
 
   private handleLogin(): void {
     if (this.authStatus === AuthStatusEnum.Process) {
-      // Prevent multiple login requests onClick
       return;
     }
 
