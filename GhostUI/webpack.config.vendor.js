@@ -18,7 +18,17 @@ module.exports = (env) => {
         },
         module: {
             rules: [
-                { test: /\.(png|gif|jpe|jpg|woff|woff2|eot|ttf|svg)(\?|$)/, use: 'url-loader?limit=100000' }
+                {
+                    test: /\.(png|gif|jpe|jpg|woff|woff2|eot|ttf|svg)(\?|$)/,
+                    use: [
+                        {
+                            loader: 'url-loader',
+                            options: {
+                                limit: 100000
+                            }
+                        }
+                    ]
+                }
             ]
         },
         output: { 

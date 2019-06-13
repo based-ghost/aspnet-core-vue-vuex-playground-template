@@ -61,7 +61,14 @@ module.exports = (env) => {
                 },
                 {
                     test: /\.(svg|png|eot|ttf|woff|woff2|bmp|wav|gif|jpe?g)(\?v=[a-z0-9]\.[a-z0-9]\.[a-z0-9])?$/,
-                    use: 'url-loader?limit=100000'
+                    use: [
+                        {
+                            loader: 'url-loader',
+                            options: {
+                                limit: 100000
+                            }
+                        }
+                    ]
                 }
             ]
         },
