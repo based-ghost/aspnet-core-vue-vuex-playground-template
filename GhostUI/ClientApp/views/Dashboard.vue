@@ -3,7 +3,11 @@
     <section class="hero is-dark">
       <div class="hero-body">
         <div class="is-flex is-horizontal-center">
-          <img src="../assets/image/aspcore-vue.png" alt width="300">
+          <img 
+            src="../assets/image/aspcore-vue.png" 
+            alt="" 
+            width="300"
+          />
         </div>
       </div>
     </section>

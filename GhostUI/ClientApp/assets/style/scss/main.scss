@@ -1,4 +1,7 @@
-﻿/* NPM package styles */
+﻿/* custom scss variables/mixins */
+@import 'base/variables.scss';
+
+/* NPM package styles */
 @import '~bulma/bulma';
 @import '~vue-snotify/styles/material.scss';
 

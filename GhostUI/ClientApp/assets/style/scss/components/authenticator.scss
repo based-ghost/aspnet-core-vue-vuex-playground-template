@@ -1,4 +1,6 @@
-﻿.atom-loader {
+﻿@import '../base/variables.scss';
+
+.atom-loader {
     position: relative;
     width: 7em;
     height: 7em;

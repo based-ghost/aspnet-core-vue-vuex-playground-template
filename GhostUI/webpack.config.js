@@ -51,11 +51,11 @@ module.exports = (env) => {
                         isDevBuild ? 'vue-style-loader' : MiniCssExtractPlugin.loader,
                         'css-loader',
                         {
-                            loader: 'sass-loader',
-                            options: {
+                            loader: 'sass-loader'
+                            /*options: {
                                 data: '@import "variables.scss";',
                                 includePaths: [path.resolve(__dirname, "./ClientApp/assets/style/scss/base")]
-                            }
+                            }*/
                         }
                     ]
                 },
