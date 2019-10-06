@@ -4,7 +4,7 @@
       <h3 class="title is-3">Weather forecast</h3>
       <h5 class="subtitle is-5">
         This component demonstrates fetching data from the server - Start Date Index:
-        <strong>{{currentStartDateIndex}}</strong>
+        <code>{{currentStartDateIndex}}</code>
       </h5>
       <spinner :show="loading"/>
       <table class="table is-fullwidth">
@@ -69,21 +69,21 @@ export default class FetchData extends Vue {
   }
 
   private paginateForecastData(pageDirection: string): void {
-    const newStartDateIndex =
-      !pageDirection || pageDirection === "prev"
-        ? this.currentStartDateIndex - 5
-        : this.currentStartDateIndex + 5;
+    const newStartDateIndex = (!pageDirection || pageDirection === "prev")
+      ? this.currentStartDateIndex - 5
+      : this.currentStartDateIndex + 5;
 
     this.handleGetWeatherForecasts(newStartDateIndex);
   }
 
   private handleGetWeatherForecasts(startDateIndex: number = 0): void {
     this.loading = true;
-    WeatherForecastModule.GetWeatherForecasts(startDateIndex).finally(() => {
-      setTimeout(() => { // setTimeout to show loading animation
-        this.loading = false;
-      }, 50);
-    });
+    WeatherForecastModule.GetWeatherForecasts(startDateIndex)
+      .finally(() => {
+        setTimeout(() => { // setTimeout to show loading animation
+          this.loading = false;
+        }, 50);
+      });
   }
 }
 </script>

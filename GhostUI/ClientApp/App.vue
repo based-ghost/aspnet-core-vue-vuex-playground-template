@@ -1,12 +1,12 @@
 <template>
   <div id="app-root">
-    <vue-snotify/>
-    <nav-bar/>
-    <settings/>
+    <vue-snotify />
+    <nav-bar />
+    <settings />
     <transition :name="$route.meta.transitionName" mode="out-in">
-      <router-view/>
+      <router-view />
     </transition>
-    <app-footer/>
+    <app-footer />
   </div>
 </template>
 

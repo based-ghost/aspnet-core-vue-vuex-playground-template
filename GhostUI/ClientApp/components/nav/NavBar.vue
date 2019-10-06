@@ -2,7 +2,11 @@
   <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-wrapper">
       <div class="brand-wrapper">
-        <img src="../../assets/image/bulma.io-logo.png" alt="Bulma Logo" width="165">
+        <img 
+          src="../../assets/image/bulma.io-logo.png" 
+          alt="bulma.io-logo" 
+          width="155"
+        />
       </div>
       <div class="navbar-routes">
         <div v-if="isAuthenticated" class="routes-wrapper">

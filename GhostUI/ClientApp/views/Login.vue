@@ -5,7 +5,12 @@
         <h3 class="title">Login</h3>
         <p class="subtitle">Please login to proceed</p>
         <div class="box">
-          <img id="login-img" src="../assets/image/based-ghost-main.png" alt="based-ghost Logo" width="190">
+          <img 
+            id="login-img" 
+            src="../assets/image/based-ghost-main.png" 
+            alt="based-ghost Logo" 
+            width="180"
+          />
           <form @submit.prevent="handleLogin">
             <div class="field">
               <div class="control has-icons-left">
@@ -16,9 +21,9 @@
                   autofocus
                   placeholder="Username"
                   name="LoginUser"
-                >
+                />
                 <span class="icon is-left">
-                  <font-awesome-icon icon="user"/>
+                  <font-awesome-icon icon="user" />
                 </span>
               </div>
             </div>
@@ -30,16 +35,16 @@
                   v-model.trim="credentials.password"
                   placeholder="Password"
                   name="LoginPassword"
-                >
+                />
                 <span class="icon is-left">
-                  <font-awesome-icon icon="lock"/>
+                  <font-awesome-icon icon="lock" />
                 </span>
                 <span
                   class="icon is-right icon-clickable"
                   :data-tooltip="!showPassword ? 'Show password' : 'Hide password'"
                   @click="showPassword = !showPassword"
                 >
-                  <font-awesome-icon :icon="!showPassword ? 'eye' : 'eye-slash'"/>
+                  <font-awesome-icon :icon="!showPassword ? 'eye' : 'eye-slash'" />
                 </span>
               </div>
             </div>
@@ -52,10 +57,14 @@
             <button class="button is-info is-large is-fullwidth" type="submit">
               <span>Login</span>
               <span class="icon">
-                <font-awesome-icon icon="sign-in-alt"/>
+                <font-awesome-icon icon="sign-in-alt" />
               </span>
             </button>
-            <authenticator :authStatus="authStatus" @success="onAuthSuccess" @fail="onAuthFailure"/>
+            <authenticator 
+              :authStatus="authStatus" 
+              @success="onAuthSuccess" 
+              @fail="onAuthFailure"
+            />
           </form>
         </div>
       </div>

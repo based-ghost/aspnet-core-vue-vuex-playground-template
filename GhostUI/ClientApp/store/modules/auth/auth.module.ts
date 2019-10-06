@@ -10,7 +10,7 @@ class Auth extends VuexModule implements IAuthState {
     public userName: string = '';
 
     public get isAuthenticated(): boolean {
-        return (this.token || '').length > 0 && (this.status || '').toLowerCase().trim() === 'success';
+        return (this.token || '').length > 0 && (this.status || '').toLowerCase().includes('success');
     }
 
     @MutationAction({ mutate: ['token', 'status', 'userName'] })
@@ -22,8 +22,7 @@ class Auth extends VuexModule implements IAuthState {
                 status: authUser.status,
                 userName: authUser.userName,
             };
-        }
-        catch (e) {
+        } catch (e) {
             return {
                 token: '',
                 status: '',

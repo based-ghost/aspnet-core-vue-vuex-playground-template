@@ -2,12 +2,12 @@
 import { HubConnection, HubConnectionBuilder, HubConnectionState } from '@aspnet/signalr';
 
 /**
- * SIGNALR HUB defaults
+ * SignalR hub defaults
  */
-const signalrService = {
-    BASE_URL: '/hubs/users',
+const _signalrConfig = {
     CONNECTION_DELAY: 0,
     HUB_MESSAGE_DELAY: 3000,
+    BASE_URL: '/hubs/users',
     HUB_MESSAGE_TITLE: 'SignalR',
     LOGIN_USER_EVENT: 'UserLogin',
     LOGOUT_USER_EVENT: 'UserLogout',
@@ -38,33 +38,33 @@ class SignalRService {
             this._hubConnection.start().catch((error) => {
                 console.error(error.toString());
             });
-        }, signalrService.CONNECTION_DELAY);
+        }, _signalrConfig.CONNECTION_DELAY);
     }
 
     private createConnection(): void {
         this._hubConnection = new HubConnectionBuilder()
-            .withUrl(signalrService.BASE_URL)
+            .withUrl(_signalrConfig.BASE_URL)
             .build();
     }
 
     private registerOnServerEvents(): void {
-        this._hubConnection.on(signalrService.LOGIN_USER_EVENT, () => {
+        this._hubConnection.on(_signalrConfig.LOGIN_USER_EVENT, () => {
             setTimeout(() => {
-                EventBus.$snotify.info('A user has logged in', signalrService.HUB_MESSAGE_TITLE);
-            }, signalrService.HUB_MESSAGE_DELAY);
+                EventBus.$snotify.info('A user has logged in', _signalrConfig.HUB_MESSAGE_TITLE);
+            }, _signalrConfig.HUB_MESSAGE_DELAY);
         });
 
-        this._hubConnection.on(signalrService.LOGOUT_USER_EVENT, () => {
+        this._hubConnection.on(_signalrConfig.LOGOUT_USER_EVENT, () => {
             setTimeout(() => {
-                EventBus.$snotify.info('A user has logged out', signalrService.HUB_MESSAGE_TITLE);
-            }, signalrService.HUB_MESSAGE_DELAY);
+                EventBus.$snotify.info('A user has logged out', _signalrConfig.HUB_MESSAGE_TITLE);
+            }, _signalrConfig.HUB_MESSAGE_DELAY);
         });
 
-        this._hubConnection.on(signalrService.CLOSE_EVENT, (reason: string) => {
+        this._hubConnection.on(_signalrConfig.CLOSE_EVENT, (reason: string) => {
             this._hubConnection.stop().then(() => {
                 setTimeout(() => {
-                    EventBus.$snotify.info(`Hub closed (${reason})`, signalrService.HUB_MESSAGE_TITLE);
-                }, signalrService.HUB_MESSAGE_DELAY);
+                    EventBus.$snotify.info(`Hub closed (${reason})`, _signalrConfig.HUB_MESSAGE_TITLE);
+                }, _signalrConfig.HUB_MESSAGE_DELAY);
             });
         });
     }

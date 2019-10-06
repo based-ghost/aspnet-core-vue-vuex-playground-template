@@ -15,7 +15,7 @@
       <div class="card">
         <div class="card-content">
           <div class="column">
-            <p class="title has-text-centered">Technology Stack</p>
+            <p class="title has-text-centered">Tech Stack</p>
             <hr>
             <div class="columns is-multiline">
               <div class="column dashboard-info is-half">
