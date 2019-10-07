@@ -1,7 +1,14 @@
 ﻿<template>
-  <div v-if="show" :class="['atom-loader', authStatus]">
-    <div></div>
-    <div></div>
+  <div v-if="show" :class="['fingerprint-spinner', authStatus]">
+    <div />
+    <div />
+    <div />
+    <div />
+    <div />
+    <div />
+    <div />
+    <div />
+    <div />
   </div>
 </template>
 
