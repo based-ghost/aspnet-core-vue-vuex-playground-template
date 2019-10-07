@@ -1,13 +1,10 @@
 ﻿export interface IDropdownOption {
-  value: number;
-  label: string;
+  readonly value: number;
+  readonly label: string;
 }
 
 export interface IFormState {
-  count: number;
-  checkboxValue: boolean;
-  selectedDropdownOption: {
-    value: number;
-    label: string;
-  };
+  readonly count: number;
+  readonly checkboxValue: boolean;
+  readonly selectedDropdownOption: IDropdownOption;
 }

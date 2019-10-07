@@ -13,7 +13,7 @@ export const configureAxiosInterceptors = (): void => {
     );
 };
 
-export const handleAxiosError = (error: AxiosError): void => {
+const handleAxiosError = (error: AxiosError): void => {
     // Error Message Object
     const message = {
         body: 'Internal Server Error',

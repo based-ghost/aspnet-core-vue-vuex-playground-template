@@ -30,7 +30,7 @@ export default class Authenticator extends Vue {
         this.$emit(newValue);
       }, this.emitTimeout);
     } else {
-      this.show = newValue === AuthStatusEnum.Process;
+      this.show = (newValue === AuthStatusEnum.Process);
     }
   }
 }

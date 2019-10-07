@@ -13,8 +13,8 @@ class Auth extends VuexModule implements IAuthState {
         return (this.token || '').length > 0 && (this.status || '').toLowerCase().includes('success');
     }
 
-    @MutationAction({ mutate: ['token', 'status', 'userName'] })
-    public async LoginUser(credentials: ICredentials): Promise<any> {
+    @MutationAction<IAuthState>({ mutate: ['token', 'status', 'userName'] })
+    public async LoginUser(credentials: ICredentials): Promise<IAuthState> {
         try {
             const authUser = await AuthApi.login(credentials);
             return {

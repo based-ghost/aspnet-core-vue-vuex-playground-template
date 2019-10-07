@@ -44,9 +44,7 @@ export default class VDropdown extends Vue {
         </button>
         <div class='dropdown-menu' ref='dropdownMenu' role='menu'>
           <ul class='dropdown-content'>
-            {this.options.map((option: any, index: number) =>
-              this.renderListOption(option, index)
-            )}
+            {this.options.map((option: any, index: number) => this.renderListOption(option, index))}
           </ul>
         </div>
       </div>

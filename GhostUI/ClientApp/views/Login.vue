@@ -138,10 +138,7 @@ export default class Login extends Vue {
 
   private onAuthFailure(): void {
     this.authStatus = AuthStatusEnum.None;
-    this.$snotify.error(
-      `Could not authenticate: ${this.credentials.userName}`,
-      "Login Error"
-    );
+    this.$snotify.error(`Could not authenticate: ${this.credentials.userName}`, "Login Error");
   }
 }
 </script>

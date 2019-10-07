@@ -1,11 +1,6 @@
 ﻿import store from "../../../store";
 import { IDropdownOption, IFormState } from "./types";
-import {
-  Module,
-  VuexModule,
-  Mutation,
-  getModule
-} from "vuex-module-decorators";
+import { Module, VuexModule, Mutation, getModule } from "vuex-module-decorators";
 
 @Module({ dynamic: true, store, name: "form" })
 class Form extends VuexModule implements IFormState {

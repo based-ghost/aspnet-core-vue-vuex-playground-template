@@ -1,12 +1,12 @@
 ﻿export interface IWeatherForecast {
-  ID: number;
-  DateFormatted: string;
-  TemperatureC: number;
-  TemperatureF: number;
-  Summary: string;
+  readonly ID: number;
+  readonly DateFormatted: string;
+  readonly TemperatureC: number;
+  readonly TemperatureF: number;
+  readonly Summary: string;
 }
 
 export interface IWeatherForecastsState {
-  startDateIndex?: number;
-  forecasts?: IWeatherForecast[];
+  readonly startDateIndex?: number;
+  readonly forecasts?: IWeatherForecast[];
 }

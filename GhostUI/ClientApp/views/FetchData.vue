@@ -54,12 +54,12 @@ import {
 export default class FetchData extends Vue {
   private loading: boolean = false;
 
-  get currentStartDateIndex(): number {
-    return WeatherForecastModule.startDateIndex;
-  }
-
   get forecasts(): IWeatherForecast[] {
     return WeatherForecastModule.forecasts;
+  }
+
+  get currentStartDateIndex(): number {
+    return WeatherForecastModule.startDateIndex;
   }
 
   private created(): void {

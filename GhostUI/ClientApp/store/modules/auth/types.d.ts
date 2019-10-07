@@ -18,7 +18,7 @@ export interface IAuthUser {
 }
 
 export interface IAuthState {
-  token: string;
-  status: string;
-  userName: string;
+  readonly token?: string;
+  readonly status?: string;
+  readonly userName?: string;
 }
