@@ -1,4 +1,5 @@
-﻿import { BaseService } from './base.service';
+﻿import { AxiosRequestConfig } from 'axios';
+import { BaseService } from './base.service';
 import { IWeatherForecast } from '../../store/modules/weather-forecasts';
 
 /**
@@ -16,7 +17,11 @@ class SampleService extends BaseService {
     }
 
     public async getWeatherForecastsAsync(startDateIndex: number): Promise<IWeatherForecast[]> {
-        const { data } = await this.$http.get<IWeatherForecast[]>('GetWeatherForecasts', { params: { startDateIndex } });
+        const config: AxiosRequestConfig = {
+            params: { startDateIndex }
+        };
+
+        const { data } = await this.$http.get<IWeatherForecast[]>('GetWeatherForecasts', config);
         return data;
     }
 }
