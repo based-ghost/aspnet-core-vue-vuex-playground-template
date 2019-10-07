@@ -17,11 +17,7 @@ class Auth extends VuexModule implements IAuthState {
     public async LoginUser(credentials: ICredentials): Promise<IAuthState> {
         try {
             const authUser = await AuthApi.login(credentials);
-            return {
-                token: authUser.token,
-                status: authUser.status,
-                userName: authUser.userName,
-            };
+            return { ...authUser };
         } catch (e) {
             return {
                 token: '',
