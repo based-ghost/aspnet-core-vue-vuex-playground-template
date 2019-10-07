@@ -7,6 +7,6 @@
 }
 
 export interface IWeatherForecastsState {
-  readonly startDateIndex?: number;
-  readonly forecasts?: IWeatherForecast[];
+  readonly startDateIndex: number;
+  readonly forecasts: IWeatherForecast[];
 }

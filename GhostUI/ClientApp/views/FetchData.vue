@@ -63,9 +63,8 @@ export default class FetchData extends Vue {
   }
 
   private created(): void {
-    if (!this.forecasts || this.forecasts.length === 0) {
+    if (!this.forecasts || this.forecasts.length === 0)
       this.handleGetWeatherForecasts();
-    }
   }
 
   private paginateForecastData(pageDirection: string): void {
