@@ -1,7 +1,7 @@
 ﻿import store from '../../../store';
 import { AuthApi } from '../../../api';
 import { IAuthState, ICredentials } from './types';
-import { Module, VuexModule, Mutation, MutationAction, Action, getModule } from 'vuex-module-decorators'
+import { Module, VuexModule, Mutation, MutationAction, Action, getModule } from 'vuex-module-decorators';
 
 @Module({ dynamic: true, store, name: 'auth' })
 class Auth extends VuexModule implements IAuthState {
@@ -10,7 +10,7 @@ class Auth extends VuexModule implements IAuthState {
     public userName: string = '';
 
     public get isAuthenticated(): boolean {
-        return !!this.token && (this.status || '').toLowerCase().includes('success');
+        return (!!this.token && this.status.toLowerCase().includes('success'));
     }
 
     @MutationAction<IAuthState>({ mutate: ['token', 'status', 'userName'] })
