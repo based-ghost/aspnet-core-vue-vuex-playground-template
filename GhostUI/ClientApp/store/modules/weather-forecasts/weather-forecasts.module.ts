@@ -16,11 +16,12 @@ class WeatherForecast extends VuexModule implements IWeatherForecastsState {
   @MutationAction<IWeatherForecastsState>({ mutate: ["forecasts", "startDateIndex"] })
   public async GetWeatherForecasts(index: number | null): Promise<IWeatherForecastsState> {
     try {
-      const indexOrDefault = index || 0;
-      const forecasts = await SampleApi.getWeatherForecastsAsync(indexOrDefault);
+      const startDateIndex = index || 0;
+      const forecasts = await SampleApi.getWeatherForecastsAsync(startDateIndex);
+
       return {
         forecasts,
-        startDateIndex: indexOrDefault,
+        startDateIndex,
       };
     } catch (e) {
       return {
