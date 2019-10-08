@@ -20,7 +20,6 @@ class SampleService extends BaseService {
         const config: AxiosRequestConfig = {
             params: { startDateIndex }
         };
-
         const { data } = await this.$http.get<IWeatherForecast[]>('GetWeatherForecasts', config);
         return data;
     }
