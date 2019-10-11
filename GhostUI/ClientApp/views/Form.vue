@@ -68,7 +68,7 @@ import { DROPDOWN_TEST_DATA } from "../config/constants";
   }
 })
 export default class Form extends Vue {
-  private readonly dropdownOptionsList: IDropdownOption[] = DROPDOWN_TEST_DATA;
+  public readonly dropdownOptionsList: IDropdownOption[] = DROPDOWN_TEST_DATA;
 
   get count(): number {
     return FormModule.count;

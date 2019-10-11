@@ -12,7 +12,7 @@ import { Component, Prop, Vue } from "vue-property-decorator";
 
 @Component
 export default class Spinner extends Vue {
-  @Prop({ default: false }) private show: boolean;
+  @Prop({ default: false }) public readonly show: boolean;
 }
 </script>
 

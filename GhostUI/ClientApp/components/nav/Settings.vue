@@ -55,19 +55,20 @@ import { AuthModule } from "../../store/modules/auth";
 
 @Component
 export default class Settings extends Vue {
-  private open: boolean = false;
-  private readonly nugetURLs = spaNugetUrls;
-  private readonly routesConfig = RoutesConfig;
+  public open: boolean = false;
+
+  public readonly nugetURLs = spaNugetUrls;
+  public readonly routesConfig = RoutesConfig;
 
   get isAuthenticated(): boolean {
     return AuthModule.isAuthenticated;
   }
 
-  private closeSettingsMenu(): void {
+  public closeSettingsMenu(): void {
     this.open = false;
   }
 
-  private handleLogout(): void {
+  public handleLogout(): void {
     AuthModule.LogoutUser()
       .then(() => {
         this.$snotify.clear();

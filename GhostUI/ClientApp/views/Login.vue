@@ -48,12 +48,13 @@
                 </span>
               </div>
             </div>
-            <v-checkbox
-              trailingLabel="Remember me"
-              wrapperClass="remember-me-control"
-              :checked="credentials.rememberMe"
-              @checked="isCheckedState => credentials.rememberMe = isCheckedState"
-            />
+            <div class="field remember-me-field">
+              <v-checkbox
+                label="Remember me"
+                :checked="credentials.rememberMe"
+                @checked="isCheckedState => credentials.rememberMe = isCheckedState"
+              />
+            </div>
             <button class="button is-info is-large is-fullwidth" type="submit">
               <span>Login</span>
               <span class="icon">
@@ -86,22 +87,22 @@ import { AuthModule, AuthStatusEnum, ICredentials } from "../store/modules/auth"
   }
 })
 export default class Login extends Vue {
-  private showPassword: boolean = false;
-  private invalidInputs: boolean = false;
-  private authStatus: string = AuthStatusEnum.None;
+  public showPassword:  boolean = false;
+  public invalidInputs: boolean = false;
+  public authStatus:    string = AuthStatusEnum.None;
   
-  private credentials: ICredentials = {
+  public credentials: ICredentials = {
     userName: "",
     password: "",
     rememberMe: false
   };
 
   // Configure and connect SignalR directly before this component is created
-  private created(): void {
+  public created(): void {
     SignalRApi.startConnection();
   }
 
-  private handleLogin(): void {
+  public handleLogin(): void {
     if (this.authStatus === AuthStatusEnum.Process) {
       return;
     }
@@ -128,11 +129,11 @@ export default class Login extends Vue {
     }
   }
 
-  private onAuthSuccess(): void {
+  public onAuthSuccess(): void {
     this.$router.push("/dashboard");
   }
 
-  private onAuthFailure(): void {
+  public onAuthFailure(): void {
     this.authStatus = AuthStatusEnum.None;
     this.$snotify.error(`Could not authenticate: ${this.credentials.userName}`, "Login Error");
   }

@@ -142,28 +142,4 @@
             }
         }
     }
-
-    &.menu-list-control {
-        display: block;
-        padding: 0.55em 0.75em;
-        margin-bottom: inherit;
-
-        .helper {
-            top: 0.25rem;
-        }
-    }
-}
-
-.remember-me-control {
-    text-align: center;
-
-    .checkbox-control {
-        line-height: 0.85;
-        font-size: 1.15rem;
-        font-weight: 400;
-
-        &.is-medium {
-            line-height: 2.25;
-        }
-    }
 }

@@ -18,13 +18,13 @@ import { AuthStatusEnum } from "../../store/modules/auth";
 
 @Component
 export default class Authenticator extends Vue {
-  @Prop({ default: 1500 }) private emitTimeout: number;
-  @Prop({ default: AuthStatusEnum.None }) private authStatus: string;
+  @Prop({ default: 1500 })                public readonly emitTimeout: number;
+  @Prop({ default: AuthStatusEnum.None }) public readonly authStatus:  string;
 
-  private show: boolean = false;
+  public show: boolean = false;
 
   @Watch("authStatus")
-  private onStatusChange(newValue: string): void {
+  public onStatusChange(newValue: string): void {
     if (newValue.isIn(AuthStatusEnum.Success, AuthStatusEnum.Fail)) {
       setTimeout(() => {
         this.$emit(newValue);

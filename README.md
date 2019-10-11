@@ -23,33 +23,44 @@ This template is vaguely based on the original Vue + TypeScript .NET Core SPA te
   - [Webpack](https://github.com/webpack/webpack) for bundling of application assets and HMR (Hot Module Replacement)
   - [Bulma CSS Framework](https://bulma.io/) + [SASS](https://github.com/sass/sass) + Font Awesome 5 (using fontawesome-svg-core)
   - [Axios](https://github.com/axios/axios) for REST endpoint requests
+  - [vue-styled-components](https://github.com/styled-components/vue-styled-components) - this is the Vue.js implementation of React's widely used 'styled-components' library. It allows you to use template literals and string-interpolation to write scoped CSS code - see example further down with the VCheckbox.render.tsx component.
   - [vuex-module-decorators](https://github.com/championswimmer/vuex-module-decorators) - a helpful package of decorators which allows you to write your vuex store modules in class-based syntax (inspired by vue-class-component). Also allows for easier namespacing and registration of modules into store at runtime after store is constructed - dynamic modules (I have all the modules configured this way in my project).
   - [vue-snotify](https://github.com/artemsky/vue-snotify) - a highly configurable toast notification library - comes hooked up to display login error & SignalR hub push notifications examples.
   - Two different loader components (spinner & authentication animation w/ callback for success/fail)
   - Babel integration to handle transformation of React-like JSX/TSX render function syntax - configured in package.json, but can be moved to a babelrc file. The app's VCheckbox.render.tsx & VDropdown.render.tsx components are live examples. This is a nice option to have for components that have very little HTML or for those that come from a React background and are comfortable with JSX syntax. Here is what the VCheckbox.render.tsx component looks like:
   
+  Note: I wired up ```vue-styled-components``` for this component as well to fully demonstrate the scope of React's influence over Vue's ecosystem (check out the source code for VCheckbox.render.tsx to see how styled-components are implemented in Vue.js).
+  
   ```JSX
-    public render(): VNode {
-        return (
-            <div class={['control', this.wrapperClass]}>
-                <p class={['checkbox-control', this.controlClass, { 'disabled': this.disabled }]}>
-                    <label>
-                        <input type="checkbox"
-                               value={this.checked}
-                               checked={this.checked}
-                               disabled={this.disabled}
-                               onChange={this.handleOnChange} />
-                        <i class="helper"></i>
-                        { this.trailingLabel && <span>{this.trailingLabel}</span> }
-                    </label>
-                </p>
-            </div>
-        );      
-    }
+      @Prop({ default: null })  public readonly id:       string;
+	  @Prop({ default: null })  public readonly name:     string;
+	  @Prop({ default: null })  public readonly label:    string;
+	  @Prop({ default: false }) public readonly checked:  boolean;
+	  @Prop({ default: false }) public readonly disabled: boolean;
+	  @Prop({ default: false }) public readonly readOnly: boolean;
 
-    private handleOnChange(e: Event): void {
-        this.$emit('checked', !!(e.target as HTMLInputElement).checked);
-    }
+	  public render(): VNode {
+		return (
+		  <StyledLabelWrapper>
+			<StyledInput
+			  id={this.id}
+			  type='checkbox'
+			  name={this.name}
+			  value={this.checked}
+			  checked={this.checked}
+			  readOnly={this.readOnly}
+			  disabled={this.disabled}
+			  onChange={this.handleOnChange}
+			/>
+			<StyledCheckIcon />
+			{this.label && <StyledSpan>{this.label}</StyledSpan>}
+		  </StyledLabelWrapper>
+		);
+	  }
+
+	  public handleOnChange(event: Event): void {
+		this.$emit('checked', !!(event.target as HTMLInputElement).checked);
+	  }
     ```
     
 - **Unit Testing**

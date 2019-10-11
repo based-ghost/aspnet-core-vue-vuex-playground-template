@@ -6,8 +6,8 @@
 @import '~vue-snotify/styles/material.scss';
 
 /* Local styles (existing files not listed are imported to components in <style> tag with scoped attribute) */
+// @import 'controls/checkbox.scss'; NOT USING CHECKBOX CSS SINCE STYLING IS TAKEN CARE OF VIA 'vue-styled-components'
 @import 'controls/dropdown.scss';
-@import 'controls/checkbox.scss';
 @import 'components/transitions.scss';
 @import 'components/tool-tip.scss';
 @import 'components/navbar.scss';

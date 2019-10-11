@@ -52,7 +52,7 @@ import {
   }
 })
 export default class FetchData extends Vue {
-  private loading: boolean = false;
+  public loading: boolean = false;
 
   get forecasts(): IWeatherForecast[] {
     return WeatherForecastModule.forecasts;
@@ -62,12 +62,12 @@ export default class FetchData extends Vue {
     return WeatherForecastModule.startDateIndex;
   }
 
-  private created(): void {
+  public created(): void {
     if (!this.forecasts || this.forecasts.length === 0)
       this.handleGetWeatherForecasts();
   }
 
-  private paginateForecastData(pageDirection: string): void {
+  public paginateForecastData(pageDirection: string): void {
     const newStartDateIndex = (!pageDirection || pageDirection === "prev")
       ? this.currentStartDateIndex - 5
       : this.currentStartDateIndex + 5;
@@ -75,7 +75,7 @@ export default class FetchData extends Vue {
     this.handleGetWeatherForecasts(newStartDateIndex);
   }
 
-  private handleGetWeatherForecasts(startDateIndex: number = 0): void {
+  public handleGetWeatherForecasts(startDateIndex: number = 0): void {
     this.loading = true;
     WeatherForecastModule.GetWeatherForecasts(startDateIndex)
       .finally(() => {

@@ -35,7 +35,7 @@ import { AuthModule } from "../../store/modules/auth";
 
 @Component
 export default class NavBar extends Vue {
-  private readonly routesConfig = RoutesConfig;
+  public readonly routesConfig = RoutesConfig;
 
   get isAuthenticated(): boolean {
     return AuthModule.isAuthenticated;
