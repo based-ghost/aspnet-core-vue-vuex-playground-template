@@ -31,37 +31,64 @@ This template is vaguely based on the original Vue + TypeScript .NET Core SPA te
   
   Note: I wired up ```vue-styled-components``` for this component as well to fully demonstrate the scope of React's influence over Vue's ecosystem (check out the source code for VCheckbox.render.tsx to see how styled-components are implemented in Vue.js).
   
-  ```JSX
-      @Prop({ default: null })  public readonly id:       string;
-	  @Prop({ default: null })  public readonly name:     string;
-	  @Prop({ default: null })  public readonly label:    string;
-	  @Prop({ default: false }) public readonly checked:  boolean;
-	  @Prop({ default: false }) public readonly disabled: boolean;
-	  @Prop({ default: false }) public readonly readOnly: boolean;
+```JSX
+import Vue, { VNode } from 'vue';
+import styled from 'vue-styled-components';
+import { Component, Prop } from 'vue-property-decorator';
 
-	  public render(): VNode {
-	    return (
-		<StyledLabelWrapper>
-		   <StyledInput
-		      id={this.id}
-		      type='checkbox'
-		      name={this.name}
-		      value={this.checked}
-		      checked={this.checked}
-		      readOnly={this.readOnly}
-		      disabled={this.disabled}
-	            onChange={this.handleOnChange}
-		    />
-		    <StyledCheckIcon />
-		    {this.label && <StyledSpan>{this.label}</StyledSpan>}
-		 </StyledLabelWrapper>
-	     );
-	  }
+const StyledSpan = styled.span`
+  padding-left: 1.5rem;
+`;
 
-	  public handleOnChange(event: Event): void {
-	    this.$emit('checked', !!(event.target as HTMLInputElement).checked);
-	  }
-    ```
+const StyledLabelWrapper = styled.label`
+  display: flex;
+  user-select: none;
+  position: relative;
+`;
+
+const StyledInput = styled.input`
+  /* ...CSS CODE */
+  ...
+`;
+
+const StyledCheckIcon = styled.i`
+  /* ...CSS CODE */
+  ...
+`;
+
+@Component
+export default class VCheckBox extends Vue {
+  @Prop({ default: null })  public readonly id:       string;
+  @Prop({ default: null })  public readonly name:     string;
+  @Prop({ default: null })  public readonly label:    string;
+  @Prop({ default: false }) public readonly checked:  boolean;
+  @Prop({ default: false }) public readonly disabled: boolean;
+  @Prop({ default: false }) public readonly readOnly: boolean;
+
+  public render(): VNode {
+    return (
+      <StyledLabelWrapper>
+        <StyledInput
+          id={this.id}
+          type='checkbox'
+          name={this.name}
+          value={this.checked}
+          checked={this.checked}
+          readOnly={this.readOnly}
+          disabled={this.disabled}
+          onChange={this.handleOnChange}
+        />
+        <StyledCheckIcon />
+        {this.label && <StyledSpan>{this.label}</StyledSpan>}
+      </StyledLabelWrapper>
+    );
+  }
+
+  public handleOnChange(event: Event): void {
+    this.$emit('checked', !!(event.target as HTMLInputElement).checked);
+  }
+}
+```
     
 - **Unit Testing**
   - Jest - configured in package.json and pointed to run all tests in any files under /ClientApp/tests. Run ```npm run test:unit``` to execute.
