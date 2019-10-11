@@ -40,26 +40,26 @@ This template is vaguely based on the original Vue + TypeScript .NET Core SPA te
 	  @Prop({ default: false }) public readonly readOnly: boolean;
 
 	  public render(): VNode {
-		return (
-		  <StyledLabelWrapper>
-			<StyledInput
-			  id={this.id}
-			  type='checkbox'
-			  name={this.name}
-			  value={this.checked}
-			  checked={this.checked}
-			  readOnly={this.readOnly}
-			  disabled={this.disabled}
-			  onChange={this.handleOnChange}
-			/>
-			<StyledCheckIcon />
-			{this.label && <StyledSpan>{this.label}</StyledSpan>}
-		  </StyledLabelWrapper>
-		);
+	    return (
+		<StyledLabelWrapper>
+		   <StyledInput
+		      id={this.id}
+		      type='checkbox'
+		      name={this.name}
+		      value={this.checked}
+		      checked={this.checked}
+		      readOnly={this.readOnly}
+		      disabled={this.disabled}
+	            onChange={this.handleOnChange}
+		    />
+		    <StyledCheckIcon />
+		    {this.label && <StyledSpan>{this.label}</StyledSpan>}
+		 </StyledLabelWrapper>
+	     );
 	  }
 
 	  public handleOnChange(event: Event): void {
-		this.$emit('checked', !!(event.target as HTMLInputElement).checked);
+	    this.$emit('checked', !!(event.target as HTMLInputElement).checked);
 	  }
     ```
     
