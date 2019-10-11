@@ -1,13 +1,13 @@
 import './assets/style/scss/main.scss';
-import './config/fa.config';
 import './prototype';
 import Vue from 'vue';
 import App from './App.vue';
 import store from './store';
 import router from './router';
-import './config/vue-snotify.config';
 import vClickOutside from './plugins/vue-click-outside';
 import { configureAxiosInterceptors } from './config/axios.config';
+import './config/fa.config'; // Configure fortawesome for vue
+import './config/vue-snotify.config'; // Install/configure vue-snotify package (self-contained set-up in file)
 
 // Install custom plugins
 Vue.use(vClickOutside);

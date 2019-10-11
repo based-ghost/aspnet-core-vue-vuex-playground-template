@@ -57,7 +57,7 @@
     "style-loader": "^1.0.0",
     "ts-jest": "^23.10.5",
     "ts-loader": "^6.2.0",
-    "typescript": "^3.6.3",
+    "typescript": "^3.6.4",
     "url-loader": "^2.2.0",
     "vue-class-component": "^7.1.0",
     "vue-jest": "^3.0.2",
@@ -65,7 +65,7 @@
     "vue-style-loader": "^4.1.2",
     "vue-template-compiler": "^2.6.10",
     "vuex-module-decorators": "^0.10.1",
-    "webpack": "^4.41.0",
+    "webpack": "^4.41.1",
     "webpack-cli": "^3.3.9",
     "webpack-dev-middleware": "^3.7.2",
     "webpack-hot-middleware": "^2.25.0"
