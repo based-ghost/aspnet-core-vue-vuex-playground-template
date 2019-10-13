@@ -56,8 +56,7 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import VCheckbox from "../components/controls/checkbox/VCheckbox.render";
-import VDropdown from "../components/controls/dropdown/VDropdown.render";
+import { VCheckbox, VDropdown } from "../components/controls";
 import { FormModule, IDropdownOption } from "../store/modules/form";
 import { DROPDOWN_TEST_DATA } from "../config/constants";
 

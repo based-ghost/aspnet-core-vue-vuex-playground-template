@@ -56,8 +56,7 @@
     <None Remove="ClientApp\api\services\base.config.ts" />
     <None Remove="ClientApp\api\services\sample.service.ts" />
     <None Remove="ClientApp\api\signalR.service.ts" />
-    <None Remove="ClientApp\components\controls\checkbox\VCheckbox.render.tsx" />
-    <None Remove="ClientApp\components\controls\dropdown\VDropdown.render.tsx" />
+    <None Remove="ClientApp\components\controls\index.ts" />
     <None Remove="ClientApp\components\controls\VDropdown.ts" />
     <None Remove="ClientApp\components\controls\VSearchDropdown.ts" />
     <None Remove="ClientApp\components\loaders\index.ts" />
@@ -113,11 +112,12 @@
 
   <ItemGroup>
     <TypeScriptCompile Include="ClientApp\api\index.ts" />
+    <TypeScriptCompile Include="ClientApp\components\controls\index.ts" />
     <TypeScriptCompile Include="ClientApp\config\axios.config.ts" />
     <TypeScriptCompile Include="ClientApp\api\services\sample.service.ts" />
     <TypeScriptCompile Include="ClientApp\api\services\signalR.service.ts" />
-    <TypeScriptCompile Include="ClientApp\components\controls\checkbox\VCheckbox.render.tsx" />
-    <TypeScriptCompile Include="ClientApp\components\controls\dropdown\VDropdown.render.tsx" />
+    <TypeScriptCompile Include="ClientApp\components\controls\VCheckbox.render.tsx" />
+    <TypeScriptCompile Include="ClientApp\components\controls\VDropdown.render.tsx" />
     <TypeScriptCompile Include="ClientApp\components\loaders\index.ts" />
     <TypeScriptCompile Include="ClientApp\components\nav\index.ts" />
     <TypeScriptCompile Include="ClientApp\config\constants.ts" />

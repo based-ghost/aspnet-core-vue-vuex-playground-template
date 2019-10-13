@@ -1,9 +1,8 @@
 ﻿import 'jest';
 import '../prototype';
-import { shallowMount, createLocalVue } from '@vue/test-utils';
 import vClickOutside from '../plugins/vue-click-outside';
-import VCheckbox from '../components/controls/checkbox/VCheckbox.render';
-import VDropdown from '../components/controls/dropdown/VDropdown.render';
+import { VCheckbox, VDropdown } from '../components/controls';
+import { shallowMount, createLocalVue } from '@vue/test-utils';
 
 /**
  * Create local Vue instance to install global plugins/mixins to (avoids pulluting the global Vue constructor)

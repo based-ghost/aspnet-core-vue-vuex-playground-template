@@ -6,7 +6,7 @@
         @click="open = !open" 
         v-click-outside="closeSettingsMenu"
       >
-        <font-awesome-icon icon="cog" size="3x"/>
+        <font-awesome-icon icon="cog" size="3x" />
       </a>
       <ul v-if="open" class="dropdown-menu">
         <li class="header-title">Settings</li>
@@ -18,7 +18,7 @@
             :href="nugetURLs.HEALTH_UI"
             role="button"
           >
-            <font-awesome-icon icon="heart"/>Health Checks
+            <font-awesome-icon icon="heart" />Health Checks
           </a>
         </li>
         <li>
@@ -29,7 +29,7 @@
             :href="nugetURLs.SWAGGER_DOCS"
             role="button"
           >
-            <font-awesome-icon icon="file"/>Swagger API
+            <font-awesome-icon icon="file" />Swagger API
           </a>
         </li>
         <li>
@@ -38,7 +38,7 @@
             role="button" 
             @click="handleLogout"
           >
-            <font-awesome-icon :icon="routesConfig.Login.meta.icon"/>
+            <font-awesome-icon :icon="routesConfig.Login.meta.icon" />
             {{routesConfig.Login.displayName}}
           </a>
         </li>

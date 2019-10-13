@@ -11,15 +11,15 @@ export default class VDropdown extends Vue {
     dropdownButton: HTMLElement;
   };
 
-  @Prop({ default: () => [] }) private options: any[];
-  @Prop({ default: false }) private disabled: boolean;
-  @Prop({ default: 'label' }) private labelKey: string;
-  @Prop({ default: '' }) private placeholder: string;
-  @Prop({ default: '' }) private wrapperClass: string;
-  @Prop({ default: '' }) private buttonClass: string;
-  @Prop({ default: '' }) private selectedOptionLabel: string;
+  @Prop({ default: () => [] }) public readonly options:             any[];
+  @Prop({ default: false })    public readonly disabled:            boolean;
+  @Prop({ default: 'label' })  public readonly labelKey:            string;
+  @Prop({ default: '' })       public readonly placeholder:         string;
+  @Prop({ default: '' })       public readonly wrapperClass:        string;
+  @Prop({ default: '' })       public readonly buttonClass:         string;
+  @Prop({ default: '' })       public readonly selectedOptionLabel: string;
 
-  open: boolean = false;
+  public open: boolean = false;
 
   get isArrayOfObjects(): boolean {
     return this.options && this.options[0] === Object(this.options[0]);
@@ -51,7 +51,7 @@ export default class VDropdown extends Vue {
     );
   }
 
-  private renderListOption(option: any, index: number): VNode {
+  public renderListOption(option: any, index: number): VNode {
     const optionLabel = this.getOptionLabelName(option);
     return (
       <li key={index}>
@@ -66,23 +66,23 @@ export default class VDropdown extends Vue {
     );
   }
 
-  private hideDropdownMenu(): void {
+  public hideDropdownMenu(): void {
     this.open = false;
   }
 
-  private toggleDropdownMenu(): void {
+  public toggleDropdownMenu(): void {
     this.open = !this.open;
   }
 
-  private updateSelectedOption(option: any): void {
+  public updateSelectedOption(option: any): void {
     this.$emit('select', option);
   }
 
-  private getOptionLabelName(option: any): string {
+  public getOptionLabelName(option: any): string {
     return this.isArrayOfObjects ? option[this.labelKey] || option[0] : option;
   }
 
-  private keyDownHandler(e: KeyboardEvent): void {
+  public keyDownHandler(e: KeyboardEvent): void {
     if (e.keyCode === 38 || e.keyCode === 40) { // up and down keys
       this.toggleDropdownMenu();
       e.preventDefault();
