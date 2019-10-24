@@ -16,22 +16,22 @@ This template is vaguely based on the original Vue + TypeScript .NET Core SPA te
   - API Documentation using Swagger UI - using package [NSwag.AspNetCore](http://NSwag.org) to prettify the specification output and display at ```/docs``` & [NSwag.MSBuild](http://NSwag.org) to handle automatic updates - so that when the project builds, the NSwag CLI will run and generate an updated API specification. Access this view in the application via the floating settings cog on right screen by clicking the "Swagger API" link.
   - Brotli/Gzip response compression (production build)
 - **Client**
-  - [Vue](https://vuejs.org/)
-  - [Vuex](https://vuex.vuejs.org/)
-  - [Vue-router](https://router.vuejs.org/)
-  - [TypeScript](https://www.typescriptlang.org/)
-  - [Webpack](https://github.com/webpack/webpack) for bundling of application assets and HMR (Hot Module Replacement)
-  - [Bulma CSS Framework](https://bulma.io/) + [SASS](https://github.com/sass/sass) + Font Awesome 5 (using fontawesome-svg-core)
-  - [Axios](https://github.com/axios/axios) for REST endpoint requests
-  - [vue-styled-components](https://github.com/styled-components/vue-styled-components) - this is the Vue.js implementation of the popular React.js [styled-components](https://www.styled-components.com/). Write component-scoped CSS code in JavaScript via template literals - see example further down with the VCheckbox.render.tsx component.
-  - [vuex-module-decorators](https://github.com/championswimmer/vuex-module-decorators) - a helpful package of decorators which allows you to write your vuex store modules in class-based syntax (inspired by vue-class-component). Also allows for easier namespacing and registration of modules into store at runtime after store is constructed - dynamic modules (I have all the modules configured this way in my project).
-  - [vue-snotify](https://github.com/artemsky/vue-snotify) - a highly configurable toast notification library - comes hooked up to display login error & SignalR hub push notifications examples.
+  - [`Vue`](https://vuejs.org/)
+  - [`Vuex`](https://vuex.vuejs.org/)
+  - [`Vue-router`](https://router.vuejs.org/)
+  - [`TypeScript`](https://www.typescriptlang.org/)
+  - [`Webpack`](https://github.com/webpack/webpack) for bundling of application assets and HMR (Hot Module Replacement)
+  - [`Bulma CSS`](https://bulma.io/) + [`SASS`](https://github.com/sass/sass) + Font Awesome 5 (using fontawesome-svg-core)
+  - [`Axios`](https://github.com/axios/axios) for REST endpoint requests
+  - [`vue-styled-components`](https://github.com/styled-components/vue-styled-components) - this is the Vue.js implementation of the popular React.js [styled-components](https://www.styled-components.com/). Write component-scoped CSS code in JavaScript via template literals - see example further down with the VCheckbox.render.tsx component.
+  - [`vuex-module-decorators`](https://github.com/championswimmer/vuex-module-decorators) - a helpful package of decorators which allows you to write your vuex store modules in class-based syntax (inspired by vue-class-component). Also allows for easier namespacing and registration of modules into store at runtime after store is constructed - dynamic modules (I have all the modules configured this way in my project).
+  - [`vue-snotify`](https://github.com/artemsky/vue-snotify) - a highly configurable toast notification library - comes hooked up to display login error & SignalR hub push notifications examples.
   - Two different loader components (spinner & authentication animation w/ callback for success/fail)
   - Babel integration to handle transformation of React-like JSX/TSX render function syntax - configured in package.json, but can be moved to a babelrc file. The app's VCheckbox.render.tsx & VDropdown.render.tsx components are live examples. This is a nice option to have for components that have very little HTML or for those that come from a React background and are comfortable with JSX syntax. Here is what the VCheckbox.render.tsx component looks like:
   
   Note: I wired up ```vue-styled-components``` for this component as well to fully demonstrate the scope of React's influence over Vue's ecosystem (check out the source code for VCheckbox.render.tsx to see how styled-components are implemented in Vue.js).
   
-```JSX
+```TSX
 import Vue, { VNode } from 'vue';
 import styled from 'vue-styled-components';
 import { Component, Prop } from 'vue-property-decorator';
