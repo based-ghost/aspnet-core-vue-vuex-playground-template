@@ -1,6 +1,6 @@
 ﻿import { AxiosRequestConfig } from 'axios';
 import { BaseService } from './base.service';
-import { IWeatherForecast } from '../../store/modules/weather-forecasts';
+import { IWeatherForecast } from '../store/modules/weather-forecasts';
 
 /**
  * SampleData API abstraction layer communication via Axios (typescript singleton pattern)

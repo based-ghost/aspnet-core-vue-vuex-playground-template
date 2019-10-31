@@ -3,7 +3,7 @@
     <div class="navbar-wrapper">
       <div class="brand-wrapper">
         <img 
-          src="../../assets/image/bulma.io-logo.png" 
+          src="../assets/image/bulma.io-logo.png" 
           alt="bulma.io-logo" 
           width="155"
         />
@@ -30,8 +30,8 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import { RoutesConfig } from "../../config/routes.config";
-import { AuthModule } from "../../store/modules/auth";
+import { RoutesConfig } from "../config/routes.config";
+import { AuthModule } from "../store/modules/auth";
 
 @Component
 export default class NavBar extends Vue {

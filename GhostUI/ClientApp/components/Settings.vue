@@ -49,9 +49,9 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import { RoutesConfig } from "../../config/routes.config";
-import { spaNugetUrls } from "../../config/constants";
-import { AuthModule } from "../../store/modules/auth";
+import { RoutesConfig } from "../config/routes.config";
+import { spaNugetUrls } from "../config/constants";
+import { AuthModule } from "../store/modules/auth";
 
 @Component
 export default class Settings extends Vue {

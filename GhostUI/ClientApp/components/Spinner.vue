@@ -17,5 +17,5 @@ export default class Spinner extends Vue {
 </script>
 
 <style lang="scss" scoped>
-@import "../../assets/style/scss/components/spinner.scss";
+@import "../assets/style/scss/components/spinner.scss";
 </style>

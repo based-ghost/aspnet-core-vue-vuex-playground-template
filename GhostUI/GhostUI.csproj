@@ -12,37 +12,21 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="ClientApp\components\loaders\delete\**" />
-    <Compile Remove="ClientApp\components\controls\date-picker\**" />
-    <Compile Remove="ClientApp\components\controls\input-dropdown\**" />
-    <Compile Remove="ClientApp\components\controls\table\**" />
     <Compile Remove="ClientApp\components\mixins\**" />
     <Compile Remove="ClientApp\components\modals\**" />
     <Compile Remove="ClientApp\views\agency\**" />
     <Compile Remove="ClientApp\views\role\**" />
     <Compile Remove="ClientApp\views\user\**" />
-    <Content Remove="ClientApp\components\loaders\delete\**" />
-    <Content Remove="ClientApp\components\controls\date-picker\**" />
-    <Content Remove="ClientApp\components\controls\input-dropdown\**" />
-    <Content Remove="ClientApp\components\controls\table\**" />
     <Content Remove="ClientApp\components\mixins\**" />
     <Content Remove="ClientApp\components\modals\**" />
     <Content Remove="ClientApp\views\agency\**" />
     <Content Remove="ClientApp\views\role\**" />
     <Content Remove="ClientApp\views\user\**" />
-    <EmbeddedResource Remove="ClientApp\components\loaders\delete\**" />
-    <EmbeddedResource Remove="ClientApp\components\controls\date-picker\**" />
-    <EmbeddedResource Remove="ClientApp\components\controls\input-dropdown\**" />
-    <EmbeddedResource Remove="ClientApp\components\controls\table\**" />
     <EmbeddedResource Remove="ClientApp\components\mixins\**" />
     <EmbeddedResource Remove="ClientApp\components\modals\**" />
     <EmbeddedResource Remove="ClientApp\views\agency\**" />
     <EmbeddedResource Remove="ClientApp\views\role\**" />
     <EmbeddedResource Remove="ClientApp\views\user\**" />
-    <None Remove="ClientApp\components\loaders\delete\**" />
-    <None Remove="ClientApp\components\controls\date-picker\**" />
-    <None Remove="ClientApp\components\controls\input-dropdown\**" />
-    <None Remove="ClientApp\components\controls\table\**" />
     <None Remove="ClientApp\components\mixins\**" />
     <None Remove="ClientApp\components\modals\**" />
     <None Remove="ClientApp\views\agency\**" />
@@ -53,15 +37,7 @@
   <ItemGroup>
     <None Remove="babel.config.ts" />
     <None Remove="ClientApp\api\index.ts" />
-    <None Remove="ClientApp\api\services\base.config.ts" />
-    <None Remove="ClientApp\api\services\sample.service.ts" />
-    <None Remove="ClientApp\api\signalR.service.ts" />
-    <None Remove="ClientApp\components\controls\index.ts" />
-    <None Remove="ClientApp\components\controls\VDropdown.ts" />
-    <None Remove="ClientApp\components\controls\VSearchDropdown.ts" />
-    <None Remove="ClientApp\components\loaders\index.ts" />
-    <None Remove="ClientApp\components\nav\index.ts" />
-    <None Remove="ClientApp\components\nav\NavBarTop.ts" />
+    <None Remove="ClientApp\components\index.ts" />
     <None Remove="ClientApp\config\fa.config.ts" />
     <None Remove="ClientApp\store\index.ts" />
     <None Remove="ClientApp\store\modules\auth\index.ts" />
@@ -83,12 +59,7 @@
     <None Remove="ClientApp\store\modules\signalR.store.ts" />
     <None Remove="ClientApp\types\tsx-shims.d.ts" />
     <None Remove="ClientApp\types\vue-snotify-shims.d.ts" />
-    <None Remove="ClientApp\components\loaders\Authenticator.ts" />
-    <None Remove="ClientApp\components\loaders\Deletion.ts" />
-    <None Remove="ClientApp\components\loaders\Spinner.ts" />
     <None Remove="ClientApp\api\agency.service.ts" />
-    <None Remove="ClientApp\api\auth.service.ts" />
-    <None Remove="ClientApp\api\base.service.ts" />
     <None Remove="ClientApp\api\role.service.ts" />
     <None Remove="ClientApp\api\user.service.ts" />
     <None Remove="ClientApp\types\vue-shims.d.ts" />
@@ -112,14 +83,12 @@
 
   <ItemGroup>
     <TypeScriptCompile Include="ClientApp\api\index.ts" />
-    <TypeScriptCompile Include="ClientApp\components\controls\index.ts" />
+    <TypeScriptCompile Include="ClientApp\components\index.ts" />
     <TypeScriptCompile Include="ClientApp\config\axios.config.ts" />
-    <TypeScriptCompile Include="ClientApp\api\services\sample.service.ts" />
-    <TypeScriptCompile Include="ClientApp\api\services\signalR.service.ts" />
-    <TypeScriptCompile Include="ClientApp\components\controls\VCheckbox.render.tsx" />
-    <TypeScriptCompile Include="ClientApp\components\controls\VDropdown.render.tsx" />
-    <TypeScriptCompile Include="ClientApp\components\loaders\index.ts" />
-    <TypeScriptCompile Include="ClientApp\components\nav\index.ts" />
+    <TypeScriptCompile Include="ClientApp\api\sample.service.ts" />
+    <TypeScriptCompile Include="ClientApp\api\signalR.service.ts" />
+    <TypeScriptCompile Include="ClientApp\components\VCheckbox.render.tsx" />
+    <TypeScriptCompile Include="ClientApp\components\VDropdown.render.tsx" />
     <TypeScriptCompile Include="ClientApp\config\constants.ts" />
     <TypeScriptCompile Include="ClientApp\config\fa.config.ts" />
     <TypeScriptCompile Include="ClientApp\config\vue-snotify.config.ts" />
@@ -139,8 +108,8 @@
     <TypeScriptCompile Include="ClientApp\types\tsx-shims.d.ts" />
     <TypeScriptCompile Include="ClientApp\prototype\extensions\string.extensions.ts" />
     <TypeScriptCompile Include="ClientApp\plugins\vue-click-outside.ts" />
-    <TypeScriptCompile Include="ClientApp\api\services\auth.service.ts" />
-    <TypeScriptCompile Include="ClientApp\api\services\base.service.ts" />
+    <TypeScriptCompile Include="ClientApp\api\auth.service.ts" />
+    <TypeScriptCompile Include="ClientApp\api\base.service.ts" />
     <TypeScriptCompile Include="ClientApp\store\index.ts" />
     <TypeScriptCompile Include="ClientApp\store\modules\auth\auth.module.ts" />
     <TypeScriptCompile Include="ClientApp\types\vue-snotify-shims.d.ts" />

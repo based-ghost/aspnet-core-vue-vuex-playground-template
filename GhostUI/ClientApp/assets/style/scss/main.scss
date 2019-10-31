@@ -6,9 +6,9 @@
 @import '~vue-snotify/styles/material.scss';
 
 /* Local styles (existing files not listed are imported to components in <style> tag with scoped attribute) */
-@import 'controls/dropdown.scss';
-@import 'components/transitions.scss';
-@import 'components/tool-tip.scss';
+@import 'base/generic.scss';
 @import 'components/navbar.scss';
 @import 'components/settings.scss';
-@import 'base/generic.scss';
+@import 'components/dropdown.scss';
+@import 'components/tool-tip.scss';
+@import 'components/transitions.scss';

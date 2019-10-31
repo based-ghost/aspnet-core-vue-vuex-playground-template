@@ -76,8 +76,7 @@
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import { SignalRApi } from "../api";
-import { VCheckbox } from "../components/controls";
-import { Authenticator } from "../components/loaders";
+import { Authenticator, VCheckbox } from "../components";
 import { AuthModule, AuthStatusEnum, ICredentials } from "../store/modules/auth";
 
 @Component({

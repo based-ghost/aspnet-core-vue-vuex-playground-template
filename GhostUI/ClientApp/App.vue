@@ -12,8 +12,7 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import AppFooter from "./components/footer/Footer.vue";
-import { NavBar, Settings } from "./components/nav";
+import { AppFooter, NavBar, Settings } from "./components";
 
 @Component({
   components: {

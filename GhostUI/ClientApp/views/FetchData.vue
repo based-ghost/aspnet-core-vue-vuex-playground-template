@@ -40,7 +40,7 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import { Spinner } from "../components/loaders";
+import { Spinner } from "../components";
 import {
   WeatherForecastModule,
   IWeatherForecast
