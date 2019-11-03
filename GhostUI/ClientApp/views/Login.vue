@@ -86,9 +86,9 @@ import { AuthModule, AuthStatusEnum, ICredentials } from "../store/modules/auth"
   }
 })
 export default class Login extends Vue {
-  public showPassword:  boolean = false;
+  public showPassword: boolean = false;
   public invalidInputs: boolean = false;
-  public authStatus:    string = AuthStatusEnum.None;
+  public authStatus: string = AuthStatusEnum.None;
   
   public credentials: ICredentials = {
     userName: "",
@@ -96,8 +96,7 @@ export default class Login extends Vue {
     rememberMe: false
   };
 
-  // Configure and connect SignalR directly before this component is created
-  public created(): void {
+  public mounted(): void {
     SignalRApi.startConnection();
   }
 
@@ -117,7 +116,8 @@ export default class Login extends Vue {
       this.authStatus = AuthStatusEnum.Process;
 
       setTimeout(() => {
-        AuthModule.LoginUser(this.credentials)
+        AuthModule
+          .LoginUser(this.credentials)
           .then(() => {
             this.authStatus = AuthStatusEnum.Success;
           })
@@ -134,7 +134,10 @@ export default class Login extends Vue {
 
   public onAuthFailure(): void {
     this.authStatus = AuthStatusEnum.None;
-    this.$snotify.error(`Could not authenticate: ${this.credentials.userName}`, "Login Error");
+    this.$snotify.error(
+      `Could not authenticate: ${this.credentials.userName}`, 
+      "Login Error"
+    );
   }
 }
 </script>

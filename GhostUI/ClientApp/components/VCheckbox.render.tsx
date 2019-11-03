@@ -99,9 +99,9 @@ const StyledCheckIcon = styled.i`
 
 @Component
 export default class VCheckBox extends Vue {
-  @Prop({ default: null })  public readonly id:       string;
-  @Prop({ default: null })  public readonly name:     string;
-  @Prop({ default: null })  public readonly label:    string;
+  @Prop({ default: null })  public readonly id: string;
+  @Prop({ default: null })  public readonly name: string;
+  @Prop({ default: null })  public readonly label: string;
   @Prop({ default: false }) public readonly checked:  boolean;
   @Prop({ default: false }) public readonly disabled: boolean;
   @Prop({ default: false }) public readonly readOnly: boolean;

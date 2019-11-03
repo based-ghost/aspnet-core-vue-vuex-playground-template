@@ -23,7 +23,7 @@
           <h5 class="subtitle is-5">Select an option from the dropdown</h5>
           <p class="subtitle is-5">
             Option:
-            <code>{{JSON.stringify(selectedDropdownOption)}}</code>
+            <code>{{JSON.stringify(selectedDropdownOption || {})}}</code>
           </p>
           <div class="field">
             <v-dropdown

@@ -63,8 +63,9 @@ export default class FetchData extends Vue {
   }
 
   public created(): void {
-    if (!this.forecasts || this.forecasts.length === 0)
+    if (!this.forecasts || this.forecasts.length === 0) {
       this.handleGetWeatherForecasts();
+    }
   }
 
   public paginateForecastData(pageDirection: string): void {
@@ -77,8 +78,9 @@ export default class FetchData extends Vue {
 
   public handleGetWeatherForecasts(startDateIndex: number = 0): void {
     this.loading = true;
-    WeatherForecastModule.GetWeatherForecasts(startDateIndex)
-      .finally(() => {
+    WeatherForecastModule
+      .GetWeatherForecasts(startDateIndex)
+      .then(() => {
         setTimeout(() => { // setTimeout to show loading animation
           this.loading = false;
         }, 50);

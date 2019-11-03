@@ -1,5 +1,4 @@
 import './assets/style/scss/main.scss';
-import './prototype';
 import Vue from 'vue';
 import App from './App.vue';
 import store from './store';
@@ -9,11 +8,11 @@ import { configureAxiosInterceptors } from './config/axios.config';
 import './config/fa.config'; // Configure fortawesome for vue
 import './config/vue-snotify.config'; // Install/configure vue-snotify package (self-contained set-up in file)
 
-// Install custom plugins
-Vue.use(vClickOutside);
-
 // Execute any base Axios configurations (e.g. request interceptors)
 configureAxiosInterceptors();
+
+// Install custom plugins
+Vue.use(vClickOutside);
 
 Vue.config.productionTip = false;
 

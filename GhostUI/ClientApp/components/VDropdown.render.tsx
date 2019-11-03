@@ -11,12 +11,12 @@ export default class VDropdown extends Vue {
     dropdownButton: HTMLElement;
   };
 
-  @Prop({ default: () => [] }) public readonly options:             any[];
-  @Prop({ default: false })    public readonly disabled:            boolean;
-  @Prop({ default: 'label' })  public readonly labelKey:            string;
-  @Prop({ default: '' })       public readonly placeholder:         string;
-  @Prop({ default: '' })       public readonly wrapperClass:        string;
-  @Prop({ default: '' })       public readonly buttonClass:         string;
+  @Prop({ default: () => [] }) public readonly options: any[];
+  @Prop({ default: false })    public readonly disabled: boolean;
+  @Prop({ default: 'label' })  public readonly labelKey: string;
+  @Prop({ default: '' })       public readonly placeholder: string;
+  @Prop({ default: '' })       public readonly wrapperClass: string;
+  @Prop({ default: '' })       public readonly buttonClass: string;
   @Prop({ default: '' })       public readonly selectedOptionLabel: string;
 
   public open: boolean = false;

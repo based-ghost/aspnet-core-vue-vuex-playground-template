@@ -1,5 +1,4 @@
 ﻿import 'jest';
-import '../prototype';
 import { VCheckbox, VDropdown } from '../components';
 import vClickOutside from '../plugins/vue-click-outside';
 import { shallowMount, createLocalVue } from '@vue/test-utils';

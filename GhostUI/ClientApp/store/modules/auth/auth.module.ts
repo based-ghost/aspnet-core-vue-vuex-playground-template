@@ -3,11 +3,11 @@ import { AuthApi } from '../../../api';
 import { IAuthState, ICredentials } from './types';
 import { Module, VuexModule, MutationAction, getModule } from 'vuex-module-decorators';
 
-const initialState: IAuthState = {
+const initialState = Object.freeze<IAuthState>({
   token: '',
   status: '',
   userName: '',
-};
+});
 
 @Module({ dynamic: true, store, name: 'auth' })
 class Auth extends VuexModule implements IAuthState {
@@ -16,7 +16,9 @@ class Auth extends VuexModule implements IAuthState {
   public userName: string = initialState.userName;
 
   public get isAuthenticated(): boolean {
-    return (!!this.token && this.status.toLowerCase().includes('success'));
+    return (
+      !!this.token && this.status.toLowerCase().includes('success')
+    );
   }
 
   @MutationAction<IAuthState>({ mutate: ['token', 'status', 'userName'] })

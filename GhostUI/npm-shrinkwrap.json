@@ -103,9 +103,9 @@
       }
     },
     "@fortawesome/vue-fontawesome": {
-      "version": "0.1.7",
-      "resolved": "https://registry.npmjs.org/@fortawesome/vue-fontawesome/-/vue-fontawesome-0.1.7.tgz",
-      "integrity": "sha512-YCw2Q2m4fxzyFsPOH3uDYMoJztTD+pT+AAyse4LFpbdrBg+r8ueaVT8BFnXEjrGwMDJJeXrwJ5AOC6q/JWBI4w=="
+      "version": "0.1.8",
+      "resolved": "https://registry.npmjs.org/@fortawesome/vue-fontawesome/-/vue-fontawesome-0.1.8.tgz",
+      "integrity": "sha512-SdFiUD+vFDA/xKuEbnQTVrK8FDxoV0eyQaiHxmCcjAc0+vQe0Kf6oGm28opNPIt8MTgKWR3+Yg3xXP455Ae4tQ=="
     },
     "@types/jest": {
       "version": "23.3.13",
@@ -11534,9 +11534,9 @@
       "integrity": "sha512-G9152NzUkz0i0xTfhk0Afc8vzdXxDR1pfN4dTwE72cskkgJtdXfrKBkMfGvDuxUh35U500g5Ve4xL8PEGdWeHg=="
     },
     "vue-hot-reload-api": {
-      "version": "2.3.3",
-      "resolved": "https://registry.npmjs.org/vue-hot-reload-api/-/vue-hot-reload-api-2.3.3.tgz",
-      "integrity": "sha512-KmvZVtmM26BQOMK1rwUZsrqxEGeKiYSZGA7SNWE6uExx8UX/cj9hq2MRV/wWC3Cq6AoeDGk57rL9YMFRel/q+g==",
+      "version": "2.3.4",
+      "resolved": "https://registry.npmjs.org/vue-hot-reload-api/-/vue-hot-reload-api-2.3.4.tgz",
+      "integrity": "sha512-BXq3jwIagosjgNVae6tkHzzIk6a8MHFtzAdwhnV5VlvPTFxDCvIttgSiHWjdGoTJvXtmRu5HacExfdarRcFhog==",
       "dev": true
     },
     "vue-jest": {
@@ -11589,9 +11589,9 @@
       }
     },
     "vue-loader": {
-      "version": "15.7.1",
-      "resolved": "https://registry.npmjs.org/vue-loader/-/vue-loader-15.7.1.tgz",
-      "integrity": "sha512-fwIKtA23Pl/rqfYP5TSGK7gkEuLhoTvRYW+TU7ER3q9GpNLt/PjG5NLv3XHRDiTg7OPM1JcckBgds+VnAc+HbA==",
+      "version": "15.7.2",
+      "resolved": "https://registry.npmjs.org/vue-loader/-/vue-loader-15.7.2.tgz",
+      "integrity": "sha512-H/P9xt/nkocyu4hZKg5TzPqyCT1oKOaCSk9zs0JCbJuy0Q8KtR0bjJpnT/5R5x/Ckd1GFkkLQnQ1C4x6xXeLZg==",
       "dev": true,
       "requires": {
         "@vue/component-compiler-utils": "^3.0.0",

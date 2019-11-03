@@ -69,7 +69,8 @@ export default class Settings extends Vue {
   }
 
   public handleLogout(): void {
-    AuthModule.LogoutUser()
+    AuthModule
+      .LogoutUser()
       .then(() => {
         this.$snotify.clear();
         this.$router.push(this.routesConfig.Login.path);

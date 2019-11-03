@@ -2,14 +2,14 @@
 import { IDropdownOption, IFormState } from "./types";
 import { Module, VuexModule, Mutation, getModule } from "vuex-module-decorators";
 
-const initialState: IFormState = {
+const initialState = Object.freeze<IFormState>({
   count: 0,
   checkboxValue: false,
   selectedDropdownOption: {
     value: 1,
     label: 'Option 1',
   },
-};
+});
 
 @Module({ dynamic: true, store, name: "form" })
 class Form extends VuexModule implements IFormState {
