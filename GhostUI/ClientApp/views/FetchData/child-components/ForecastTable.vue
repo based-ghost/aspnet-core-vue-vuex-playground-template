@@ -28,8 +28,6 @@ import { IWeatherForecast } from "../../../store/modules/weather-forecasts";
 
 @Component
 export default class ForecastTable extends Vue {
-  @Prop({
-    default: []
-  }) public readonly forecasts: IWeatherForecast[];
+  @Prop() public readonly forecasts: IWeatherForecast[];
 }
 </script>
