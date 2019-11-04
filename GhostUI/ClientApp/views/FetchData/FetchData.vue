@@ -6,32 +6,20 @@
         This component demonstrates fetching data from the server - Start Date Index:
         <code>{{currentStartDateIndex}}</code>
       </h5>
-      <spinner :show="loading"/>
-      <table class="table is-fullwidth">
-        <thead>
-          <tr>
-            <th>Date</th>
-            <th>Temp. (C)</th>
-            <th>Temp. (F)</th>
-            <th>Summary</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="forecast in forecasts" :key="forecast.ID">
-            <td>{{forecast.DateFormatted}}</td>
-            <td>{{forecast.TemperatureC}}</td>
-            <td>{{forecast.TemperatureF}}</td>
-            <td>{{forecast.Summary}}</td>
-          </tr>
-        </tbody>
-      </table>
+      <spinner :loading="loading"/>
+      <forecast-table :forecasts="forecasts" />
       <p class="buttons is-pagination-group">
-        <a class="button is-info" @click="paginateForecastData('prev')">
+        <a
+          class="button is-info"
+          @click="paginateForecastData('prev')"
+        >
           <font-awesome-icon icon="chevron-left"/>Previous
         </a>
-        <a class="button is-info" @click="paginateForecastData('next')">
-          Next
-          <font-awesome-icon icon="chevron-right"/>
+        <a
+          class="button is-info"
+          @click="paginateForecastData('next')"
+        >
+          Next<font-awesome-icon icon="chevron-right"/>
         </a>
       </p>
     </div>
@@ -40,15 +28,15 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import { Spinner } from "../components";
-import {
-  WeatherForecastModule,
-  IWeatherForecast
-} from "../store/modules/weather-forecasts";
+import { Spinner } from "../../components";
+import { isArrayWithLength } from "../../utils";
+import { ForecastTable } from "./child-components";
+import { WeatherForecastModule, IWeatherForecast } from "../../store/modules/weather-forecasts";
 
 @Component({
   components: {
-    Spinner
+    Spinner,
+    ForecastTable,
   }
 })
 export default class FetchData extends Vue {
@@ -63,9 +51,7 @@ export default class FetchData extends Vue {
   }
 
   public created(): void {
-    if (!this.forecasts || this.forecasts.length === 0) {
-      this.handleGetWeatherForecasts();
-    }
+    !isArrayWithLength(this.forecasts) && this.handleGetWeatherForecasts();
   }
 
   public paginateForecastData(pageDirection: string): void {
@@ -78,8 +64,7 @@ export default class FetchData extends Vue {
 
   public handleGetWeatherForecasts(startDateIndex: number = 0): void {
     this.loading = true;
-    WeatherForecastModule
-      .GetWeatherForecasts(startDateIndex)
+    WeatherForecastModule.GetWeatherForecasts(startDateIndex)
       .then(() => {
         setTimeout(() => { // setTimeout to show loading animation
           this.loading = false;

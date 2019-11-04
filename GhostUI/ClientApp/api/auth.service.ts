@@ -1,4 +1,5 @@
-﻿import { BaseService } from "./base.service";
+﻿import { AxiosResponse } from "axios";
+import { BaseService } from "./base.service";
 import { ICredentials, IAuthUser } from "../store/modules/auth";
 
 /**
@@ -12,16 +13,23 @@ class AuthService extends BaseService {
   }
 
   public static get Instance(): AuthService {
-    return this._authService || (this._authService = new this("Auth"));
+    return (
+      this._authService || (this._authService = new this("Auth"))
+    );
   }
 
-  public async login(credentials: ICredentials): Promise<IAuthUser> {
+  public async logout(): Promise<AxiosResponse> {
+    return await this.$http.post("Logout");
+  }
+  
+  public async login(userName: string, password: string, rememberMe: boolean): Promise<IAuthUser> {
+    const credentials: ICredentials = {
+      userName,
+      password,
+      rememberMe,
+    };
     const { data } = await this.$http.post<IAuthUser>("Login", credentials);
     return data;
-  }
-
-  public async logout(): Promise<any> {
-    await this.$http.post("Logout");
   }
 }
 

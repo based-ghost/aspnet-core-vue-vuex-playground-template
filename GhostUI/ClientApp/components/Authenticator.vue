@@ -1,5 +1,8 @@
 ﻿<template>
-  <div v-if="show" :class="['fingerprint-spinner', authStatus]">
+  <div
+    v-if="show"
+    :class="['fingerprint-spinner', authStatus]"
+  >
     <div /><div /><div />
     <div /><div /><div />
     <div /><div /><div />
@@ -38,5 +41,5 @@ export default class Authenticator extends Vue {
 </script>
 
 <style lang="scss" scoped>
-@import "../assets/style/scss/components/authenticator.scss";
+  @import "../assets/style/scss/scoped/authenticator.scss";
 </style>

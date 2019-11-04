@@ -1,9 +1,9 @@
 ﻿<template>
-  <div v-show="show" id="load-spinner">
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
+  <div v-show="loading" id="load-spinner">
+    <div />
+    <div />
+    <div />
+    <div />
   </div>
 </template>
 
@@ -12,10 +12,10 @@ import { Component, Prop, Vue } from "vue-property-decorator";
 
 @Component
 export default class Spinner extends Vue {
-  @Prop({ default: false }) public readonly show: boolean;
+  @Prop() public readonly loading: boolean;
 }
 </script>
 
 <style lang="scss" scoped>
-@import "../assets/style/scss/components/spinner.scss";
+  @import "../assets/style/scss/scoped/spinner.scss";
 </style>

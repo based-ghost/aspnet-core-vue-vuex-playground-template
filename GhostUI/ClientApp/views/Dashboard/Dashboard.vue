@@ -4,7 +4,7 @@
       <div class="hero-body">
         <div class="is-flex is-horizontal-center">
           <img 
-            src="../assets/image/aspcore-vue.png" 
+            src="../../assets/image/aspcore-vue.png" 
             alt="" 
             width="300"
           />
@@ -70,7 +70,7 @@
                         rel="noopener"
                         href="https://sass-lang.com/"
                       >SASS</a>
-                      is a CSS pre-processor extension to help provide more flexibility & maintainability to your style-sheets. Use nesting, variables, mixins, inheritance and more great features to make writing CSS a less arduous task.
+                      is a CSS pre-processor extension to help provide more flexibility &amp; maintainability to your style-sheets. Use nesting, variables, mixins, inheritance and more great features to make writing CSS a less arduous task.
                     </li>
                     <li>
                       <a

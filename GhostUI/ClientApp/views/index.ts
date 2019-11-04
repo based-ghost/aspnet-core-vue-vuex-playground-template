@@ -1,7 +1,7 @@
-﻿import Form from './Form.vue';
-import Login from './Login.vue';
-import Dashboard from './Dashboard.vue';
-import FetchData from './FetchData.vue';
+﻿import { Form } from './Form';
+import { Login } from './Login';
+import { Dashboard } from './Dashboard';
+import { FetchData } from './FetchData';
 
 export {
   Form,

@@ -13,7 +13,9 @@ class SampleService extends BaseService {
   }
 
   public static get Instance(): SampleService {
-    return (this._sampleService || (this._sampleService = new this("SampleData")));
+    return (
+      this._sampleService || (this._sampleService = new this("SampleData"))
+    );
   }
 
   public async getWeatherForecastsAsync(startDateIndex: number): Promise<IWeatherForecast[]> {

@@ -18,7 +18,7 @@ class WeatherForecast extends VuexModule implements IWeatherForecastsState {
     try {
       const startDateIndex = index || 0;
       const forecasts = await SampleApi.getWeatherForecastsAsync(startDateIndex);
-
+      
       return {
         forecasts,
         startDateIndex,

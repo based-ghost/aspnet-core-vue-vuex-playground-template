@@ -18,7 +18,7 @@ import { AppFooter, NavBar, Settings } from "./components";
   components: {
     NavBar,
     Settings,
-    AppFooter
+    AppFooter,
   }
 })
 export default class App extends Vue {}

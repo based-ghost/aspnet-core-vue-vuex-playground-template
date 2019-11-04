@@ -12,13 +12,15 @@ export interface ICredentials {
 }
 
 export interface IAuthUser {
-  token?: string;
-  status?: string;
-  userName?: string;
-}
-
-export interface IAuthState {
   readonly token?: string;
   readonly status?: string;
   readonly userName?: string;
+}
+
+export interface IAuthState {
+  readonly token: string;
+  readonly status: string;
+  readonly userName: string;
+  readonly password: string;
+  readonly rememberMe: boolean;
 }

@@ -27,11 +27,15 @@ class SignalRService {
   }
 
   public static get Instance(): SignalRService {
-    return this._signalRService || (this._signalRService = new this());
+    return (
+      this._signalRService || (this._signalRService = new this())
+    );
   }
 
   public startConnection(): void {
-    if (this._hubConnection.state === HubConnectionState.Connected) return;
+    if (this._hubConnection.state === HubConnectionState.Connected) { 
+      return;
+    }
 
     setTimeout(() => {
       this._hubConnection.start().catch(error => {
@@ -49,20 +53,29 @@ class SignalRService {
   private registerOnServerEvents(): void {
     this._hubConnection.on(_signalrConfig.LOGIN_USER_EVENT, () => {
       setTimeout(() => {
-        EventBus.$snotify.info("A user has logged in", _signalrConfig.HUB_MESSAGE_TITLE);
+        EventBus.$snotify.info(
+          "A user has logged in",
+          _signalrConfig.HUB_MESSAGE_TITLE
+        );
       }, _signalrConfig.HUB_MESSAGE_DELAY);
     });
 
     this._hubConnection.on(_signalrConfig.LOGOUT_USER_EVENT, () => {
       setTimeout(() => {
-        EventBus.$snotify.info("A user has logged out", _signalrConfig.HUB_MESSAGE_TITLE);
+        EventBus.$snotify.info(
+          "A user has logged out",
+          _signalrConfig.HUB_MESSAGE_TITLE
+        );
       }, _signalrConfig.HUB_MESSAGE_DELAY);
     });
 
     this._hubConnection.on(_signalrConfig.CLOSE_EVENT, (reason: string) => {
       this._hubConnection.stop().then(() => {
         setTimeout(() => {
-          EventBus.$snotify.info(`Hub closed (${reason})`, _signalrConfig.HUB_MESSAGE_TITLE);
+          EventBus.$snotify.info(
+            `Hub closed (${reason})`,
+            _signalrConfig.HUB_MESSAGE_TITLE
+          );
         }, _signalrConfig.HUB_MESSAGE_DELAY);
       });
     });

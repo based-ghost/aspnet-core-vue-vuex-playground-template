@@ -1,0 +1,1 @@
+export const isArrayWithLength = (test: any): boolean => (Array.isArray(test) && !!test.length);
