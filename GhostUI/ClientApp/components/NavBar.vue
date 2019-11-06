@@ -10,17 +10,14 @@
       </div>
       <div class="navbar-routes">
         <div v-if="isAuthenticated" class="routes-wrapper">
-          <router-link :to="routesConfig.Form.path" class="navbar-item">
-            <font-awesome-icon :icon="routesConfig.Form.meta.icon"/>
-            {{routesConfig.Form.displayName}}
-          </router-link>
-          <router-link :to="routesConfig.Dashboard.path" class="navbar-item">
-            <font-awesome-icon :icon="routesConfig.Dashboard.meta.icon"/>
-            {{routesConfig.Dashboard.displayName}}
-          </router-link>
-          <router-link :to="routesConfig.FetchData.path" class="navbar-item">
-            <font-awesome-icon :icon="routesConfig.FetchData.meta.icon"/>
-            {{routesConfig.FetchData.displayName}}
+          <router-link
+            v-for="routeKey in navRouteKeys"
+            :key="routeKey"
+            class="navbar-item"
+            :to="routesConfig[routeKey].path"
+          >
+            <font-awesome-icon :icon="routesConfig[routeKey].meta.icon"/>
+            {{routesConfig[routeKey].displayName}}
           </router-link>
         </div>
       </div>
@@ -39,6 +36,12 @@ export default class NavBar extends Vue {
 
   get isAuthenticated(): boolean {
     return AuthModule.isAuthenticated;
+  }
+
+  get navRouteKeys(): string[] {
+    return Object
+      .keys(RoutesConfig)
+      .filter((key: string) => !!RoutesConfig[key].showInNav);
   }
 }
 </script>

@@ -1,12 +1,12 @@
-﻿import axios, { AxiosError } from "axios";
+﻿import axios, { AxiosError, AxiosResponse } from "axios";
 import { EventBus } from "../event-bus";
 
 export const configureAxiosInterceptors = (): void => {
   axios.interceptors.response.use(
-    response => {
+    (response: AxiosResponse) => {
       return response;
     },
-    error => {
+    (error: AxiosError) => {
       handleAxiosError(error);
       return Promise.reject(error);
     }

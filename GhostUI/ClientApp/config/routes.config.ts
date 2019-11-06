@@ -1,6 +1,21 @@
-﻿export const RoutesConfig = {
+﻿import { IconProp } from '@fortawesome/fontawesome-svg-core';
+
+export type Route = {
+  readonly path: string;
+  readonly showInNav?: boolean;
+  readonly displayName: string;
+  readonly meta: {
+    readonly icon?: IconProp;
+    readonly transitionName?: string;
+  };
+};
+
+export type RoutesConfig = { [key: string]: Route };
+
+export const RoutesConfig: RoutesConfig = {
   Login: {
     path: "/",
+    showInNav: false,
     displayName: "Logout",
     meta: {
       transitionName: "fade",
@@ -9,6 +24,7 @@
   },
   Form: {
     path: "/form",
+    showInNav: true,
     displayName: "Form",
     meta: {
       transitionName: "pageSlideLeft",
@@ -17,6 +33,7 @@
   },
   Dashboard: {
     path: "/dashboard",
+    showInNav: true,
     displayName: "Home",
     meta: {
       transitionName: "fade",
@@ -25,6 +42,7 @@
   },
   FetchData: {
     path: "/fetchdata",
+    showInNav: true,
     displayName: "Fetch",
     meta: {
       transitionName: "pageSlideRight",

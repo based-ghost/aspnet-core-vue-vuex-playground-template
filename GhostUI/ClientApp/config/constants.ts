@@ -14,7 +14,7 @@ export const DROPDOWN_TEST_DATA: IDropdownOption[] = [
 /**
  * HealthChecks/Swagger response path config
  */
-export const spaNugetUrls = {
+export const spaNugetUrls: { [key: string]: string } = {
   HEALTH_UI: "http://localhost:52530/healthchecks-ui",
   HEALTH_JSON: "http://localhost:52530/healthchecks-json",
   SWAGGER_DOCS: "http://localhost:52530/docs"
