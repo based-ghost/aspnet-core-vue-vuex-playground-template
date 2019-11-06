@@ -11,13 +11,13 @@
       <div class="navbar-routes">
         <div v-if="isAuthenticated" class="routes-wrapper">
           <router-link
-            v-for="routeKey in navRouteKeys"
-            :key="routeKey"
+            v-for="route in navRoutes"
+            :key="route.path"
             class="navbar-item"
-            :to="routesConfig[routeKey].path"
+            :to="route.path"
           >
-            <font-awesome-icon :icon="routesConfig[routeKey].meta.icon"/>
-            {{routesConfig[routeKey].displayName}}
+            <font-awesome-icon :icon="route.meta.icon"/>
+            {{route.displayName}}
           </router-link>
         </div>
       </div>
@@ -27,21 +27,18 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import { RoutesConfig } from "../config/routes.config";
+import { RoutesConfig, Route } from "../config/routes.config";
 import { AuthModule } from "../store/modules/auth";
 
 @Component
 export default class NavBar extends Vue {
-  public readonly routesConfig: RoutesConfig = RoutesConfig;
-
   get isAuthenticated(): boolean {
     return AuthModule.isAuthenticated;
   }
 
-  get navRouteKeys(): string[] {
-    return Object
-      .keys(this.routesConfig)
-      .filter((key: string) => !!this.routesConfig[key].meta.showInNav);
-  }
+  public navRoutes: Route[] = Object
+    .keys(RoutesConfig)
+    .map((key) => RoutesConfig[key])
+    .filter((route) => !!route.meta.showInNav);
 }
 </script>
