@@ -40,8 +40,8 @@ export default class NavBar extends Vue {
 
   get navRouteKeys(): string[] {
     return Object
-      .keys(RoutesConfig)
-      .filter((key: string) => !!RoutesConfig[key].meta.showInNav);
+      .keys(this.routesConfig)
+      .filter((key: string) => !!this.routesConfig[key].meta.showInNav);
   }
 }
 </script>
