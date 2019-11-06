@@ -32,7 +32,7 @@ import { AuthModule } from "../store/modules/auth";
 
 @Component
 export default class NavBar extends Vue {
-  public readonly routesConfig = RoutesConfig;
+  public readonly routesConfig: RoutesConfig = RoutesConfig;
 
   get isAuthenticated(): boolean {
     return AuthModule.isAuthenticated;
@@ -41,7 +41,7 @@ export default class NavBar extends Vue {
   get navRouteKeys(): string[] {
     return Object
       .keys(RoutesConfig)
-      .filter((key: string) => !!RoutesConfig[key].showInNav);
+      .filter((key: string) => !!RoutesConfig[key].meta.showInNav);
   }
 }
 </script>

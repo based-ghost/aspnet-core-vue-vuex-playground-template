@@ -57,8 +57,8 @@ import { AuthModule } from "../store/modules/auth";
 export default class Settings extends Vue {
   public open: boolean = false;
 
-  public readonly nugetURLs = spaNugetUrls;
-  public readonly routesConfig = RoutesConfig;
+  public readonly routesConfig: RoutesConfig = RoutesConfig;
+  public readonly nugetURLs: { [key: string]: string } = spaNugetUrls;
 
   get isAuthenticated(): boolean {
     return AuthModule.isAuthenticated;
