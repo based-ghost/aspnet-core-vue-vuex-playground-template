@@ -1,46 +1,54 @@
 ﻿import store from '../../../store';
 import { AuthApi } from '../../../api';
-import { IAuthState } from './types';
+import { IAuthState, IAuthUser, AuthStatus } from './types';
 import { Module, VuexModule, Mutation, MutationAction, getModule } from 'vuex-module-decorators';
+
+export const AuthStatusEnum: { [key: string]: AuthStatus } = {
+  NONE: "none",
+  PROCESS: "process",
+  SUCCESS: "success",
+  FAIL: "fail"
+};
 
 const initialState = Object.freeze<IAuthState>({
   token: '',
-  status: '',
   userName: '',
   password: '',
   rememberMe: false,
+  status: AuthStatusEnum.NONE,
+});
+
+const authFailureState = Object.freeze<Partial<IAuthState>>({
+  token: initialState.token,
+  status: AuthStatusEnum.FAIL,
 });
 
 @Module({ dynamic: true, store, name: 'auth' })
 class Auth extends VuexModule implements IAuthState {
   public token: string = initialState.token;
-  public status: string = initialState.status;
+  public status: AuthStatus = initialState.status;
   public userName: string = initialState.userName;
   public password: string = initialState.password;
   public rememberMe: boolean = initialState.rememberMe;
 
   public get isUserNameOrPasswordEmpty(): boolean {
-    return !this.userName || !this.password;
+    return (!this.userName || !this.password);
   }
 
   public get isAuthenticated(): boolean {
-    return (
-      !!this.token && this.status.toLowerCase().includes('success')
-    );
+    return (!!this.token && this.status === AuthStatusEnum.SUCCESS);
   }
 
   @MutationAction<Partial<IAuthState>>({ mutate: ['token', 'status'] })
   public async LoginUser(): Promise<Partial<IAuthState>> {
     try {
       const authUser = await AuthApi.login(this.userName, this.password, this.rememberMe);
-      return { 
+      return {
         ...authUser,
       };
     } catch (e) {
-      const { token, status } = initialState;
       return {
-        token,
-        status,
+        ...authFailureState,
       };
     }
   }

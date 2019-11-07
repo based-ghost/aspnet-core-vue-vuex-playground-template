@@ -42,3 +42,7 @@ export default class NavBar extends Vue {
     .filter((route) => !!route.meta.showInNav);
 }
 </script>
+
+<style lang="scss" scoped>
+@import "../assets/style/scss/scoped/navbar.scss";
+</style>

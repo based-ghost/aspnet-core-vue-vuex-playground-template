@@ -24,7 +24,7 @@ export default class UserNameInput extends Vue {
   @Prop() public readonly isInputInvalid: boolean;
 
   get isUserNameInvalid(): boolean {
-    return this.isInputInvalid && !this.userName;
+    return (this.isInputInvalid && !this.userName);
   }
 
   get userName(): string {

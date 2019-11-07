@@ -1,2 +1,11 @@
-﻿export { AuthModule } from './auth.module';
-export { AuthStatusEnum, IAuthUser, IAuthState, ICredentials } from './types';
+﻿import { AuthModule, AuthStatusEnum } from './auth.module';
+import { AuthStatus, IAuthUser, IAuthState, ICredentials } from './types';
+
+export {
+  AuthModule,
+  AuthStatus,
+  AuthStatusEnum,
+  IAuthUser,
+  IAuthState,
+  ICredentials,
+};

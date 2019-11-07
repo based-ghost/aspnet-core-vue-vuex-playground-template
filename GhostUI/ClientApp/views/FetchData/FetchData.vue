@@ -6,19 +6,13 @@
         This component demonstrates fetching data from the server - Start Date Index:
         <code>{{currentStartDateIndex}}</code>
       </h5>
-      <spinner :loading="loading"/>
+      <spinner :isLoading="isLoading"/>
       <forecast-table :forecasts="forecasts" />
       <p class="buttons is-pagination-group">
-        <a
-          class="button is-info"
-          @click="paginateForecastData('prev')"
-        >
+        <a class="button is-info" @click="paginateForecastData('prev')">
           <font-awesome-icon icon="chevron-left"/>Previous
         </a>
-        <a
-          class="button is-info"
-          @click="paginateForecastData('next')"
-        >
+        <a class="button is-info" @click="paginateForecastData('next')">
           Next<font-awesome-icon icon="chevron-right"/>
         </a>
       </p>
@@ -40,7 +34,7 @@ import { WeatherForecastModule, IWeatherForecast } from "../../store/modules/wea
   }
 })
 export default class FetchData extends Vue {
-  public loading: boolean = false;
+  public isLoading: boolean = false;
 
   get forecasts(): IWeatherForecast[] {
     return WeatherForecastModule.forecasts;
@@ -51,25 +45,24 @@ export default class FetchData extends Vue {
   }
 
   public created(): void {
-    !isArrayWithLength(this.forecasts) && this.handleGetWeatherForecasts();
+    if (!isArrayWithLength(this.forecasts)) {
+      this.handleGetWeatherForecasts();
+    }
   }
 
   public paginateForecastData(pageDirection: string): void {
-    const newStartDateIndex = (!pageDirection || pageDirection === "prev")
-      ? this.currentStartDateIndex - 5
-      : this.currentStartDateIndex + 5;
-
+    const indexMod: number = (pageDirection === 'prev') ? -5 : 5;
+    const newStartDateIndex: number = (this.currentStartDateIndex + indexMod);
     this.handleGetWeatherForecasts(newStartDateIndex);
   }
 
   public handleGetWeatherForecasts(startDateIndex: number = 0): void {
-    this.loading = true;
-    WeatherForecastModule.GetWeatherForecasts(startDateIndex)
-      .then(() => {
-        setTimeout(() => { // setTimeout to show loading animation
-          this.loading = false;
-        }, 50);
-      });
+    this.isLoading = true;
+    WeatherForecastModule.GetWeatherForecasts(startDateIndex).then(() => {
+      setTimeout(() => { // setTimeout to show loading animation
+        this.isLoading = false;
+      }, 50);
+    });
   }
 }
 </script>

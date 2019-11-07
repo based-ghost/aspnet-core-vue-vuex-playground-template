@@ -37,7 +37,7 @@
 import { Component, Vue } from "vue-property-decorator";
 import { SignalRApi } from "../../api";
 import { Authenticator } from "../../components";
-import { AuthModule, AuthStatusEnum } from "../../store/modules/auth";
+import { AuthModule, AuthStatus, AuthStatusEnum } from "../../store/modules/auth";
 import { UserNameInput, PasswordInput, RememberMeInput } from "./child-components";
 
 @Component({
@@ -50,7 +50,7 @@ import { UserNameInput, PasswordInput, RememberMeInput } from "./child-component
 })
 export default class Login extends Vue {
   public invalidInputs: boolean = false;
-  public authStatus: string = AuthStatusEnum.None;
+  public authStatus: AuthStatus = AuthStatusEnum.NONE;
 
   get isUserNameOrPasswordEmpty(): boolean {
     return AuthModule.isUserNameOrPasswordEmpty;
@@ -61,7 +61,7 @@ export default class Login extends Vue {
   }
 
   public handleLogin(): void {
-    if (this.authStatus === AuthStatusEnum.Process) {
+    if (this.authStatus === AuthStatusEnum.PROCESS) {
       return;
     }
 
@@ -69,20 +69,19 @@ export default class Login extends Vue {
       this.invalidInputs = true;
       this.$snotify.error("Enter user name/password", "Login Error");
       return;
-    } 
+    }
 
     this.$snotify.clear();
     this.invalidInputs = false;
-    this.authStatus = AuthStatusEnum.Process;
+    this.authStatus = AuthStatusEnum.PROCESS;
 
     setTimeout(() => {
-      AuthModule.LoginUser()
-        .then(() => {
-          this.authStatus = AuthStatusEnum.Success;
-        })
-        .catch(() => {
-          this.authStatus = AuthStatusEnum.Fail;
-        });
+      AuthModule.LoginUser().then(() => {
+        this.authStatus = AuthStatusEnum.SUCCESS;
+      })
+      .catch((e) => {
+        this.authStatus = AuthStatusEnum.FAIL;
+      });
     }, 2500);
   }
 
@@ -91,7 +90,7 @@ export default class Login extends Vue {
   }
 
   public onAuthFailure(): void {
-    this.authStatus = AuthStatusEnum.None;
+    this.authStatus = AuthStatusEnum.NONE;
     this.$snotify.error("Could not authenticate user", "Login Error");
   }
 }

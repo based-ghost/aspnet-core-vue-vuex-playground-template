@@ -1,4 +1,6 @@
-﻿.navbar {
+﻿@import "../base/variables.scss";
+
+.navbar {
   width: 100%;
   background-color: $color-nav-bar;
   padding-left: 7rem;
@@ -51,6 +53,7 @@
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
     -webkit-flex-direction: row;
+    flex-direction: row;
     justify-content: flex-end;
     margin: auto;
     width: 100%;
@@ -72,8 +75,10 @@
       -webkit-box-orient: horizontal;
       -webkit-box-direction: normal;
       -webkit-flex-direction: row;
+      flex-direction: row;
       -webkit-box-align: center;
       -webkit-align-items: center;
+      align-items: center;
       height: 100%;
 
       @include renderMobileNavView {

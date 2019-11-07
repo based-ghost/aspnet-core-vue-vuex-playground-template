@@ -1,14 +1,13 @@
-﻿/* custom scss variables/mixins */
+﻿// custom scss variables/mixins
 @import 'base/variables.scss';
 
-/* NPM package styles */
+// NPM package styles
 @import '~bulma/bulma';
 @import '~vue-snotify/styles/material.scss';
 
-/* Local styles (existing files not listed are imported to components in <style> tag with scoped attribute) */
+// Local styles 
+// .scss modules under /scoped are imported by specific components using <style> tag with "scoped" attribute
 @import 'base/generic.scss';
-@import 'components/navbar.scss';
-@import 'components/settings.scss';
+@import 'base/tool-tip.scss';
+@import 'base/transitions.scss';
 @import 'components/dropdown.scss';
-@import 'components/tool-tip.scss';
-@import 'components/transitions.scss';

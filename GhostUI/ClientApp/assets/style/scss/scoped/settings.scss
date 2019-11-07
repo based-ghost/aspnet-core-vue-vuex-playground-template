@@ -1,4 +1,6 @@
-﻿.fixed-plugin {
+﻿@import "../base/variables.scss";
+
+.fixed-plugin {
   position: fixed;
   top: 120px;
   right: 0;

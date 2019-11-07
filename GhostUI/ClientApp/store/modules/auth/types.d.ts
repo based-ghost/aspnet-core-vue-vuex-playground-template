@@ -1,26 +1,21 @@
-﻿export const enum AuthStatusEnum {
-  None = "none",
-  Process = "process",
-  Success = "success",
-  Fail = "fail"
-}
+﻿export type AuthStatus = "none" | "process" | "success" | "fail";
 
-export interface ICredentials {
+export type IAuthUser = {
+  readonly token?: string;
+  readonly userName?: string;
+  readonly status?: AuthStatus;
+};
+
+export type ICredentials = {
   userName?: string;
   password?: string;
   rememberMe?: boolean;
-}
+};
 
-export interface IAuthUser {
-  readonly token?: string;
-  readonly status?: string;
-  readonly userName?: string;
-}
-
-export interface IAuthState {
-  readonly token: string;
-  readonly status: string;
-  readonly userName: string;
-  readonly password: string;
-  readonly rememberMe: boolean;
-}
+export type IAuthState = {
+  token: string;
+  userName: string;
+  password: string;
+  rememberMe: boolean;
+  status: AuthStatus;
+};

@@ -64,7 +64,7 @@
     "vue-loader": "^15.7.2",
     "vue-style-loader": "^4.1.2",
     "vue-template-compiler": "^2.6.10",
-    "vuex-module-decorators": "^0.10.1",
+    "vuex-module-decorators": "^0.11.0",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10",
     "webpack-dev-middleware": "^3.7.2",

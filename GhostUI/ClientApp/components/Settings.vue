@@ -56,7 +56,6 @@ import { AuthModule } from "../store/modules/auth";
 @Component
 export default class Settings extends Vue {
   public open: boolean = false;
-
   public readonly routesConfig: RoutesConfig = RoutesConfig;
   public readonly nugetURLs: { [key: string]: string } = spaNugetUrls;
 
@@ -69,11 +68,14 @@ export default class Settings extends Vue {
   }
 
   public handleLogout(): void {
-    AuthModule.LogoutUser()
-      .then(() => {
-        this.$snotify.clear();
-        this.$router.push(this.routesConfig.Login.path);
-      });
+    AuthModule.LogoutUser().then(() => {
+      this.$snotify.clear();
+      this.$router.push(this.routesConfig.Login.path);
+    });
   }
 }
 </script>
+
+<style lang="scss" scoped>
+@import "../assets/style/scss/scoped/settings.scss";
+</style>

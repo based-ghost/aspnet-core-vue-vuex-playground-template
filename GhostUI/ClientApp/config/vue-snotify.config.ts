@@ -1,7 +1,6 @@
-﻿import Vue from "vue";
-import Snotify, { SnotifyPosition, SnotifyDefaults, SnotifyStyle } from "vue-snotify";
+﻿import { SnotifyPosition, SnotifyDefaults, SnotifyStyle } from "vue-snotify";
 
-const snotifyOptions: SnotifyDefaults = {
+export const snotifyDefaults: SnotifyDefaults = {
   global: {
     newOnTop: true,
     maxAtPosition: 4,
@@ -24,5 +23,3 @@ const snotifyOptions: SnotifyDefaults = {
     }
   }
 };
-
-Vue.use(Snotify, snotifyOptions);

@@ -21,7 +21,7 @@ class AuthService extends BaseService {
   public async logout(): Promise<AxiosResponse> {
     return await this.$http.post("Logout");
   }
-  
+
   public async login(userName: string, password: string, rememberMe: boolean): Promise<IAuthUser> {
     const credentials: ICredentials = {
       userName,

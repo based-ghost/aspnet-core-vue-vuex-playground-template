@@ -25,10 +25,10 @@
           </p>
           <div class="field">
             <v-dropdown
-              :options="dropdownOptionsList"
               labelKey="label"
-              :selectedOptionLabel="selectedDropdownOption.label"
               wrapperClass="normal-width"
+              :options="dropdownOptionsList"
+              :selectedOptionLabel="selectedDropdownOption.label"
               @select="newSelectedOption => selectedDropdownOption = newSelectedOption"
             />
           </div>

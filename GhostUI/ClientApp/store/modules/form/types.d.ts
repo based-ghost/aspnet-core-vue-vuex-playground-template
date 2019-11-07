@@ -1,10 +1,10 @@
-﻿export interface IDropdownOption {
+﻿export type IDropdownOption = {
   readonly value: number;
   readonly label: string;
-}
+};
 
-export interface IFormState {
-  readonly count: number;
-  readonly checkboxValue: boolean;
-  readonly selectedDropdownOption: IDropdownOption;
-}
+export type IFormState = {
+  count: number;
+  checkboxValue: boolean;
+  selectedDropdownOption: IDropdownOption;
+};
