@@ -1,0 +1,237 @@
+﻿/* OVERIDE & GENERAL STYLES */
+html,
+body {
+  background-color: $color-body-bg;
+}
+
+.box {
+  border-radius: 6px;
+  box-shadow: $box-box-shadow;
+}
+
+#login-img {
+  padding-bottom: 0.75rem;
+}
+
+.section-login {
+  padding: 1rem 1.5rem;
+}
+
+code {
+  color: #212529;
+  padding: 3px 4px;
+  font-size: 0.94em;
+  word-break: break-word;
+  border-radius: 0.25rem;
+  background-color: rgba(187, 239, 253, 0.325);
+  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+.hero.is-dark {
+  background-color: $color-hero-is-dark;
+
+  .hero-body {
+    padding: 1.5rem;
+  }
+
+  .title {
+    color: $color-blue-highlight;
+  }
+}
+
+.form-columns {
+  h5 {
+    margin-bottom: 3.5rem !important;
+  }
+
+  .title:not(.is-spaced) + .subtitle {
+    margin-top: -1rem;
+  }
+}
+
+.is-horizontal-center {
+  justify-content: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.button {
+  font-weight: 600;
+
+  &.is-light {
+    background-color: #f0f0f0;
+
+    &:hover {
+      background-color: #e6e6e6;
+    }
+  }
+}
+
+.remember-me-field {
+  display: flex;
+
+  label {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.incrementer-buttons {
+  > .button {
+    svg {
+      margin-right: 0.5rem;
+    }
+
+    &.plus {
+      svg {
+        color: $green;
+      }
+    }
+
+    &.minus {
+      svg {
+        color: $red;
+      }
+    }
+  }
+}
+
+.dashboard-wrapper {
+  padding-bottom: 3rem;
+
+  hr {
+    width: 55%;
+    margin: 0.5rem auto;
+    background-color: rgba(0, 0, 0, 0.065);
+  }
+}
+
+.dashboard-link {
+  color: #363636;
+  font-weight: 700;
+  padding: 0.25em 0.5em 0.25em;
+  margin-right: 0.25em;
+
+  &.vue {
+    background-color: rgba(66, 185, 131, 0.2);
+    border-bottom: 1px solid rgba(66, 185, 131, 0.75);
+
+    &:hover {
+      background-color: rgba(66, 185, 131, 0.35);
+      border-bottom: 1px solid rgba(66, 185, 131, 1);
+    }
+  }
+
+  &.vuex {
+    background-color: rgba(62, 83, 104, 0.2);
+    border-bottom: 1px solid rgba(62, 83, 104, 0.75);
+
+    &:hover {
+      background-color: rgba(62, 83, 104, 0.35);
+      border-bottom: 1px solid rgba(62, 83, 104, 1);
+    }
+  }
+
+  &.bulma {
+    background-color: rgba(0, 196, 167, 0.2);
+    border-bottom: 1px solid rgba(0, 196, 167, 0.75);
+
+    &:hover {
+      background-color: rgba(0, 196, 167, 0.35);
+      border-bottom: 1px solid rgba(0, 196, 167, 1);
+    }
+  }
+
+  &.aspcore {
+    background-color: rgba(118, 74, 188, 0.2);
+    border-bottom: 1px solid rgba(118, 74, 188, 0.75);
+
+    &:hover {
+      background-color: rgba(118, 74, 188, 0.35);
+      border-bottom: 1px solid rgba(118, 74, 188, 1);
+    }
+  }
+
+  &.sass {
+    background-color: rgba(198, 83, 140, 0.2);
+    border-bottom: 1px solid rgba(198, 83, 140, 0.75);
+
+    &:hover {
+      background-color: rgba(198, 83, 140, 0.35);
+      border-bottom: 1px solid rgba(198, 83, 140, 1);
+    }
+  }
+
+  &.typescript {
+    background-color: rgba(41, 78, 128, 0.2);
+    border-bottom: 1px solid rgba(41, 78, 128, 0.75);
+
+    &:hover {
+      background-color: rgba(41, 78, 128, 0.35);
+      border-bottom: 1px solid rgba(41, 78, 128, 1);
+    }
+  }
+}
+
+.content.dashboard-content li + li {
+  margin-top: 1em;
+}
+
+.dashboard-info {
+  padding: 1.5em !important;
+}
+
+.is-pagination-group {
+  > a {
+    width: 8em;
+
+    &:nth-child(1) {
+      margin-left: auto;
+
+      svg {
+        margin-right: 0.75rem;
+      }
+    }
+
+    &:nth-child(2) {
+      margin-right: auto;
+
+      svg {
+        margin-left: 0.75rem;
+      }
+    }
+  }
+}
+
+.icon-clickable {
+  pointer-events: visible !important;
+  cursor: pointer;
+
+  &:hover {
+    color: #363636 !important;
+    opacity: 0.7;
+  }
+}
+
+.table.is-fullwidth {
+  @media (max-width: 449px) {
+    font-size: 0.8rem;
+  }
+}
+
+.footer {
+  background-color: $color-body-bg;
+  padding: 3rem 1.5rem 3rem;
+  width: 40%;
+  margin: auto;
+
+  > hr {
+    height: 1px;
+    margin: 2rem 0 0.75rem 0;
+    background-color: rgba(0, 0, 0, 0.15);
+  }
+
+  @media (max-width: 900px) {
+    width: 100%;
+  }
+}
