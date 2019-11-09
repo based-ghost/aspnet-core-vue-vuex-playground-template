@@ -1,5 +1,5 @@
-# ASP.NET Core 2.2 / Vue + Vuex + TypeScript + Hot Module Replacement (HMR)
-This template is a SPA application built using ASP.NET Core 2.2 as the REST API server and Vue/Vuex/TypeScript as the web client (Bulma + SASS used for UI styling). You can find a similar version using React + Redux (and associated libraries) here: [aspnet-core-react-redux-playground-template](https://github.com/based-ghost/aspnet-core-react-redux-playground-template)
+# ASP.NET Core 3.0 / Vue + Vuex + TypeScript + Hot Module Replacement (HMR)
+This template is a SPA application built using ASP.NET Core 3.0 as the REST API server and Vue/Vuex/TypeScript as the web client (Bulma + SASS used for UI styling). You can find a similar version using React + Redux (and associated libraries) here: [aspnet-core-react-redux-playground-template](https://github.com/based-ghost/aspnet-core-react-redux-playground-template)
 
 
 ![](https://j.gifs.com/gZMpjj.gif)
@@ -8,10 +8,14 @@ This template is a SPA application built using ASP.NET Core 2.2 as the REST API 
 ## General Overview
 This template is vaguely based on the original Vue + TypeScript .NET Core SPA template that was offered in the past with earlier versions of the framework (Vue has been removed as an option from their starter templates for some reason). Using that as a base, this template greatly extends the functionality provided and also uses the latest versions of all referenced libraries/packages. Keep in mind that I use this project (or others like it) as a testing ground for varying libraries/packages and it is not meant to act as a stand-alone final solution - it is more of POC. For example, the login & logout processes are stubbed to simulate the actual process (no real authentication is happening, however, it is something I plan to add to this project in the near future). I plan on keeping this up to date, and the listed technology stack may be subject to change.
 
+* Front-end bootstrapped using the [`Vue CLI App`](https://cli.vuejs.org)
+* Server has the [`aspnetcore-vueclimiddleware`](https://github.com/EEParker/aspnetcore-vueclimiddleware) nuget package installed in order to execute the `npm run serve` ClientApp script automatically when you run the .NET project (browser is also configured to automatically launch with IIS, so there is no need to manually run your Vue front-end every time).
+
 ## Technology Stack Overview
 - **Server**
-  - ASP.NET Core 2.2
+  - ASP.NET Core 3.0
   - SignalR
+  - [`aspnetcore-vueclimiddleware`](https://github.com/EEParker/aspnetcore-vueclimiddleware)
   - HealthChecks + [AspNetCore.HealthChecks.UI package](https://github.com/xabaril/AspNetCore.Diagnostics.HealthChecks) - this provides  a nicely formatted UI for viewing the results of the HealthCheck modules in use and is accessed on ```/health-ui``` (also, provide an option for viewing the raw JSON data that the UI package prettifies for you at ```/healthchecks-json```). Access this view in the application via the floating settings cog on right screen by clicking the "Health Checks" link.
   - API Documentation using Swagger UI - using package [NSwag.AspNetCore](http://NSwag.org) to prettify the specification output and display at ```/docs``` & [NSwag.MSBuild](http://NSwag.org) to handle automatic updates - so that when the project builds, the NSwag CLI will run and generate an updated API specification. Access this view in the application via the floating settings cog on right screen by clicking the "Swagger API" link.
   - Brotli/Gzip response compression (production build)
@@ -95,7 +99,7 @@ export default class VCheckBox extends Vue {
   
 ## Setup
   - [Node.js version >= 8](https://nodejs.org/en/download/)
-  - [.NET Core 2.2 SDK](https://dotnet.microsoft.com/download/dotnet-core/2.2)
+  - [.NET Core 3.0 SDK](https://dotnet.microsoft.com/download/dotnet-core/3.0)
   - Clone the repository and running ```npm install``` should properly restore all packages and dependencies - if the vendor.js & vendor-manifest.json did not get installed, run ```npm run webpack``` to execute the script added to accomplish this task.
   - A solution.sln file is added to act as an entry point to open the application in Visual Studio. Visual Studio 2017 and up and the [Vue.js Pack 2017](https://marketplace.visualstudio.com/items?itemName=MadsKristensen.VuejsPack-18329) extension may need to be installed as well.
   - GhostUI/GhostUI.csproj acts as the entry point to open the application in Visual Studio Code.
