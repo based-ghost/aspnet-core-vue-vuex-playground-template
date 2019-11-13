@@ -12,7 +12,7 @@ export type Route = {
 
 export type RoutesConfig = { [key: string]: Route };
 
-export const RoutesConfig: RoutesConfig = {
+export const RoutesConfig = Object.freeze<RoutesConfig>({
   Login: {
     path: "/",
     displayName: "Logout",
@@ -49,4 +49,4 @@ export const RoutesConfig: RoutesConfig = {
       icon: "cloud"
     }
   }
-};
+});

@@ -15,7 +15,7 @@
             class="dropdown-item"
             target="_blank"
             rel="noopener"
-            :href="nugetURLs.HEALTH_UI"
+            :href="nugetUrls.HEALTH_UI"
             role="button"
           >
             <font-awesome-icon icon="heart" />Health Checks
@@ -26,7 +26,7 @@
             class="dropdown-item"
             target="_blank"
             rel="noopener"
-            :href="nugetURLs.SWAGGER_DOCS"
+            :href="nugetUrls.SWAGGER_DOCS"
             role="button"
           >
             <font-awesome-icon icon="file" />Swagger API
@@ -49,15 +49,15 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import { RoutesConfig } from "@/config/routes.config";
-import { spaNugetUrls } from "@/config/constants";
 import { AuthModule } from "@/store/modules/auth";
+import { RoutesConfig } from "@/config/routes.config";
+import { nugetUrlConfig, UrlConfig } from "@/config/constants";
 
 @Component
 export default class Settings extends Vue {
   public open: boolean = false;
+  public readonly nugetUrls: UrlConfig = nugetUrlConfig;
   public readonly routesConfig: RoutesConfig = RoutesConfig;
-  public readonly nugetURLs: { [key: string]: string } = spaNugetUrls;
 
   get isAuthenticated(): boolean {
     return AuthModule.isAuthenticated;

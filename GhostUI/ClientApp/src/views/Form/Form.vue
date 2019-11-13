@@ -25,10 +25,10 @@
           </p>
           <div class="field">
             <v-dropdown
-              :options="dropdownOptionsList"
               labelKey="label"
-              :selectedOptionLabel="selectedDropdownOption.label"
+              :options="dropdownOptions"
               wrapperClass="normal-width"
+              :selectedOptionLabel="selectedDropdownOption.label"
               @select="newSelectedOption => selectedDropdownOption = newSelectedOption"
             />
           </div>
@@ -64,7 +64,7 @@ import { FormModule, IDropdownOption } from "@/store/modules/form";
   }
 })
 export default class Form extends Vue {
-  public readonly dropdownOptionsList: IDropdownOption[] = DROPDOWN_TEST_DATA;
+  public readonly dropdownOptions: IDropdownOption[] = DROPDOWN_TEST_DATA;
 
   get count(): number {
     return FormModule.count;

@@ -1,6 +1,6 @@
 ﻿import { SnotifyPosition, SnotifyDefaults, SnotifyStyle } from "vue-snotify";
 
-export const snotifyDefaults: SnotifyDefaults = {
+export const snotifyDefaults = Object.freeze<SnotifyDefaults>({
   global: {
     newOnTop: true,
     maxAtPosition: 4,
@@ -22,4 +22,4 @@ export const snotifyDefaults: SnotifyDefaults = {
       timeout: 7500
     }
   }
-};
+});
