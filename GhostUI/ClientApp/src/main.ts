@@ -1,4 +1,5 @@
 import Vue from 'vue';
+import '@/assets/style/scss/main.scss';
 import App from '@/App.vue';
 import store from '@/store';
 import router from '@/router';
@@ -6,12 +7,7 @@ import Snotify from 'vue-snotify';
 import vClickOutside from '@/plugins/vue-click-outside';
 import { snotifyDefaults } from '@/config/vue-snotify.config';
 import { configureAxiosInterceptors } from '@/config/axios.config';
-
-// Load fortawesome svgs and custom/framework css
 import '@/config/fa.config';
-import '@/assets/style/scss/main.scss';
-
-// register service worker (production only - further PWA configuration in vue.config.js)
 import '@/registerServiceWorker';
 
 // Execute any base Axios configurations (e.g. request interceptors)

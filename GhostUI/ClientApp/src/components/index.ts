@@ -1,4 +1,4 @@
-﻿import NavBar from './NavBar.vue';
+﻿import Navbar from './Navbar.vue';
 import Spinner from './Spinner.vue';
 import AppFooter from './Footer.vue';
 import Settings from './Settings.vue';
@@ -7,7 +7,7 @@ import VDropdown from './VDropdown.render';
 import Authenticator from './Authenticator.vue';
 
 export {
-  NavBar,
+  Navbar,
   Spinner,
   Settings,
   AppFooter,

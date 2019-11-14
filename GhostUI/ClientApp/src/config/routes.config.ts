@@ -2,7 +2,7 @@
 
 export type Route = {
   readonly path: string;
-  readonly displayName: string;
+  readonly name: string;
   readonly meta: {
     readonly icon?: IconProp;
     readonly showInNav?: boolean;
@@ -15,7 +15,7 @@ export type RoutesConfig = { [key: string]: Route };
 export const RoutesConfig = Object.freeze<RoutesConfig>({
   Login: {
     path: "/",
-    displayName: "Logout",
+    name: "Logout",
     meta: {
       showInNav: false,
       transitionName: "fade",
@@ -24,7 +24,7 @@ export const RoutesConfig = Object.freeze<RoutesConfig>({
   },
   Form: {
     path: "/form",
-    displayName: "Form",
+    name: "Form",
     meta: {
       showInNav: true,
       transitionName: "pageSlideLeft",
@@ -33,7 +33,7 @@ export const RoutesConfig = Object.freeze<RoutesConfig>({
   },
   Dashboard: {
     path: "/dashboard",
-    displayName: "Home",
+    name: "Home",
     meta: {
       showInNav: true,
       transitionName: "fade",
@@ -42,7 +42,7 @@ export const RoutesConfig = Object.freeze<RoutesConfig>({
   },
   FetchData: {
     path: "/fetchdata",
-    displayName: "Fetch",
+    name: "Fetch",
     meta: {
       showInNav: true,
       transitionName: "pageSlideRight",

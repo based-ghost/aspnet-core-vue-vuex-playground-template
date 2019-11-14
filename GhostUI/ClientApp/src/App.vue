@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <vue-snotify />
-    <nav-bar />
+    <navbar />
     <settings />
     <transition :name="$route.meta.transitionName" mode="out-in">
       <router-view />
@@ -12,11 +12,11 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import { AppFooter, NavBar, Settings } from "@/components";
+import { AppFooter, Navbar, Settings } from "@/components";
 
 @Component({
   components: {
-    NavBar,
+    Navbar,
     Settings,
     AppFooter,
   }

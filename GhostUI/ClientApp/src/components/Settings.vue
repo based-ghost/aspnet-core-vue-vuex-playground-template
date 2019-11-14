@@ -39,7 +39,7 @@
             @click="handleLogout"
           >
             <font-awesome-icon :icon="routesConfig.Login.meta.icon" />
-            {{routesConfig.Login.displayName}}
+            {{routesConfig.Login.name}}
           </a>
         </li>
       </ul>

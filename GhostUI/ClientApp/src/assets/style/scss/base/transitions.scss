@@ -49,3 +49,11 @@
     opacity: 1;
   }
 }
+
+@keyframes opacityFadeIn {
+  from {
+    opacity: 0;
+  } to {
+    opacity: 1;
+  }
+}

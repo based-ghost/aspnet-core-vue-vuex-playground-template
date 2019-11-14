@@ -24,7 +24,7 @@
         document.addEventListener("click", handler);
       },
 
-      unbind: function(el, binding) {
+      unbind: function(el) {
         document.removeEventListener("click", el.__vueClickOutside__);
         el.__vueClickOutside__ = null;
       }
