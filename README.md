@@ -95,7 +95,7 @@ export default class VCheckBox extends Vue {
 ```
     
 - **Unit Testing**
-  - Jest - configured in package.json and pointed to run all tests in any files under /ClientApp/tests. Run ```npm run test:unit``` to execute.
+  - Jest - configured in package.json and pointed to run all tests in any files under /ClientApp/tests. Run ```npm run test:unit``` to execute. Unit tests for components `VCheckBox.render.tsx` and `Spinner.vue` are included as examples.
   
 ## Setup
   - [Node.js version >= 8](https://nodejs.org/en/download/)
