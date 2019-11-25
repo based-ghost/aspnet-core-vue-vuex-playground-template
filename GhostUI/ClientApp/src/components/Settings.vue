@@ -14,7 +14,7 @@
           <a
             class="dropdown-item"
             target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer"
             :href="nugetUrls.HEALTH_UI"
             role="button"
           >
@@ -25,7 +25,7 @@
           <a
             class="dropdown-item"
             target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer"
             :href="nugetUrls.SWAGGER_DOCS"
             role="button"
           >
