@@ -55,9 +55,8 @@ namespace GhostUI
             // In production, the Vue files will be served from this directory
             services.AddSpaStaticFiles(configuration => configuration.RootPath = $"{_spaSourcePath}/dist");
 
-            // Register the Swagger services
+            // Register the Swagger services (using OpenApi 3.0)
             services.AddOpenApiDocument(configure => configure.Title = $"{this.GetType().Namespace} API");
-            //services.AddSwaggerDocument(settings => settings.Title = $"{this.GetType().Namespace} API");
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -116,7 +115,8 @@ namespace GhostUI
 
             // Map controllers / SignalR hubs / HealthChecks
             // Configure VueCliMiddleware package to handle startup of Vue.js ClientApp front-end
-            app.UseEndpoints(endpoints => {
+            app.UseEndpoints(endpoints =>
+            {
                 endpoints.MapControllers();
                 endpoints.MapHub<UsersHub>("/hubs/users");
 
@@ -125,15 +125,12 @@ namespace GhostUI
                     Predicate = _ => true,
                     ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
                 });
+
                 endpoints.MapHealthChecksUI();
 
-                // initialize vue cli middleware
-#if DEBUG
                 if (System.Diagnostics.Debugger.IsAttached)
                     endpoints.MapToVueCliProxy("{*path}", new SpaOptions { SourcePath = _spaSourcePath }, "serve", regex: "running at");
                 else
-#endif
-                    // note: output of vue cli or quasar cli should be wwwroot
                     endpoints.MapFallbackToFile("index.html");
             });
         }
