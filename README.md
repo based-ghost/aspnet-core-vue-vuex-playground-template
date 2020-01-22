@@ -2,7 +2,7 @@
 This template is a SPA application built using ASP.NET Core 3.1 as the REST API server and Vue/Vuex/TypeScript as the web client (Bulma + SASS used for UI styling). You can find a similar version using React + Redux (and associated libraries) here: [aspnet-core-react-redux-playground-template](https://github.com/based-ghost/aspnet-core-react-redux-playground-template)
 
 
-![](https://j.gifs.com/D1rAKY.gif)
+![](https://j.gifs.com/oVKkEY.gif)
 
 
 ## General Overview
