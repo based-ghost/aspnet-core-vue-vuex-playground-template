@@ -26,12 +26,12 @@
     border-radius: 50%;
     box-sizing: border-box;
     border: 2px solid transparent;
-    border-top-color: $blue;
     margin: auto;
     bottom: 0;
     left: 0;
     right: 0;
     top: 0;
+    border-top-color: $color-login-default;
     animation: fingerprint-spinner-animation 1500ms cubic-bezier(0.68, -0.75, 0.265, 1.75) infinite forwards;
 
     &:nth-child(1) {

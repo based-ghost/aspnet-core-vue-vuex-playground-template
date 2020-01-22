@@ -3,10 +3,11 @@
     <section class="hero is-dark">
       <div class="hero-body">
         <div class="is-flex is-horizontal-center">
-          <img
-            src="@/assets/image/aspcore-vue.png"
-            alt="AspNetCoreVue"
-            width="300"
+          <vue-core-logo
+            role="img"
+            width="260"
+            height="260"
+            aria-hidden="true"
           />
         </div>
       </div>
@@ -15,11 +16,11 @@
       <div class="card">
         <div class="card-content">
           <div class="column">
-            <p class="title has-text-centered">Tech Stack</p>
+            <p class="title has-text-centered">Technology Stack</p>
             <hr>
             <div class="columns is-multiline">
               <div class="column dashboard-info is-half">
-                <div class="content dashboard-content">
+                <div class="content">
                   <ul>
                     <li>
                       <a
@@ -52,7 +53,7 @@
                 </div>
               </div>
               <div class="column dashboard-info is-half">
-                <div class="content dashboard-content">
+                <div class="content">
                   <ul>
                     <li>
                       <a
@@ -94,7 +95,12 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
+import VueCoreLogo from "@/assets/img/VueCore.svg?inline";
 
-@Component
+@Component({
+  components: {
+    VueCoreLogo
+  }
+})
 export default class Dashboard extends Vue {}
 </script>

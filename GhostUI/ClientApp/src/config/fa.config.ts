@@ -2,8 +2,6 @@
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import {
-  faHome,
-  faCloud,
   faHeart,
   faFile,
   faUser,
@@ -13,16 +11,19 @@ import {
   faPlus,
   faMinus,
   faEyeSlash,
-  faPencilAlt,
   faSignInAlt,
   faSignOutAlt,
-  faChevronLeft,
-  faChevronRight
+  faAngleDoubleLeft,
+  faAngleDoubleRight
 } from "@fortawesome/free-solid-svg-icons";
 
+import {
+  faGithub,
+  faMediumM,
+  faTwitter
+} from "@fortawesome/free-brands-svg-icons";
+
 library.add(
-  faHome,
-  faCloud,
   faHeart,
   faFile,
   faUser,
@@ -32,11 +33,13 @@ library.add(
   faPlus,
   faMinus,
   faEyeSlash,
-  faPencilAlt,
   faSignInAlt,
   faSignOutAlt,
-  faChevronLeft,
-  faChevronRight
+  faAngleDoubleLeft,
+  faAngleDoubleRight,
+  faGithub,
+  faMediumM,
+  faTwitter
 );
 
 Vue.component("font-awesome-icon", FontAwesomeIcon);

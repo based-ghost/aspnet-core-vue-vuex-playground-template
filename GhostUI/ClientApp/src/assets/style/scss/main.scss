@@ -5,9 +5,10 @@
 @import '~bulma/bulma';
 @import '~vue-snotify/styles/material.scss';
 
-// Local styles 
+// Local styles
 // .scss modules under /scoped are imported by specific components using <style> tag with "scoped" attribute
 @import 'base/generic.scss';
 @import 'base/tool-tip.scss';
 @import 'base/transitions.scss';
+@import 'components/footer.scss';
 @import 'components/dropdown.scss';

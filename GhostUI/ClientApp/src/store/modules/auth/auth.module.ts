@@ -43,9 +43,7 @@ class Auth extends VuexModule implements IAuthState {
   public async LoginUser(): Promise<IAuthUser> {
     try {
       const authUser = await AuthApi.login(this.userName, this.password, this.rememberMe);
-      return { 
-        ...authUser,
-      };
+      return authUser;
     } catch (e) {
       return {
         ...authFailureState,
@@ -77,4 +75,4 @@ class Auth extends VuexModule implements IAuthState {
   }
 }
 
-export const AuthModule = getModule(Auth); 
+export const AuthModule = getModule(Auth);

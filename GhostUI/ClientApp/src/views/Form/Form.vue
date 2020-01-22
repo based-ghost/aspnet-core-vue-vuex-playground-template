@@ -1,49 +1,58 @@
 ﻿<template>
   <section class="section">
-    <div class="container is-centered box">
-      <div class="columns form-columns">
-        <div class="column">
-          <h3 class="title is-4">Counter</h3>
-          <h5 class="subtitle is-5">Click buttons to change count value</h5>
-          <p class="subtitle is-5">
-            Current count: <code>{{count}}</code>
-          </p>
-          <p class="buttons incrementer-buttons">
-            <button class="button is-light minus" @click="count = count - 1">
-              <font-awesome-icon icon="minus" class="is-danger" />Decrement
-            </button>
-            <button class="button is-light plus" @click="count = count + 1">
-              <font-awesome-icon icon="plus" class="is-success" />Increment
-            </button>
-          </p>
-        </div>
-        <div class="column">
-          <h3 class="title is-4">Dropdown</h3>
-          <h5 class="subtitle is-5">Select an option from the dropdown</h5>
-          <p class="subtitle is-5">
-            Option: <code>{{JSON.stringify(selectedDropdownOption || {})}}</code>
-          </p>
-          <div class="field">
-            <v-dropdown
-              labelKey="label"
-              :options="dropdownOptions"
-              wrapperClass="normal-width"
-              :selectedOptionLabel="selectedDropdownOption.label"
-              @select="newSelectedOption => selectedDropdownOption = newSelectedOption"
-            />
+    <div class="container">
+      <h3 class="title is-3">Form Controls</h3>
+      <div class="box container-box">
+        <div class="columns form-columns">
+          <div class="column">
+            <h3 class="title is-4">Counter</h3>
+            <h5 class="subtitle is-5">Use buttons to update count value</h5>
+            <p class="buttons incrementer-buttons form-control-group">
+              <button
+                @click="count = count - 1"
+                class="button is-light minus"
+              >
+                <font-awesome-icon icon="minus" class="is-danger" />
+              </button>
+              <button
+                @click="count = count + 1"
+                class="button is-light plus"
+              >
+                <font-awesome-icon icon="plus" class="is-success" />
+              </button>
+            </p>
+            <p class="subtitle is-5">
+              Current count: <code>{{count}}</code>
+            </p>
           </div>
-        </div>
-        <div class="column">
-          <h3 class="title is-4">Checkbox</h3>
-          <h5 class="subtitle is-5">Toggle the checkbox</h5>
-          <p class="subtitle is-5">
-            Checked: <code>{{checkboxValue}}</code>
-          </p>
-          <div class="field">
-            <v-checkbox
-              :checked="checkboxValue"
-              @checked="isCheckedState => checkboxValue = isCheckedState"
-            />
+          <div class="column">
+            <h3 class="title is-4">Dropdown</h3>
+            <h5 class="subtitle is-5">Select options from the dropdown</h5>
+            <div class="field form-control-group">
+              <v-dropdown
+                labelKey="label"
+                :options="dropdownOptions"
+                wrapperClass="normal-width"
+                :selectedOptionLabel="selectedDropdownOption.label"
+                @select="newSelectedOption => selectedDropdownOption = newSelectedOption"
+              />
+            </div>
+            <p class="subtitle is-5">
+              Option: <code>{{selectedOptionJSON}}</code>
+            </p>
+          </div>
+          <div class="column">
+            <h3 class="title is-4">Checkbox</h3>
+            <h5 class="subtitle is-5">Toggle the checkbox</h5>
+            <div class="field form-control-group">
+              <v-checkbox
+                :checked="checkboxValue"
+                @checked="isCheckedState => checkboxValue = isCheckedState"
+              />
+            </div>
+            <p class="subtitle is-5">
+              Checked: <code>{{checkboxValue}}</code>
+            </p>
           </div>
         </div>
       </div>
@@ -65,6 +74,11 @@ import { FormModule, IDropdownOption } from "@/store/modules/form";
 })
 export default class Form extends Vue {
   public readonly dropdownOptions: IDropdownOption[] = DROPDOWN_TEST_DATA;
+
+  get selectedOptionJSON(): string {
+    const option = this.selectedDropdownOption || {};
+    return JSON.stringify(option).replace(/"/g, "'");
+  }
 
   get count(): number {
     return FormModule.count;

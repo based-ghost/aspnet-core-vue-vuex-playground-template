@@ -2,10 +2,10 @@
   <div class="field">
     <div class="control has-icons-left has-icons-right">
       <input
-        placeholder="Password"       
+        placeholder="Password"
         v-model.trim="password"
         :type="!showPassword ? 'password' : 'text'"
-        :class="['input is-large', { 'is-danger': isPasswordInvalid }]"
+        :class="['input is-medium', { 'is-danger': isPasswordInvalid }]"
       />
       <span class="icon is-left">
         <font-awesome-icon icon="lock" />

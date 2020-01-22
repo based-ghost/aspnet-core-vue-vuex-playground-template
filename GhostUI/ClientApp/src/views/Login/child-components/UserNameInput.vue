@@ -6,7 +6,7 @@
         type="text"
         placeholder="Username"
         v-model.trim="userName"
-        :class="['input is-large', { 'is-danger': isUserNameInvalid }]"
+        :class="['input is-medium', { 'is-danger': isUserNameInvalid }]"
       />
       <span class="icon is-left">
         <font-awesome-icon icon="user" />

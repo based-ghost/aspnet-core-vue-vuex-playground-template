@@ -3,13 +3,13 @@ import styled from 'vue-styled-components';
 import { Component, Prop } from 'vue-property-decorator';
 
 // ============================================================================
-// React CSS-in-JS using its popular styled-components library 
+// React CSS-in-JS using its popular styled-components library
 // ...(creators have made one for Vue.js)
 // ============================================================================
 
-const _borderColor = '#dbdbdb';
-const _checkMarkColor = '#209cee';
-const _borderColorHover = '#b5b5b5';
+const BORDER_COLOR = '#dbdbdb';
+const CHECK_MARK_COLOR = '#09d3ac';
+const BORDER_CHECKED_COLOR = 'rgba(9, 211, 172, 0.6)';
 
 const StyledSpan = styled.span`
   padding-left: 1.5rem;
@@ -31,6 +31,8 @@ const StyledInput = styled.input`
   position: absolute;
 
   :checked ~ i {
+    border-color: ${BORDER_CHECKED_COLOR};
+
     :after,
     :before {
       opacity: 1;
@@ -46,10 +48,6 @@ const StyledInput = styled.input`
       transition-delay: 0.15s;
     }
   }
-
-  :hover ~ i {
-    border-color: ${_borderColorHover};
-  }
 `;
 
 const StyledCheckIcon = styled.i`
@@ -57,7 +55,7 @@ const StyledCheckIcon = styled.i`
   width: 1rem;
   height: 1rem;
   position: absolute;
-  color: ${_borderColor};
+  color: ${BORDER_COLOR};
   box-sizing: border-box;
   border-radius: 0.0625rem;
   background-color: transparent;
@@ -75,7 +73,7 @@ const StyledCheckIcon = styled.i`
     position: absolute;
     border-radius: 0.25rem;
     transform-origin: left top;
-    background-color: ${_checkMarkColor};
+    background-color: ${CHECK_MARK_COLOR};
     transition: opacity 0.38s ease, height 0s linear 0.38s;
   }
 
@@ -99,12 +97,12 @@ const StyledCheckIcon = styled.i`
 
 @Component
 export default class VCheckBox extends Vue {
-  @Prop({ default: null })  public readonly id: string;
-  @Prop({ default: null })  public readonly name: string;
-  @Prop({ default: null })  public readonly label: string;
-  @Prop({ default: false }) public readonly checked:  boolean;
-  @Prop({ default: false }) public readonly disabled: boolean;
-  @Prop({ default: false }) public readonly readOnly: boolean;
+  @Prop({ default: undefined })  public readonly id: string;
+  @Prop({ default: undefined })  public readonly name: string;
+  @Prop({ default: undefined })  public readonly label: string;
+  @Prop({ default: false })      public readonly checked:  boolean;
+  @Prop({ default: false })      public readonly disabled: boolean;
+  @Prop({ default: false })      public readonly readOnly: boolean;
 
   public render(): VNode {
     return (

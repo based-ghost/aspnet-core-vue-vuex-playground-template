@@ -1,9 +1,9 @@
 ﻿<template>
   <div v-if="isAuthenticated" :class="['fixed-plugin', { 'fixed-plugin-active': open }]">
     <div class="dropdown">
-      <a 
-        role="button" 
-        @click="open = !open" 
+      <a
+        role="button"
+        @click="open = !open"
         v-click-outside="closeSettingsMenu"
       >
         <font-awesome-icon icon="cog" size="3x" />
@@ -33,9 +33,9 @@
           </a>
         </li>
         <li>
-          <a 
-            class="dropdown-item" 
-            role="button" 
+          <a
+            class="dropdown-item"
+            role="button"
             @click="handleLogout"
           >
             <font-awesome-icon :icon="routesConfig.Login.meta.icon" />
@@ -68,10 +68,11 @@ export default class Settings extends Vue {
   }
 
   public handleLogout(): void {
-    AuthModule.LogoutUser().then(() => {
-      this.$snotify.clear();
-      this.$router.push(this.routesConfig.Login.path);
-    });
+    AuthModule.LogoutUser()
+      .then(() => {
+        this.$snotify.clear();
+        this.$router.push(this.routesConfig.Login.path);
+      });
   }
 }
 </script>

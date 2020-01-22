@@ -2,10 +2,11 @@
   <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-wrapper">
       <div class="brand-wrapper">
-        <img 
-          src="@/assets/image/bulma.io-logo.png" 
-          alt="bulma.io-logo" 
-          width="155"
+        <bulma-logo
+          role="img"
+          width="135"
+          height="66"
+          aria-hidden="true"
         />
       </div>
       <div class="navbar-routes">
@@ -16,7 +17,6 @@
           :to="route.path"
           class="navbar-item"
         >
-          <font-awesome-icon :icon="route.meta.icon"/>
           {{route.name}}
         </router-link>
       </div>
@@ -28,17 +28,21 @@
 import { Component, Vue } from "vue-property-decorator";
 import { RoutesConfig, Route } from "@/config/routes.config";
 import { AuthModule } from "@/store/modules/auth";
+import BulmaLogo from "@/assets/img/BulmaLogo.svg?inline";
 
-@Component
+@Component({
+  components: {
+    BulmaLogo
+  }
+})
 export default class Navbar extends Vue {
   get isAuthenticated(): boolean {
     return AuthModule.isAuthenticated;
   }
 
-  public navRoutes: Route[] = Object
-    .keys(RoutesConfig)
-    .map((key: string) => RoutesConfig[key])
-    .filter((route: Route) => !!route.meta.showInNav);
+  public navRoutes: Route[] = Object.keys(RoutesConfig)
+    .map((key) => RoutesConfig[key])
+    .filter((route) => !!route.meta.showInNav);
 }
 </script>
 

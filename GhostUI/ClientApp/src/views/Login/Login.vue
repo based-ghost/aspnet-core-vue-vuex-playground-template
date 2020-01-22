@@ -4,18 +4,18 @@
       <div class="column is-4 is-offset-4">
         <h3 class="title">Login</h3>
         <p class="subtitle">Please login to proceed</p>
-        <div class="box">
+        <div class="box login-box">
           <img
             id="login-img"
-            src="@/assets/image/based-ghost-main.png"
+            src="@/assets/img/based-ghost-main.png"
             alt="based-ghost-logo"
-            width="180"
+            width="175"
           />
           <form @submit.prevent="handleLogin">
             <user-name-input :isInputInvalid="invalidInputs" />
             <password-input :isInputInvalid="invalidInputs" />
             <remember-me-input />
-            <button class="button is-info is-large is-fullwidth" type="submit">
+            <button class="button is-info is-medium is-fullwidth" type="submit">
               <span>Login</span>
               <span class="icon">
                 <font-awesome-icon icon="sign-in-alt" />
@@ -76,13 +76,14 @@ export default class Login extends Vue {
     this.authStatus = AuthStatusEnum.PROCESS;
 
     setTimeout(() => {
-      AuthModule.LoginUser().then(() => {
-        this.authStatus = AuthStatusEnum.SUCCESS;
-      })
-      .catch((e) => {
-        this.authStatus = AuthStatusEnum.FAIL;
-      });
-    }, 2500);
+      AuthModule.LoginUser()
+        .then(() => {
+          this.authStatus = AuthStatusEnum.SUCCESS;
+        })
+        .catch((e) => {
+          this.authStatus = AuthStatusEnum.FAIL;
+        });
+    }, 2250);
   }
 
   public onAuthSuccess(): void {

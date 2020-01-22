@@ -9,10 +9,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr 
-        v-for="forecast in forecasts" 
-        :key="forecast.id"
-      >
+      <tr v-for="forecast in forecasts" :key="forecast.id">
         <td>{{forecast.dateFormatted}}</td>
         <td>{{forecast.temperatureC}}</td>
         <td>{{forecast.temperatureF}}</td>

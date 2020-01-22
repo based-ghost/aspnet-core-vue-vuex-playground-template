@@ -1,21 +1,24 @@
 ﻿<template>
   <section class="section">
-    <div class="container is-centered box">
-      <h3 class="title is-3">Weather forecast</h3>
-      <h5 class="subtitle is-5">
-        This component demonstrates fetching data from the server - Start Date Index:
-        <code>{{currentStartDateIndex}}</code>
-      </h5>
-      <spinner :isLoading="isLoading"/>
-      <forecast-table :forecasts="forecasts" />
-      <p class="buttons is-pagination-group">
-        <a class="button is-info" @click="paginateForecastData('prev')">
-          <font-awesome-icon icon="chevron-left"/>Previous
-        </a>
-        <a class="button is-info" @click="paginateForecastData('next')">
-          Next<font-awesome-icon icon="chevron-right"/>
-        </a>
-      </p>
+    <div class="container">
+      <h3 class="title is-3">Fetch Data</h3>
+      <div class="box container-box">
+        <h3 class="title is-4">Weather forecast</h3>
+        <h5 class="subtitle is-5">
+          This component demonstrates fetching data from the server - Start Date Index:
+          <code>{{currentStartDateIndex}}</code>
+        </h5>
+        <spinner :isLoading="isLoading"/>
+        <forecast-table :forecasts="forecasts" />
+        <p class="buttons is-pagination-group">
+          <a class="button is-info" @click="paginateForecastData('prev')">
+            <font-awesome-icon icon="angle-double-left" size="2x" />
+          </a>
+          <a class="button is-info" @click="paginateForecastData('next')">
+            <font-awesome-icon icon="angle-double-right" size="2x" />
+          </a>
+        </p>
+      </div>
     </div>
   </section>
 </template>
@@ -58,11 +61,12 @@ export default class FetchData extends Vue {
 
   public handleGetWeatherForecasts(startDateIndex: number = 0): void {
     this.isLoading = true;
-    WeatherForecastModule.GetWeatherForecasts(startDateIndex).then(() => {
-      setTimeout(() => { // setTimeout to show loading animation
-        this.isLoading = false;
-      }, 50);
-    });
+    WeatherForecastModule.GetWeatherForecasts(startDateIndex)
+      .then(() => {
+        setTimeout(() => { // setTimeout to show loading animation
+          this.isLoading = false;
+        }, 50);
+      });
   }
 }
 </script>

@@ -1,0 +1,49 @@
+.footer {
+  color: #fff;
+  background-color: $color-nav-bar;
+  padding: 3rem 1.5rem 3rem;
+  font-size: 1.15rem;
+  width: 100%;
+  margin: auto;
+
+  @media only screen and (max-width: 769px) {
+    font-size: 1rem;
+  }
+
+  .content {
+    text-align: center;
+    word-spacing: 0.05rem;
+  }
+
+  .buttons {
+    margin-bottom: 0rem;
+
+    > .button {
+      font-size: 1.25rem;
+      margin-bottom: 0;
+      margin-right: 0 !important;
+      color: #fff;
+      background-color: transparent;
+      border-color: transparent;
+      padding-left: 0.5em;
+      padding-right: 0.5em;
+      transition: color 0.2s ease-out;
+
+      &:hover {
+        color: $cyan;
+      }
+
+      &:first-child {
+        margin-left: auto !important;
+      }
+
+      &:last-child {
+        margin-right: auto !important;
+      }
+
+      .icon {
+        align-items: baseline;
+      }
+    }
+  }
+}
