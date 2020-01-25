@@ -10,15 +10,16 @@
         />
       </div>
       <div class="navbar-routes">
-        <router-link
-          v-if="isAuthenticated"
-          v-for="route in navRoutes"
-          :key="route.path"
-          :to="route.path"
-          class="navbar-item"
-        >
-          {{route.name}}
-        </router-link>
+        <div v-if="isAuthenticated" class="navbar-items-group">
+          <router-link
+            v-for="route in navRoutes"
+            :key="route.path"
+            :to="route.path"
+            class="navbar-item"
+          >
+            {{route.name}}
+          </router-link>
+        </div>
       </div>
     </div>
   </nav>

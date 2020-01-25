@@ -1,5 +1,8 @@
 ﻿<template>
-  <div v-if="isAuthenticated" :class="['fixed-plugin', { 'fixed-plugin-active': open }]">
+  <div
+    v-if="isAuthenticated"
+    :class="['fixed-plugin', { 'fixed-plugin-active': open }]"
+  >
     <div class="dropdown">
       <a
         role="button"
@@ -12,30 +15,30 @@
         <li class="header-title">Settings</li>
         <li>
           <a
-            class="dropdown-item"
+            role="button"
             target="_blank"
+            class="dropdown-item"
             rel="noopener noreferrer"
             :href="nugetUrls.HEALTH_UI"
-            role="button"
           >
             <font-awesome-icon icon="heart" />Health Checks
           </a>
         </li>
         <li>
           <a
-            class="dropdown-item"
+            role="button"
             target="_blank"
+            class="dropdown-item"
             rel="noopener noreferrer"
             :href="nugetUrls.SWAGGER_DOCS"
-            role="button"
           >
             <font-awesome-icon icon="file" />Swagger API
           </a>
         </li>
         <li>
           <a
-            class="dropdown-item"
             role="button"
+            class="dropdown-item"
             @click="handleLogout"
           >
             <font-awesome-icon :icon="routesConfig.Login.meta.icon" />

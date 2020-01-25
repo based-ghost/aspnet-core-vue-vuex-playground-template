@@ -6,16 +6,16 @@
         <p class="subtitle">Please login to proceed</p>
         <div class="box login-box">
           <img
-            id="login-img"
-            src="@/assets/img/based-ghost-main.png"
-            alt="based-ghost-logo"
             width="175"
+            id="login-img"
+            alt="based-ghost-logo"
+            src="@/assets/img/based-ghost-main.png"
           />
           <form @submit.prevent="handleLogin">
             <user-name-input :isInputInvalid="invalidInputs" />
             <password-input :isInputInvalid="invalidInputs" />
             <remember-me-input />
-            <button class="button is-info is-medium is-fullwidth" type="submit">
+            <button type="submit" class="button is-info is-medium is-fullwidth">
               <span>Login</span>
               <span class="icon">
                 <font-awesome-icon icon="sign-in-alt" />
@@ -45,7 +45,7 @@ import { UserNameInput, PasswordInput, RememberMeInput } from "./child-component
     Authenticator,
     UserNameInput,
     PasswordInput,
-    RememberMeInput,
+    RememberMeInput
   }
 })
 export default class Login extends Vue {

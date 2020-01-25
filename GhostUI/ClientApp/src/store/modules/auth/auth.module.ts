@@ -15,12 +15,12 @@ const initialState = Object.freeze<IAuthState>({
   userName: '',
   password: '',
   rememberMe: false,
-  status: AuthStatusEnum.NONE,
+  status: AuthStatusEnum.NONE
 });
 
 const authFailureState = Object.freeze<Partial<IAuthState>>({
   token: initialState.token,
-  status: AuthStatusEnum.FAIL,
+  status: AuthStatusEnum.FAIL
 });
 
 @Module({ dynamic: true, store, name: 'auth' })
@@ -46,7 +46,7 @@ class Auth extends VuexModule implements IAuthState {
       return authUser;
     } catch (e) {
       return {
-        ...authFailureState,
+        ...authFailureState
       };
     }
   }
@@ -55,7 +55,7 @@ class Auth extends VuexModule implements IAuthState {
   public async LogoutUser(): Promise<IAuthState> {
     await AuthApi.logout();
     return {
-      ...initialState,
+      ...initialState
     };
   }
 

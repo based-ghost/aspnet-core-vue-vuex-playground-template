@@ -19,7 +19,7 @@ export default class Authenticator extends Vue {
     return [
       AuthStatusEnum.FAIL,
       AuthStatusEnum.SUCCESS,
-      AuthStatusEnum.PROCESS,
+      AuthStatusEnum.PROCESS
     ].includes(this.authStatus);
   }
 

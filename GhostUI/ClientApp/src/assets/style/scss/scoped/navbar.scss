@@ -22,8 +22,6 @@
     height: 100%;
     margin: auto;
     display: flex;
-    animation-delay: 0.25s;
-    animation: opacityFadeIn 0.25s both ease;
 
     .brand-wrapper {
       display: flex;
@@ -37,47 +35,51 @@
     }
 
     .navbar-routes {
-      font-size: 1.25rem;
-      height: 100%;
-      display: flex;
-      justify-content: flex-end;
-      margin: auto;
       width: 54%;
-      align-items: center;
 
-      .navbar-item {
-        color: white;
-        font-weight: 600;
-        background-color: transparent;
-        transition: color 0.2s ease-out, border-bottom-color 0.2s ease-out;
-        border-bottom: 2.5px solid transparent;
-        border-top: 2.5px solid transparent;
-        display: flex;
-        overflow-x: auto;
-        overflow-y: hidden;
+      .navbar-items-group {
         height: 100%;
+        display: flex;
+        font-size: 1.25rem;
+        align-items: center;
+        justify-content: flex-end;
+        animation-delay: 0.25s;
+        animation: opacityFadeIn 0.25s both ease;
 
-        @include renderMobileNavView {
-          font-size: 0.95rem;
-          padding: 0.75rem 0.2rem 0.75rem 0.2rem;
-        }
-
-        &:not(:first-child) {
-          margin-left: 1.25rem;
+        .navbar-item {
+          color: white;
+          font-weight: 600;
+          background-color: transparent;
+          transition: color 0.2s ease-out, border-bottom-color 0.2s ease-out;
+          border-bottom: 2.5px solid transparent;
+          border-top: 2.5px solid transparent;
+          display: flex;
+          overflow-x: auto;
+          overflow-y: hidden;
+          height: 100%;
 
           @include renderMobileNavView {
-            margin-left: 0;
+            font-size: 0.95rem;
+            padding: 0.75rem 0.2rem 0.75rem 0.2rem;
           }
-        }
 
-        &:hover {
-          color: $color-blue-highlight;
-          background-color: transparent;
-        }
+          &:not(:first-child) {
+            margin-left: 1.25rem;
 
-        &.is-active {
-          color: $color-blue-highlight !important;
-          border-bottom-color: $color-blue-highlight !important;
+            @include renderMobileNavView {
+              margin-left: 0;
+            }
+          }
+
+          &:hover {
+            color: $color-blue-highlight;
+            background-color: transparent;
+          }
+
+          &.is-active {
+            color: $color-blue-highlight !important;
+            border-bottom-color: $color-blue-highlight !important;
+          }
         }
       }
     }

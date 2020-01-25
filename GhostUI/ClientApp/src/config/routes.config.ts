@@ -27,7 +27,7 @@ export const RoutesConfig = Object.freeze<RoutesConfig>({
     name: "Form",
     meta: {
       showInNav: true,
-      transitionName: "pageSlideLeft",
+      transitionName: "pageSlideLeft"
     }
   },
   Dashboard: {
@@ -35,7 +35,7 @@ export const RoutesConfig = Object.freeze<RoutesConfig>({
     name: "Home",
     meta: {
       showInNav: true,
-      transitionName: "fade",
+      transitionName: "fade"
     }
   },
   FetchData: {
@@ -43,7 +43,7 @@ export const RoutesConfig = Object.freeze<RoutesConfig>({
     name: "Fetch",
     meta: {
       showInNav: true,
-      transitionName: "pageSlideRight",
+      transitionName: "pageSlideRight"
     }
   }
 });

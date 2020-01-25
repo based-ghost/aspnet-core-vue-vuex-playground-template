@@ -5,7 +5,7 @@ import { Module, VuexModule, MutationAction, getModule } from "vuex-module-decor
 
 const initialState = Object.freeze<IWeatherForecastsState>({
   forecasts: [],
-  startDateIndex: 0,
+  startDateIndex: 0
 });
 
 @Module({ dynamic: true, store, name: "forecasts" })
@@ -20,11 +20,11 @@ class WeatherForecast extends VuexModule implements IWeatherForecastsState {
       const forecasts = await SampleApi.getWeatherForecastsAsync(startDateIndex);
       return {
         forecasts,
-        startDateIndex,
+        startDateIndex
       };
     } catch (e) {
       return {
-        ...initialState,
+        ...initialState
       };
     }
   }

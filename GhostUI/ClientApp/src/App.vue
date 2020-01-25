@@ -3,7 +3,7 @@
     <vue-snotify />
     <navbar />
     <settings />
-    <transition :name="$route.meta.transitionName" mode="out-in">
+    <transition mode="out-in" :name="$route.meta.transitionName">
       <router-view />
     </transition>
     <app-footer />
@@ -18,7 +18,7 @@ import { AppFooter, Navbar, Settings } from "@/components";
   components: {
     Navbar,
     Settings,
-    AppFooter,
+    AppFooter
   }
 })
 export default class App extends Vue {}
