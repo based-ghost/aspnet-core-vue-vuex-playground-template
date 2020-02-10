@@ -43,7 +43,7 @@
     "sass-loader": "^8.0.2",
     "ts-jest": "^25.2.0",
     "typescript": "^3.7.5",
-    "vue-svg-loader": "^0.15.0",
+    "vue-svg-loader": "^0.16.0",
     "vue-template-compiler": "^2.6.11",
     "vuex-module-decorators": "^0.16.1"
   }
