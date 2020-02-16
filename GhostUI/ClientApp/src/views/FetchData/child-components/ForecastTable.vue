@@ -9,11 +9,11 @@
       </tr>
     </thead>
     <tbody>
-      <tr v-for="forecast in forecasts" :key="forecast.id">
-        <td>{{forecast.dateFormatted}}</td>
-        <td>{{forecast.temperatureC}}</td>
-        <td>{{forecast.temperatureF}}</td>
-        <td>{{forecast.summary}}</td>
+      <tr v-for="fc in forecasts" :key="fc.id">
+        <td>{{fc.dateFormatted}}</td>
+        <td>{{fc.temperatureC}}</td>
+        <td>{{fc.temperatureF}}</td>
+        <td>{{fc.summary}}</td>
       </tr>
     </tbody>
   </table>

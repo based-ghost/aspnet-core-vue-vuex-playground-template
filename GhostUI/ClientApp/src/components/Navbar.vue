@@ -42,8 +42,11 @@ export default class Navbar extends Vue {
   }
 
   public navRoutes: Route[] = Object.keys(RoutesConfig)
-    .map((key) => RoutesConfig[key])
-    .filter((route) => !!route.meta.showInNav);
+    .reduce((acc: Route[], key: string) => {
+      const route = RoutesConfig[key];
+      route.meta.showInNav && acc.push(route);
+      return acc;
+    }, []);
 }
 </script>
 
