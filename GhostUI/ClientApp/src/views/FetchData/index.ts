@@ -1,4 +1,4 @@
-import FetchData from "./FetchData.vue";
+import FetchData from './FetchData.vue';
 
 export {
   FetchData,

@@ -7,5 +7,5 @@ export {
   Form,
   Login,
   Dashboard,
-  FetchData,
+  FetchData
 };

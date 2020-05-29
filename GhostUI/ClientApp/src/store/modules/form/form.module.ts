@@ -1,7 +1,7 @@
-﻿import store from "@/store";
-import { IDropdownOption, IFormState } from "./types";
-import { DROPDOWN_TEST_DATA } from "@/config/constants";
-import { Module, VuexModule, Mutation, getModule } from "vuex-module-decorators";
+﻿import store from '@/store';
+import { IDropdownOption, IFormState } from './types';
+import { DROPDOWN_TEST_DATA } from '@/config/constants';
+import { Module, VuexModule, Mutation, getModule } from 'vuex-module-decorators';
 
 const initialState = Object.freeze<IFormState>({
   count: 0,
@@ -9,7 +9,7 @@ const initialState = Object.freeze<IFormState>({
   selectedDropdownOption: DROPDOWN_TEST_DATA[0]
 });
 
-@Module({ dynamic: true, store, name: "form" })
+@Module({ dynamic: true, store, name: 'form' })
 class Form extends VuexModule implements IFormState {
   public count: number = initialState.count;
   public checkboxValue: boolean = initialState.checkboxValue;

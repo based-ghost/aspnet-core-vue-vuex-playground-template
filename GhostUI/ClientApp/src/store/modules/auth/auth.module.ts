@@ -3,12 +3,12 @@ import { AuthApi } from '@/api';
 import { IAuthState, IAuthUser, AuthStatus } from './types';
 import { Module, VuexModule, Mutation, MutationAction, getModule } from 'vuex-module-decorators';
 
-export const AuthStatusEnum: { [key: string]: AuthStatus } = {
-  NONE: "none",
-  PROCESS: "process",
-  SUCCESS: "success",
-  FAIL: "fail"
-};
+export enum AuthStatusEnum {
+  NONE = 'none',
+  FAIL = 'fail',
+  PROCESS = 'process',
+  SUCCESS = 'success'
+}
 
 const initialState = Object.freeze<IAuthState>({
   token: '',

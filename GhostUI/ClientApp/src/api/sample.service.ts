@@ -1,6 +1,6 @@
-﻿import { AxiosRequestConfig } from "axios";
-import { BaseService } from "./base.service";
-import { IWeatherForecast } from "@/store/modules/weather-forecasts";
+﻿import { AxiosRequestConfig } from 'axios';
+import { BaseService } from './base.service';
+import { IWeatherForecast } from '@/store/modules/weather-forecasts';
 
 /**
  * SampleData API abstraction layer communication via Axios (typescript singleton pattern)
@@ -13,7 +13,7 @@ class SampleService extends BaseService {
   }
 
   public static get Instance(): SampleService {
-    return (this._sampleService || (this._sampleService = new this("SampleData")));
+    return this._sampleService || (this._sampleService = new this('SampleData'));
   }
 
   public async getWeatherForecastsAsync(startDateIndex: number): Promise<IWeatherForecast[]> {
@@ -22,7 +22,8 @@ class SampleService extends BaseService {
         startDateIndex,
       },
     };
-    const { data } = await this.$http.get<IWeatherForecast[]>("GetWeatherForecasts", config);
+
+    const { data } = await this.$http.get<IWeatherForecast[]>('GetWeatherForecasts', config);
     return data;
   }
 }

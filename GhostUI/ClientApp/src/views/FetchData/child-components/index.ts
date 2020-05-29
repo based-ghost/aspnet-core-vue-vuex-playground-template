@@ -1,4 +1,4 @@
-import ForecastTable from "./ForecastTable.vue";
+import ForecastTable from './ForecastTable.vue';
 
 export {
   ForecastTable,

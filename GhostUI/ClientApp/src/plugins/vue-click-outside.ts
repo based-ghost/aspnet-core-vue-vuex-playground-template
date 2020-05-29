@@ -1,8 +1,8 @@
 ﻿export default {
   install(Vue) {
-    Vue.directive("click-outside", {
+    Vue.directive('click-outside', {
       bind: function(el, binding, vNode) {
-        if (typeof binding.value !== "function") {
+        if (typeof binding.value !== 'function') {
           const compName = vNode.context.name;
           let warnMsg = `[Vue-click-outside:] provided expression '${binding.expression}' is not a function, but has to be`;
 
@@ -14,6 +14,7 @@
         }
 
         const bubble = binding.modifiers.bubble;
+
         const handler = e => {
           if (bubble || (!el.contains(e.target) && el !== e.target)) {
             binding.value(e);
@@ -21,11 +22,11 @@
         };
 
         el.__vueClickOutside__ = handler;
-        document.addEventListener("click", handler);
+        document.addEventListener('click', handler);
       },
 
       unbind: function(el) {
-        document.removeEventListener("click", el.__vueClickOutside__);
+        document.removeEventListener('click', el.__vueClickOutside__);
         el.__vueClickOutside__ = null;
       }
     });

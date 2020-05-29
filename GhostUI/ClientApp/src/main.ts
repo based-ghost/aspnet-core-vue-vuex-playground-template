@@ -1,6 +1,6 @@
 import Vue from 'vue';
-import '@/assets/style/scss/main.scss';
 import App from '@/App.vue';
+import '@/assets/style/scss/main.scss';
 import store from '@/store';
 import router from '@/router';
 import Snotify from 'vue-snotify';

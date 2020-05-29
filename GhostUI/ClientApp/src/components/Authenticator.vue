@@ -23,7 +23,7 @@ export default class Authenticator extends Vue {
     ].includes(this.authStatus);
   }
 
-  @Watch("authStatus")
+  @Watch('authStatus')
   public onStatusChange(newAuthStatus: AuthStatus): void {
     if ([AuthStatusEnum.FAIL, AuthStatusEnum.SUCCESS].includes(newAuthStatus)) {
       setTimeout(() => {

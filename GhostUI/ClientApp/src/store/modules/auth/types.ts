@@ -1,4 +1,4 @@
-﻿export type AuthStatus = "none" | "process" | "success" | "fail";
+﻿export type AuthStatus = 'none' | 'process' | 'success' | 'fail';
 
 export type IAuthUser = {
   readonly token?: string;
@@ -16,6 +16,6 @@ export type IAuthState = {
   token: string;
   userName: string;
   password: string;
-  rememberMe: boolean;
   status: AuthStatus;
+  rememberMe: boolean;
 };

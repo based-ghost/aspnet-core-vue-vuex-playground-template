@@ -97,12 +97,12 @@ const StyledCheckIcon = styled.i`
 
 @Component
 export default class VCheckBox extends Vue {
-  @Prop({ default: undefined })  public readonly id: string;
-  @Prop({ default: undefined })  public readonly name: string;
-  @Prop({ default: undefined })  public readonly label: string;
-  @Prop({ default: false })      public readonly checked:  boolean;
-  @Prop({ default: false })      public readonly disabled: boolean;
-  @Prop({ default: false })      public readonly readOnly: boolean;
+  @Prop({ default: undefined }) public readonly id: string;
+  @Prop({ default: undefined }) public readonly name: string;
+  @Prop({ default: undefined }) public readonly label: string;
+  @Prop({ default: false }) public readonly checked:  boolean;
+  @Prop({ default: false }) public readonly disabled: boolean;
+  @Prop({ default: false }) public readonly readOnly: boolean;
 
   public render(): VNode {
     return (
@@ -124,6 +124,6 @@ export default class VCheckBox extends Vue {
   }
 
   public handleOnChange(event: Event): void {
-    this.$emit('checked', !!(event.target as HTMLInputElement).checked);
+    this.$emit('checked', (event.target as HTMLInputElement).checked);
   }
 }

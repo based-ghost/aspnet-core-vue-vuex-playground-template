@@ -7,5 +7,5 @@ export {
   AuthStatusEnum,
   IAuthUser,
   IAuthState,
-  ICredentials,
+  ICredentials
 };

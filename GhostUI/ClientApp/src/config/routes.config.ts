@@ -10,40 +10,38 @@ export type Route = {
   };
 };
 
-export type RoutesConfig = { [key: string]: Route };
-
-export const RoutesConfig = Object.freeze<RoutesConfig>({
+export const RoutesConfig = Object.freeze<Record<string, Route>>({
   Login: {
-    path: "/",
-    name: "Logout",
+    path: '/',
+    name: 'Logout',
     meta: {
       showInNav: false,
-      transitionName: "fade",
-      icon: "sign-out-alt"
+      transitionName: 'fade',
+      icon: 'sign-out-alt'
     }
   },
   Form: {
-    path: "/form",
-    name: "Form",
+    path: '/form',
+    name: 'Form',
     meta: {
       showInNav: true,
-      transitionName: "pageSlideLeft"
+      transitionName: 'pageSlideLeft'
     }
   },
   Dashboard: {
-    path: "/dashboard",
-    name: "Home",
+    path: '/dashboard',
+    name: 'Home',
     meta: {
       showInNav: true,
-      transitionName: "fade"
+      transitionName: 'fade'
     }
   },
   FetchData: {
-    path: "/fetchdata",
-    name: "Fetch",
+    path: '/fetchdata',
+    name: 'Fetch',
     meta: {
       showInNav: true,
-      transitionName: "pageSlideRight"
+      transitionName: 'pageSlideRight'
     }
   }
 });

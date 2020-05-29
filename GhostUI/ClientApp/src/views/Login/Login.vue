@@ -67,7 +67,7 @@ export default class Login extends Vue {
 
     if (this.isUserNameOrPasswordEmpty) {
       this.invalidInputs = true;
-      this.$snotify.error("Enter user name/password", "Login Error");
+      this.$snotify.error('Enter user name/password', 'Login Error');
       return;
     }
 
@@ -87,12 +87,12 @@ export default class Login extends Vue {
   }
 
   public onAuthSuccess(): void {
-    this.$router.push("/dashboard");
+    this.$router.push('/dashboard');
   }
 
   public onAuthFailure(): void {
     this.authStatus = AuthStatusEnum.NONE;
-    this.$snotify.error("Could not authenticate user", "Login Error");
+    this.$snotify.error('Could not authenticate user', 'Login Error');
   }
 }
 </script>

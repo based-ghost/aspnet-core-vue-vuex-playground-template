@@ -1,4 +1,4 @@
-import Form from "./Form.vue";
+import Form from './Form.vue';
 
 export {
   Form

@@ -13,5 +13,5 @@ export {
   AppFooter,
   VCheckbox,
   VDropdown,
-  Authenticator,
+  Authenticator
 };

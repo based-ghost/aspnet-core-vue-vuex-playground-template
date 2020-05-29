@@ -1,5 +1,5 @@
-﻿import { EventBus } from "@/event-bus";
-import { HubConnection, HubConnectionBuilder, HubConnectionState } from "@aspnet/signalr";
+﻿import { EventBus } from '@/event-bus';
+import { HubConnection, HubConnectionBuilder, HubConnectionState } from '@aspnet/signalr';
 
 /**
  * SignalR hub defaults
@@ -7,11 +7,11 @@ import { HubConnection, HubConnectionBuilder, HubConnectionState } from "@aspnet
 const _signalrConfig = Object.freeze({
   CONNECTION_DELAY: 0,
   HUB_MESSAGE_DELAY: 3000,
-  BASE_URL: "/hubs/users",
-  HUB_MESSAGE_TITLE: "SignalR",
-  LOGIN_USER_EVENT: "UserLogin",
-  LOGOUT_USER_EVENT: "UserLogout",
-  CLOSE_EVENT: "CloseAllConnections"
+  BASE_URL: '/hubs/users',
+  HUB_MESSAGE_TITLE: 'SignalR',
+  LOGIN_USER_EVENT: 'UserLogin',
+  LOGOUT_USER_EVENT: 'UserLogout',
+  CLOSE_EVENT: 'CloseAllConnections'
 });
 
 /**
@@ -31,7 +31,7 @@ class SignalRService {
   }
 
   public startConnection(): void {
-    if (this._hubConnection.state === HubConnectionState.Connected) { 
+    if (this._hubConnection.state === HubConnectionState.Connected) {
       return;
     }
 
@@ -52,7 +52,7 @@ class SignalRService {
     this._hubConnection.on(_signalrConfig.LOGIN_USER_EVENT, () => {
       setTimeout(() => {
         EventBus.$snotify.info(
-          "A user has logged in",
+          'A user has logged in',
           _signalrConfig.HUB_MESSAGE_TITLE
         );
       }, _signalrConfig.HUB_MESSAGE_DELAY);
@@ -61,7 +61,7 @@ class SignalRService {
     this._hubConnection.on(_signalrConfig.LOGOUT_USER_EVENT, () => {
       setTimeout(() => {
         EventBus.$snotify.info(
-          "A user has logged out",
+          'A user has logged out',
           _signalrConfig.HUB_MESSAGE_TITLE
         );
       }, _signalrConfig.HUB_MESSAGE_DELAY);

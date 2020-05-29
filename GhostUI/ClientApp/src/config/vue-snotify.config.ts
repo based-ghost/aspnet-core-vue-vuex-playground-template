@@ -1,4 +1,4 @@
-﻿import { SnotifyPosition, SnotifyDefaults, SnotifyStyle } from "vue-snotify";
+﻿import { SnotifyPosition, SnotifyDefaults, SnotifyStyle } from 'vue-snotify';
 
 export const snotifyDefaults = Object.freeze<SnotifyDefaults>({
   global: {
