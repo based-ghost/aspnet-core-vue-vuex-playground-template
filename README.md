@@ -27,7 +27,7 @@ This template is vaguely based on the original Vue + TypeScript .NET Core SPA te
   - [`Webpack`](https://github.com/webpack/webpack) for bundling of application assets and HMR (Hot Module Replacement)
   - [`Bulma CSS`](https://bulma.io/) + [`SASS`](https://github.com/sass/sass) + Font Awesome 5 (using fontawesome-svg-core)
   - [`Axios`](https://github.com/axios/axios) for REST endpoint requests
-  - [`vue-svg-loader`](https://github.com/axios/axios) for fetching and displaying SVG images inline
+  - [`vue-svg-loader`](https://github.com/visualfanatic/vue-svg-loader) for fetching and displaying SVG images inline
   - [`vue-styled-components`](https://github.com/styled-components/vue-styled-components) - this is the Vue.js implementation of the popular React.js [styled-components](https://www.styled-components.com/). Write component-scoped CSS code in JavaScript via template literals - see example further down with the VCheckbox.render.tsx component.
   - [`vuex-module-decorators`](https://github.com/championswimmer/vuex-module-decorators) - a helpful package of decorators which allows you to write your vuex store modules in class-based syntax (inspired by vue-class-component). Also allows for easier namespacing and registration of modules into store at runtime after store is constructed - dynamic modules (I have all the modules configured this way in my project).
   - [`vue-snotify`](https://github.com/artemsky/vue-snotify) - a highly configurable toast notification library - comes hooked up to display login error & SignalR hub push notifications examples.
