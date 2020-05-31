@@ -1,8 +1,14 @@
 ﻿<template>
   <div v-if="isLoading" :class="['fingerprint-spinner', authStatus]">
-    <div /><div /><div />
-    <div /><div /><div />
-    <div /><div /><div />
+    <div />
+    <div />
+    <div />
+    <div />
+    <div />
+    <div />
+    <div />
+    <div />
+    <div />
   </div>
 </template>
 
@@ -19,7 +25,7 @@ export default class Authenticator extends Vue {
     return [
       AuthStatusEnum.FAIL,
       AuthStatusEnum.SUCCESS,
-      AuthStatusEnum.PROCESS
+      AuthStatusEnum.PROCESS,
     ].includes(this.authStatus);
   }
 

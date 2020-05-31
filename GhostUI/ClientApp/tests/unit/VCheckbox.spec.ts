@@ -1,4 +1,4 @@
-import { mount } from '@vue/test-utils';
+import { mount, ThisTypedShallowMountOptions } from '@vue/test-utils';
 import VCheckbox from '@/components/VCheckbox.render';
 
 /**
@@ -7,15 +7,17 @@ import VCheckbox from '@/components/VCheckbox.render';
 describe("VCheckbox.render.tsx", () => {
   const inputElQuery = 'input[type="checkbox"]';
 
-  const mountVCheckbox = (options?: any) => {
+  const mountVCheckbox = (
+    options?: ThisTypedShallowMountOptions<VCheckbox>
+  ) => {
     return mount(VCheckbox, {
-      ...options
+      ...options,
     });
   };
 
   it("should mount and render properly", async () => {
     const wrapper = mountVCheckbox();
-    expect(wrapper.isVueInstance()).toBeTruthy();
+    expect(wrapper).toBeTruthy();
     expect(wrapper.find(inputElQuery).exists()).toBeTruthy();
   });
 
@@ -62,6 +64,7 @@ describe("VCheckbox.render.tsx", () => {
         label
       }
     });
+
     expect(wrapper.html().includes(label)).toBeTruthy();
   });
 });

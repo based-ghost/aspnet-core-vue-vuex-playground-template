@@ -23,7 +23,11 @@ const authFailureState = Object.freeze<Partial<IAuthState>>({
   status: AuthStatusEnum.FAIL
 });
 
-@Module({ dynamic: true, store, name: 'auth' })
+@Module({
+  store,
+  name: 'auth',
+  dynamic: true
+})
 class Auth extends VuexModule implements IAuthState {
   public token: string = initialState.token;
   public status: AuthStatus = initialState.status;

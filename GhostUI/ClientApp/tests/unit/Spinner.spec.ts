@@ -1,5 +1,6 @@
-import { shallowMount } from '@vue/test-utils';
+import { shallowMount, ThisTypedShallowMountOptions } from '@vue/test-utils';
 import Spinner from '@/components/Spinner.vue';
+import '@testing-library/jest-dom';
 
 /**
  * Unit Tests For Component: Spinner.vue
@@ -7,35 +8,39 @@ import Spinner from '@/components/Spinner.vue';
 describe("Spinner.vue", () => {
   const spinnerParentElId = "#load-spinner";
 
-  const shallowMountSpinner = (options?: any) => {
+  const shallowMountSpinner = (
+    options?: ThisTypedShallowMountOptions<Spinner>
+  ) => {
     return shallowMount(Spinner, {
       ...options
     });
   };
 
   it("should mount and render properly", async () => {
-    const wrapper = shallowMountSpinner(Spinner);
-    expect(wrapper.isVueInstance()).toBeTruthy();
+    const wrapper = shallowMountSpinner();
+    expect(wrapper).toBeTruthy();
     expect(wrapper.find(spinnerParentElId).exists()).toBeTruthy();
   });
 
   it("v-show directive evaluates false AND element is not visible when 'isLoading' prop = false", async () => {
-    const isLoading = false;
-    const wrapper = shallowMount(Spinner, {
+    const wrapper = shallowMountSpinner({
       propsData: {
-        isLoading
+        isLoading: false
       }
     });
-    expect(wrapper.find(spinnerParentElId).isVisible()).toBe(isLoading);
+
+    const spinnerParentEl = wrapper.find(spinnerParentElId).element;
+    expect(spinnerParentEl).not.toBeVisible();
   });
 
   it("v-show directive evaluates true AND element is visible when 'isLoading' prop = true", async () => {
-    const isLoading = true;
-    const wrapper = shallowMount(Spinner, {
+    const wrapper = shallowMountSpinner({
       propsData: {
-        isLoading
+        isLoading: true
       }
     });
-    expect(wrapper.find(spinnerParentElId).isVisible()).toBe(isLoading);
+
+    const spinnerParentEl = wrapper.find(spinnerParentElId).element;
+    expect(spinnerParentEl).toBeVisible();
   });
 });

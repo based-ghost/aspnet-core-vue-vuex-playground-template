@@ -8,7 +8,11 @@ const initialState = Object.freeze<IWeatherForecastsState>({
   startDateIndex: 0
 });
 
-@Module({ dynamic: true, store, name: 'forecasts' })
+@Module({
+  store,
+  dynamic: true,
+  name: 'forecasts'
+})
 class WeatherForecast extends VuexModule implements IWeatherForecastsState {
    public startDateIndex: number = initialState.startDateIndex;
    public forecasts: IWeatherForecast[] = initialState.forecasts;
@@ -18,6 +22,7 @@ class WeatherForecast extends VuexModule implements IWeatherForecastsState {
     try {
       const startDateIndex = index || 0;
       const forecasts = await SampleApi.getWeatherForecastsAsync(startDateIndex);
+
       return {
         forecasts,
         startDateIndex

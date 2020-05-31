@@ -9,7 +9,11 @@ const initialState = Object.freeze<IFormState>({
   selectedDropdownOption: DROPDOWN_TEST_DATA[0]
 });
 
-@Module({ dynamic: true, store, name: 'form' })
+@Module({
+  store,
+  name: 'form',
+  dynamic: true
+})
 class Form extends VuexModule implements IFormState {
   public count: number = initialState.count;
   public checkboxValue: boolean = initialState.checkboxValue;
