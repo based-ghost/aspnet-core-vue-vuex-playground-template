@@ -36,11 +36,11 @@ class Auth extends VuexModule implements IAuthState {
   public rememberMe: boolean = initialState.rememberMe;
 
   public get isUserNameOrPasswordEmpty(): boolean {
-    return (!this.userName || !this.password);
+    return !this.userName || !this.password;
   }
 
   public get isAuthenticated(): boolean {
-    return (!!this.token && this.status === AuthStatusEnum.SUCCESS);
+    return !!this.token && this.status === AuthStatusEnum.SUCCESS;
   }
 
   @MutationAction<IAuthUser>({ mutate: ['token', 'status'] })

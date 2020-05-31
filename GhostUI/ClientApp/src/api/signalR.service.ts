@@ -4,7 +4,7 @@ import { HubConnection, HubConnectionBuilder, HubConnectionState } from '@aspnet
 /**
  * SignalR hub defaults
  */
-const _signalrConfig = Object.freeze({
+const _signalrConfig = {
   CONNECTION_DELAY: 0,
   HUB_MESSAGE_DELAY: 3000,
   BASE_URL: '/hubs/users',
@@ -12,7 +12,7 @@ const _signalrConfig = Object.freeze({
   LOGIN_USER_EVENT: 'UserLogin',
   LOGOUT_USER_EVENT: 'UserLogout',
   CLOSE_EVENT: 'CloseAllConnections'
-});
+};
 
 /**
  * SignalR API abstraction layer communication - configures/manages hub connections
@@ -27,19 +27,16 @@ class SignalRService {
   }
 
   public static get Instance(): SignalRService {
-    return (this._signalRService || (this._signalRService = new this()));
+    return this._signalRService || (this._signalRService = new this());
   }
 
   public startConnection(): void {
-    if (this._hubConnection.state === HubConnectionState.Connected) {
-      return;
+    if (this._hubConnection.state !== HubConnectionState.Connected) {
+      setTimeout(() => {
+        this._hubConnection.start()
+          .catch(err => console.error(err));
+      }, _signalrConfig.CONNECTION_DELAY);
     }
-
-    setTimeout(() => {
-      this._hubConnection.start().catch(error => {
-        console.error(String(error));
-      });
-    }, _signalrConfig.CONNECTION_DELAY);
   }
 
   private createConnection(): void {

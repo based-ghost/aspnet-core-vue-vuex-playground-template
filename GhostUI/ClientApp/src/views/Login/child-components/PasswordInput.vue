@@ -28,10 +28,11 @@ import { AuthModule } from "@/store/modules/auth";
 @Component
 export default class PasswordInput extends Vue {
   public showPassword: boolean = false;
+
   @Prop() public readonly isInputInvalid: boolean;
 
   get isPasswordInvalid(): boolean {
-    return (this.isInputInvalid && !this.password);
+    return this.isInputInvalid && !this.password;
   }
 
   get password(): string {

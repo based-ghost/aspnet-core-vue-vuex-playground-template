@@ -3,7 +3,7 @@
     <v-checkbox
       label="Remember me"
       :checked="rememberMe"
-      @checked="isCheckedState => rememberMe = isCheckedState"
+      @checked="checked => rememberMe = checked"
     />
   </div>
 </template>
@@ -15,7 +15,7 @@ import { VCheckbox } from "@/components";
 
 @Component({
   components: {
-    VCheckbox,
+    VCheckbox
   }
 })
 export default class RememberMeInput extends Vue {

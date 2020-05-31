@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import App from '@/App.vue';
+import '@/registerServiceWorker';
 import '@/assets/style/scss/main.scss';
 import store from '@/store';
 import router from '@/router';
@@ -8,7 +9,6 @@ import vClickOutside from '@/plugins/vue-click-outside';
 import { snotifyDefaults } from '@/config/vue-snotify.config';
 import { configureAxiosInterceptors } from '@/config/axios.config';
 import '@/config/fa.config';
-import '@/registerServiceWorker';
 
 // Execute any base Axios configurations (e.g. request interceptors)
 configureAxiosInterceptors();

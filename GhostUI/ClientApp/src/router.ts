@@ -1,11 +1,11 @@
 ﻿import Vue from 'vue';
-import VueRouter from 'vue-router';
+import Router from 'vue-router';
 import { RoutesConfig } from './config/routes.config';
 import { Dashboard, FetchData, Form, Login } from './views';
 
-Vue.use(VueRouter);
+Vue.use(Router);
 
-export default new VueRouter({
+export default new Router({
   mode: 'history',
   base: process.env.BASE_URL,
   linkExactActiveClass: 'is-active',

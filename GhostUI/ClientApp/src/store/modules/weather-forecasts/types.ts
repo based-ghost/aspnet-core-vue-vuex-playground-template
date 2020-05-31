@@ -1,9 +1,9 @@
 ﻿export type IWeatherForecast = {
   readonly id: number;
-  readonly dateFormatted: string;
+  readonly summary: string;
   readonly temperatureC: number;
   readonly temperatureF: number;
-  readonly summary: string;
+  readonly dateFormatted: string;
 };
 
 export type IWeatherForecastsState = {

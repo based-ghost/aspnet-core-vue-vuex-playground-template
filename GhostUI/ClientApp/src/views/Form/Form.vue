@@ -34,7 +34,7 @@
                 :options="dropdownOptions"
                 wrapperClass="normal-width"
                 :selectedOptionLabel="selectedDropdownOption.label"
-                @select="newSelectedOption => selectedDropdownOption = newSelectedOption"
+                @select="selectedOption => selectedDropdownOption = selectedOption"
               />
             </div>
             <p class="subtitle is-5">
@@ -47,7 +47,7 @@
             <div class="field form-control-group">
               <v-checkbox
                 :checked="checkboxValue"
-                @checked="isCheckedState => checkboxValue = isCheckedState"
+                @checked="checked => checkboxValue = checked"
               />
             </div>
             <p class="subtitle is-5">
@@ -76,8 +76,7 @@ export default class Form extends Vue {
   public readonly dropdownOptions: IDropdownOption[] = DROPDOWN_TEST_DATA;
 
   get selectedOptionJSON(): string {
-    const option = this.selectedDropdownOption || {};
-    return JSON.stringify(option).replace(/"/g, "'");
+    return JSON.stringify(this.selectedDropdownOption || {}).replace(/"/g, "'");
   }
 
   get count(): number {

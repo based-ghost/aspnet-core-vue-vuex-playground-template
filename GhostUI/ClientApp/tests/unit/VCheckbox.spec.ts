@@ -33,7 +33,8 @@ describe("VCheckbox.render.tsx", () => {
     const inputEl = wrapper.find(inputElQuery).element;
 
     Object.keys(propsData).forEach((key) => {
-      expect(inputEl.hasAttribute(key.toLowerCase())).toBeTruthy();
+      const attr = key.toLowerCase();
+      expect(inputEl.hasAttribute(attr)).toBeTruthy();
     });
   });
 
@@ -47,12 +48,12 @@ describe("VCheckbox.render.tsx", () => {
     const inputNode = wrapper.find(inputElQuery);
     const inputEl = inputNode.element as HTMLInputElement;
 
-    inputEl.value = "true";
     inputEl.checked = true;
+    inputEl.value = inputEl.checked.toString();
+
     inputNode.trigger("change");
 
-    expect(wrapper.emitted("checked")).toBeTruthy();
-    expect(wrapper.emitted("checked")[0]).toEqual([true]);
+    expect(wrapper.emitted().checked).toBeTruthy();
   });
 
   it("A label element is rendered with the specified value when the 'label' prop is defined", async () => {
@@ -63,6 +64,6 @@ describe("VCheckbox.render.tsx", () => {
       }
     });
 
-    expect(wrapper.html().includes(label)).toBeTruthy();
+    expect(wrapper.find("label").text()).toMatch(label);
   });
 });

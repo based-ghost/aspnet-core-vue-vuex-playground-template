@@ -53,12 +53,13 @@
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import { AuthModule } from "@/store/modules/auth";
+import { nugetUrlConfig } from "@/config/constants";
 import { Route, RoutesConfig } from "@/config/routes.config";
-import { nugetUrlConfig, UrlConfig } from "@/config/constants";
 
 @Component
 export default class Settings extends Vue {
   public open: boolean = false;
+
   public readonly nugetUrls: Record<string, string> = nugetUrlConfig;
   public readonly routesConfig: Record<string, Route> = RoutesConfig;
 
@@ -71,11 +72,10 @@ export default class Settings extends Vue {
   }
 
   public handleLogout(): void {
-    AuthModule.LogoutUser()
-      .then(() => {
-        this.$snotify.clear();
-        this.$router.push(this.routesConfig.Login.path);
-      });
+    AuthModule.LogoutUser().then(() => {
+      this.$snotify.clear();
+      this.$router.push(this.routesConfig.Login.path);
+    });
   }
 }
 </script>

@@ -22,16 +22,12 @@ export default class Authenticator extends Vue {
   @Prop({ default: 1500 }) public readonly delay: number;
 
   get isLoading(): boolean {
-    return [
-      AuthStatusEnum.FAIL,
-      AuthStatusEnum.SUCCESS,
-      AuthStatusEnum.PROCESS,
-    ].includes(this.authStatus);
+    return this.authStatus !== AuthStatusEnum.NONE;
   }
 
   @Watch('authStatus')
   public onStatusChange(newAuthStatus: AuthStatus): void {
-    if ([AuthStatusEnum.FAIL, AuthStatusEnum.SUCCESS].includes(newAuthStatus)) {
+    if (([AuthStatusEnum.FAIL, AuthStatusEnum.SUCCESS] as string[]).includes(newAuthStatus)) {
       setTimeout(() => {
         this.$emit(newAuthStatus);
       }, this.delay);
