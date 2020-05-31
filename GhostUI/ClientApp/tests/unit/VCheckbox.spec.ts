@@ -21,22 +21,20 @@ describe("VCheckbox.render.tsx", () => {
     expect(wrapper.find(inputElQuery).exists()).toBeTruthy();
   });
 
-  it("'id', 'disabled', 'readOnly', and 'name' attributes are rendered on input element when those props are explicitly defined", async () => {
-    const wrapper = mountVCheckbox({
-      propsData: {
-        id: 'checkbox',
-        disabled: true,
-        readOnly: true,
-        name: 'checkbox',
-      }
-    });
+  it("'id', 'disabled', 'readonly', and 'name' attributes are rendered on input element when those props are explicitly defined", async () => {
+    const propsData = {
+      id: 'checkbox',
+      disabled: true,
+      readOnly: true,
+      name: 'checkbox'
+    };
 
+    const wrapper = mountVCheckbox({ propsData });
     const inputEl = wrapper.find(inputElQuery).element;
 
-    expect(inputEl.hasAttribute('id')).toBeTruthy();
-    expect(inputEl.hasAttribute('name')).toBeTruthy();
-    expect(inputEl.hasAttribute('disabled')).toBeTruthy();
-    expect(inputEl.hasAttribute('readonly')).toBeTruthy();
+    Object.keys(propsData).forEach((key) => {
+      expect(inputEl.hasAttribute(key.toLowerCase())).toBeTruthy();
+    });
   });
 
   it("emits the custom @checked event with new target value when the @change event is triggered", async () => {
