@@ -14,9 +14,9 @@
   },
   "dependencies": {
     "@aspnet/signalr": "^1.1.4",
-    "@fortawesome/fontawesome-svg-core": "^1.2.29",
-    "@fortawesome/free-brands-svg-icons": "^5.13.1",
-    "@fortawesome/free-solid-svg-icons": "^5.13.1",
+    "@fortawesome/fontawesome-svg-core": "^1.2.30",
+    "@fortawesome/free-brands-svg-icons": "^5.14.0",
+    "@fortawesome/free-solid-svg-icons": "^5.14.0",
     "@fortawesome/vue-fontawesome": "^0.1.10",
     "axios": "^0.19.2",
     "bulma": "^0.9.0",
@@ -31,8 +31,8 @@
     "vuex": "^3.5.1"
   },
   "devDependencies": {
-    "@testing-library/jest-dom": "^5.11.0",
-    "@types/jest": "^26.0.4",
+    "@testing-library/jest-dom": "^5.11.1",
+    "@types/jest": "^26.0.5",
     "@vue/cli-plugin-babel": "^4.4.6",
     "@vue/cli-plugin-e2e-nightwatch": "^4.4.6",
     "@vue/cli-plugin-pwa": "^4.4.6",
@@ -42,8 +42,8 @@
     "@vue/test-utils": "1.0.3",
     "node-sass": "^4.14.1",
     "sass-loader": "^9.0.2",
-    "ts-jest": "^26.1.1",
-    "typescript": "^3.9.6",
+    "ts-jest": "^26.1.3",
+    "typescript": "^3.9.7",
     "vue-svg-loader": "^0.16.0",
     "vue-template-compiler": "^2.6.11",
     "vuex-module-decorators": "^0.17.0"
