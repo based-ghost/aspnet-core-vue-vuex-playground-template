@@ -1,5 +1,5 @@
 ﻿import { EventBus } from '@/event-bus';
-import { HubConnection, HubConnectionBuilder, HubConnectionState } from '@aspnet/signalr';
+import { HubConnection, HubConnectionBuilder, HubConnectionState } from '@microsoft/signalr';
 
 /**
  * SignalR hub defaults

@@ -13,11 +13,11 @@
     "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {
-    "@aspnet/signalr": "^1.1.4",
     "@fortawesome/fontawesome-svg-core": "^1.2.30",
     "@fortawesome/free-brands-svg-icons": "^5.14.0",
     "@fortawesome/free-solid-svg-icons": "^5.14.0",
     "@fortawesome/vue-fontawesome": "^0.1.10",
+    "@microsoft/signalr": "^3.1.6",
     "axios": "^0.19.2",
     "bulma": "^0.9.0",
     "core-js": "^3.6.5",
@@ -32,7 +32,7 @@
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.11.2",
-    "@types/jest": "^26.0.7",
+    "@types/jest": "^26.0.8",
     "@vue/cli-plugin-babel": "^4.4.6",
     "@vue/cli-plugin-e2e-nightwatch": "^4.4.6",
     "@vue/cli-plugin-pwa": "^4.4.6",
