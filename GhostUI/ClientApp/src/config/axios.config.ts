@@ -1,17 +1,19 @@
 ﻿import axios, { AxiosError, AxiosResponse } from 'axios';
 import { EventBus } from '@/event-bus';
 
-export const configureAxiosInterceptors = (): void => {
-  axios.interceptors.response.use(
-    (response: AxiosResponse) => {
-      return response;
-    },
-    (error: AxiosError) => {
-      handleAxiosError(error);
-      return Promise.reject(error);
-    }
-  );
-};
+export default class AxiosGlobalConfig {
+  public static setup(): void {
+    axios.interceptors.response.use(
+      (response: AxiosResponse) => {
+        return response;
+      },
+      (error: AxiosError) => {
+        handleAxiosError(error);
+        return Promise.reject(error);
+      }
+    );
+  }
+}
 
 const handleAxiosError = (error: AxiosError): void => {
   // Error Message Object

@@ -7,11 +7,11 @@ import router from '@/router';
 import Snotify from 'vue-snotify';
 import vClickOutside from '@/plugins/vue-click-outside';
 import { snotifyDefaults } from '@/config/vue-snotify.config';
-import { configureAxiosInterceptors } from '@/config/axios.config';
+import AxiosGlobalConfig from '@/config/axios.config';
 import '@/config/fa.config';
 
-// Execute any base Axios configurations (e.g. request interceptors)
-configureAxiosInterceptors();
+// Execute global Axios configurations (e.g. request interceptors)
+AxiosGlobalConfig.setup();
 
 // Install custom plugins
 Vue.use(vClickOutside);
