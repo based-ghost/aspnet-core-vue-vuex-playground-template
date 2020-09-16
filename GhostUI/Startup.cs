@@ -79,7 +79,6 @@ namespace GhostUI
             {
                 app.UseResponseCompression();
                 app.UseExceptionHandler("/Error");
-                app.UseHttpsRedirection();
                 app.UseHsts();
             }
 
@@ -102,8 +101,14 @@ namespace GhostUI
             });
 
             app.UseCors(_corsPolicyName);
-            app.UseStaticFiles();
+
+            // Show/write HealthReport data from healthchecks (AspNetCore.HealthChecks.UI.Client nuget package)
             app.UseHealthChecksUI();
+            app.UseHealthChecks("/healthchecks-json", new HealthCheckOptions()
+            {
+                Predicate = _ => true,
+                ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
+            });
 
             // Register the Swagger generator and the Swagger UI middlewares
             // NSwage.MsBuild + adding automation config in GhostUI.csproj makes this part of the build step (updates to API will be handled automatically)
@@ -114,15 +119,10 @@ namespace GhostUI
                 settings.DocumentPath = "/docs/api-specification.json";
             });
 
+            app.UseHttpsRedirection();
+            app.UseStaticFiles();
             app.UseSpaStaticFiles();
             app.UseRouting();
-
-            // Show/write HealthReport data from healthchecks (AspNetCore.HealthChecks.UI.Client nuget package)
-            app.UseHealthChecks("/healthchecks-json", new HealthCheckOptions()
-            {
-                Predicate = _ => true,
-                ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
-            });
 
             // Map controllers / SignalR hubs / HealthChecks
             // Configure VueCliMiddleware package to handle startup of Vue.js ClientApp front-end
@@ -132,9 +132,23 @@ namespace GhostUI
                 endpoints.MapHub<UsersHub>("/hubs/users");
 
                 if (System.Diagnostics.Debugger.IsAttached)
-                    endpoints.MapToVueCliProxy("{*path}", new SpaOptions { SourcePath = _spaSourcePath }, "serve", regex: "running at");
+                {
+                    endpoints.MapToVueCliProxy(
+                       "{*path}",
+                       new SpaOptions { SourcePath = _spaSourcePath },
+                       "serve",
+                       regex: "running at"
+                    );
+                }
                 else
+                {
                     endpoints.MapFallbackToFile("index.html");
+                }
+            });
+
+            app.UseSpa(spa =>
+            {
+                spa.Options.SourcePath = "ClientApp";
             });
         }
     }
