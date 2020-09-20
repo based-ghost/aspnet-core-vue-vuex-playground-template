@@ -14,20 +14,25 @@
 
 <script lang="ts">
 import { Component, Prop, Watch, Vue } from "vue-property-decorator";
-import { AuthStatus, AuthStatusEnum } from "@/store/modules/auth";
+import { AuthStatusEnum } from "@/store/modules/auth";
 
 @Component
 export default class Authenticator extends Vue {
-  @Prop() public readonly authStatus: AuthStatus;
+  @Prop() public readonly authStatus: AuthStatusEnum;
   @Prop({ default: 1500 }) public readonly delay: number;
+
+  private readonly authStatusEmitOnValues: AuthStatusEnum[] = [
+    AuthStatusEnum.FAIL,
+    AuthStatusEnum.SUCCESS,
+  ];
 
   get isLoading(): boolean {
     return this.authStatus !== AuthStatusEnum.NONE;
   }
 
   @Watch('authStatus')
-  public onStatusChange(newAuthStatus: AuthStatus): void {
-    if (([AuthStatusEnum.FAIL, AuthStatusEnum.SUCCESS] as string[]).includes(newAuthStatus)) {
+  public onStatusChange(newAuthStatus: AuthStatusEnum): void {
+    if (this.authStatusEmitOnValues.includes(newAuthStatus)) {
       setTimeout(() => {
         this.$emit(newAuthStatus);
       }, this.delay);

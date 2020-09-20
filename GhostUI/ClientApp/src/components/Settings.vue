@@ -53,15 +53,15 @@
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import { AuthModule } from "@/store/modules/auth";
-import { nugetUrlConfig } from "@/config/constants";
+import { NUGET_URL_CONFIG } from "@/config/constants";
 import { Route, RoutesConfig } from "@/config/routes.config";
 
 @Component
 export default class Settings extends Vue {
   public open: boolean = false;
 
-  public readonly nugetUrls: Record<string, string> = nugetUrlConfig;
   public readonly routesConfig: Record<string, Route> = RoutesConfig;
+  public readonly nugetUrls: Record<string, string> = NUGET_URL_CONFIG;
 
   get isAuthenticated(): boolean {
     return AuthModule.isAuthenticated;

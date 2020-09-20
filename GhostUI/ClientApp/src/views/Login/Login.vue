@@ -37,7 +37,7 @@
 import { Component, Vue } from "vue-property-decorator";
 import { SignalRApi } from "@/api";
 import { Authenticator } from "@/components";
-import { AuthModule, AuthStatus, AuthStatusEnum } from "@/store/modules/auth";
+import { AuthModule, AuthStatusEnum } from "@/store/modules/auth";
 import { UserNameInput, PasswordInput, RememberMeInput } from "./child-components";
 
 @Component({
@@ -50,7 +50,7 @@ import { UserNameInput, PasswordInput, RememberMeInput } from "./child-component
 })
 export default class Login extends Vue {
   public invalidInputs: boolean = false;
-  public authStatus: AuthStatus = AuthStatusEnum.NONE;
+  public authStatus: AuthStatusEnum = AuthStatusEnum.NONE;
 
   get isUserNameOrPasswordEmpty(): boolean {
     return AuthModule.isUserNameOrPasswordEmpty;

@@ -1,27 +1,20 @@
 ﻿import store from '@/store';
 import { AuthApi } from '@/api';
-import { IAuthState, IAuthUser, AuthStatus } from './types';
+import { IAuthState, IAuthUser, AuthStatusEnum } from './types';
 import { Module, VuexModule, Mutation, MutationAction, getModule } from 'vuex-module-decorators';
 
-export enum AuthStatusEnum {
-  NONE = 'none',
-  FAIL = 'fail',
-  PROCESS = 'process',
-  SUCCESS = 'success'
-}
-
-const initialState = Object.freeze<IAuthState>({
+const initialState: IAuthState = {
   token: '',
   userName: '',
   password: '',
   rememberMe: false,
   status: AuthStatusEnum.NONE
-});
+};
 
-const authFailureState = Object.freeze<Partial<IAuthState>>({
+const authFailureState: Partial<IAuthState> = {
   token: initialState.token,
   status: AuthStatusEnum.FAIL
-});
+};
 
 @Module({
   store,
@@ -30,9 +23,9 @@ const authFailureState = Object.freeze<Partial<IAuthState>>({
 })
 class Auth extends VuexModule implements IAuthState {
   public token: string = initialState.token;
-  public status: AuthStatus = initialState.status;
   public userName: string = initialState.userName;
   public password: string = initialState.password;
+  public status: AuthStatusEnum = initialState.status;
   public rememberMe: boolean = initialState.rememberMe;
 
   public get isUserNameOrPasswordEmpty(): boolean {

@@ -1,9 +1,14 @@
-﻿export type AuthStatus = 'none' | 'process' | 'success' | 'fail';
+﻿export enum AuthStatusEnum {
+  NONE = 'none',
+  FAIL = 'fail',
+  PROCESS = 'process',
+  SUCCESS = 'success'
+};
 
 export type IAuthUser = {
   readonly token?: string;
   readonly userName?: string;
-  readonly status?: AuthStatus;
+  readonly status?: AuthStatusEnum;
 };
 
 export type ICredentials = {
@@ -16,6 +21,6 @@ export type IAuthState = {
   token: string;
   userName: string;
   password: string;
-  status: AuthStatus;
   rememberMe: boolean;
+  status: AuthStatusEnum;
 };

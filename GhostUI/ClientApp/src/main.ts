@@ -16,7 +16,7 @@ AxiosGlobalConfig.setup();
 // Install custom plugins
 Vue.use(vClickOutside);
 
-// Install node packages
+// Install npm packages
 Vue.use(Snotify, snotifyDefaults);
 
 new Vue({

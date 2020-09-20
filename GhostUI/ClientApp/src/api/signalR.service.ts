@@ -31,10 +31,9 @@ class SignalRService {
   }
 
   public startConnection(): void {
-    if (this._hubConnection.state !== HubConnectionState.Connected) {
+    if (this._hubConnection.state === HubConnectionState.Disconnected) {
       setTimeout(() => {
-        this._hubConnection.start()
-          .catch(err => console.error(err));
+        this._hubConnection.start().catch((e) => console.error(e));
       }, _signalrConfig.CONNECTION_DELAY);
     }
   }

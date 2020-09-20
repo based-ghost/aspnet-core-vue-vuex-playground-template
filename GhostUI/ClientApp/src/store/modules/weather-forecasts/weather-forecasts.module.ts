@@ -3,10 +3,10 @@ import { SampleApi } from '@/api';
 import { IWeatherForecast, IWeatherForecastsState } from './types';
 import { Module, VuexModule, MutationAction, getModule } from 'vuex-module-decorators';
 
-const initialState = Object.freeze<IWeatherForecastsState>({
+const initialState: IWeatherForecastsState = {
   forecasts: [],
   startDateIndex: 0
-});
+};
 
 @Module({
   store,

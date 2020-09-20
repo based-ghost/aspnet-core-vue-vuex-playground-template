@@ -41,11 +41,11 @@ export default class Navbar extends Vue {
     return AuthModule.isAuthenticated;
   }
 
-  public navRoutes: Route[] = Object.keys(RoutesConfig).reduce((acc: Route[], key: string) => {
+  public navRoutes: Route[] = Object.keys(RoutesConfig).reduce((acc, key) => {
     const route = RoutesConfig[key];
     route.meta.showInNav && acc.push(route);
     return acc;
-  }, []);
+  }, [] as Route[]);
 }
 </script>
 

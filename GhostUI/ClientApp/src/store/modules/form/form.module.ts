@@ -3,11 +3,11 @@ import { IDropdownOption, IFormState } from './types';
 import { DROPDOWN_TEST_DATA } from '@/config/constants';
 import { Module, VuexModule, Mutation, getModule } from 'vuex-module-decorators';
 
-const initialState = Object.freeze<IFormState>({
+const initialState: IFormState = {
   count: 0,
   checkboxValue: false,
   selectedDropdownOption: DROPDOWN_TEST_DATA[0]
-});
+};
 
 @Module({
   store,
