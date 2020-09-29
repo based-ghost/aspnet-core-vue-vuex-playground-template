@@ -23,7 +23,7 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator";
-import { AuthModule } from "@/store/modules/auth";
+import { AuthModule } from "../../../store/modules/auth";
 
 @Component
 export default class PasswordInput extends Vue {

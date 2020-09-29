@@ -37,7 +37,6 @@
     "tests/**/*.tsx"
   ],
   "exclude": [
-    "bin",
     "node_modules"
   ]
 }

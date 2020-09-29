@@ -12,7 +12,7 @@
       <div class="navbar-routes">
         <div v-if="isAuthenticated" class="navbar-items-group">
           <router-link
-            v-for="route in navRoutes"
+            v-for="route in validNavRoutes"
             :key="route.path"
             :to="route.path"
             class="navbar-item"
@@ -27,8 +27,8 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import { RoutesConfig, Route } from "@/config/routes.config";
-import { AuthModule } from "@/store/modules/auth";
+import { RouteConfig } from 'vue-router';
+import { AuthModule } from "../store/modules/auth";
 import BulmaLogo from "@/assets/img/BulmaLogo.svg?inline";
 
 @Component({
@@ -41,11 +41,9 @@ export default class Navbar extends Vue {
     return AuthModule.isAuthenticated;
   }
 
-  public navRoutes: Route[] = Object.keys(RoutesConfig).reduce((acc, key) => {
-    const route = RoutesConfig[key];
-    route.meta.showInNav && acc.push(route);
-    return acc;
-  }, [] as Route[]);
+  get validNavRoutes(): RouteConfig[] {
+    return this.$router.options.routes.filter(({ meta }) => !!meta.showInNav);
+  }
 }
 </script>
 

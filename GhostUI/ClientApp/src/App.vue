@@ -12,7 +12,7 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import { AppFooter, Navbar, Settings } from "@/components";
+import { AppFooter, Navbar, Settings } from "./components";
 
 @Component({
   components: {

@@ -1,6 +1,6 @@
 <template>
   <div class="field remember-me-field">
-    <v-checkbox
+    <VCheckbox
       label="Remember me"
       :checked="rememberMe"
       @checked="checked => rememberMe = checked"
@@ -10,8 +10,8 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import { AuthModule } from "@/store/modules/auth";
-import { VCheckbox } from "@/components";
+import { AuthModule } from "../../../store/modules/auth";
+import { VCheckbox } from "../../../components";
 
 @Component({
   components: {

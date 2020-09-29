@@ -41,8 +41,8 @@
             class="dropdown-item"
             @click="handleLogout"
           >
-            <font-awesome-icon :icon="routesConfig.Login.meta.icon" />
-            {{routesConfig.Login.name}}
+            <font-awesome-icon :icon="loginRoutConfig.meta.icon" />
+            {{loginRoutConfig.name}}
           </a>
         </li>
       </ul>
@@ -52,19 +52,21 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import { AuthModule } from "@/store/modules/auth";
-import { NUGET_URL_CONFIG } from "@/config/constants";
-import { Route, RoutesConfig } from "@/config/routes.config";
+import { AuthModule } from "../store/modules/auth";
+import { NUGET_URL_CONFIG } from "../config/constants";
+import { RouteConfig } from 'vue-router';
 
 @Component
 export default class Settings extends Vue {
   public open: boolean = false;
-
-  public readonly routesConfig: Record<string, Route> = RoutesConfig;
   public readonly nugetUrls: Record<string, string> = NUGET_URL_CONFIG;
 
   get isAuthenticated(): boolean {
     return AuthModule.isAuthenticated;
+  }
+
+  get loginRoutConfig(): RouteConfig | null {
+    return this.$router.options.routes.find(({ name }) => name === 'Login');
   }
 
   public closeSettingsMenu(): void {
@@ -74,7 +76,7 @@ export default class Settings extends Vue {
   public handleLogout(): void {
     AuthModule.LogoutUser().then(() => {
       this.$snotify.clear();
-      this.$router.push(this.routesConfig.Login.path);
+      this.$router.push(this.loginRoutConfig.path);
     });
   }
 }

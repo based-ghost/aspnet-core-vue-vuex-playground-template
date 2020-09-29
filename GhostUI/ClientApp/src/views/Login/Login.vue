@@ -21,7 +21,7 @@
                 <font-awesome-icon icon="sign-in-alt" />
               </span>
             </button>
-            <authenticator
+            <Authenticator
               :authStatus="authStatus"
               @success="onAuthSuccess"
               @fail="onAuthFailure"
@@ -35,9 +35,9 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import { SignalRApi } from "@/api";
-import { Authenticator } from "@/components";
-import { AuthModule, AuthStatusEnum } from "@/store/modules/auth";
+import { SignalRApi } from "../../api";
+import { Authenticator } from "../../components";
+import { AuthModule, AuthStatusEnum } from "../../store/modules/auth";
 import { UserNameInput, PasswordInput, RememberMeInput } from "./child-components";
 
 @Component({
