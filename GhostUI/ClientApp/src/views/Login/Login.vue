@@ -12,20 +12,16 @@
             src="@/assets/img/based-ghost-main.png"
           />
           <form @submit.prevent="handleLogin">
-            <user-name-input :isInputInvalid="invalidInputs" />
-            <password-input :isInputInvalid="invalidInputs" />
-            <remember-me-input />
+            <UserNameInput :isInputInvalid="invalidInputs" />
+            <PasswordInput :isInputInvalid="invalidInputs" />
+            <RememberMeInput />
             <button type="submit" class="button is-info is-medium is-fullwidth">
               <span>Login</span>
               <span class="icon">
                 <font-awesome-icon icon="sign-in-alt" />
               </span>
             </button>
-            <Authenticator
-              :authStatus="authStatus"
-              @success="onAuthSuccess"
-              @fail="onAuthFailure"
-            />
+            <Authenticator :authStatus="authStatus" @success="onAuthSuccess" @fail="onAuthFailure" />
           </form>
         </div>
       </div>
@@ -52,8 +48,8 @@ export default class Login extends Vue {
   public invalidInputs: boolean = false;
   public authStatus: AuthStatusEnum = AuthStatusEnum.NONE;
 
-  get isUserNameOrPasswordEmpty(): boolean {
-    return AuthModule.isUserNameOrPasswordEmpty;
+  get isLoginInputValid(): boolean {
+    return AuthModule.isLoginInputValid;
   }
 
   public mounted(): void {
@@ -65,7 +61,7 @@ export default class Login extends Vue {
       return;
     }
 
-    if (this.isUserNameOrPasswordEmpty) {
+    if (this.isLoginInputValid) {
       this.invalidInputs = true;
       this.$snotify.error('Enter user name/password', 'Login Error');
       return;

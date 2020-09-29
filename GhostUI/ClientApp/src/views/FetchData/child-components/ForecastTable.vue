@@ -21,7 +21,7 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator";
-import { IWeatherForecast } from "@/store/modules/weather-forecasts";
+import { IWeatherForecast } from "../../../store/modules/weather-forecasts";
 
 @Component
 export default class ForecastTable extends Vue {

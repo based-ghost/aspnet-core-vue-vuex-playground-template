@@ -13,11 +13,9 @@ import '@/config/fa.config';
 // Execute global Axios configurations (e.g. request interceptors)
 AxiosGlobalConfig.setup();
 
-// Install custom plugins
-Vue.use(vClickOutside);
-
-// Install npm packages
-Vue.use(Snotify, snotifyDefaults);
+// Install custom plugins/third-party packages
+Vue.use(vClickOutside)
+   .use(Snotify, snotifyDefaults);
 
 new Vue({
   router,

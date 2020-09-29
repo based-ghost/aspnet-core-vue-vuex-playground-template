@@ -8,16 +8,10 @@
             <h3 class="title is-4">Counter</h3>
             <h5 class="subtitle is-5">Use buttons to update count value</h5>
             <p class="buttons incrementer-buttons form-control-group">
-              <button
-                @click="count = count - 1"
-                class="button is-light minus"
-              >
+              <button @click="count = count - 1" class="button is-light minus">
                 <font-awesome-icon icon="minus" class="is-danger" />
               </button>
-              <button
-                @click="count = count + 1"
-                class="button is-light plus"
-              >
+              <button @click="count = count + 1" class="button is-light plus">
                 <font-awesome-icon icon="plus" class="is-success" />
               </button>
             </p>
@@ -29,7 +23,7 @@
             <h3 class="title is-4">Dropdown</h3>
             <h5 class="subtitle is-5">Select options from the dropdown</h5>
             <div class="field form-control-group">
-              <v-dropdown
+              <VDropdown
                 labelKey="label"
                 :options="dropdownOptions"
                 wrapperClass="normal-width"
@@ -45,7 +39,7 @@
             <h3 class="title is-4">Checkbox</h3>
             <h5 class="subtitle is-5">Toggle the checkbox</h5>
             <div class="field form-control-group">
-              <v-checkbox
+              <VCheckbox
                 :checked="checkboxValue"
                 @checked="checked => checkboxValue = checked"
               />
@@ -62,9 +56,9 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import { VCheckbox, VDropdown } from "@/components";
-import { DROPDOWN_TEST_DATA } from "@/config/constants";
-import { FormModule, IDropdownOption } from "@/store/modules/form";
+import { VCheckbox, VDropdown } from "../../components";
+import { DROPDOWN_TEST_DATA } from "../../config/constants";
+import { FormModule, IDropdownOption } from "../../store/modules/form";
 
 @Component({
   components: {

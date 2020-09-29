@@ -8,8 +8,8 @@
           This component demonstrates fetching data from the server - Start Date Index:
           <code>{{currentStartDateIndex}}</code>
         </h5>
-        <spinner :isLoading="isLoading" />
-        <forecast-table :forecasts="forecasts" />
+        <Spinner :isLoading="isLoading" />
+        <ForecastTable :forecasts="forecasts" />
         <p class="buttons is-pagination-group">
           <a class="button is-info" @click="paginateForecastData(-5)">
             <font-awesome-icon icon="angle-double-left" size="2x" />
@@ -25,10 +25,10 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import { Spinner } from "@/components";
-import { isArrayWithLength } from "@/utils";
+import { Spinner } from "../../components";
+import { isArrayWithLength } from "../../utils";
 import { ForecastTable } from "./child-components";
-import { WeatherForecastModule, IWeatherForecast } from "@/store/modules/weather-forecasts";
+import { WeatherForecastModule, IWeatherForecast } from "../../store/modules/weather-forecasts";
 
 @Component({
   components: {

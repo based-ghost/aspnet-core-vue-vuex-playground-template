@@ -11,11 +11,6 @@ const initialState: IAuthState = {
   status: AuthStatusEnum.NONE
 };
 
-const authFailureState: Partial<IAuthState> = {
-  token: initialState.token,
-  status: AuthStatusEnum.FAIL
-};
-
 @Module({
   store,
   name: 'auth',
@@ -28,7 +23,7 @@ class Auth extends VuexModule implements IAuthState {
   public status: AuthStatusEnum = initialState.status;
   public rememberMe: boolean = initialState.rememberMe;
 
-  public get isUserNameOrPasswordEmpty(): boolean {
+  public get isLoginInputValid(): boolean {
     return !this.userName || !this.password;
   }
 
@@ -43,7 +38,8 @@ class Auth extends VuexModule implements IAuthState {
       return authUser;
     } catch (e) {
       return {
-        ...authFailureState
+        token: initialState.token,
+        status: AuthStatusEnum.FAIL
       };
     }
   }

@@ -1,4 +1,6 @@
 module.exports = {
+  lintOnSave: false,
+
   // https://github.com/visualfanatic/vue-svg-loader
   chainWebpack: config => {
     const svgRule = config.module.rule("svg");
