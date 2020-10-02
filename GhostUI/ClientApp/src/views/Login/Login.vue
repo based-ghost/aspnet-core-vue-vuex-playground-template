@@ -31,7 +31,6 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import { SignalRApi } from "../../api";
 import { Authenticator } from "../../components";
 import { AuthModule, AuthStatusEnum } from "../../store/modules/auth";
 import { UserNameInput, PasswordInput, RememberMeInput } from "./child-components";
@@ -50,10 +49,6 @@ export default class Login extends Vue {
 
   get isLoginInputValid(): boolean {
     return AuthModule.isLoginInputValid;
-  }
-
-  public mounted(): void {
-    SignalRApi.startConnection();
   }
 
   public handleLogin(): void {
