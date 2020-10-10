@@ -19,7 +19,7 @@
             target="_blank"
             class="dropdown-item"
             rel="noopener noreferrer"
-            :href="nugetUrls.HEALTH_UI"
+            :href="nugetUrls.HealthUi"
           >
             <font-awesome-icon icon="heart" />Health Checks
           </a>
@@ -30,7 +30,7 @@
             target="_blank"
             class="dropdown-item"
             rel="noopener noreferrer"
-            :href="nugetUrls.SWAGGER_DOCS"
+            :href="nugetUrls.SwaggerDocs"
           >
             <font-awesome-icon icon="file" />Swagger API
           </a>
@@ -59,7 +59,7 @@ import { RouteConfig } from 'vue-router';
 @Component
 export default class Settings extends Vue {
   public open: boolean = false;
-  public readonly nugetUrls: Record<string, string> = NUGET_URL_CONFIG;
+  public readonly nugetUrls = NUGET_URL_CONFIG;
 
   get isAuthenticated(): boolean {
     return AuthModule.isAuthenticated;
