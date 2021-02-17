@@ -1,5 +1,5 @@
-# ASP.NET Core 3.1 / Vue + Vuex + TypeScript + Hot Module Replacement (HMR)
-This template is a SPA application built using ASP.NET Core 3.1 as the REST API server and Vue/Vuex/TypeScript as the web client (Bulma + SASS + vue-styled-components for UI styling). You can find a similar version using React + Redux (and associated libraries) here: [aspnet-core-react-redux-playground-template](https://github.com/based-ghost/aspnet-core-react-redux-playground-template)
+# ASP.NET Core 5.0 / Vue + Vuex + TypeScript + Hot Module Replacement (HMR)
+This template is a SPA application built using ASP.NET Core 5.0 as the REST API server and Vue/Vuex/TypeScript as the web client (Bulma + SASS + vue-styled-components for UI styling). You can find a similar version using React + Redux (and associated libraries) here: [aspnet-core-react-redux-playground-template](https://github.com/based-ghost/aspnet-core-react-redux-playground-template)
 
 
 ![](https://j.gifs.com/oVKkEY.gif)
@@ -13,7 +13,7 @@ This template is vaguely based on the original Vue + TypeScript .NET Core SPA te
 
 ## Technology Stack Overview
 - **Server**
-  - ASP.NET Core 3.1
+  - ASP.NET Core 5.0
   - SignalR
   - [`aspnetcore-vueclimiddleware`](https://github.com/EEParker/aspnetcore-vueclimiddleware)
   - HealthChecks + [AspNetCore.HealthChecks.UI package](https://github.com/xabaril/AspNetCore.Diagnostics.HealthChecks) - this provides  a nicely formatted UI for viewing the results of the HealthCheck modules in use and is accessed on ```/health-ui``` (also, provide an option for viewing the raw JSON data that the UI package prettifies for you at ```/healthchecks-json```). Access this view in the application via the floating settings cog on right screen by clicking the "Health Checks" link.
@@ -99,8 +99,8 @@ export default class VCheckBox extends Vue {
   - Jest - configured in package.json and pointed to run all tests in any files under /ClientApp/tests. Run ```npm run test:unit``` to execute. Unit tests for components `VCheckBox.render.tsx` and `Spinner.vue` are included as examples.
   
 ## Setup
-  - [Node.js version >= 8](https://nodejs.org/en/download/)
-  - [.NET Core 3.1 SDK](https://dotnet.microsoft.com/download/dotnet-core/3.1)
+  - [Node.js version >= 10](https://nodejs.org/en/download/)
+  - [`.NET 5.0 SDK`](https://dotnet.microsoft.com/download/dotnet/5.0)
   - Clone the repository and running ```npm install``` should properly restore all packages and dependencies - if the vendor.js & vendor-manifest.json did not get installed, run ```npm run webpack``` to execute the script added to accomplish this task.
-  - A solution.sln file is added to act as an entry point to open the application in Visual Studio. Visual Studio 2017 and up and the [Vue.js Pack 2017](https://marketplace.visualstudio.com/items?itemName=MadsKristensen.VuejsPack-18329) extension may need to be installed as well.
+  - A solution.sln file is added to act as an entry point to open the application in Visual Studio. Visual Studio 2019 and up and the [Vue.js Pack 2017](https://marketplace.visualstudio.com/items?itemName=MadsKristensen.VuejsPack-18329) extension may need to be installed as well.
   - GhostUI/GhostUI.csproj acts as the entry point to open the application in Visual Studio Code.

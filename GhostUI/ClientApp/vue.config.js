@@ -1,5 +1,12 @@
 module.exports = {
-  lintOnSave: false,
+  // define port
+  devServer: {
+    // proxy: 'http://160.153.250.157:33000', // option A
+    // host: 'http://localhost', // option B
+    port: '3001', // option C - recommended
+    hot: true,
+    disableHostCheck: true
+   },
 
   // https://github.com/visualfanatic/vue-svg-loader
   chainWebpack: config => {
@@ -27,12 +34,16 @@ module.exports = {
       });
   },
 
+  // https://cli.vuejs.org/guide/webpack.html
   configureWebpack: (config) => {
     if (process.env.NODE_ENV !== "production") {
       return {};
     }
 
     return {
+      performance: {
+        hints: false,
+      },
       plugins: []
     };
   },
@@ -40,12 +51,12 @@ module.exports = {
   // https://github.com/vuejs/vue-cli/tree/dev/packages/@vue/cli-plugin-pwa
   pwa: {
     name: "aspnet-core-vue-vuex-playground-template",
-    themeColor: "#fff",
-    msTileColor: "#fff",
+    msTileColor: "#ffffff",
+    themeColor: "#209cee",
     workboxPluginMode: "GenerateSW",
     workboxOptions: {
       skipWaiting: true,
-      cacheId: "aspnet-core-vue-template",
+      cacheId: "VueNetCoreSpa",
       importWorkboxFrom: "local",
       navigateFallback: "/index.html"
     }

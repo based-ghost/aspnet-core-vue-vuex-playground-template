@@ -53,6 +53,7 @@ export default class VDropdown extends Vue {
 
   public renderListOption(option: any, index: number): VNode {
     const optionLabel = this.getOptionLabelName(option);
+
     return (
       <li key={index}>
         <a
@@ -83,14 +84,21 @@ export default class VDropdown extends Vue {
   }
 
   public keyDownHandler(e: KeyboardEvent): void {
-    if (e.keyCode === 38 || e.keyCode === 40) { // up and down keys
-      this.toggleDropdownMenu();
-      e.preventDefault();
-    } else if (e.keyCode === 27) { // Esc key
-      this.$refs.dropdownButton.focus();
-      this.hideDropdownMenu();
-    } else if (e.keyCode === 9) { // Tab key
-      this.hideDropdownMenu();
+    switch (e.key) {
+      case 'ArrowUp':
+      case 'ArrowDown':
+        this.toggleDropdownMenu();
+        e.preventDefault();
+        break;
+      case 'Escape':
+        this.$refs.dropdownButton.focus();
+        this.hideDropdownMenu();
+        break;
+      case 'Tab':
+        this.hideDropdownMenu();
+        break;
+      default:
+        break;
     }
   }
 }

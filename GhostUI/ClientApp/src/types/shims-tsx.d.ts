@@ -8,7 +8,7 @@ declare global {
       $props: {};
     }
     interface IntrinsicElements {
-      [elemName: string]: any;
+      [elem: string]: any;
     }
   }
 }

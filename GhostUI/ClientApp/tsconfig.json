@@ -3,13 +3,15 @@
     "target": "esnext",
     "module": "esnext",
     "jsx": "preserve",
-    "strict": false,
-    "noImplicitAny": false,
-    "noImplicitThis": true,
+    "strict": true,
+    "allowJs": true,
+	  "noImplicitAny": false,
     "importHelpers": true,
     "moduleResolution": "node",
+    "resolveJsonModule": true,
     "experimentalDecorators": true,
     "esModuleInterop": true,
+	  "strictPropertyInitialization": false,
     "allowSyntheticDefaultImports": true,
     "sourceMap": true,
     "baseUrl": ".",
@@ -25,8 +27,7 @@
     "lib": [
       "esnext",
       "dom",
-      "dom.iterable",
-      "scripthost"
+      "dom.iterable"
     ]
   },
   "include": [

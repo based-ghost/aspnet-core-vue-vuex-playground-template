@@ -5,11 +5,11 @@
   SUCCESS = 'success'
 };
 
-export type IAuthUser = {
-  readonly token?: string;
-  readonly userName?: string;
-  readonly status?: AuthStatusEnum;
-};
+export type IAuthUser = Readonly<{
+  token?: string;
+  userName?: string;
+  status?: AuthStatusEnum;
+}>;
 
 export type ICredentials = {
   userName?: string;

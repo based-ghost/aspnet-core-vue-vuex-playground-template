@@ -53,10 +53,10 @@ namespace GhostUI
             services.AddSignalR();
 
             // IMPORTANT CONFIG CHANGE IN 3.0 - 'Async' suffix in action names get stripped by default - so, to access them by full name with 'Async' part - opt out of this feature'.
-            services.AddMvc(options => options.SuppressAsyncSuffixInActionNames = false);
+            services.AddMvc(opt => opt.SuppressAsyncSuffixInActionNames = false);
 
             // In production, the Vue files will be served from this directory
-            services.AddSpaStaticFiles(configuration => configuration.RootPath = $"{_spaSourcePath}/dist");
+            services.AddSpaStaticFiles(opt => opt.RootPath = $"{_spaSourcePath}/dist");
 
             // Register the Swagger services (using OpenApi 3.0)
             services.AddOpenApiDocument(configure => configure.Title = $"{this.GetType().Namespace} API");
@@ -69,11 +69,6 @@ namespace GhostUI
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                // There does not yet appear to be a finalized solution to replace this obselete framework.
-                // app.UseWebpackDevMiddleware(new WebpackDevMiddlewareOptions
-                // {
-                //     HotModuleReplacement = true
-                // });
             }
             else
             {
@@ -136,19 +131,16 @@ namespace GhostUI
                     endpoints.MapToVueCliProxy(
                        "{*path}",
                        new SpaOptions { SourcePath = _spaSourcePath },
-                       "serve",
-                       regex: "running at"
+                       npmScript: "serve",
+                       regex: "running at",
+                       port: 3001,
+                       forceKill: true
                     );
                 }
                 else
                 {
                     endpoints.MapFallbackToFile("index.html");
                 }
-            });
-
-            app.UseSpa(spa =>
-            {
-                spa.Options.SourcePath = "ClientApp";
             });
         }
     }

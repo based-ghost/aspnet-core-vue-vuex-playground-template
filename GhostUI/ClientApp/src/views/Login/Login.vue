@@ -44,7 +44,7 @@ import { UserNameInput, PasswordInput, RememberMeInput } from "./child-component
   }
 })
 export default class Login extends Vue {
-  public invalidInputs: boolean = false;
+  public invalidInputs = false;
   public authStatus: AuthStatusEnum = AuthStatusEnum.NONE;
 
   get isLoginInputValid(): boolean {

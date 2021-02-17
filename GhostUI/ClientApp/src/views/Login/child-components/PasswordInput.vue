@@ -4,6 +4,7 @@
       <input
         placeholder="Password"
         v-model.trim="password"
+        autocomplete="password"
         :type="!showPassword ? 'password' : 'text'"
         :class="['input is-medium', { 'is-danger': isPasswordInvalid }]"
       />
@@ -27,7 +28,7 @@ import { AuthModule } from "../../../store/modules/auth";
 
 @Component
 export default class PasswordInput extends Vue {
-  public showPassword: boolean = false;
+  public showPassword = false;
 
   @Prop() public readonly isInputInvalid: boolean;
 
