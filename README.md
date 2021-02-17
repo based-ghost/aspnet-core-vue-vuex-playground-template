@@ -1,4 +1,4 @@
-# ASP.NET Core 5.0 / Vue + Vuex + TypeScript + Hot Module Replacement (HMR)
+# ASP.NET Core 5.0 + Vue + Vuex + TypeScript + Hot Module Replacement (HMR)
 This template is a SPA application built using ASP.NET Core 5.0 as the REST API server and Vue/Vuex/TypeScript as the web client (Bulma + SASS + vue-styled-components for UI styling). You can find a similar version using React + Redux (and associated libraries) here: [aspnet-core-react-redux-playground-template](https://github.com/based-ghost/aspnet-core-react-redux-playground-template)
 
 
