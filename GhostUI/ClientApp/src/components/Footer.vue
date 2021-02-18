@@ -23,7 +23,7 @@
         <font-awesome-icon :icon="['fab', 'medium-m']"/>
       </a>
     </div>
-    <div class="content">based-ghost LLC &copy; 2020</div>
+    <div class="content">based-ghost LLC &copy; 2021</div>
   </footer>
 </template>
 

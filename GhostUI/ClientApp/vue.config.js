@@ -1,15 +1,17 @@
 module.exports = {
+  lintOnSave: false,
+
   // define port
   devServer: {
     // proxy: 'http://160.153.250.157:33000', // option A
     // host: 'http://localhost', // option B
-    port: '3001', // option C - recommended
+    port: "3001", // option C - recommended
     hot: true,
-    disableHostCheck: true
-   },
+    disableHostCheck: true,
+  },
 
   // https://github.com/visualfanatic/vue-svg-loader
-  chainWebpack: config => {
+  chainWebpack: (config) => {
     const svgRule = config.module.rule("svg");
     svgRule.uses.clear();
 
@@ -29,8 +31,8 @@ module.exports = {
       .options({
         name: "assets/[name].[hash:8].[ext]",
         svgo: {
-          plugins: [{ prefixIds: true }]
-        }
+          plugins: [{ prefixIds: true }],
+        },
       });
   },
 
@@ -44,7 +46,7 @@ module.exports = {
       performance: {
         hints: false,
       },
-      plugins: []
+      plugins: [],
     };
   },
 
@@ -58,7 +60,7 @@ module.exports = {
       skipWaiting: true,
       cacheId: "VueNetCoreSpa",
       importWorkboxFrom: "local",
-      navigateFallback: "/index.html"
-    }
-  }
+      navigateFallback: "/index.html",
+    },
+  },
 };
