@@ -3,6 +3,7 @@
     "target": "esnext",
     "module": "esnext",
     "jsx": "preserve",
+    "allowJs": false,
     "noImplicitAny": false,
     "noImplicitThis": true,
     "importHelpers": true,
@@ -25,8 +26,7 @@
     "lib": [
       "esnext",
       "dom",
-      "dom.iterable",
-      "scripthost"
+      "dom.iterable"
     ]
   },
   "include": [

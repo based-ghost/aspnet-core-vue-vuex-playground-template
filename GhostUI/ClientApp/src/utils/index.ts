@@ -1,4 +1,4 @@
-import { isArrayWithLength } from './isArrayWithLength';
+import isArrayWithLength from './isArrayWithLength';
 
 export {
   isArrayWithLength
