@@ -53,7 +53,7 @@
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import { AuthModule } from "../store/modules/auth";
-import { NUGET_URL_CONFIG } from "../config/constants";
+import { NUGET_URL_CONFIG } from "../config";
 import { RouteConfig } from 'vue-router';
 
 @Component

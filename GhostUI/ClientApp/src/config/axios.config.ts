@@ -55,10 +55,13 @@ const handleAxiosError = (error: AxiosError): void => {
 
 
   // Log in console or use Snotify notification (via Global EventBus)
-  EventBus.$snotify.error(`${message.status} (${message.body})`, 'XHR Error');
+  EventBus.$snotify.error(
+    `${message.status} (${message.body})`,
+    'XHR Error'
+  );
 };
 
-export default class AxiosGlobalConfig {
+export class AxiosGlobalConfig {
   public static setup(): void {
     axios.interceptors.response.use(
       (response: AxiosResponse) => {

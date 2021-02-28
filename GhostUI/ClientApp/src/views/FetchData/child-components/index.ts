@@ -1,5 +1,3 @@
 import ForecastTable from './ForecastTable.vue';
 
-export {
-  ForecastTable,
-};
+export { ForecastTable };

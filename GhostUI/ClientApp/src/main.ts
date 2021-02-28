@@ -6,10 +6,9 @@ import App from '@/App.vue';
 import store from '@/store';
 import router from '@/router';
 import { vClickOutside } from '@/plugins';
-import { SignalRApi } from '@/api/signalR.service';
-import AxiosGlobalConfig from '@/config/axios.config';
+import { SignalRApi } from '@/api/signalr.service';
+import { AxiosGlobalConfig, snotifyDefaults } from '@/config';
 import Snotify from 'vue-snotify';
-import { snotifyDefaults } from '@/config/vue-snotify.config';
 
 // Install custom plugins/third-party packages
 Vue.use(vClickOutside);
