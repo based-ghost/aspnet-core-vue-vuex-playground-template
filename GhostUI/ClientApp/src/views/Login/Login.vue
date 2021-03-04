@@ -15,13 +15,20 @@
             <UserNameInput :isInputInvalid="invalidInputs" />
             <PasswordInput :isInputInvalid="invalidInputs" />
             <RememberMeInput />
-            <button type="submit" class="button is-info is-medium is-fullwidth">
+            <button
+              type="submit"
+              class="button is-info is-medium is-fullwidth"
+            >
               <span>Login</span>
               <span class="icon">
                 <font-awesome-icon icon="sign-in-alt" />
               </span>
             </button>
-            <Authenticator :authStatus="authStatus" @success="onAuthSuccess" @fail="onAuthFailure" />
+            <Authenticator
+              :authStatus="authStatus"
+              @success="onAuthSuccess"
+              @fail="onAuthFailure"
+            />
           </form>
         </div>
       </div>

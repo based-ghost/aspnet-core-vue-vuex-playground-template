@@ -21,9 +21,7 @@ class SignalRService {
 
   public startConnection(): void {
     if (this._hubConnection.state === HubConnectionState.Disconnected) {
-      this._hubConnection
-        .start()
-        .catch((e) => console.error(e));
+      this._hubConnection.start().catch((e) => console.error(e));
     }
   }
 
@@ -53,8 +51,7 @@ class SignalRService {
     });
 
     this._hubConnection.on(SIGNALR_CONFIG.events.closeConnections, (reason: string) => {
-      this._hubConnection
-        .stop()
+      this._hubConnection.stop()
         .then(() => {
           this.hubToastMessage(`Hub closed (${reason})`);
         });

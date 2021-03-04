@@ -14,8 +14,8 @@ const initialState: IWeatherForecastsState = {
   name: 'forecasts'
 })
 class WeatherForecast extends VuexModule implements IWeatherForecastsState {
-   public startDateIndex: number = initialState.startDateIndex;
-   public forecasts: IWeatherForecast[] = initialState.forecasts;
+  public startDateIndex: number = initialState.startDateIndex;
+  public forecasts: IWeatherForecast[] = initialState.forecasts;
 
   @MutationAction<IWeatherForecastsState>({ mutate: ['forecasts', 'startDateIndex'] })
   public async GetWeatherForecasts(index: number | null): Promise<IWeatherForecastsState> {
@@ -28,9 +28,7 @@ class WeatherForecast extends VuexModule implements IWeatherForecastsState {
         startDateIndex
       };
     } catch (e) {
-      return {
-        ...initialState
-      };
+      return { ...initialState };
     }
   }
 }

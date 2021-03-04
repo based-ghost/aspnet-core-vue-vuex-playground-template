@@ -1,5 +1,8 @@
 ﻿<template>
-  <div v-show="isLoading" id="load-spinner">
+  <div
+    id="load-spinner"
+    v-show="isLoading"
+  >
     <div />
     <div />
     <div />

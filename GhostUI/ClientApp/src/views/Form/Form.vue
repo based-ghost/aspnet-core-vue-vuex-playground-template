@@ -8,11 +8,23 @@
             <h3 class="title is-4">Counter</h3>
             <h5 class="subtitle is-5">Use buttons to update count value</h5>
             <p class="buttons incrementer-buttons form-control-group">
-              <button @click="count = count - 1" class="button is-light minus">
-                <font-awesome-icon icon="minus" class="is-danger" />
+              <button
+                @click="count = count - 1"
+                class="button is-light minus"
+              >
+                <font-awesome-icon
+                  icon="minus"
+                  class="is-danger"
+                />
               </button>
-              <button @click="count = count + 1" class="button is-light plus">
-                <font-awesome-icon icon="plus" class="is-success" />
+              <button
+                @click="count = count + 1"
+                class="button is-light plus"
+              >
+                <font-awesome-icon
+                  icon="plus"
+                  class="is-success"
+                />
               </button>
             </p>
             <p class="subtitle is-5">
