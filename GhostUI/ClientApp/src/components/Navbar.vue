@@ -1,5 +1,9 @@
 <template>
-  <nav class="navbar" role="navigation" aria-label="main navigation">
+  <nav
+    class="navbar"
+    role="navigation"
+    aria-label="main navigation"
+  >
     <div class="navbar-wrapper">
       <div class="brand-wrapper">
         <bulma-logo
@@ -10,7 +14,10 @@
         />
       </div>
       <div class="navbar-routes">
-        <div v-if="isAuthenticated" class="navbar-items-group">
+        <div
+          v-if="isAuthenticated"
+          class="navbar-items-group"
+        >
           <router-link
             v-for="route in validNavRoutes"
             :key="route.path"

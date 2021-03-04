@@ -11,10 +11,16 @@
         <Spinner :isLoading="isLoading" />
         <ForecastTable :forecasts="forecasts" />
         <p class="buttons is-pagination-group">
-          <a class="button is-info" @click="paginateForecastData(-5)">
+          <a
+            class="button is-info"
+            @click="paginateForecastData(-5)"
+          >
             <font-awesome-icon icon="angle-double-left" size="2x" />
           </a>
-          <a class="button is-info" @click="paginateForecastData(5)">
+          <a
+            class="button is-info"
+            @click="paginateForecastData(5)"
+          >
             <font-awesome-icon icon="angle-double-right" size="2x" />
           </a>
         </p>

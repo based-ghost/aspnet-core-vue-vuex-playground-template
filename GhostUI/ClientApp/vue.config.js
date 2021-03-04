@@ -53,7 +53,7 @@ module.exports = {
   // https://github.com/vuejs/vue-cli/tree/dev/packages/@vue/cli-plugin-pwa
   pwa: {
     name: "aspnet-core-vue-vuex-playground-template",
-    msTileColor: "#ffffff",
+    msTileColor: "#fff",
     themeColor: "#209cee",
     workboxPluginMode: "GenerateSW",
     workboxOptions: {

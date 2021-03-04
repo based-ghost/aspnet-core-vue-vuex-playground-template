@@ -1,5 +1,8 @@
 ﻿<template>
-  <div v-if="isLoading" :class="['fingerprint-spinner', authStatus]">
+  <div
+    v-if="isLoading"
+    :class="['fingerprint-spinner', authStatus]"
+  >
     <div />
     <div />
     <div />
