@@ -73,15 +73,7 @@ export default class Login extends Vue {
     this.invalidInputs = false;
     this.authStatus = AuthStatusEnum.PROCESS;
 
-    setTimeout(() => {
-      AuthModule.LoginUser()
-        .then(() => {
-          this.authStatus = AuthStatusEnum.SUCCESS;
-        })
-        .catch((e) => {
-          this.authStatus = AuthStatusEnum.FAIL;
-        });
-    }, 2250);
+    setTimeout(() => { this.loginUser(); }, 2250);
   }
 
   public onAuthSuccess(): void {
@@ -91,6 +83,15 @@ export default class Login extends Vue {
   public onAuthFailure(): void {
     this.authStatus = AuthStatusEnum.NONE;
     this.$snotify.error('Could not authenticate user', 'Login Error');
+  }
+
+  private async loginUser(): Promise<void> {
+    try {
+      await AuthModule.LoginUser();
+      this.authStatus = AuthStatusEnum.SUCCESS;
+    } catch (e) {
+      this.authStatus = AuthStatusEnum.FAIL;
+    }
   }
 }
 </script>

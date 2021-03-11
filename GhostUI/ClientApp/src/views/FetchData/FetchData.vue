@@ -64,16 +64,17 @@ export default class FetchData extends Vue {
     this.handleGetWeatherForecasts(newStartDateIndex);
   }
 
-  public handleGetWeatherForecasts(startDateIndex: number = 0): void {
+  public async handleGetWeatherForecasts(startDateIndex: number = 0): Promise<void> {
     this.isLoading = true;
 
-    // setTimeout to show loading animation
-    WeatherForecastModule.GetWeatherForecasts(startDateIndex)
-      .then(() => {
-        setTimeout(() => {
-          this.isLoading = false;
-        }, 50);
-      });
+    try {
+      await WeatherForecastModule.GetWeatherForecasts(startDateIndex);
+
+      // setTimeout to show loading animation
+      setTimeout(() => { this.isLoading = false; }, 50);
+    } catch (e) {
+      console.error(e);
+    }
   }
 }
 </script>
