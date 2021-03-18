@@ -18,7 +18,7 @@ describe("VCheckbox.render.tsx", () => {
   it("should mount and render properly", async () => {
     const wrapper = mountVCheckbox();
     expect(wrapper).toBeTruthy();
-    expect(wrapper.find(inputElQuery).exists()).toBeTruthy();
+    expect(wrapper.find(inputElQuery).exists()).toBe(true);
   });
 
   it("'id', 'disabled', 'readonly', and 'name' attributes are rendered on input element when those props are explicitly defined", async () => {
@@ -34,7 +34,7 @@ describe("VCheckbox.render.tsx", () => {
 
     Object.keys(propsData).forEach((key) => {
       const attr = key.toLowerCase();
-      expect(inputEl.hasAttribute(attr)).toBeTruthy();
+      expect(inputEl.hasAttribute(attr)).toBe(true);
     });
   });
 
@@ -51,8 +51,7 @@ describe("VCheckbox.render.tsx", () => {
     inputEl.checked = true;
     inputEl.value = inputEl.checked.toString();
 
-    inputNode.trigger("change");
-
+    await inputNode.trigger("change");
     expect(wrapper.emitted().checked).toBeTruthy();
   });
 

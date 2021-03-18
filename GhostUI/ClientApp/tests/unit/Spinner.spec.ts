@@ -1,6 +1,6 @@
+import '@testing-library/jest-dom';
 import { shallowMount, ThisTypedShallowMountOptions } from '@vue/test-utils';
 import Spinner from '@/components/Spinner.vue';
-import '@testing-library/jest-dom';
 
 /**
  * Unit Tests For Component: Spinner.vue
@@ -19,7 +19,7 @@ describe("Spinner.vue", () => {
   it("should mount and render properly", async () => {
     const wrapper = shallowMountSpinner();
     expect(wrapper).toBeTruthy();
-    expect(wrapper.find(spinnerParentElId).exists()).toBeTruthy();
+    expect(wrapper.find(spinnerParentElId).exists()).toBe(true);
   });
 
   it("v-show directive evaluates false AND element is not visible when 'isLoading' prop = false", async () => {
