@@ -1,9 +1,11 @@
-﻿export enum AuthStatusEnum {
-  NONE = 'none',
-  FAIL = 'fail',
-  PROCESS = 'process',
-  SUCCESS = 'success'
-};
+﻿export const AuthStatusEnum = {
+  FAIL: 'fail',
+  NONE: 'none',
+  PROCESS: 'process',
+  SUCCESS: 'success'
+} as const;
+
+export type AuthStatusEnum = typeof AuthStatusEnum[keyof typeof AuthStatusEnum];
 
 export type IAuthUser = Readonly<{
   token?: string;

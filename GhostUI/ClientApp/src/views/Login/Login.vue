@@ -73,7 +73,7 @@ export default class Login extends Vue {
     this.invalidInputs = false;
     this.authStatus = AuthStatusEnum.PROCESS;
 
-    setTimeout(() => { this.loginUser(); }, 2250);
+    setTimeout(() => this.loginUser(), 2250);
   }
 
   public onAuthSuccess(): void {
