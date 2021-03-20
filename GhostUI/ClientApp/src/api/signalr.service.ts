@@ -1,6 +1,6 @@
 ﻿import { EventBus } from '@/event-bus';
 import { SIGNALR_CONFIG } from '../config';
-import { HubConnection, HubConnectionBuilder, HubConnectionState } from '@microsoft/signalr';
+import { HubConnection, HubConnectionBuilder, HubConnectionState, LogLevel } from '@microsoft/signalr';
 
 /**
  * SignalR API abstraction layer communication.
@@ -19,15 +19,26 @@ class SignalRService {
     return this._signalRService || (this._signalRService = new this());
   }
 
-  public startConnection(): void {
-    if (this._hubConnection.state === HubConnectionState.Disconnected) {
-      this._hubConnection.start().catch((e) => console.error(e));
+  get connectionState(): HubConnectionState {
+    return this._hubConnection?.state ?? HubConnectionState.Disconnected;
+  }
+
+  public async startConnection(): Promise<void> {
+    try {
+      await this._hubConnection?.start();
+      console.assert(this.connectionState === HubConnectionState.Connected);
+    } catch (e) {
+      console.assert(this.connectionState === HubConnectionState.Disconnected);
+      console.error(e);
+      setTimeout(() => this.startConnection(), 5000);
     }
   }
 
   private createConnection(): void {
     this._hubConnection = new HubConnectionBuilder()
       .withUrl(SIGNALR_CONFIG.baseUrl)
+      .withAutomaticReconnect()
+      .configureLogging(LogLevel.Information)
       .build();
   }
 
@@ -50,11 +61,13 @@ class SignalRService {
       this.hubToastMessage('A user has logged out');
     });
 
-    this._hubConnection.on(SIGNALR_CONFIG.events.closeConnections, (reason: string) => {
-      this._hubConnection.stop()
-        .then(() => {
-          this.hubToastMessage(`Hub closed (${reason})`);
-        });
+    this._hubConnection.on(SIGNALR_CONFIG.events.closeConnections, async (reason: string) => {
+      try {
+        await this._hubConnection.stop();
+        this.hubToastMessage(`Hub closed (${reason})`);
+      } catch (e) {
+        console.error(e);
+      }
     });
   }
 }
