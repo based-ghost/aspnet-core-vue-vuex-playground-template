@@ -114,7 +114,7 @@ namespace GhostUI
                 settings.DocumentPath = "/docs/api-specification.json";
             });
 
-            app.UseHttpsRedirection();
+            // app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseSpaStaticFiles();
             app.UseRouting();

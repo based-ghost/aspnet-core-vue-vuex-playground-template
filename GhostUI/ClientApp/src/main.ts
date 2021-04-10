@@ -1,14 +1,14 @@
 import Vue from 'vue';
+import App from '@/App.vue';
 import '@/registerServiceWorker';
 import '@/assets/style/scss/main.scss';
-import '@/config/fa.config';
-import App from '@/App.vue';
 import store from '@/store';
 import router from '@/router';
+import Snotify from 'vue-snotify';
 import { vClickOutside } from '@/plugins';
 import { SignalRApi } from '@/api/signalr.service';
 import { AxiosGlobalConfig, snotifyDefaults } from '@/config';
-import Snotify from 'vue-snotify';
+import '@/config/fa.config';
 
 // Install custom plugins/third-party packages
 Vue.use(vClickOutside);

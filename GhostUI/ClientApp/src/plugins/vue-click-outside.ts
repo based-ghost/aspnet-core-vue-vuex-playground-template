@@ -1,4 +1,6 @@
-﻿export default {
+﻿const DEFAULT_EVENTS: string[] = ['click', 'touchstart'];
+
+const vClickOutside = {
   install(Vue) {
     Vue.directive('click-outside', {
       bind: function(el, binding, vNode) {
@@ -10,24 +12,24 @@
 
         const bubble = binding.modifiers.bubble;
 
-        const handler = (e) => {
+        const handlerFn = (e) => {
           if (bubble || (!el.contains(e.target) && el !== e.target)) {
             binding.value(e);
           }
         };
 
-        el.__vueClickOutside__ = handler;
-        document.addEventListener('click', handler, true);
-        document.addEventListener('touchstart', handler, true);
+        el.__vueClickOutside__ = handlerFn;
+        DEFAULT_EVENTS.forEach((type) => document.addEventListener(type, handlerFn));
       },
 
       unbind: function(el) {
-        if (!el.__vueClickOutside__) return;
-
-        document.removeEventListener('click', el.__vueClickOutside__, true);
-        document.removeEventListener('touchstart', el.__vueClickOutside__, true);
-        el.__vueClickOutside__ = null;
+        if (el.__vueClickOutside__) {
+          DEFAULT_EVENTS.forEach((type) => document?.removeEventListener(type, el.__vueClickOutside__));
+          el.__vueClickOutside__ = null;
+        }
       }
     });
   }
 };
+
+export default vClickOutside;

@@ -37,7 +37,7 @@ module.exports = {
   },
 
   // https://cli.vuejs.org/guide/webpack.html
-  configureWebpack: (config) => {
+  configureWebpack: () => {
     if (process.env.NODE_ENV !== "production") {
       return {};
     }
