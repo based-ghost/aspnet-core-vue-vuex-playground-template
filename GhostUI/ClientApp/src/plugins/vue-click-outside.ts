@@ -10,22 +10,19 @@ const vClickOutside = {
           console.warn(warnMsg);
         }
 
-        const bubble = binding.modifiers.bubble;
-
-        const handlerFn = (e) => {
-          if (bubble || (!el.contains(e.target) && el !== e.target)) {
+        el.clickOutsideEvent = function (e) {
+          e.stopPropagation();
+          if (!(el === e.target || el.contains(e.target))) {
             binding.value(e);
           }
-        };
+        }
 
-        el.__vueClickOutside__ = handlerFn;
-        DEFAULT_EVENTS.forEach((type) => document.addEventListener(type, handlerFn));
+        DEFAULT_EVENTS.forEach((type) => document.addEventListener(type, el.clickOutsideEvent));
       },
 
       unbind: function(el) {
-        if (el.__vueClickOutside__) {
-          DEFAULT_EVENTS.forEach((type) => document?.removeEventListener(type, el.__vueClickOutside__));
-          el.__vueClickOutside__ = null;
+        if (el.clickOutsideEvent) {
+          DEFAULT_EVENTS.forEach((type) => document?.removeEventListener(type, el.clickOutsideEvent));
         }
       }
     });
