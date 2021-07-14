@@ -1,8 +1,3 @@
-﻿import { FormModule } from './form.module';
-import { IDropdownOption, IFormState } from './types';
+﻿export { FormModule } from './form.module';
 
-export {
-  FormModule,
-  IDropdownOption,
-  IFormState
-};
+export type { IDropdownOption, IFormState } from './types';

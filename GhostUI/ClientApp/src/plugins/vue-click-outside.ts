@@ -22,7 +22,7 @@ const vClickOutside = {
 
       unbind: function(el) {
         if (el.clickOutsideEvent) {
-          DEFAULT_EVENTS.forEach((type) => document?.removeEventListener(type, el.clickOutsideEvent));
+          DEFAULT_EVENTS.forEach((type) => document.removeEventListener(type, el.clickOutsideEvent));
         }
       }
     });

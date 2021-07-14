@@ -1,8 +1,3 @@
-﻿import { WeatherForecastModule } from './weather-forecasts.module';
-import { IWeatherForecast, IWeatherForecastsState } from './types';
+﻿export { WeatherForecastModule } from './weather-forecasts.module';
 
-export {
-  WeatherForecastModule,
-  IWeatherForecast,
-  IWeatherForecastsState
-};
+export type { IWeatherForecast, IWeatherForecastsState } from './types';

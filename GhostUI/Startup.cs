@@ -43,9 +43,6 @@ namespace GhostUI
             // Add CORS
             services.AddCorsConfig(_corsPolicyName);
 
-            // Register RazorPages/Controllers
-            services.AddControllers();
-
             // Add Brotli/Gzip response compression (prod only)
             services.AddResponseCompressionConfig(Configuration);
 
@@ -57,6 +54,9 @@ namespace GhostUI
 
             // In production, the Vue files will be served from this directory
             services.AddSpaStaticFiles(opt => opt.RootPath = $"{_spaSourcePath}/dist");
+
+            // Register RazorPages/Controllers
+            services.AddControllers();
 
             // Register the Swagger services (using OpenApi 3.0)
             services.AddOpenApiDocument(configure => configure.Title = $"{this.GetType().Namespace} API");
@@ -126,21 +126,14 @@ namespace GhostUI
                 endpoints.MapControllers();
                 endpoints.MapHub<UsersHub>("/hubs/users");
 
-                if (System.Diagnostics.Debugger.IsAttached)
-                {
-                    endpoints.MapToVueCliProxy(
-                       "{*path}",
-                       new SpaOptions { SourcePath = _spaSourcePath },
-                       npmScript: "serve",
-                       regex: "running at",
-                       port: 3001,
-                       forceKill: true
-                    );
-                }
-                else
-                {
-                    endpoints.MapFallbackToFile("index.html");
-                }
+                endpoints.MapToVueCliProxy(
+                   "{*path}",
+                   new SpaOptions { SourcePath = _spaSourcePath },
+                   npmScript: System.Diagnostics.Debugger.IsAttached ? "serve" : null,
+                   regex: "Compiled successfully",
+                   port: 3001,
+                   forceKill: true
+                );
             });
         }
     }

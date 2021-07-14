@@ -3,7 +3,10 @@
     <vue-snotify />
     <navbar />
     <settings />
-    <transition mode="out-in" :name="$route.meta.transitionName">
+    <transition
+      mode="out-in"
+      :name="$route.meta.transitionName"
+    >
       <router-view />
     </transition>
     <app-footer />
